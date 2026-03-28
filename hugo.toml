@@ -1,0 +1,29 @@
+baseURL = "https://example.org/"
+languageCode = "es-ar"
+title = "Pablo Marchiori"
+theme = "congo"
+
+defaultContentLanguage = "es"
+enableRobotsTXT = true
+summaryLength = 30
+
+[pagination]
+  pagerSize = 10
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  description = "Notas personales sobre lenguaje, IT, trabajo y organización"
+  mainSections = ["notas"]
+
+[params.homepage]
+  layout = "page"
+  showRecent = true
+  recentLimit = 6
+
+[params.author]
+  name = "Pablo Marchiori"
+  image = "img/author.jpg"
+  headline = "Notas personales sobre lenguaje, IT, trabajo y organización"
+  bio = "Supervisor de infraestructura IT. Apuntes, ensayos y notas técnicas."
