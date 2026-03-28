@@ -34,8 +34,7 @@ El proceso empezó con estos objetivos:
 
 ### 1. Instalación de Hugo
 
-Primero descargué Hugo para Windows, dejé el ejecutable en una carpeta local y lo agregué al `PATH`.
-La verificación inicial fue con:
+Primero descargué Hugo para Windows, dejé el ejecutable en una carpeta local y lo agregué al `PATH`. 	La verificación inicial fue con:
 
 `hugo version`
 
@@ -64,6 +63,7 @@ A partir de ahí ya tenía una base local sobre la cual empezar a trabajar.
 ### 4. Elección del tema
 
 La elección del tema llevó más vueltas de las que parecía. Hubo discusión entre Gemini, ChatGPT y yo haciendo de árbitro, y la decisión final fue usar **Congo**.
+
 La elección quedó basada en un equilibrio entre:
 - sobriedad
 - flexibilidad
@@ -82,22 +82,22 @@ Con eso el tema quedó incorporado al repositorio sin mezclar su código directa
 
 ### 6. Cambio a Hugo Extended
 
-La primera contrariedad apareció enseguida: **Congo requiere Hugo Extended**.
+La primera contrariedad apareció enseguida: **Congo requiere Hugo Extended**.  
 Yo había arrancado con la edición estándar de Hugo, así que tuve que reemplazarla por la versión **Extended** para que el tema pudiera compilar correctamente.
 
 ### 7. Configuración inicial
 
-Después armé un `hugo.toml` mínimo para que el sitio arrancara con una configuración básica y usable.
+Después armé un `hugo.toml` mínimo para que el sitio arrancara con una configuración básica y usable.  
 La idea en esta etapa no fue dejar todo perfecto, sino simplemente lograr una base funcional sobre la cual seguir ajustando el resto más adelante.
 
 ### 8. Corrección de compatibilidad
 
-La segunda contrariedad fue más concreta: apareció un error de compatibilidad entre la versión actual de Hugo y un partial del tema Congo.
+La segunda contrariedad fue más concreta: apareció un error de compatibilidad entre la versión actual de Hugo y un partial del tema Congo.  
 La solución aplicada fue anular localmente ese partial creando el archivo:
 
 `layouts/partials/functions/warnings.html`
 
-vacío, para que el sitio pudiera renderizar sin romper.
+vacío, para que el sitio pudiera renderizar sin romper.  
 No fue la clase de problema que uno imagina al empezar, pero justamente también formó parte del aprendizaje práctico del proceso.
 
 ### 9. Prueba local
@@ -114,7 +114,7 @@ Ese `-D` fue importante porque permite ver también los contenidos que siguen ma
 
 ### 10. Publicación en GitHub
 
-Con el sitio funcionando localmente, el paso siguiente fue inicializar el repositorio correctamente, hacer el primer commit y subir el proyecto a GitHub.
+Con el sitio funcionando localmente, el paso siguiente fue inicializar el repositorio correctamente, hacer el primer commit y subir el proyecto a GitHub.  
 Después se configuró el despliegue con **GitHub Pages** usando **GitHub Actions**, de forma que cada `push` a la rama principal vuelva a compilar y publicar el sitio automáticamente.
 
 ### 11. Primera publicación visible en línea
@@ -124,6 +124,19 @@ Finalmente, el sitio quedó visible en línea en:
 `https://pablomarchiori.github.io/sitio-personal/`
 
 Con eso quedó resuelta la primera meta completa: pasar de una carpeta vacía en Windows a un sitio estático publicado y accesible desde Internet.
+
+## 12. Ajuste visual final
+
+Ya con el sitio funcionando, apareció un detalle menor pero molesto: el espaciado entre bullets dentro de las notas quedaba demasiado abierto.  
+Primero intenté resolverlo con un archivo `assets/css/custom.css`, pero en este caso no estaba siendo tomado por el tema como esperaba.
+
+La solución que sí funcionó fue otra:
+
+* crear `static/css/custom.css`
+* cargarlo explícitamente desde `layouts/partials/extend-head.html`
+
+Con eso pude ajustar el espaciado de listas sin tocar el tema Congo directamente.
+Fue un buen cierre para la instalación, porque dejó resuelto no solo el despliegue del sitio, sino también un primer ajuste visual real sobre la presentación del contenido.
 
 ## Estado actual
 
@@ -138,18 +151,18 @@ En este punto, el sitio ya quedó:
 ## Qué sigue después
 
 Los pasos siguientes ya quedan fuera de esta primera etapa, pero forman parte natural de la continuación del proyecto:
-- ordenar mejor las secciones reales del sitio<br>
+- conectar el sitio con dominio propio
+- ordenar mejor las secciones reales del sitio
 - documentar cómo mantenerlo y publicar nuevas notas
 - definir una estructura más estable para categorías y contenido
-- conectar el sitio con dominio propio
 
 ## Cierre
 
-La primera etapa quedó resuelta: ya existe una base funcional, editable localmente y publicada en línea.
+La primera etapa quedó resuelta: ya existe una base funcional, editable localmente y publicada en línea.  
 Más importante todavía: el proceso no quedó solo como resultado técnico, sino también como registro de instalación, errores reales, decisiones tomadas y soluciones aplicadas. Y eso, para un sitio que también quiere servir como archivo personal de trabajo, ya es parte del proyecto.
 
 Ahora hay que aprenderse esto! 😅
 
-**git add content\notas\instalacion-del-sitio.md**  
-**git commit -m "Actualizar nota de instalación del sitio"**  
-**git push**
+`git add content\notas\instalacion-del-sitio.md`  
+`git commit -m "Actualizar nota de instalación del sitio"`  
+`git push`
