@@ -27,3 +27,7 @@ summaryLength = 30
   image = "img/author.jpg"
   headline = "Notas personales sobre lenguaje, IT, trabajo y organización"
   bio = "Supervisor de infraestructura IT. Apuntes, ensayos y notas técnicas."
+  
+[caches]
+[caches.images]
+dir = ':cacheDir/images'
