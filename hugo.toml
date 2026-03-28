@@ -15,7 +15,7 @@ summaryLength = 30
 
 [params]
   description = "Notas personales sobre lenguaje, IT, trabajo y organización"
-  mainSections = ["notas"]
+  mainSections = ["notas", "site-log"]
 
 [params.homepage]
   layout = "page"
@@ -36,3 +36,8 @@ dir = ':cacheDir/images'
 name = "Notas"
 pageRef = "notas"
 weight = 10
+
+[[menus.main]]
+name = "Site Log"
+pageRef = "site-log"
+weight = 20
