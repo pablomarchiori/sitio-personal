@@ -31,3 +31,8 @@ summaryLength = 30
 [caches]
 [caches.images]
 dir = ':cacheDir/images'
+
+[[menus.main]]
+name = "Notas"
+pageRef = "notas"
+weight = 10

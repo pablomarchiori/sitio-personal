@@ -1,7 +1,7 @@
 ---
 title: "Instalación del sitio personal con Hugo en Windows"
 date: 2026-03-27T21:55:00-03:00
-draft: true
+draft: false
 description: "Primera nota del sitio: instalación de Hugo, Git, Congo y puesta en marcha local."
 tags: ["hugo", "windows", "github", "sitio-personal"]
 categories: ["Notas"]
@@ -21,29 +21,29 @@ El proceso empezó con estos objetivos:
 - escribir en Markdown
 - tener un sitio limpio, legible y fácil de mantener
 - dejar abierta la posibilidad de conectar dominio propio más adelante
+- renegar un poco con casos practicos para aprender tecnologia
 
 ## Entorno usado
 
-- Windows
+- Windows 
 - Hugo Extended
-- Git for Windows
-- Git CMD
+- Git for Windows 
 - tema Congo
+- Asistente Chatgpt 5.4 thinking (y algo de Gemini)
 
 ## Proceso realizado
 
 ### 1. Instalación de Hugo
 
-Se descargó Hugo para Windows, se dejó el ejecutable en una carpeta local y se agregó al `PATH`.
+Descargué Hugo para Windows, se dejó el ejecutable en una carpeta local y ya lo agregué al `PATH`.
+Luego se verificamos con:
 
-Luego se verificó con:
-
--powershell
 hugo version
 
 ### 2. Instalación de Git
 
-Se instaló Git for Windows y se verificó con el comando git --version.
+Instaló Git for Windows y se verificó con el comando git --version.
+(usé bash primero pero me canso el copiar y pegar, y me pasé a CMD)
 
 ### 3. Creación del proyecto
 
@@ -52,8 +52,8 @@ Se creó el proyecto con el comando hugo new project sitio-personal.
 Luego se inicializó Git dentro del proyecto con git init.
 
 ### 4. Elección del tema
-
-Se evaluaron varios temas de Hugo y finalmente se eligió Congo, priorizando equilibrio entre:
+Despues de una discución entre Gemini, chatgpt y yo de arbitro (se pusieron heavy)  quedamos en usar Congo como tema
+ priorizando equilibrio entre:
 
 sobriedad
 flexibilidad
@@ -62,13 +62,13 @@ mantenimiento razonable
 
 ###5. Instalación del tema
 
-El tema se agregó como submódulo con:
+Agtegamos / agregué como submódulo con:
 
 git submodule add https://github.com/jpanther/congo.git themes/congo
 
 ### 6. Cambio a Hugo Extended
 
-Como Congo lo requiere, se reemplazó Hugo estándar por Hugo Extended.
+primer contrariedad: Como Congo lo requiere, se reemplazó Hugo estándar por Hugo Extended.
 
 ### 7. Configuración inicial
 
@@ -76,7 +76,7 @@ Se armó un hugo.toml mínimo para dejar el sitio funcionando.
 
 ### 8. Corrección de compatibilidad
 
-Apareció un error de compatibilidad entre la versión actual de Hugo y un partial del tema Congo.
+Segunda contrariedad: Apareció un error de compatibilidad entre la versión actual de Hugo y un partial del tema Congo.
 
 La solución aplicada fue anular localmente ese partial creando el archivo layouts/partials/functions/warnings.html vacío, para que el sitio pudiera renderizar.
 
