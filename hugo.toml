@@ -39,6 +39,11 @@ pageRef = "notas"
 weight = 10
 
 [[menus.main]]
+name = "Lenguaje"
+pageRef = "manual-de-supervivencia-linguistica"
+weight = 20
+
+[[menus.main]]
 name = "Site Log"
 pageRef = "site-log"
-weight = 20
+weight = 30
