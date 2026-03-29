@@ -4,6 +4,7 @@ title = "Pablo Marchiori"
 theme = "congo"
 
 defaultContentLanguage = "es"
+disableLanguages = ["en"]
 enableRobotsTXT = true
 summaryLength = 30
 
