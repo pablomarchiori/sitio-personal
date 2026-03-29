@@ -169,5 +169,3 @@ La parte importante quedó resuelta: el sitio ya tiene dominio propio, HTTPS y s
 La parte que quedó pendiente no es el sitio en sí, sino el manejo fino del dominio alternativo en el proveedor DNS actual.
 
 Y justamente por eso vale la pena dejarlo escrito: para que después no parezca que “algo falló” cuando en realidad lo que apareció fue una limitación bastante concreta de infraestructura.
-
-Si querés, te la dejo todavía más “tuya”, con un poco más de ironía técnica y menos tono neutro.
