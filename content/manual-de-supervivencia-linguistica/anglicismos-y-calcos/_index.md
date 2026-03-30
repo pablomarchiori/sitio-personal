@@ -2,5 +2,4 @@
 title: "Anglicismos y calcos"
 draft: false
 ---
-
-# Anglicismos y calcos
+Sentidos importados del inglés que desplazan palabras mejores que ya existían en español.
