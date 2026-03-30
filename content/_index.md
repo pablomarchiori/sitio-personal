@@ -9,3 +9,7 @@ description: "Notas personales sobre lenguaje, IT, trabajo y organización."
 Alguna vez alguien me dijo que “los de sistemas” somos bichos raros. Puede ser. O quizá simplemente tenemos una manera algo particular de mirar las cosas, un poco al costado de lo popular. Bueno, por ahí va esto, mi amigo. No hay una etiqueta demasiado clara.
 
 Pero no lo entretengo más... ¡Pase y vea!
+
+{{< icon "instagram" >}} [Instagram](https://www.instagram.com/pablo_marchiori)
+{{< icon "linkedin" >}} [LinkedIn](https://www.linkedin.com/in/pablo-marchiori-68936725b/)
+{{< icon "email" >}} [Correo](mailto:pablo@marchiori.ar)
