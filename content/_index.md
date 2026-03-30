@@ -10,6 +10,4 @@ Alguna vez alguien me dijo que “los de sistemas” somos bichos raros. Puede s
 
 Pero no lo entretengo más... ¡Pase y vea!
 
-{{< icon "instagram" >}} [Instagram](https://www.instagram.com/pablo_marchiori)
-{{< icon "linkedin" >}} [LinkedIn](https://www.linkedin.com/in/pablo-marchiori-68936725b/)
-{{< icon "email" >}} [Correo](mailto:pablo@marchiori.ar)
+---

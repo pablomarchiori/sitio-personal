@@ -1,6 +1,6 @@
 baseURL = "https://www.marchiori.ar/"
 languageCode = "es-ar"
-title = "Nerdeadas de Pablo"
+title = "Mirada Nerd"
 theme = "congo"
 
 defaultContentLanguage = "es"
@@ -15,7 +15,8 @@ summaryLength = 30
   home = ["HTML", "RSS", "JSON"]
 
 [params]
-  description = "Notas personales sobre lenguaje, IT, trabajo y organización"
+  subtitle = "Apuntes técnicos con mirada propia"
+  description = "Notas sobre tecnología, infraestructura, seguridad web y demases."
   mainSections = ["notas", "site-log"]
 
 [params.homepage]
@@ -47,3 +48,8 @@ weight = 20
 name = "Site Log"
 pageRef = "site-log"
 weight = 30
+
+[[menus.main]]
+name = "Acerca de"
+pageRef = "/about"
+weight = 40
