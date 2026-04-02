@@ -8,6 +8,7 @@ draft: false
 {{< icon "email" >}} [Correo](mailto:pablo@marchiori.ar)
 
 Mirada nerd es un sitio personal hecho por mí 😌, Pablo Marchiori, donde junto notas, aprendizajes y publicaciones sobre tecnología, infraestructura, seguridad web y otras cosas que vale la pena mirar con un poco más de detalle… o que, directamente, anoto para no olvidarme.
+¿Este sitio es una broma o es serio? Es libre ud. de decidirlo.
 
 ## Etimología del título 🤓
 
