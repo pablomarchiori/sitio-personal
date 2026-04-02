@@ -25,3 +25,5 @@ Memorable, espectacular, muy bueno.
 “Qué noche espectacular.”
 
 **Desvío:** hipérbole / vaciamiento.
+
+---

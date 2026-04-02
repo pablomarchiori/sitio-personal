@@ -26,3 +26,5 @@ Introducción, capacitación inicial, bienvenida.
 “Habrá una introducción para el personal nuevo.”
 
 **Desvío:** calco del inglés.
+
+---

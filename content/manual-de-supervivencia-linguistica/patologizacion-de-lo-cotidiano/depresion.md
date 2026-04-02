@@ -25,3 +25,5 @@ Triste, desanimado, bajoneado.
 “Hoy estoy un poco bajoneado.”
 
 **Desvío:** patologización.
+
+---

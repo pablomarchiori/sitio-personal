@@ -26,3 +26,5 @@ Ventaja, beneficio, posición favorable.
 “Tenés algunas ventajas en ese contexto.”
 
 **Desvío:** comodín moral.
+
+---

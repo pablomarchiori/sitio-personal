@@ -25,3 +25,5 @@ Excelente, impresionante, muy bueno.
 “La hamburguesa estaba muy buena.”
 
 **Desvío:** hipérbole / vaciamiento.
+
+---

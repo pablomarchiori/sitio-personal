@@ -24,3 +24,5 @@ Superficial, trivial, sin importancia.
 “Es un tema bastante trivial.”
 
 **Desvío:** desdibujamiento conceptual.
+
+---

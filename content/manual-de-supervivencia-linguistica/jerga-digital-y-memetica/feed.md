@@ -25,3 +25,5 @@ Inicio, contenido, muro, publicaciones, flujo.
 “Tenés que cuidar cómo se ve el contenido.”
 
 **Desvío:** anglicismo de redes / plataformas.
+
+---

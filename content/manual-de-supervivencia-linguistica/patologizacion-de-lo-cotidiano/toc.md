@@ -24,3 +24,5 @@ Manía, fijación, gusto por el orden, obsesión cotidiana.
 “Me gusta tener los cables ordenados.”
 
 **Desvío:** patologización.
+
+---

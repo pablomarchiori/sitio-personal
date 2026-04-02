@@ -29,3 +29,5 @@ Desde mi perspectiva, así se ve, cuando, yo.
 “Así se ve llegar al trabajo sin ganas.”
 
 **Desvío:** jerga digital vaciada.
+
+---

@@ -26,3 +26,5 @@ Autoridad abusiva, dominante, restrictivo.
 “Ese modelo concentra demasiado poder.”
 
 **Desvío:** comodín moral.
+
+---

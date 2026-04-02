@@ -28,3 +28,5 @@ Rápido, inmediato, en poco tiempo.
 “Ganó fama en muy poco tiempo.”
 
 **Desvío:** hipérbole temporal.
+
+---

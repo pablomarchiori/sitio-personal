@@ -26,3 +26,5 @@ Fortalecer, dar autonomía, capacitar.
 “Este curso les da más autonomía.”
 
 **Desvío:** anglicismo / comodín social.
+
+---

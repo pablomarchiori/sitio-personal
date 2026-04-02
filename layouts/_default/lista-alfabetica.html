@@ -10,9 +10,9 @@
       {{ .Content }}
     </section>
 
-    <section class="mt-10 space-y-6">
+    <section class="mt-10">
       {{ range .RegularPages.ByTitle }}
-        <article>
+        <article class="mb-8">
           <h2 class="text-xl font-semibold">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           </h2>

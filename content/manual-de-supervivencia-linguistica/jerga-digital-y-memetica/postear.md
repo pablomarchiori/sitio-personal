@@ -25,3 +25,5 @@ Publicar, subir, compartir.
 “Publicó una foto del viaje.”
 
 **Desvío:** anglicismo de redes.
+
+---

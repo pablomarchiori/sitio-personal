@@ -25,3 +25,5 @@ Nervios, expectativa, inquietud.
 “Me cuesta esperar.”
 
 **Desvío:** patologización.
+
+---

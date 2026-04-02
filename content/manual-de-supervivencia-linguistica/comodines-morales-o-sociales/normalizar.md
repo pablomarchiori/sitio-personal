@@ -26,3 +26,5 @@ Aceptar, tolerar, volver habitual.
 “Se está volviendo habitual.”
 
 **Desvío:** comodín moral.
+
+---

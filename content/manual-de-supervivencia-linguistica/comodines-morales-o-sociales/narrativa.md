@@ -26,3 +26,5 @@ Versión, relato, discurso, interpretación.
 “Quieren instalar ese discurso.”
 
 **Desvío:** comodín inflado.
+
+---

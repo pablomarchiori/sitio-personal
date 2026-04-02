@@ -25,3 +25,5 @@ Capo, seguro de sí mismo, ganador, ideal masculino caricaturesco.
 “Quedó como un capo.”
 
 **Desvío:** jerga memética importada.
+
+---

@@ -127,16 +127,18 @@ layouts/_default/lista-alfabetica.html
       {{ .Content }}
     </section>
 
-    <section class="mt-10 space-y-6">
+    <section class="mt-10">
       {{ range .RegularPages.ByTitle }}
-        <article>
+        <article class="mb-8">
           <h2 class="text-xl font-semibold">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           </h2>
 
-          <div class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-            {{ time.Format ":date_long" .Date }} · 1 min
-          </div>
+          {{ if not .Draft }}
+            <div class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+              {{ time.Format ":date_long" .Date }} · 1 min
+            </div>
+          {{ end }}
         </article>
       {{ end }}
     </section>

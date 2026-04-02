@@ -26,3 +26,5 @@ Mensaje, conversación, charla escrita, mensajería.
 “Después seguimos por escrito.”
 
 **Desvío:** préstamo asentado.
+
+---

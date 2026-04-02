@@ -27,3 +27,5 @@ Extraño, extravagante, insólito, estrafalario.
 “Fue una situación bastante insólita.”
 
 **Desvío:** anglicismo semántico.
+
+---

@@ -25,3 +25,5 @@ Consecuencia, castigo, devolución, justicia poética.
 “Pareció una especie de justicia poética.”
 
 **Desvío:** simplificación cultural.
+
+---

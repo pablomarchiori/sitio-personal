@@ -27,3 +27,5 @@ Desplazarse, bajar, deslizar, recorrer la pantalla.
 “Me colgué viendo cosas.”
 
 **Desvío:** anglicismo de redes / plataformas.
+
+---

@@ -25,3 +25,5 @@ Miedo, nervios, temor.
 “Me pone nervioso rendir.”
 
 **Desvío:** patologización / hipérbole.
+
+---

@@ -25,3 +25,5 @@ Ambiente, clima, sensación.
 “El clima del lugar es muy agradable.”
 
 **Desvío:** vaguedad / comodín.
+
+---

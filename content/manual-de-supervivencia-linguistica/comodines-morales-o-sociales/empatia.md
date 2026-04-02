@@ -26,3 +26,5 @@ Consideración, comprensión, paciencia.
 “Podrías tener un poco más de paciencia.”
 
 **Desvío:** comodín moral.
+
+---

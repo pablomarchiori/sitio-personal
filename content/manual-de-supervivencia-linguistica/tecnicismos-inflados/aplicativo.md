@@ -24,3 +24,5 @@ Aplicación, sistema, programa.
 “La aplicación no responde.”
 
 **Desvío:** tecnicismo inflado.
+
+---

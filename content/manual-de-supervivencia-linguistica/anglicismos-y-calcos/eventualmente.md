@@ -26,3 +26,5 @@ Finalmente, con el tiempo, en algún momento.
 “Finalmente lo vamos a resolver.”
 
 **Desvío:** falso amigo / calco semántico.
+
+---

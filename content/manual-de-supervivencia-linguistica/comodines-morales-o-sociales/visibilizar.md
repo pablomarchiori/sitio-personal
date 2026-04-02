@@ -26,3 +26,5 @@ Mostrar, dar a conocer, exponer.
 “Buscan mostrar esa situación.”
 
 **Desvío:** comodín conceptual.
+
+---

@@ -25,3 +25,5 @@ Boicotear, criticar, dejar de apoyar.
 “Recibió muchas críticas en redes.”
 
 **Desvío:** desplazamiento de sentido.
+
+---

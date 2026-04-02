@@ -26,3 +26,5 @@ Llamada, videollamada, reunión.
 “Te mando la invitación para la reunión.”
 
 **Desvío:** anglicismo corporativo.
+
+---

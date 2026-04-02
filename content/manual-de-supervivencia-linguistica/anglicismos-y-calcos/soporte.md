@@ -27,3 +27,5 @@ Apoyo, respaldo, colaboración.
 “Este proyecto requiere más colaboración de otras áreas.”
 
 **Desvío:** calco semántico.
+
+---

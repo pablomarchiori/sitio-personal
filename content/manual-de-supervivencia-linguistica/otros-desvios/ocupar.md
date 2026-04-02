@@ -25,3 +25,5 @@ Usar, utilizar, emplear.
 “¿Puedo usar tu auto un rato?”
 
 **Desvío:** desplazamiento de sentido.
+
+---

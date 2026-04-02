@@ -25,3 +25,5 @@ Predeterminado, inicial, configuración original.
 “Vino con la configuración inicial.”
 
 **Desvío:** anglicismo técnico / traducción imprecisa.
+
+---

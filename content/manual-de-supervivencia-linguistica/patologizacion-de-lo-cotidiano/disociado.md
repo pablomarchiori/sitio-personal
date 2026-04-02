@@ -25,3 +25,5 @@ Distraído, colgado, desconectado.
 “Quedé colgado viendo una serie.”
 
 **Desvío:** patologización.
+
+---

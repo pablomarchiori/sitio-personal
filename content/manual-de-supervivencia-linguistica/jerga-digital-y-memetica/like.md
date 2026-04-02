@@ -25,3 +25,5 @@ Me gusta, aprobación, reacción positiva.
 “Tuvo muchos me gusta.”
 
 **Desvío:** anglicismo de redes.
+
+---

@@ -25,3 +25,5 @@ Mal recuerdo, situación incómoda, experiencia desagradable.
 “Me quedó un mal recuerdo.”
 
 **Desvío:** patologización.
+
+---
