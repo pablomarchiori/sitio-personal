@@ -21,7 +21,7 @@ Con el tiempo se generalizó tanto que la RAE terminó incorporándolo también 
 
 Extraño, extravagante, insólito, estrafalario.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Ese video es muy extraño.”  
 “Fue una situación bastante insólita.”

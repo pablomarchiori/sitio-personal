@@ -20,7 +20,7 @@ En español ya existen palabras claras para eso, incluso cuando se trata de vide
 
 Llamada, videollamada, reunión.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Después hacemos una videollamada.”  
 “Te mando la invitación para la reunión.”

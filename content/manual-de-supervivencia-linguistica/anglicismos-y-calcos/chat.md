@@ -20,7 +20,7 @@ Desplazó palabras que ya existían.
 
 Mensaje, conversación, charla escrita, mensajería.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Te lo mando por mensaje.”  
 “Después seguimos por escrito.”

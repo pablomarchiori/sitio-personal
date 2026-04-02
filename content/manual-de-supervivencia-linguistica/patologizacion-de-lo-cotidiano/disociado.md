@@ -19,7 +19,7 @@ No es simplemente estar distraído, colgado o cansado.
 
 Distraído, colgado, desconectado.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Estaba re distraído en la reunión.”  
 “Quedé colgado viendo una serie.”

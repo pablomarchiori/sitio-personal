@@ -19,7 +19,7 @@ Hoy se usa muchas veces para describir nervios o expectativa.
 
 Nervios, expectativa, inquietud.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Estoy nervioso por el estreno.”  
 “Me cuesta esperar.”

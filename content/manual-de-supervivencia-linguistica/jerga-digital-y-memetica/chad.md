@@ -19,7 +19,7 @@ No es una palabra del español: es un símbolo memético importado.
 
 Capo, seguro de sí mismo, ganador, ideal masculino caricaturesco.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Ese tipo es muy seguro de sí mismo.”  
 “Quedó como un capo.”

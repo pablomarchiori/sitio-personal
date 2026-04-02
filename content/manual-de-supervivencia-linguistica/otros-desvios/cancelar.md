@@ -19,7 +19,7 @@ En redes suele referirse a repudio público o boicot social.
 
 Boicotear, criticar, dejar de apoyar.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Mucha gente dejó de apoyarlo.”  
 “Recibió muchas críticas en redes.”

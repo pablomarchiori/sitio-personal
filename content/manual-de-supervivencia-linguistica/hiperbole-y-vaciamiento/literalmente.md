@@ -19,7 +19,7 @@ Usarlo para exagerar produce el efecto contrario.
 
 Realmente, de verdad, en serio.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Me reí muchísimo.”  
 “De verdad se llenó de mensajes.”

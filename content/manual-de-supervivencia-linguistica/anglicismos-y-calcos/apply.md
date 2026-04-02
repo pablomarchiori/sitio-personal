@@ -20,7 +20,7 @@ En español ya existen formas claras para decir lo mismo.
 
 Postularse, presentarse.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Me voy a postular para ese puesto.”  
 “Voy a presentarme a ese trabajo.”

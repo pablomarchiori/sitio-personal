@@ -19,7 +19,7 @@ Usarlo para cualquier cosa memorable lo vacía.
 
 Memorable, espectacular, muy bueno.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Ese asado fue memorable.”  
 “Qué noche espectacular.”

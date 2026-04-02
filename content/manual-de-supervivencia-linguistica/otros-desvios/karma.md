@@ -19,7 +19,7 @@ En su origen remite a la relación entre las acciones y sus consecuencias dentro
 
 Consecuencia, castigo, devolución, justicia poética.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Fue una consecuencia de lo que hizo.”  
 “Pareció una especie de justicia poética.”

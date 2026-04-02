@@ -20,7 +20,7 @@ Muchas veces reemplaza simplemente a mostrar o dar a conocer.
 
 Mostrar, dar a conocer, exponer.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Queremos dar a conocer el problema.”  
 “Buscan mostrar esa situación.”

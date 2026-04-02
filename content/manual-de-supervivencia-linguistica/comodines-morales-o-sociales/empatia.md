@@ -20,7 +20,7 @@ Comprender no implica necesariamente justificar conductas ni suspender un límit
 
 Consideración, comprensión, paciencia.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Tené un poco de consideración hoy.”  
 “Podrías tener un poco más de paciencia.”

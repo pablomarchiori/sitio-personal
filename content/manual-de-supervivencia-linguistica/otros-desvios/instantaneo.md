@@ -22,7 +22,7 @@ Muchas veces se usa para cosas que solo fueron rápidas, no instantáneas.
 
 Rápido, inmediato, en poco tiempo.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “La respuesta fue muy rápida.”  
 “Ganó fama en muy poco tiempo.”

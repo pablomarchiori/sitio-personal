@@ -18,7 +18,7 @@ tags: ["lenguaje", "manual", "otros-desvios"]
 
 Superficial, trivial, sin importancia.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “La discusión se volvió superficial.”  
 “Es un tema bastante trivial.”

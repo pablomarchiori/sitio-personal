@@ -20,7 +20,7 @@ En empresas se usa como calco del inglés *induction*.
 
 Introducción, capacitación inicial, bienvenida.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Mañana tenés la capacitación inicial.”  
 “Habrá una introducción para el personal nuevo.”

@@ -20,7 +20,7 @@ Usarlo como traducción directa cambia el sentido de la frase.
 
 Finalmente, con el tiempo, en algún momento.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Con el tiempo lo vamos a hacer.”  
 “Finalmente lo vamos a resolver.”

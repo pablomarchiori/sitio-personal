@@ -20,7 +20,7 @@ En debates se usa muchas veces como juicio moral.
 
 Aceptar, tolerar, volver habitual.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “No deberíamos aceptar eso.”  
 “Se está volviendo habitual.”

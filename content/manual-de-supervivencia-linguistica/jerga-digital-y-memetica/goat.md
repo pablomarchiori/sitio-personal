@@ -23,7 +23,7 @@ Se importa la sigla inglesa como si fuera natural, y a veces hasta se traduce el
 
 El mejor de todos, el número uno, una leyenda.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Messi es el mejor de todos.”  
 “Es una leyenda.”

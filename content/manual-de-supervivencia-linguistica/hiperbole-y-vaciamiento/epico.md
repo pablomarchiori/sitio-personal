@@ -19,7 +19,7 @@ Usarlo para cualquier cosa termina vaciando la palabra.
 
 Excelente, impresionante, muy bueno.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “El gol fue impresionante.”  
 “La hamburguesa estaba muy buena.”

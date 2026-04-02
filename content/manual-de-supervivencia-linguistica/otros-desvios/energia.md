@@ -19,7 +19,7 @@ Muchas veces se usa de forma vaga para describir sensaciones personales.
 
 Ambiente, clima, sensación.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “El ambiente se siente tenso.”  
 “El clima del lugar es muy agradable.”

@@ -20,7 +20,7 @@ En español tradicional se hablaba de fortalecer o dar autonomía.
 
 Fortalecer, dar autonomía, capacitar.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “El programa busca fortalecer a la comunidad.”  
 “Este curso les da más autonomía.”

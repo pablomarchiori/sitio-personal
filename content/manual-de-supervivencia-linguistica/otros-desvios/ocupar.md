@@ -19,7 +19,7 @@ En muchos casos se usa en lugar de usar o necesitar.
 
 Usar, utilizar, emplear.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Uso el taladro para poner el estante.”  
 “¿Puedo usar tu auto un rato?”

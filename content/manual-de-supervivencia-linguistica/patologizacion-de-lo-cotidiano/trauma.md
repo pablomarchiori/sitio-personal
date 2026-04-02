@@ -19,7 +19,7 @@ Hoy se usa muchas veces para incomodidades menores.
 
 Mal recuerdo, situación incómoda, experiencia desagradable.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Fue una experiencia desagradable.”  
 “Me quedó un mal recuerdo.”

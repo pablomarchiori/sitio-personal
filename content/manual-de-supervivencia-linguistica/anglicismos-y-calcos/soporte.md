@@ -21,7 +21,7 @@ Cuando se usa para hablar de respaldo o ayuda entre personas, muchas veces reemp
 
 Apoyo, respaldo, colaboración.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Necesitamos más apoyo del equipo.”  
 “Este proyecto requiere más colaboración de otras áreas.”

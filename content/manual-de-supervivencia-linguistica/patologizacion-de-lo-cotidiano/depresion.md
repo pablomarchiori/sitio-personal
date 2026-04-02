@@ -19,7 +19,7 @@ Usarla para estados de ánimo pasajeros banaliza el término.
 
 Triste, desanimado, bajoneado.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Estoy medio desanimado.”  
 “Hoy estoy un poco bajoneado.”

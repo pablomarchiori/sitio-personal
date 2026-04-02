@@ -19,7 +19,7 @@ En urbanismo muchas veces reemplaza simplemente a arreglar o remodelar.
 
 Remodelar, modificar, restaurar.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Remodelaron la plaza.”  
 “Van a restaurar el edificio.”

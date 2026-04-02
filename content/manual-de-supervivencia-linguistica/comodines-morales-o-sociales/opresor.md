@@ -20,7 +20,7 @@ En debates actuales a veces se usa como etiqueta amplia para desacreditar.
 
 Autoridad abusiva, dominante, restrictivo.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Ese sistema es muy restrictivo.”  
 “Ese modelo concentra demasiado poder.”

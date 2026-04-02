@@ -23,7 +23,7 @@ Hoy muchas veces se usa como etiqueta genérica, aunque no haya un punto de vist
 
 Desde mi perspectiva, así se ve, cuando, yo.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Yo otra vez un lunes.”  
 “Así se ve llegar al trabajo sin ganas.”

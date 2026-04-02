@@ -20,7 +20,7 @@ Hoy se usa muchas veces como palabra inflada para decir versión, discurso o int
 
 Versión, relato, discurso, interpretación.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Esa es tu versión.”  
 “Quieren instalar ese discurso.”

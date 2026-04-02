@@ -21,7 +21,7 @@ En inglés, **alien** puede significar extraterrestre, pero también extraño, a
 
 Extraterrestre, alienígena.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Parece un extraterrestre.”  
 “Ese bicho era alienígena.”

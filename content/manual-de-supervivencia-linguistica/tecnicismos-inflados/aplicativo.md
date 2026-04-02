@@ -18,7 +18,7 @@ En muchos contextos se usa como si fuera más técnico o más profesional que **
 
 Aplicación, sistema, programa.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Te paso el link de la aplicación.”  
 “La aplicación no responde.”

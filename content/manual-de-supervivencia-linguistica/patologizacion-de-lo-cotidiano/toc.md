@@ -18,7 +18,7 @@ El **TOC** es un trastorno obsesivo-compulsivo, no una simple manía por el orde
 
 Manía, fijación, gusto por el orden, obsesión cotidiana.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Soy muy maniático con el escritorio.”  
 “Me gusta tener los cables ordenados.”

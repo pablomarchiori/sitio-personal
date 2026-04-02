@@ -20,7 +20,7 @@ Hoy muchas veces se usa de forma amplia para describir ventajas sociales.
 
 Ventaja, beneficio, posición favorable.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Partís de una situación más favorable.”  
 “Tenés algunas ventajas en ese contexto.”

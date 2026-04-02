@@ -19,7 +19,7 @@ Hoy se usa muchas veces para nervios, temor o incomodidad.
 
 Miedo, nervios, temor.
 
-## Mejor dicho
+## Otras formas de decirlo
 
 “Me dio miedo llegar tarde.”  
 “Me pone nervioso rendir.”
