@@ -1,0 +1,271 @@
+<script type="text/javascript">
+(function () {
+  var monthNames = [
+    "enero", "febrero", "marzo", "abril", "mayo", "junio",
+    "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+  ];
+
+  var dayNames = [
+    "domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"
+  ];
+
+  var holidayData = [];
+  var fallbackHolidayData = [];
+
+  function pad(n) {
+    return n < 10 ? "0" + n : "" + n;
+  }
+
+  function formatDateKey(y, m, d) {
+    return y + "-" + pad(m + 1) + "-" + pad(d);
+  }
+
+  function updateClock() {
+    var now = new Date();
+    var clock = document.getElementById("clock");
+    var date = document.getElementById("date");
+
+    clock.innerHTML = pad(now.getHours()) + ":" + pad(now.getMinutes()) + ":" + pad(now.getSeconds());
+    date.innerHTML =
+      dayNames[now.getDay()] + ", " +
+      now.getDate() + " de " +
+      monthNames[now.getMonth()] + " de " +
+      now.getFullYear();
+  }
+
+  function getHolidayMap(year) {
+    var map = {};
+    var i;
+    for (i = 0; i < holidayData.length; i++) {
+      if (holidayData[i].fecha && holidayData[i].fecha.indexOf(String(year) + "-") === 0) {
+        map[holidayData[i].fecha] = holidayData[i].nombre;
+      }
+    }
+    return map;
+  }
+
+  function renderCalendar() {
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth();
+    var today = now.getDate();
+
+    var firstDay = new Date(year, month, 1);
+    var lastDay = new Date(year, month + 1, 0);
+    var daysInMonth = lastDay.getDate();
+
+    var startDay = firstDay.getDay();
+    if (startDay === 0) {
+      startDay = 7;
+    }
+
+    var holidayMap = getHolidayMap(year);
+    var calendarTitle = document.getElementById("calendarTitle");
+    var calendarBody = document.getElementById("calendarBody");
+    var html = "";
+    var day = 1;
+    var row;
+    var col;
+    var className;
+    var dateKey;
+
+    calendarTitle.innerHTML = monthNames[month].charAt(0).toUpperCase() + monthNames[month].slice(1) + " " + year;
+
+    for (row = 0; row < 6; row++) {
+      html += "<tr>";
+
+      for (col = 1; col <= 7; col++) {
+        if ((row === 0 && col < startDay) || day > daysInMonth) {
+          html += '<td class="other-month">&nbsp;</td>';
+        } else {
+          className = "";
+          dateKey = formatDateKey(year, month, day);
+
+          if (holidayMap[dateKey]) {
+            className += " holiday";
+          }
+
+          if (day === today) {
+            className += " today";
+          }
+
+          html += '<td class="' + className + '" title="' + (holidayMap[dateKey] || "") + '">' + day + '</td>';
+          day++;
+        }
+      }
+
+      html += "</tr>";
+
+      if (day > daysInMonth) {
+        break;
+      }
+    }
+
+    calendarBody.innerHTML = html;
+    renderHolidayList(year, month);
+  }
+
+  function renderHolidayList(year, month) {
+    var holidayList = document.getElementById("holidayList");
+    var html = "";
+    var found = 0;
+    var i;
+    var parts;
+    var itemMonth;
+    var itemDay;
+
+    for (i = 0; i < holidayData.length; i++) {
+      if (!holidayData[i].fecha) {
+        continue;
+      }
+
+      parts = holidayData[i].fecha.split("-");
+      itemMonth = parseInt(parts[1], 10) - 1;
+      itemDay = parseInt(parts[2], 10);
+
+      if (itemMonth === month && parseInt(parts[0], 10) === year) {
+        html += "<li><strong>" + itemDay + "/" + (month + 1) + "</strong> - " + holidayData[i].nombre + "</li>";
+        found++;
+      }
+    }
+
+    if (found === 0) {
+      html = "<li>No hay feriados cargados para este mes.</li>";
+    }
+
+    holidayList.innerHTML = html;
+  }
+
+  function weatherCodeToText(code) {
+    var map = {
+      0: "Despejado",
+      1: "Mayormente despejado",
+      2: "Parcialmente nublado",
+      3: "Nublado",
+      45: "Niebla",
+      48: "Niebla con escarcha",
+      51: "Llovizna leve",
+      53: "Llovizna moderada",
+      55: "Llovizna intensa",
+      61: "Lluvia leve",
+      63: "Lluvia moderada",
+      65: "Lluvia intensa",
+      71: "Nieve leve",
+      73: "Nieve moderada",
+      75: "Nieve intensa",
+      80: "Chaparrones leves",
+      81: "Chaparrones moderados",
+      82: "Chaparrones intensos",
+      95: "Tormenta"
+    };
+
+    return map[code] || "Condición no identificada";
+  }
+
+  function loadWeather() {
+    var xhr = new XMLHttpRequest();
+    var url = "https://api.open-meteo.com/v1/forecast?latitude=-32.6978&longitude=-62.1067&current=temperature_2m,weather_code,wind_speed_10m&timezone=auto";
+    var weatherStatus = document.getElementById("weatherStatus");
+    var weatherTemp = document.getElementById("weatherTemp");
+    var weatherDetail = document.getElementById("weatherDetail");
+
+    xhr.onreadystatechange = function () {
+      var data;
+      if (xhr.readyState === 4) {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          try {
+            data = JSON.parse(xhr.responseText);
+            if (data && data.current) {
+              weatherStatus.innerHTML = "Datos actualizados";
+              weatherTemp.innerHTML = Math.round(data.current.temperature_2m) + "°C";
+              weatherDetail.innerHTML =
+                weatherCodeToText(data.current.weather_code) +
+                " · Viento " + Math.round(data.current.wind_speed_10m) + " km/h";
+            } else {
+              weatherStatus.innerHTML = "No se pudo interpretar el clima";
+              weatherTemp.innerHTML = "--°C";
+              weatherDetail.innerHTML = "La respuesta no trajo datos esperados.";
+            }
+          } catch (e) {
+            weatherStatus.innerHTML = "Error al leer clima";
+            weatherTemp.innerHTML = "--°C";
+            weatherDetail.innerHTML = "La respuesta no se pudo procesar.";
+          }
+        } else {
+          weatherStatus.innerHTML = "No se pudo consultar el clima";
+          weatherTemp.innerHTML = "--°C";
+          weatherDetail.innerHTML = "Revisá conectividad o compatibilidad TLS del navegador.";
+        }
+      }
+    };
+
+    try {
+      xhr.open("GET", url, true);
+      xhr.send();
+    } catch (e) {
+      weatherStatus.innerHTML = "Consulta de clima no disponible";
+      weatherTemp.innerHTML = "--°C";
+      weatherDetail.innerHTML = "Este navegador puede ser demasiado viejo.";
+    }
+  }
+
+  function updateNetStatus(message) {
+    var el = document.getElementById("netStatus");
+    if (message) {
+      el.innerHTML = message;
+      return;
+    }
+
+    if (navigator.onLine) {
+      el.innerHTML = '<span class="status-ok">Conectado</span>';
+    } else {
+      el.innerHTML = '<span class="status-fail">Sin conexión</span>';
+    }
+  }
+
+  function setFallbackHolidays(data) {
+    fallbackHolidayData = data || [];
+  }
+
+  function setHolidayData(data) {
+    holidayData = data || [];
+    renderCalendar();
+  }
+
+  function loadHolidayJson(url, ok, fail) {
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          try {
+            ok(JSON.parse(xhr.responseText));
+          } catch (e) {
+            fail();
+          }
+        } else {
+          fail();
+        }
+      }
+    };
+
+    try {
+      xhr.open("GET", url, true);
+      xhr.send();
+    } catch (e) {
+      fail();
+    }
+  }
+
+  window.PanelApp = {
+    updateClock: updateClock,
+    renderCalendar: renderCalendar,
+    loadWeather: loadWeather,
+    updateNetStatus: updateNetStatus,
+    setHolidayData: setHolidayData,
+    setFallbackHolidays: setFallbackHolidays,
+    loadHolidayJson: loadHolidayJson,
+    getFallbackHolidays: function () { return fallbackHolidayData; }
+  };
+})();
+</script>

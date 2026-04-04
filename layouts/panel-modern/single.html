@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #171a21;
+      --line: #2b3240;
+      --text: #edf2f7;
+      --muted: #a0aec0;
+      --accent: #7dd3fc;
+      --holiday: #43242a;
+      --today: #f3f4f6;
+      --today-text: #111827;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #0b0d12 0%, #111827 100%);
+      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+      min-height: 100vh;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .clock {
+      font-size: 88px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .date {
+      font-size: 26px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(23, 26, 33, 0.92);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .temp {
+      font-size: 56px;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 14px 0;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .calendar-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      text-align: center;
+      height: 52px;
+      font-size: 18px;
+    }
+
+    th {
+      background: #1e2430;
+      color: var(--muted);
+    }
+
+    td.other-month {
+      opacity: 0.25;
+    }
+
+    td.holiday {
+      background: var(--holiday);
+    }
+
+    td.today {
+      background: var(--today);
+      color: var(--today-text);
+      font-weight: 700;
+    }
+
+    .holiday-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .holiday-list li {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .clock {
+        font-size: 62px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div id="clock" class="clock">00:00:00</div>
+      <div id="date" class="date">Cargando fecha...</div>
+    </div>
+
+    <div class="grid">
+      <div>
+        <div class="card" style="margin-bottom:20px;">
+          <div class="title">Clima en Marcos Juárez</div>
+          <div id="weatherStatus" class="muted">Consultando clima...</div>
+          <div id="weatherTemp" class="temp">--°C</div>
+          <div id="weatherDetail" class="muted">Sin datos todavía.</div>
+        </div>
+
+        <div class="card">
+          <div class="title">Feriados del mes</div>
+          <ul id="holidayList" class="holiday-list">
+            <li>Cargando feriados...</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div id="calendarTitle" class="calendar-title">Calendario</div>
+        <table>
+          <thead>
+            <tr>
+              <th>Lu</th><th>Ma</th><th>Mi</th><th>Ju</th><th>Vi</th><th>Sa</th><th>Do</th>
+            </tr>
+          </thead>
+          <tbody id="calendarBody">
+            <tr><td colspan="7">Cargando calendario...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span id="netStatus">Verificando conectividad...</span>
+    </div>
+  </div>
+
+  {{ partial "panel-base-script.html" . }}
+
+  <script type="text/javascript">
+    (function () {
+      var year = new Date().getFullYear();
+      var apiUrl = "https://api.argentinadatos.com/v1/feriados/" + year;
+      var jsonUrl = "/data/feriados-" + year + ".json";
+
+      PanelApp.updateClock();
+      PanelApp.loadWeather();
+      PanelApp.updateNetStatus('Panel moderno');
+
+      PanelApp.loadHolidayJson(
+        apiUrl,
+        function (apiData) {
+          PanelApp.setHolidayData(apiData);
+          PanelApp.updateNetStatus('<span class="status-ok">Conectado</span> · Feriados desde API');
+        },
+        function () {
+          PanelApp.loadHolidayJson(
+            jsonUrl,
+            function (data) {
+              PanelApp.setHolidayData(data);
+              PanelApp.updateNetStatus('<span class="status-fail">API no disponible</span> · Usando JSON local');
+            },
+            function () {
+              PanelApp.setHolidayData([]);
+              PanelApp.updateNetStatus('<span class="status-fail">Sin datos de feriados</span>');
+            }
+          );
+        }
+      );
+
+      setInterval(PanelApp.updateClock, 1000);
+      setInterval(PanelApp.loadWeather, 900000);
+    })();
+  </script>
+</body>
+</html>

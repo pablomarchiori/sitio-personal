@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  {{ partial "panel-base-head.html" . }}
+</head>
+<body>
+  <div class="panel">
+    <div class="top">
+      <div id="clock" class="clock">00:00:00</div>
+      <div id="date" class="date">Cargando fecha...</div>
+    </div>
+
+    <div class="main">
+      <div class="left">
+        <div class="box">
+          <div class="box-title">Clima en Marcos Juárez</div>
+          <div id="weatherStatus" class="weather-line">Consultando clima...</div>
+          <div id="weatherTemp" class="weather-temp">--°C</div>
+          <div id="weatherDetail" class="weather-note">Sin datos todavía.</div>
+          <div class="small" style="margin-top: 12px;">Fuente: Open-Meteo</div>
+        </div>
+
+        <div class="box">
+          <div class="box-title">Feriados del mes</div>
+          <ul id="holidayList" class="holidays-list">
+            <li>Cargando feriados...</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="box">
+          <div id="calendarTitle" class="calendar-header">Calendario</div>
+          <table class="calendar">
+            <thead>
+              <tr>
+                <th>Lu</th><th>Ma</th><th>Mi</th><th>Ju</th><th>Vi</th><th>Sa</th><th>Do</th>
+              </tr>
+            </thead>
+            <tbody id="calendarBody">
+              <tr><td colspan="7">Cargando calendario...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span id="netStatus">Verificando conectividad...</span>
+    </div>
+  </div>
+
+  {{ partial "panel-base-script.html" . }}
+
+  <script type="text/javascript">
+    (function () {
+      var year = new Date().getFullYear();
+      var apiUrl = "https://api.argentinadatos.com/v1/feriados/" + year;
+      var jsonUrl = "/data/feriados-" + year + ".json";
+
+      PanelApp.updateClock();
+      PanelApp.loadWeather();
+      PanelApp.updateNetStatus('Intentando cargar feriados desde API');
+
+      PanelApp.loadHolidayJson(
+        jsonUrl,
+        function (fallbackData) {
+          PanelApp.setFallbackHolidays(fallbackData);
+
+          PanelApp.loadHolidayJson(
+            apiUrl,
+            function (apiData) {
+              PanelApp.setHolidayData(apiData);
+              PanelApp.updateNetStatus('<span class="status-ok">Conectado</span> · Feriados desde API');
+            },
+            function () {
+              PanelApp.setHolidayData(PanelApp.getFallbackHolidays());
+              PanelApp.updateNetStatus('<span class="status-fail">API no disponible</span> · Usando JSON local');
+            }
+          );
+        },
+        function () {
+          PanelApp.loadHolidayJson(
+            apiUrl,
+            function (apiData) {
+              PanelApp.setHolidayData(apiData);
+              PanelApp.updateNetStatus('<span class="status-ok">Conectado</span> · Feriados desde API');
+            },
+            function () {
+              PanelApp.setHolidayData([]);
+              PanelApp.updateNetStatus('<span class="status-fail">Sin API ni JSON local</span>');
+            }
+          );
+        }
+      );
+
+      setInterval(PanelApp.updateClock, 1000);
+      setInterval(PanelApp.loadWeather, 900000);
+    })();
+  </script>
+</body>
+</html>

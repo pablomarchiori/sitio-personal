@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  {{ partial "panel-base-head.html" . }}
+</head>
+<body>
+  <div class="panel">
+    <div class="top">
+      <div id="clock" class="clock">00:00:00</div>
+      <div id="date" class="date">Cargando fecha...</div>
+    </div>
+
+    <div class="main">
+      <div class="left">
+        <div class="box">
+          <div class="box-title">Clima en Marcos Juárez</div>
+          <div id="weatherStatus" class="weather-line">Consultando clima...</div>
+          <div id="weatherTemp" class="weather-temp">--°C</div>
+          <div id="weatherDetail" class="weather-note">Sin datos todavía.</div>
+          <div class="small" style="margin-top: 12px;">Fuente: Open-Meteo</div>
+        </div>
+
+        <div class="box">
+          <div class="box-title">Feriados del mes</div>
+          <ul id="holidayList" class="holidays-list">
+            <li>Cargando feriados...</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="box">
+          <div id="calendarTitle" class="calendar-header">Calendario</div>
+          <table class="calendar">
+            <thead>
+              <tr>
+                <th>Lu</th><th>Ma</th><th>Mi</th><th>Ju</th><th>Vi</th><th>Sa</th><th>Do</th>
+              </tr>
+            </thead>
+            <tbody id="calendarBody">
+              <tr><td colspan="7">Cargando calendario...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span id="netStatus">Verificando conectividad...</span>
+    </div>
+  </div>
+
+  {{ partial "panel-base-script.html" . }}
+
+  <script type="text/javascript">
+    (function () {
+      var localHolidays2026 = [
+        { "fecha": "2026-01-01", "tipo": "inamovible", "nombre": "Año Nuevo" },
+        { "fecha": "2026-02-16", "tipo": "inamovible", "nombre": "Carnaval" },
+        { "fecha": "2026-02-17", "tipo": "inamovible", "nombre": "Carnaval" },
+        { "fecha": "2026-03-24", "tipo": "inamovible", "nombre": "Día Nacional de la Memoria por la Verdad y la Justicia" },
+        { "fecha": "2026-04-02", "tipo": "inamovible", "nombre": "Día del Veterano y de los Caídos en la Guerra de Malvinas" },
+        { "fecha": "2026-04-03", "tipo": "religioso", "nombre": "Viernes Santo" },
+        { "fecha": "2026-05-01", "tipo": "inamovible", "nombre": "Día del Trabajador" },
+        { "fecha": "2026-05-25", "tipo": "inamovible", "nombre": "Día de la Revolución de Mayo" },
+        { "fecha": "2026-06-20", "tipo": "inamovible", "nombre": "Paso a la Inmortalidad del General Manuel Belgrano" },
+        { "fecha": "2026-07-09", "tipo": "inamovible", "nombre": "Día de la Independencia" },
+        { "fecha": "2026-08-17", "tipo": "trasladable", "nombre": "Paso a la Inmortalidad del General José de San Martín" },
+        { "fecha": "2026-10-12", "tipo": "trasladable", "nombre": "Día del Respeto a la Diversidad Cultural" },
+        { "fecha": "2026-11-23", "tipo": "trasladable", "nombre": "Día de la Soberanía Nacional (trasladado)" },
+        { "fecha": "2026-12-08", "tipo": "inamovible", "nombre": "Inmaculada Concepción de María" },
+        { "fecha": "2026-12-25", "tipo": "inamovible", "nombre": "Navidad" }
+      ];
+
+      PanelApp.setHolidayData(localHolidays2026);
+      PanelApp.updateClock();
+      PanelApp.loadWeather();
+      PanelApp.updateNetStatus('Panel básico local');
+
+      setInterval(PanelApp.updateClock, 1000);
+      setInterval(PanelApp.loadWeather, 900000);
+      setInterval(function () { PanelApp.updateNetStatus('Panel básico local'); }, 30000);
+    })();
+  </script>
+</body>
+</html>
