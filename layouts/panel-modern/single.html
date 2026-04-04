@@ -239,5 +239,64 @@
       setInterval(loadHolidays, 3600000);
     })();
   </script>
+    {{ partial "panel-base-script.html" . }}
+
+  <script type="text/javascript">
+    (function () {
+      function loadHolidays() {
+        var year = new Date().getFullYear();
+        var apiUrl = "https://api.argentinadatos.com/v1/feriados/" + year;
+        var jsonUrl = "/data/feriados-" + year + ".json";
+
+        PanelApp.loadHolidayJson(
+          apiUrl,
+          function (apiData) {
+            PanelApp.setHolidayData(apiData);
+            PanelApp.updateNetStatus('<span class="status-ok">Conectado</span> · Feriados desde API');
+          },
+          function () {
+            PanelApp.loadHolidayJson(
+              jsonUrl,
+              function (data) {
+                PanelApp.setHolidayData(data);
+                PanelApp.updateNetStatus('<span class="status-fail">API no disponible</span> · Usando JSON local');
+              },
+              function () {
+                PanelApp.setHolidayData([]);
+                PanelApp.updateNetStatus('<span class="status-fail">Sin datos de feriados</span>');
+              }
+            );
+          }
+        );
+      }
+
+      PanelApp.updateClock();
+      PanelApp.loadWeather();
+      PanelApp.updateNetStatus('Panel moderno');
+      loadHolidays();
+
+      setInterval(PanelApp.updateClock, 1000);
+      setInterval(PanelApp.loadWeather, 900000);
+      setInterval(loadHolidays, 3600000);
+    })();
+  </script>
+
+  <script type="text/javascript">
+    document.addEventListener("click", function () {
+      var doc = window.document;
+      var docEl = doc.documentElement;
+      var requestFullScreen =
+        docEl.requestFullscreen ||
+        docEl.mozRequestFullScreen ||
+        docEl.webkitRequestFullScreen ||
+        docEl.msRequestFullscreen;
+
+      if (requestFullScreen) {
+        requestFullScreen.call(docEl);
+      }
+    });
+  </script>
+</body>
+  
 </body>
 </html>

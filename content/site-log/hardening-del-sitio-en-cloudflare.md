@@ -7,6 +7,10 @@ tags: ["cloudflare", "security", "headers", "https", "csp", "hsts", "hardening"]
 categories: ["Site Log"]
 ---
 
+**2026-04-04 — Update sobre Content Security Policy (CSP) y panel del sitio:** [agregué `connect-src` para habilitar consultas a APIs externas del panel sin romper el hardening original](#update-2026-04-04-csp-y-panel).
+
+---
+
 El sitio funcionaba bien, tenía HTTPS y respondía sin problemas, pero al pasarlo por [SecurityHeaders](https://securityheaders.com/?q=marchiori.ar&followRedirects=on) la nota era **F**.
 
 Eso fue interesante porque el sitio, a simple vista, parecía estar bien: cargaba normal, tenía HTTPS y mostraba el “candado” del navegador.  
@@ -245,3 +249,45 @@ También dejó algo práctico: una vez hecho todo el proceso, la publicación de
 El sitio pasó de **F** a **A** en SecurityHeaders con una serie de cambios que no tocaron el contenido, pero sí mejoraron de forma concreta su postura de seguridad.
 
 Más importante que la nota final fue el proceso: entender qué hace cada encabezado, cómo se aplica una política prudente sin romper el sitio y por qué hoy el hardening web exige bastante más criterio que simplemente activar HTTPS y darlo por terminado.
+
+
+
+---
+
+## Update 2026-04-04: CSP y panel del sitio {#update-2026-04-04-csp-y-panel}
+
+Después de publicar una página tipo panel para usar en una tablet vieja, apareció un detalle que no era visible en local pero sí en producción.
+
+El panel cargaba bien en `localhost`, pero al publicarlo en el dominio no podía consultar el clima ni los feriados desde APIs externas. La causa real era la **Content Security Policy (CSP)** que ya tenía definida en Cloudflare como parte del hardening del sitio.
+
+La política original permitía conexiones solo al propio sitio y a Cloudflare Insights:
+
+```text
+connect-src 'self' https://cloudflareinsights.com;
+```
+
+Eso bloqueaba las consultas del panel hacia:
+
+```text
+https://api.open-meteo.com
+https://api.argentinadatos.com
+```
+
+La corrección fue mínima: mantener la política existente y ampliar únicamente connect-src para permitir esas dos APIs.
+
+La directiva quedó así:
+
+```text
+connect-src 'self' https://cloudflareinsights.com https://api.open-meteo.com https://api.argentinadatos.com;
+```
+
+Y la CSP completa quedó en esta forma:
+
+```text
+default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; font-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://api.open-meteo.com https://api.argentinadatos.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests
+```
+
+No fue un cambio de criterio ni una relajación general de seguridad. Fue un ajuste puntual para que una funcionalidad nueva pudiera operar dentro del mismo esquema de endurecimiento ya aplicado.
+
+En otras palabras: el sitio seguía seguro, pero ahora con permiso explícito para que ese panel consulte solo los endpoints que realmente necesita.
+
