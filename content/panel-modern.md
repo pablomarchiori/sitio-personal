@@ -1,6 +1,6 @@
 ---
-title: "Panel Modern"
+title: "Panel"
 type: "panel-modern"
-url: "/panel-modern/"
+url: "/panel/"
 draft: false
 ---

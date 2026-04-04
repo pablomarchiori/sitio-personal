@@ -4,6 +4,10 @@
   <meta charset="utf-8">
   <title>{{ .Title }} | {{ .Site.Title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="1800">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0f1115">
   <meta name="robots" content="noindex,nofollow">
   <style>
     :root {
@@ -198,37 +202,41 @@
 
   <script type="text/javascript">
     (function () {
-      var year = new Date().getFullYear();
-      var apiUrl = "https://api.argentinadatos.com/v1/feriados/" + year;
-      var jsonUrl = "/data/feriados-" + year + ".json";
+      function loadHolidays() {
+        var year = new Date().getFullYear();
+        var apiUrl = "https://api.argentinadatos.com/v1/feriados/" + year;
+        var jsonUrl = "/data/feriados-" + year + ".json";
+
+        PanelApp.loadHolidayJson(
+          apiUrl,
+          function (apiData) {
+            PanelApp.setHolidayData(apiData);
+            PanelApp.updateNetStatus('<span class="status-ok">Conectado</span> · Feriados desde API');
+          },
+          function () {
+            PanelApp.loadHolidayJson(
+              jsonUrl,
+              function (data) {
+                PanelApp.setHolidayData(data);
+                PanelApp.updateNetStatus('<span class="status-fail">API no disponible</span> · Usando JSON local');
+              },
+              function () {
+                PanelApp.setHolidayData([]);
+                PanelApp.updateNetStatus('<span class="status-fail">Sin datos de feriados</span>');
+              }
+            );
+          }
+        );
+      }
 
       PanelApp.updateClock();
       PanelApp.loadWeather();
       PanelApp.updateNetStatus('Panel moderno');
-
-      PanelApp.loadHolidayJson(
-        apiUrl,
-        function (apiData) {
-          PanelApp.setHolidayData(apiData);
-          PanelApp.updateNetStatus('<span class="status-ok">Conectado</span> · Feriados desde API');
-        },
-        function () {
-          PanelApp.loadHolidayJson(
-            jsonUrl,
-            function (data) {
-              PanelApp.setHolidayData(data);
-              PanelApp.updateNetStatus('<span class="status-fail">API no disponible</span> · Usando JSON local');
-            },
-            function () {
-              PanelApp.setHolidayData([]);
-              PanelApp.updateNetStatus('<span class="status-fail">Sin datos de feriados</span>');
-            }
-          );
-        }
-      );
+      loadHolidays();
 
       setInterval(PanelApp.updateClock, 1000);
       setInterval(PanelApp.loadWeather, 900000);
+      setInterval(loadHolidays, 3600000);
     })();
   </script>
 </body>
