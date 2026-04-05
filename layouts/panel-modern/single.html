@@ -35,61 +35,103 @@
     .wrap {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 24px;
+      padding: 20px;
     }
 
     .hero {
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
     }
 
     .clock {
-      font-size: 88px;
+      font-size: 76px;
       font-weight: 700;
       letter-spacing: 2px;
+      line-height: 1;
     }
 
     .date {
-      font-size: 26px;
+      font-size: 22px;
       color: var(--muted);
       margin-top: 8px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 20px;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 18px;
+      align-items: start;
     }
 
     .card {
       background: rgba(23, 26, 33, 0.92);
       border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 20px;
+      padding: 18px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
     .title {
-      font-size: 26px;
+      font-size: 24px;
       font-weight: 700;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
+    }
+
+    .weather-top {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .weather-icon {
+      font-size: 56px;
+      line-height: 1;
+      text-align: center;
     }
 
     .temp {
-      font-size: 56px;
+      font-size: 48px;
       font-weight: 700;
       color: var(--accent);
-      margin: 14px 0;
+      margin: 0 0 6px 0;
+      line-height: 1;
     }
 
-    .muted {
+    .weather-main {
+      font-size: 20px;
+      color: var(--text);
+    }
+
+    .weather-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 16px;
+      margin-top: 12px;
+    }
+
+    .weather-item {
+      font-size: 17px;
+      color: var(--text);
+    }
+
+    .weather-label {
       color: var(--muted);
-      font-size: 18px;
+      display: block;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .updated {
+      margin-top: 14px;
+      font-size: 14px;
+      color: var(--muted);
     }
 
     .calendar-title {
       text-align: center;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 700;
       margin-bottom: 12px;
     }
@@ -98,18 +140,20 @@
       width: 100%;
       border-collapse: collapse;
       table-layout: fixed;
+      margin-bottom: 14px;
     }
 
     th, td {
       border: 1px solid var(--line);
       text-align: center;
-      height: 52px;
-      font-size: 18px;
+      height: 48px;
+      font-size: 17px;
     }
 
     th {
       background: #1e2430;
       color: var(--muted);
+      font-weight: 600;
     }
 
     td.other-month {
@@ -126,21 +170,44 @@
       font-weight: 700;
     }
 
+    .holidays-block {
+      margin-top: 6px;
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+    }
+
+    .holidays-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--muted);
+    }
+
     .holiday-list {
       margin: 0;
-      padding-left: 20px;
+      padding-left: 18px;
     }
 
     .holiday-list li {
-      margin-bottom: 10px;
-      font-size: 18px;
+      margin-bottom: 6px;
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.3;
     }
 
     .footer {
       text-align: center;
       color: var(--muted);
-      margin-top: 20px;
-      font-size: 16px;
+      margin-top: 16px;
+      font-size: 15px;
+    }
+
+    .status-ok {
+      color: #9be49b;
+    }
+
+    .status-fail {
+      color: #ff9999;
     }
 
     @media (max-width: 900px) {
@@ -149,7 +216,32 @@
       }
 
       .clock {
-        font-size: 62px;
+        font-size: 60px;
+      }
+
+      .date {
+        font-size: 20px;
+      }
+
+      .temp {
+        font-size: 42px;
+      }
+
+      .weather-top {
+        grid-template-columns: 68px 1fr;
+      }
+
+      .weather-icon {
+        font-size: 46px;
+      }
+
+      th, td {
+        height: 42px;
+        font-size: 15px;
+      }
+
+      .holiday-list li {
+        font-size: 14px;
       }
     }
   </style>
@@ -162,20 +254,50 @@
     </div>
 
     <div class="grid">
-      <div>
-        <div class="card" style="margin-bottom:20px;">
-          <div class="title">Clima en Marcos Juárez</div>
-          <div id="weatherStatus" class="muted">Consultando clima...</div>
-          <div id="weatherTemp" class="temp">--°C</div>
-          <div id="weatherDetail" class="muted">Sin datos todavía.</div>
+      <div class="card">
+        <div class="title">Clima en Marcos Juárez</div>
+
+        <div class="weather-top">
+          <div id="weatherIcon" class="weather-icon">⏳</div>
+          <div>
+            <div id="weatherTemp" class="temp">--°C</div>
+            <div id="weatherMain" class="weather-main">Consultando clima...</div>
+          </div>
         </div>
 
-        <div class="card">
-          <div class="title">Feriados del mes</div>
-          <ul id="holidayList" class="holiday-list">
-            <li>Cargando feriados...</li>
-          </ul>
+        <div class="weather-grid">
+          <div class="weather-item">
+            <span class="weather-label">Humedad</span>
+            <span id="weatherHumidity">--%</span>
+          </div>
+
+          <div class="weather-item">
+            <span class="weather-label">Lluvia</span>
+            <span id="weatherRain">--%</span>
+          </div>
+
+          <div class="weather-item">
+            <span class="weather-label">Viento</span>
+            <span id="weatherWind">-- km/h</span>
+          </div>
+
+          <div class="weather-item">
+            <span class="weather-label">Dirección</span>
+            <span id="weatherWindDir">--</span>
+          </div>
+
+          <div class="weather-item">
+            <span class="weather-label">Mínima</span>
+            <span id="weatherMin">--°C</span>
+          </div>
+
+          <div class="weather-item">
+            <span class="weather-label">Máxima</span>
+            <span id="weatherMax">--°C</span>
+          </div>
         </div>
+
+        <div id="weatherUpdated" class="updated">Actualizado: --:--</div>
       </div>
 
       <div class="card">
@@ -190,6 +312,13 @@
             <tr><td colspan="7">Cargando calendario...</td></tr>
           </tbody>
         </table>
+
+        <div class="holidays-block">
+          <div class="holidays-title">Feriados del mes</div>
+          <ul id="holidayList" class="holiday-list">
+            <li>Cargando feriados...</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -202,6 +331,182 @@
 
   <script type="text/javascript">
     (function () {
+      var fullscreenRequested = false;
+
+      function degToCompass(deg) {
+        if (deg === null || typeof deg === "undefined") {
+          return "--";
+        }
+
+        var directions = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSO", "SO", "OSO", "O", "ONO", "NO", "NNO"];
+        var index = Math.round(deg / 22.5) % 16;
+        return directions[index];
+      }
+
+      function weatherCodeToText(code) {
+        var map = {
+          0: "Despejado",
+          1: "Mayormente despejado",
+          2: "Parcialmente nublado",
+          3: "Nublado",
+          45: "Niebla",
+          48: "Niebla con escarcha",
+          51: "Llovizna leve",
+          53: "Llovizna moderada",
+          55: "Llovizna intensa",
+          56: "Llovizna helada leve",
+          57: "Llovizna helada intensa",
+          61: "Lluvia leve",
+          63: "Lluvia moderada",
+          65: "Lluvia intensa",
+          66: "Lluvia helada leve",
+          67: "Lluvia helada intensa",
+          71: "Nieve leve",
+          73: "Nieve moderada",
+          75: "Nieve intensa",
+          77: "Granos de nieve",
+          80: "Chaparrones leves",
+          81: "Chaparrones moderados",
+          82: "Chaparrones intensos",
+          85: "Chaparrones de nieve leves",
+          86: "Chaparrones de nieve intensos",
+          95: "Tormenta",
+          96: "Tormenta con granizo leve",
+          99: "Tormenta con granizo fuerte"
+        };
+
+        return map[code] || "Condición no identificada";
+      }
+
+      function weatherCodeToIcon(code) {
+        if (code === 0) return "☀️";
+        if (code === 1) return "🌤️";
+        if (code === 2) return "⛅";
+        if (code === 3) return "☁️";
+        if (code === 45 || code === 48) return "🌫️";
+        if (code === 51 || code === 53 || code === 55 || code === 56 || code === 57) return "🌦️";
+        if (code === 61 || code === 63 || code === 65 || code === 66 || code === 67 || code === 80 || code === 81 || code === 82) return "🌧️";
+        if (code === 71 || code === 73 || code === 75 || code === 77 || code === 85 || code === 86) return "🌨️";
+        if (code === 95 || code === 96 || code === 99) return "⛈️";
+        return "🌡️";
+      }
+
+      function getCurrentHourPrecipitation(data) {
+        var currentTime;
+        var hourlyTimes;
+        var hourlyRain;
+        var i;
+        var currentHourKey;
+
+        if (!data || !data.current || !data.current.time || !data.hourly || !data.hourly.time || !data.hourly.precipitation_probability) {
+          return "--%";
+        }
+
+        currentTime = data.current.time;
+        currentHourKey = currentTime.substring(0, 13);
+        hourlyTimes = data.hourly.time;
+        hourlyRain = data.hourly.precipitation_probability;
+
+        for (i = 0; i < hourlyTimes.length; i++) {
+          if (hourlyTimes[i] && hourlyTimes[i].substring(0, 13) === currentHourKey) {
+            if (typeof hourlyRain[i] !== "undefined" && hourlyRain[i] !== null) {
+              return Math.round(hourlyRain[i]) + "%";
+            }
+            break;
+          }
+        }
+
+        return "--%";
+      }
+
+      function loadEnhancedWeather() {
+        var xhr = new XMLHttpRequest();
+        var url = "https://api.open-meteo.com/v1/forecast?latitude=-32.6978&longitude=-62.1067&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,wind_direction_10m&hourly=precipitation_probability&daily=temperature_2m_max,temperature_2m_min&timezone=auto&forecast_days=1";
+
+        xhr.onreadystatechange = function () {
+          var data;
+          var now;
+          var updatedText;
+          var windDeg;
+          var windDirText;
+
+          if (xhr.readyState === 4) {
+            if (xhr.status >= 200 && xhr.status < 300) {
+              try {
+                data = JSON.parse(xhr.responseText);
+
+                if (data && data.current) {
+                  document.getElementById("weatherTemp").innerHTML = Math.round(data.current.temperature_2m) + "°C";
+                  document.getElementById("weatherMain").innerHTML = weatherCodeToText(data.current.weather_code);
+                  document.getElementById("weatherIcon").innerHTML = weatherCodeToIcon(data.current.weather_code);
+
+                  document.getElementById("weatherHumidity").innerHTML =
+                    (typeof data.current.relative_humidity_2m !== "undefined" ? Math.round(data.current.relative_humidity_2m) + "%" : "--%");
+
+                  document.getElementById("weatherWind").innerHTML =
+                    (typeof data.current.wind_speed_10m !== "undefined" ? Math.round(data.current.wind_speed_10m) + " km/h" : "-- km/h");
+
+                  windDeg = data.current.wind_direction_10m;
+                  windDirText = degToCompass(windDeg);
+                  document.getElementById("weatherWindDir").innerHTML =
+                    (typeof windDeg !== "undefined" ? windDirText + " (" + Math.round(windDeg) + "°)" : "--");
+
+                  if (data.daily && data.daily.temperature_2m_min && data.daily.temperature_2m_min.length > 0) {
+                    document.getElementById("weatherMin").innerHTML = Math.round(data.daily.temperature_2m_min[0]) + "°C";
+                  } else {
+                    document.getElementById("weatherMin").innerHTML = "--°C";
+                  }
+
+                  if (data.daily && data.daily.temperature_2m_max && data.daily.temperature_2m_max.length > 0) {
+                    document.getElementById("weatherMax").innerHTML = Math.round(data.daily.temperature_2m_max[0]) + "°C";
+                  } else {
+                    document.getElementById("weatherMax").innerHTML = "--°C";
+                  }
+
+                  document.getElementById("weatherRain").innerHTML = getCurrentHourPrecipitation(data);
+
+                  if (data.current.time) {
+                    updatedText = data.current.time.split("T")[1];
+                    if (updatedText) {
+                      updatedText = updatedText.substring(0, 5);
+                    } else {
+                      updatedText = "--:--";
+                    }
+                  } else {
+                    now = new Date();
+                    updatedText = ("0" + now.getHours()).slice(-2) + ":" + ("0" + now.getMinutes()).slice(-2);
+                  }
+
+                  document.getElementById("weatherUpdated").innerHTML = "Actualizado: " + updatedText;
+                  PanelApp.updateNetStatus('<span class="status-ok">Conectado</span> · Clima y feriados actualizados');
+                } else {
+                  document.getElementById("weatherMain").innerHTML = "No se pudo interpretar el clima";
+                  document.getElementById("weatherIcon").innerHTML = "⚠️";
+                  PanelApp.updateNetStatus('<span class="status-fail">Sin datos válidos de clima</span>');
+                }
+              } catch (e) {
+                document.getElementById("weatherMain").innerHTML = "Error al leer clima";
+                document.getElementById("weatherIcon").innerHTML = "⚠️";
+                PanelApp.updateNetStatus('<span class="status-fail">Error procesando clima</span>');
+              }
+            } else {
+              document.getElementById("weatherMain").innerHTML = "No se pudo consultar el clima";
+              document.getElementById("weatherIcon").innerHTML = "⚠️";
+              PanelApp.updateNetStatus('<span class="status-fail">Error consultando clima</span>');
+            }
+          }
+        };
+
+        try {
+          xhr.open("GET", url, true);
+          xhr.send();
+        } catch (e) {
+          document.getElementById("weatherMain").innerHTML = "Consulta de clima no disponible";
+          document.getElementById("weatherIcon").innerHTML = "⚠️";
+          PanelApp.updateNetStatus('<span class="status-fail">Clima no disponible</span>');
+        }
+      }
+
       function loadHolidays() {
         var year = new Date().getFullYear();
         var apiUrl = "https://api.argentinadatos.com/v1/feriados/" + year;
@@ -211,14 +516,13 @@
           apiUrl,
           function (apiData) {
             PanelApp.setHolidayData(apiData);
-            PanelApp.updateNetStatus('<span class="status-ok">Conectado</span> · Feriados desde API');
           },
           function () {
             PanelApp.loadHolidayJson(
               jsonUrl,
               function (data) {
                 PanelApp.setHolidayData(data);
-                PanelApp.updateNetStatus('<span class="status-fail">API no disponible</span> · Usando JSON local');
+                PanelApp.updateNetStatus('<span class="status-fail">API de feriados no disponible</span> · Usando JSON local');
               },
               function () {
                 PanelApp.setHolidayData([]);
@@ -229,74 +533,37 @@
         );
       }
 
-      PanelApp.updateClock();
-      PanelApp.loadWeather();
-      PanelApp.updateNetStatus('Panel moderno');
-      loadHolidays();
+      function requestFullscreenOnce() {
+        if (fullscreenRequested) {
+          return;
+        }
 
-      setInterval(PanelApp.updateClock, 1000);
-      setInterval(PanelApp.loadWeather, 900000);
-      setInterval(loadHolidays, 3600000);
-    })();
-  </script>
-    {{ partial "panel-base-script.html" . }}
+        var doc = window.document;
+        var docEl = doc.documentElement;
+        var requestFullScreen =
+          docEl.requestFullscreen ||
+          docEl.mozRequestFullScreen ||
+          docEl.webkitRequestFullScreen ||
+          docEl.msRequestFullscreen;
 
-  <script type="text/javascript">
-    (function () {
-      function loadHolidays() {
-        var year = new Date().getFullYear();
-        var apiUrl = "https://api.argentinadatos.com/v1/feriados/" + year;
-        var jsonUrl = "/data/feriados-" + year + ".json";
-
-        PanelApp.loadHolidayJson(
-          apiUrl,
-          function (apiData) {
-            PanelApp.setHolidayData(apiData);
-            PanelApp.updateNetStatus('<span class="status-ok">Conectado</span> · Feriados desde API');
-          },
-          function () {
-            PanelApp.loadHolidayJson(
-              jsonUrl,
-              function (data) {
-                PanelApp.setHolidayData(data);
-                PanelApp.updateNetStatus('<span class="status-fail">API no disponible</span> · Usando JSON local');
-              },
-              function () {
-                PanelApp.setHolidayData([]);
-                PanelApp.updateNetStatus('<span class="status-fail">Sin datos de feriados</span>');
-              }
-            );
-          }
-        );
+        if (requestFullScreen) {
+          fullscreenRequested = true;
+          requestFullScreen.call(docEl);
+        }
       }
 
       PanelApp.updateClock();
-      PanelApp.loadWeather();
-      PanelApp.updateNetStatus('Panel moderno');
+      loadEnhancedWeather();
       loadHolidays();
+      PanelApp.updateNetStatus('Panel moderno');
 
       setInterval(PanelApp.updateClock, 1000);
-      setInterval(PanelApp.loadWeather, 900000);
+      setInterval(loadEnhancedWeather, 900000);
       setInterval(loadHolidays, 3600000);
+
+      document.addEventListener("click", requestFullscreenOnce);
+      document.addEventListener("touchstart", requestFullscreenOnce);
     })();
   </script>
-
-  <script type="text/javascript">
-    document.addEventListener("click", function () {
-      var doc = window.document;
-      var docEl = doc.documentElement;
-      var requestFullScreen =
-        docEl.requestFullscreen ||
-        docEl.mozRequestFullScreen ||
-        docEl.webkitRequestFullScreen ||
-        docEl.msRequestFullscreen;
-
-      if (requestFullScreen) {
-        requestFullScreen.call(docEl);
-      }
-    });
-  </script>
-</body>
-  
 </body>
 </html>

@@ -28,7 +28,7 @@ summaryLength = 30
   name = "Pablo Marchiori"
   image = "img/author.jpg"
   headline = "Notas personales sobre lenguaje, IT, trabajo y organización"
-  bio = "Supervisor de infraestructura IT. Apuntes, ensayos y notas técnicas."
+  bio = "Infraestructura IT. Apuntes, ensayos y notas técnicas."
   
 [caches]
 [caches.images]
@@ -40,16 +40,21 @@ pageRef = "notas"
 weight = 10
 
 [[menus.main]]
+name = "Labs"
+pageRef = "labs"
+weight = 20
+
+[[menus.main]]
 name = "Lenguaje"
 pageRef = "manual-de-supervivencia-linguistica"
-weight = 20
+weight = 30
 
 [[menus.main]]
 name = "Site Log"
 pageRef = "site-log"
-weight = 30
+weight = 40
 
 [[menus.main]]
 name = "Acerca de"
 pageRef = "/about"
-weight = 40
+weight = 50

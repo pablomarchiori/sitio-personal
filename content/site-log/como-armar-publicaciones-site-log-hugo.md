@@ -292,6 +292,16 @@ Después, dentro de la nota:
 
 ---
 
+## Imagen que al hacer clic abre otra imagen
+
+Esto sirve para mostrar una versión chica o miniatura, y que al hacer clic se abra la imagen grande.
+
+```markdown
+[![Tablet CX Boreal II mostrando el panel](/images/labs/panel-tablet-cx-boreal-ii-thumb.jpg)](/images/labs/panel-tablet-cx-boreal-ii.jpg)
+```
+
+---
+
 ## Imagen con texto debajo
 
 ```markdown
