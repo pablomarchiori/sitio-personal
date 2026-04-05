@@ -1,5 +1,5 @@
 ---
-title: "Cómo armar las publicaciones del Site Log en Hugo"
+title: "Cómo armar las publicaciones para Hugo"
 date: 2026-03-29T21:30:00-03:00
 draft: false
 description: "Diferencia entre secciones, menú, categorías y tags en Hugo, más una guía rápida de Markdown para escribir notas."

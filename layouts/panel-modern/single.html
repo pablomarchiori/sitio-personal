@@ -20,6 +20,8 @@
       --holiday: #43242a;
       --today: #f3f4f6;
       --today-text: #111827;
+      --button-bg: #1e2430;
+      --button-hover: #2a3342;
     }
 
     * { box-sizing: border-box; }
@@ -129,11 +131,37 @@
       color: var(--muted);
     }
 
+    .calendar-header {
+      display: grid;
+      grid-template-columns: 44px 1fr 44px;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
     .calendar-title {
       text-align: center;
       font-size: 26px;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin: 0;
+    }
+
+    .calendar-nav {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: var(--button-bg);
+      color: var(--text);
+      border-radius: 10px;
+      height: 40px;
+      width: 40px;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .calendar-nav:hover {
+      background: var(--button-hover);
     }
 
     table {
@@ -243,6 +271,16 @@
       .holiday-list li {
         font-size: 14px;
       }
+
+      .calendar-header {
+        grid-template-columns: 40px 1fr 40px;
+      }
+
+      .calendar-nav {
+        height: 36px;
+        width: 36px;
+        font-size: 20px;
+      }
     }
   </style>
 </head>
@@ -301,7 +339,12 @@
       </div>
 
       <div class="card">
-        <div id="calendarTitle" class="calendar-title">Calendario</div>
+        <div class="calendar-header">
+          <button id="prevMonthBtn" class="calendar-nav" type="button" aria-label="Mes anterior">‹</button>
+          <div id="calendarTitle" class="calendar-title">Calendario</div>
+          <button id="nextMonthBtn" class="calendar-nav" type="button" aria-label="Mes siguiente">›</button>
+        </div>
+
         <table>
           <thead>
             <tr>
@@ -332,6 +375,9 @@
   <script type="text/javascript">
     (function () {
       var fullscreenRequested = false;
+      var holidayDataByYear = {};
+      var visibleDate = new Date();
+      visibleDate = new Date(visibleDate.getFullYear(), visibleDate.getMonth(), 1);
 
       function degToCompass(deg) {
         if (deg === null || typeof deg === "undefined") {
@@ -419,6 +465,167 @@
         return "--%";
       }
 
+      function getMonthNames() {
+        return [
+          "enero", "febrero", "marzo", "abril", "mayo", "junio",
+          "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+        ];
+      }
+
+      function getHolidayDataForYear(year) {
+        return holidayDataByYear[String(year)] || [];
+      }
+
+      function setHolidayDataForYear(year, data) {
+        holidayDataByYear[String(year)] = data || [];
+      }
+
+      function renderVisibleMonth() {
+        var monthNames = getMonthNames();
+        var today = new Date();
+        var year = visibleDate.getFullYear();
+        var month = visibleDate.getMonth();
+        var firstDay = new Date(year, month, 1);
+        var lastDay = new Date(year, month + 1, 0);
+        var daysInMonth = lastDay.getDate();
+        var startDay = firstDay.getDay();
+        var calendarTitle = document.getElementById("calendarTitle");
+        var calendarBody = document.getElementById("calendarBody");
+        var holidayList = document.getElementById("holidayList");
+        var holidays = getHolidayDataForYear(year);
+        var holidayMap = {};
+        var html = "";
+        var day = 1;
+        var row;
+        var col;
+        var className;
+        var dateKey;
+        var foundHolidayCount = 0;
+        var holidayHtml = "";
+        var i;
+        var parts;
+        var holidayMonth;
+        var holidayDay;
+        var isToday;
+
+        for (i = 0; i < holidays.length; i++) {
+          if (holidays[i] && holidays[i].fecha) {
+            holidayMap[holidays[i].fecha] = holidays[i].nombre;
+          }
+        }
+
+        if (startDay === 0) {
+          startDay = 7;
+        }
+
+        calendarTitle.innerHTML = monthNames[month].charAt(0).toUpperCase() + monthNames[month].slice(1) + " " + year;
+
+        for (row = 0; row < 6; row++) {
+          html += "<tr>";
+
+          for (col = 1; col <= 7; col++) {
+            if ((row === 0 && col < startDay) || day > daysInMonth) {
+              html += '<td class="other-month">&nbsp;</td>';
+            } else {
+              className = "";
+              dateKey = year + "-" + ("0" + (month + 1)).slice(-2) + "-" + ("0" + day).slice(-2);
+
+              if (holidayMap[dateKey]) {
+                className += " holiday";
+              }
+
+              isToday =
+                year === today.getFullYear() &&
+                month === today.getMonth() &&
+                day === today.getDate();
+
+              if (isToday) {
+                className += " today";
+              }
+
+              html += '<td class="' + className.replace(/^\s+/, "") + '">' + day + "</td>";
+              day++;
+            }
+          }
+
+          html += "</tr>";
+
+          if (day > daysInMonth) {
+            break;
+          }
+        }
+
+        calendarBody.innerHTML = html;
+
+        for (i = 0; i < holidays.length; i++) {
+          if (!holidays[i] || !holidays[i].fecha) {
+            continue;
+          }
+
+          parts = holidays[i].fecha.split("-");
+          holidayMonth = parseInt(parts[1], 10) - 1;
+          holidayDay = parseInt(parts[2], 10);
+
+          if (holidayMonth === month) {
+            holidayHtml += "<li><strong>" + holidayDay + "/" + (month + 1) + "</strong> - " + holidays[i].nombre + "</li>";
+            foundHolidayCount++;
+          }
+        }
+
+        if (foundHolidayCount === 0) {
+          holidayHtml = "<li>No hay feriados cargados para este mes.</li>";
+        }
+
+        holidayList.innerHTML = holidayHtml;
+      }
+
+      function ensureVisibleYearHolidays(callback) {
+        var year = visibleDate.getFullYear();
+        var existing = getHolidayDataForYear(year);
+        var apiUrl = "https://api.argentinadatos.com/v1/feriados/" + year;
+        var jsonUrl = "/data/feriados-" + year + ".json";
+
+        if (existing && existing.length > 0) {
+          renderVisibleMonth();
+          if (callback) {
+            callback(true, false);
+          }
+          return;
+        }
+
+        PanelApp.loadHolidayJson(
+          apiUrl,
+          function (apiData) {
+            setHolidayDataForYear(year, apiData);
+            renderVisibleMonth();
+            if (callback) {
+              callback(true, false);
+            }
+          },
+          function () {
+            PanelApp.loadHolidayJson(
+              jsonUrl,
+              function (data) {
+                setHolidayDataForYear(year, data);
+                renderVisibleMonth();
+                PanelApp.updateNetStatus('<span class="status-fail">API de feriados no disponible</span> · Usando JSON local');
+                if (callback) {
+                  callback(true, true);
+                }
+              },
+              function () {
+                setHolidayDataForYear(year, []);
+                renderVisibleMonth();
+                PanelApp.updateNetStatus('<span class="status-fail">Sin datos de feriados</span>');
+                if (callback) {
+                  callback(false, false);
+                }
+              }
+            );
+          }
+        );
+      }
+
       function loadEnhancedWeather() {
         var xhr = new XMLHttpRequest();
         var url = "https://api.open-meteo.com/v1/forecast?latitude=-32.6978&longitude=-62.1067&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,wind_direction_10m&hourly=precipitation_probability&daily=temperature_2m_max,temperature_2m_min&timezone=auto&forecast_days=1";
@@ -478,7 +685,7 @@
                   }
 
                   document.getElementById("weatherUpdated").innerHTML = "Actualizado: " + updatedText;
-                  PanelApp.updateNetStatus('<span class="status-ok">Conectado</span> · Clima y feriados actualizados');
+                  PanelApp.updateNetStatus('<span class="status-ok">Conectado</span> · Clima actualizado');
                 } else {
                   document.getElementById("weatherMain").innerHTML = "No se pudo interpretar el clima";
                   document.getElementById("weatherIcon").innerHTML = "⚠️";
@@ -507,30 +714,30 @@
         }
       }
 
-      function loadHolidays() {
-        var year = new Date().getFullYear();
-        var apiUrl = "https://api.argentinadatos.com/v1/feriados/" + year;
-        var jsonUrl = "/data/feriados-" + year + ".json";
-
-        PanelApp.loadHolidayJson(
-          apiUrl,
-          function (apiData) {
-            PanelApp.setHolidayData(apiData);
-          },
-          function () {
-            PanelApp.loadHolidayJson(
-              jsonUrl,
-              function (data) {
-                PanelApp.setHolidayData(data);
-                PanelApp.updateNetStatus('<span class="status-fail">API de feriados no disponible</span> · Usando JSON local');
-              },
-              function () {
-                PanelApp.setHolidayData([]);
-                PanelApp.updateNetStatus('<span class="status-fail">Sin datos de feriados</span>');
-              }
-            );
+      function refreshVisibleMonthPreservingStatus() {
+        ensureVisibleYearHolidays(function (ok, usedFallback) {
+          if (ok && !usedFallback) {
+            PanelApp.updateNetStatus('<span class="status-ok">Conectado</span> · Calendario actualizado');
           }
-        );
+        });
+      }
+
+      function goToPreviousMonth() {
+        visibleDate = new Date(visibleDate.getFullYear(), visibleDate.getMonth() - 1, 1);
+        refreshVisibleMonthPreservingStatus();
+      }
+
+      function goToNextMonth() {
+        visibleDate = new Date(visibleDate.getFullYear(), visibleDate.getMonth() + 1, 1);
+        refreshVisibleMonthPreservingStatus();
+      }
+
+      function loadCurrentVisibleMonth() {
+        ensureVisibleYearHolidays(function (ok, usedFallback) {
+          if (ok && !usedFallback) {
+            PanelApp.updateNetStatus('<span class="status-ok">Conectado</span> · Clima y feriados actualizados');
+          }
+        });
       }
 
       function requestFullscreenOnce() {
@@ -552,14 +759,24 @@
         }
       }
 
+      document.getElementById("prevMonthBtn").addEventListener("click", function (event) {
+        event.preventDefault();
+        goToPreviousMonth();
+      });
+
+      document.getElementById("nextMonthBtn").addEventListener("click", function (event) {
+        event.preventDefault();
+        goToNextMonth();
+      });
+
       PanelApp.updateClock();
       loadEnhancedWeather();
-      loadHolidays();
+      loadCurrentVisibleMonth();
       PanelApp.updateNetStatus('Panel moderno');
 
       setInterval(PanelApp.updateClock, 1000);
       setInterval(loadEnhancedWeather, 900000);
-      setInterval(loadHolidays, 3600000);
+      setInterval(loadCurrentVisibleMonth, 3600000);
 
       document.addEventListener("click", requestFullscreenOnce);
       document.addEventListener("touchstart", requestFullscreenOnce);
