@@ -10,6 +10,9 @@ draft: false
 Mirada nerd es un sitio personal hecho por mí 😌, Pablo Marchiori, donde junto notas, aprendizajes y publicaciones sobre tecnología, infraestructura, seguridad web y otras cosas que vale la pena mirar con un poco más de detalle… o que, directamente, anoto para no olvidarme.
 ¿Este sitio es una broma o es serio? Es libre ud. de decidirlo.
 
+**Aviso**
+*Este sitio refleja opiniones personales y humor. No busca ofender a personas ni a religiones. Si algo no te gusta, sos libre de no leerlo. No respondo debates doctrinarios ni discusiones moralizantes; sí leo correcciones y sugerencias puntuales sobre el contenido.*
+
 ## Etimología del título 🤓
 
 El término **nerd** tuvo su recorrido: durante mucho tiempo se usó como burla, y con los años terminó convirtiéndose bastante más en una identidad que en un insulto. Según el matiz, hoy aparecen variantes como *geek*, *techie*, *specialist*, *pro* o similares, pero **nerd** sigue teniendo algo más reconocible: mezcla curiosidad, obsesión, detalle y cierta dificultad para socializar con otros no-nerds 😁.

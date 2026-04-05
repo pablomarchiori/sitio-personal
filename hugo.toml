@@ -8,6 +8,11 @@ disableLanguages = ["en"]
 enableRobotsTXT = true
 summaryLength = 30
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [pagination]
   pagerSize = 10
 

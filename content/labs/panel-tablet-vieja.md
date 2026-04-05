@@ -14,7 +14,16 @@ Entonces: **¿para qué se puede usar? ¿Todavía puede servir como terminal fij
 
 Vamos a reconvertirla en un panel de monitoreo para mostrar una página propia del sitio: [**`/panel/`**](https://www.marchiori.ar/panel).
 
-Un momento... ¿es algo práctico eso? No demasiado. Pero bueno, es una nerdeada pintoresca. A todo nerd le interesa el clima y la fecha; bueno, eso en realidad le interesa a mucha gente. La parte nerd es la pantallita.
+<div style="display: flex; align-items: center; gap: 16px; margin: 1.2rem 0;">
+  <img
+    src="/images/homero-momento.png"
+    alt="Homero pensando"
+    style="width: 90px; height: auto; flex: 0 0 auto; margin: 0;"
+  >
+  <p style="margin: 0; font: inherit; line-height: inherit;">
+    Un momento... ¿es algo útil esto? No demasiado. Pero bueno, es una nerdeada pintoresca. A todo nerd le interesa el clima y la fecha; bueno, eso en realidad le interesa a mucha gente. La parte nerd es la pantallita.
+  </p>
+</div>
 
 ## Arrancamos
 
@@ -98,8 +107,7 @@ El comportamiento final quedó limitado al primer toque, para que no intente ent
 
 ## Lo que quedó funcionando
 
-El resultado final fue bastante mejor de lo que parecía probable al principio.
-
+El resultado final fue bastante mejor de lo que parecía probable al principio 😎.
 La tablet hoy puede quedar como terminal fija mostrando:
 
 - hora
@@ -112,14 +120,7 @@ sin exigirle nada para lo que ya no está preparada.
 
 [![Tablet CX Boreal II mostrando el panel](/images/labs/panel-tablet-cx-boreal-ii-thumb.jpg)](/images/labs/panel-tablet-cx-boreal-ii.jpg)
 
-El experimento salió bien, pero con límites claros. No usaría una tablet de este tipo para:
-
-- navegación general
-- cuentas personales
-- correo
-- bancos
-- redes sociales
-- nada sensible
+El experimento salió bien, pero con límites claros. Esta tablet ya no sirve para navegación general, correo, redes sociales ni nada parecido. Aunque el sitio funcione en Firefox, las apps ya no acompañan y el equipo queda, en la práctica, reducido a ese navegador y a una función muy puntual.
 
 Su valor acá no está en “recuperarla por completo”, sino en asignarle una función mínima, visible y controlada.
 
@@ -133,9 +134,9 @@ Durante las pruebas fui usando **Gemini** para explorar ideas, compatibilidades 
 
 ## Reflexión final
 
-De este trabajo quedan dudas profundas. 🤔
+De este trabajo quedan dudas profundas. 
 
-¿Esto va en Notas, en Site Log o se ganó directamente un lugar propio? ¿Un menú Labs? ¿Nerdeadas? ¿Cosas raras? 😎
+¿Esto va en Notas, en Site Log o se ganó directamente un lugar propio? ¿Un menú Labs? ¿Nerdeadas? ¿Cosas raras? 🤔
 
 Y ahora queda la duda más importante de todas:
 
