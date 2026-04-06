@@ -88,9 +88,12 @@
     }
 
     .weather-icon {
-      font-size: 56px;
-      line-height: 1;
-      text-align: center;
+      width: 56px;
+      height: 56px;
+      display: block;
+      object-fit: contain;
+      margin: 0 auto;
+      filter: brightness(1.05);
     }
 
     .temp {
@@ -260,7 +263,8 @@
       }
 
       .weather-icon {
-        font-size: 46px;
+        width: 46px;
+        height: 46px;
       }
 
       th, td {
@@ -296,7 +300,7 @@
         <div class="title">Clima en Marcos Juárez</div>
 
         <div class="weather-top">
-          <div id="weatherIcon" class="weather-icon">⏳</div>
+          <img id="weatherIcon" class="weather-icon" src="/images/weather/unknown.svg" alt="Estado del tiempo">
           <div>
             <div id="weatherTemp" class="temp">--°C</div>
             <div id="weatherMain" class="weather-main">Consultando clima...</div>
@@ -424,17 +428,17 @@
         return map[code] || "Condición no identificada";
       }
 
-      function weatherCodeToIcon(code) {
-        if (code === 0) return "☀️";
-        if (code === 1) return "🌤️";
-        if (code === 2) return "⛅";
-        if (code === 3) return "☁️";
-        if (code === 45 || code === 48) return "🌫️";
-        if (code === 51 || code === 53 || code === 55 || code === 56 || code === 57) return "🌦️";
-        if (code === 61 || code === 63 || code === 65 || code === 66 || code === 67 || code === 80 || code === 81 || code === 82) return "🌧️";
-        if (code === 71 || code === 73 || code === 75 || code === 77 || code === 85 || code === 86) return "🌨️";
-        if (code === 95 || code === 96 || code === 99) return "⛈️";
-        return "🌡️";
+      function weatherCodeToIconPath(code) {
+        if (code === 0) return "/images/weather/sun.svg";
+        if (code === 1) return "/images/weather/partly-cloudy.svg";
+        if (code === 2) return "/images/weather/partly-cloudy.svg";
+        if (code === 3) return "/images/weather/cloud.svg";
+        if (code === 45 || code === 48) return "/images/weather/fog.svg";
+        if (code === 51 || code === 53 || code === 55 || code === 56 || code === 57) return "/images/weather/rain.svg";
+        if (code === 61 || code === 63 || code === 65 || code === 66 || code === 67 || code === 80 || code === 81 || code === 82) return "/images/weather/rain.svg";
+        if (code === 71 || code === 73 || code === 75 || code === 77 || code === 85 || code === 86) return "/images/weather/snow.svg";
+        if (code === 95 || code === 96 || code === 99) return "/images/weather/storm.svg";
+        return "/images/weather/unknown.svg";
       }
 
       function getCurrentHourPrecipitation(data) {
@@ -645,7 +649,7 @@
                 if (data && data.current) {
                   document.getElementById("weatherTemp").innerHTML = Math.round(data.current.temperature_2m) + "°C";
                   document.getElementById("weatherMain").innerHTML = weatherCodeToText(data.current.weather_code);
-                  document.getElementById("weatherIcon").innerHTML = weatherCodeToIcon(data.current.weather_code);
+                  document.getElementById("weatherIcon").src = weatherCodeToIconPath(data.current.weather_code);
 
                   document.getElementById("weatherHumidity").innerHTML =
                     (typeof data.current.relative_humidity_2m !== "undefined" ? Math.round(data.current.relative_humidity_2m) + "%" : "--%");
@@ -688,17 +692,17 @@
                   PanelApp.updateNetStatus('<span class="status-ok">Conectado</span> · Clima actualizado');
                 } else {
                   document.getElementById("weatherMain").innerHTML = "No se pudo interpretar el clima";
-                  document.getElementById("weatherIcon").innerHTML = "⚠️";
+                  document.getElementById("weatherIcon").src = "/images/weather/unknown.svg";
                   PanelApp.updateNetStatus('<span class="status-fail">Sin datos válidos de clima</span>');
                 }
               } catch (e) {
                 document.getElementById("weatherMain").innerHTML = "Error al leer clima";
-                document.getElementById("weatherIcon").innerHTML = "⚠️";
+                document.getElementById("weatherIcon").src = "/images/weather/unknown.svg";
                 PanelApp.updateNetStatus('<span class="status-fail">Error procesando clima</span>');
               }
             } else {
               document.getElementById("weatherMain").innerHTML = "No se pudo consultar el clima";
-              document.getElementById("weatherIcon").innerHTML = "⚠️";
+              document.getElementById("weatherIcon").src = "/images/weather/unknown.svg";
               PanelApp.updateNetStatus('<span class="status-fail">Error consultando clima</span>');
             }
           }
@@ -709,7 +713,7 @@
           xhr.send();
         } catch (e) {
           document.getElementById("weatherMain").innerHTML = "Consulta de clima no disponible";
-          document.getElementById("weatherIcon").innerHTML = "⚠️";
+          document.getElementById("weatherIcon").src = "/images/weather/unknown.svg";
           PanelApp.updateNetStatus('<span class="status-fail">Clima no disponible</span>');
         }
       }
@@ -759,15 +763,28 @@
         }
       }
 
-      document.getElementById("prevMonthBtn").addEventListener("click", function (event) {
-        event.preventDefault();
+      function handlePrevMonth(event) {
+        if (event) {
+          event.preventDefault();
+          if (event.stopPropagation) {
+            event.stopPropagation();
+          }
+        }
         goToPreviousMonth();
-      });
+      }
 
-      document.getElementById("nextMonthBtn").addEventListener("click", function (event) {
-        event.preventDefault();
+      function handleNextMonth(event) {
+        if (event) {
+          event.preventDefault();
+          if (event.stopPropagation) {
+            event.stopPropagation();
+          }
+        }
         goToNextMonth();
-      });
+      }
+
+      document.getElementById("prevMonthBtn").addEventListener("click", handlePrevMonth);
+      document.getElementById("nextMonthBtn").addEventListener("click", handleNextMonth);
 
       PanelApp.updateClock();
       loadEnhancedWeather();
@@ -779,7 +796,6 @@
       setInterval(loadCurrentVisibleMonth, 3600000);
 
       document.addEventListener("click", requestFullscreenOnce);
-      document.addEventListener("touchstart", requestFullscreenOnce);
     })();
   </script>
 </body>
