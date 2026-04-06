@@ -25,6 +25,7 @@ Vamos a reconvertirla en un panel de monitoreo para mostrar una página propia d
   </p>
 </div>
 
+
 ## Ingredientes
 
 El hardware era este:
