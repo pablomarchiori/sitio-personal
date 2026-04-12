@@ -7,7 +7,7 @@ tags: ["luna", "apollo", "artemis", "espacio", "historia", "ciencia"]
 categories: ["Notas"]
 ---
 
-> “Frente a un logro humano extraordinario, siempre hay quien prefiere la explicación cómoda antes que el esfuerzo de entender cómo se hizo posible.”
+> Frente a un logro humano extraordinario, siempre hay quien prefiere la explicación cómoda antes que el esfuerzo de entender cómo se hizo posible.
 
 El reciente lanzamiento de [Artemis II](https://www.nasa.gov/mission/artemis-ii/) volvió a poner los viajes a la Luna en el centro de la conversación, tanto entre entusiastas como entre personas que tuvieron poco o ningún contacto con la exploración espacial, y en ese cruce no es raro que vuelvan también algunas conclusiones poco realistas. Junto con eso, claro, también reaparece alguna teoría conspiranoica, a veces tratada como si fuera más verosímil la película [Viaje a la Luna](https://es.wikipedia.org/wiki/Viaje_a_la_Luna), de 1902, que la información acumulada por la [NASA](https://www.nasa.gov/) y otras agencias.
 
@@ -65,6 +65,6 @@ Después de unos 60 años no se vuelve a la Luna con los mismos instrumentos, ma
 
 ![Comparación entre Orion (Artemis II) y el módulo de mando Apollo](/images/notas/luna/orion-vs-apollo-command-module.jpg)
 
-## Para terminar..
+## Para terminar
 
 Frente a un logro humano extraordinario, siempre hay quien prefiere la explicación cómoda antes que el esfuerzo de entender cómo se hizo posible. Pasa con Apollo, como pasa con tantas otras obras o hitos históricos a los que algunos les niegan origen humano porque les resulta más fácil imaginar un fraude, una mano oculta o una explicación fantástica que aceptar que hubo personas capaces de hacer algo excepcional.
