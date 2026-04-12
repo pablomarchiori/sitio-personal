@@ -1,6 +1,6 @@
 ---
 title: "La física del espacio real y la física del cine"
-date: 2026-04-12T21:00:00-03:00
+date: 2026-04-12T12:00:00-03:00
 draft: false
 description: "Una mirada sobre cómo el cine nos acostumbró a imaginar el espacio y por qué la física real resulta más extraña, incómoda y fascinante."
 tags: ["espacio", "ciencia ficción", "star wars", "star trek", "the expanse", "física"]
