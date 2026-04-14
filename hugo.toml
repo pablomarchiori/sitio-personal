@@ -22,7 +22,7 @@ summaryLength = 30
 [params]
   subtitle = "Apuntes técnicos con mirada propia"
   description = "Notas sobre tecnología, infraestructura, seguridad web y demases."
-  mainSections = ["notas", "site-log"]
+  mainSections = ["notas", "labs", "site-log"]
 
 [params.homepage]
   layout = "page"

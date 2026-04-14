@@ -9,4 +9,7 @@ Accesos directos de proyectos ya hechos:
   <a href="/panel/" target="_blank" rel="noopener noreferrer" style="display: block; padding: 12px 16px; border: 1px solid #444; border-radius: 10px; text-decoration: none;">
   ☁️ <strong>Panel</strong>
 </a>
+  <a href="/moonjs/agc_sp.html" target="_blank" rel="noopener noreferrer" style="display: block; padding: 12px 16px; border: 1px solid #444; border-radius: 10px; text-decoration: none;">
+  🌕 <strong>Apollo AGC</strong>
+</a>
 </div>

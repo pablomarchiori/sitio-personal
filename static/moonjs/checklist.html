@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Checklist de lanzamiento / Launch Checklist</title>
+    <style>
+            html , body {
+                width: 400px;
+                height: 800px;
+                margin: 5px;
+                padding: 5px;
+            }
+    </style>
+</style>
+</head>
+<body>
+    <h4>Checklist de lanzamiento simulado del Saturn V</h4>
+    <div style="position: relative; width: 400px; border: solid black 1px; font-size: 12px; font-family: monospace; margin-bottom: 20px;">
+    <ol>
+        <li>Presioná el botón <b>Habilitar IMU</b>.</li>
+        <li>Esperá entre 85 y 90 segundos hasta que se apague la luz <b>NO ATT</b>.</li>
+        <li>Ingresá <b>V37E01E</b> para iniciar el major mode 01 (prelanzamiento o inicialización de servicio). <b>PROG</b> debería mostrar 01; si no, volvé a probar unos segundos después.</li>
+        <li>Esperá hasta que la IMU quede calibrada (pitch 90°).</li>
+        <li>El major mode 02 (prelanzamiento o gyrocompassing de servicio) va a arrancar automáticamente unos segundos después (<b>PROG</b> muestra 02).</li>
+        <li>Presioná el botón <b>Lanzar</b>.</li>
+        <li>El reloj <b>MET</b> (Mission Elapsed Time) empieza a correr.</li>
+        <li>El major mode 11 (Earth Orbit Insertion Monitor) arranca después de que el sistema detecta el evento de lanzamiento.</li>
+        <li>El DSKY se actualiza cada dos segundos con los datos más recientes del vector de estado:
+            <ul>
+                <li>R1 = velocidad (XXXXX ft/s).</li>
+                <li>R2 = tasa de altitud (XXXXX ft/s).</li>
+                <li>R3 = altitud sobre la plataforma (XXXX.X nmi).</li>
+            </ul>
+        </li>
+        <li>La fase de vuelo propulsado dura 11 minutos y 44 segundos. Se ejecutan tanto el programa de <i>roll</i> como el de <i>pitch</i>.</li>
+        <li>Podés monitorear los parámetros orbitales en cualquier momento después del lanzamiento ingresando <b>V82E</b>:
+            <ul>
+                <li>R1 = altitud del apocentro (XXXX.X nmi).</li>
+                <li>R2 = altitud del pericentro (XXXX.X nmi).</li>
+                <li>R3 = tiempo hasta caída libre (XX XX min:sec).</li>
+            </ul>
+        </li>
+        <li>Después de un lanzamiento exitoso, tanto la altitud del apocentro como la del pericentro deberían ser &gt;90 nmi.</li>
+        <li>Presioná <b>PRO</b> para volver a la pantalla del major mode 11.</li>
+        <li>Ingresá <b>V06N32E</b> para mostrar el tiempo desde el perigeo:
+            <ul>
+                <li>R1 = 00XXX. horas</li>
+                <li>R2 = 000XX. minutos</li>
+                <li>R3 = 0XX.XX segundos</li>
+            </ul>
+        </li>
+    </ol>
+    </div>
+
+    <h4>Simulated Saturn 5 Launch Checklist</h4>
+    <div style="position: relative; width: 400px; border: solid black 1px; font-size: 12px; font-family: monospace;">
+    <ol>
+	    <li>Press <b>Enable IMU</b> button.</li>
+        <li>Wait 85-90 seconds until <b>NO ATT</b> light turns off.</li>
+        <li>Enter <b>V37E01E</b> to initiate major mode 01 (Prelaunch or Service Initialization). PROG should read 01, if not try again in few seconds.</li>
+        <li>Wait until IMU is calibrated (pitch 90°).</li>
+        <li>Major mode 02 (Prelaunch or Service Gyrocompassing) will automatically start in few seconds (PROG shows 02).</li>
+        <li>Press <b>Launch</b> button. </li>
+        <li>MET (Mission Elapsed Time) clock starts running.</li>
+        <li>Major mode 11 (Earth Orbit Insertion Monitor) will start after the detection of the launch event.</li>
+        <li>DSKY updates every two seconds with the latest state-vector data:
+    		<ul>
+    			<li>R1 = velocity (XXXXX ft/s).</li>
+                <li>R2 = the altitude rate (XXXXX ft/s).</li>
+                <li>R3 = the altitude above the pad (XXXX.X nmi).</li>
+            </ul>
+         </li>
+        <li>The powered flight lasts 11 minutes and 44 seconds. Both <i>roll</i> and <i>pitch</i> programs are executed.</li>
+        <li>You may monitor the orbit parameters at any time after the launch by entering <b>V82E</b>:
+    		<ul>
+	    		<li>R1 = the apocenter altitude (XXXX.X nmi).</li>
+                <li>R2 = the pericenter altitude (XXXX.X nmi).</li>
+                <li>R3 = the time to free fall (XX XX min:sec).</li>
+            </ul>
+    	</li>
+        <li>After a successful launch, both the apocenter and pericenter altitudes should be &gt;90 nmi.</li>
+        <li>Press <b>PRO</b> to return to major mode 11 display.</li>
+        <li>Enter <b>V06N32E</b> to display time from perigee:
+            <ul>
+                <li>R1 = 00XXX. hours</li>
+                <li>R2 = 000XX. minutes</li>
+                <li>R3 = 0XX.XX seconds</li>
+            </ul>
+        </li>
+    </ol>
+  </div>
+</body></html>
