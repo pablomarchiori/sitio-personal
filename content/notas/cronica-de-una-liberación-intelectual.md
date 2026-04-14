@@ -1,6 +1,6 @@
 ---
 title: "Crónica de una liberación intelectual"
-date: 2026-04-18T22:30:00-03:00
+date: 2026-04-14T06:30:00-03:00
 draft: false
 description: "Cómo algunas revistas, dudas viejas, humor blasfemo y divulgadores públicos me hicieron sentir menos solo en cierta forma de pensar."
 tags: ["pensamiento crítico", "divulgación", "ricky gervais", "neil degrasse tyson", "religión", "cultura nerd"]

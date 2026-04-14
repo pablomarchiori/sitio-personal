@@ -1,6 +1,6 @@
 ---
 title: "Navegando Apollo 9 con el mouse"
-date: 2026-04-24T19:10:00-03:00
+date: 2026-04-13T19:10:00-03:00
 draft: false
 description: "Una recreación web del AGC y el DSKY de Apollo 9, y esa sensación rara de tocar con el mouse algo que alguna vez fue hardware crítico de misión."
 tags: ["apollo", "nasa", "agc", "simulación", "labs"]
