@@ -71,7 +71,7 @@ Y del otro lado, si uno mira una cabina moderna como la de **Orion**, o incluso 
 
 ## Para seguir viendo
 
-ES muy bueno que exista gente dedicando tiempo a hacer estos emuladores. No es solo nostalgia. Hay preservación técnica, curiosidad histórica y ganas de volver tocable algo que, de otro modo, quedaría perdido entre documentación vieja, manuales y fotos de museo. Poder abrir esto en una web y tocarlo un poco ayuda a entender mejor qué clase de tecnología era, cómo se operaba y por qué sigue fascinando. Virtual AGC lo plantea justamente en esos términos: preservar y poner a disposición el software de vuelo original y las emulaciones de estas computadoras históricas. 
+Que bueno que exista gente dedicando tiempo a hacer estos emuladores. No es solo nostalgia. Hay preservación técnica, curiosidad histórica y ganas de volver tocable algo que, de otro modo, quedaría perdido entre documentación vieja, manuales y fotos de museo. Poder abrir esto en una web y tocarlo un poco ayuda a entender mejor qué clase de tecnología era, cómo se operaba y por qué sigue fascinando. Virtual AGC lo plantea justamente en esos términos: preservar y poner a disposición el software de vuelo original y las emulaciones de estas computadoras históricas. 
 
 - [Emulador AGC/DSKY Castellano](/moonjs/agc_sp.html)
 - [Emulador AGC/DSKY Inglés](/moonjs/agc.html)
