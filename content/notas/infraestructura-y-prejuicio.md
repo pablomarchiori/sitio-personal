@@ -130,7 +130,7 @@ Además, sugerime qué pruebas mínimas harías para orientar el análisis hacia
 
 No es magia. No reemplaza al desarrollador, al DBA ni a Infraestructura. Pero puede servir como primer filtro para no convertir una sospecha en diagnóstico.
 
-Y acá aparece otro detalle interesant: ¿probaste alguna vez analizar un ejecutable con herramientas actuales? Te sorprendería cuánto puede quedar adentro de un `.exe`: cadenas de conexión, nombres de servidores, rutas internas, nombres de desarrolladores, configuraciones, endpoints, tokens mal guardados o datos que nunca deberían haber viajado dentro del binario.
+Y acá aparece otro detalle interesante: ¿probaste alguna vez analizar un ejecutable con herramientas actuales? Te sorprendería cuánto puede quedar adentro de un `.exe`: cadenas de conexión, nombres de servidores, rutas internas, nombres de desarrolladores, configuraciones, endpoints, tokens mal guardados o datos que nunca deberían haber viajado dentro del binario.
 
 Eso no significa que haya que subir alegremente una aplicación interna a ChatGPT, Gemini o Claude. Justamente al revés: significa que hay que tomar conciencia de lo que se está compilando, distribuyendo y dejando expuesto. Un ejecutable no siempre es una caja negra. Muchas veces es más parecido a una valija mal cerrada.
 

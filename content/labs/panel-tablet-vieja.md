@@ -67,8 +67,6 @@ En equipos tan viejos, eso no sorprende. El sistema operativo quedó congelado h
 
 Busqué en F-Droid algún navegador compatible. También insistí un poco más con alternativas tipo kiosk, pero las versiones para Android 4.1.1 ya no estaban disponibles. Chrome ya no funciona en esa versión, así que fui a algo seguro: el viejo y confiable **Firefox** (`fennec-68.11.0.multi.android-arm.apk`). Usa certificados raíz propios, así que no hizo falta depender de los del sistema.
 
-### La limpieza mínima
-
 Antes de seguir, hice una limpieza razonable para que el equipo quedara un poco más liviano. En términos prácticos, fue deshabilitar aplicaciones de fábrica que no aportaban nada y dejar el dispositivo lo más cerca posible de una función única.
 
 ## Qué se hizo del lado del sitio
@@ -106,13 +104,13 @@ La tablet hoy puede quedar como terminal fija mostrando:
 
 sin exigirle nada para lo que ya no está preparada.
 
-[![Tablet CX Boreal II mostrando el panel](/images/labs/panel-tablet-cx-boreal-ii-thumb.jpg)](/images/labs/panel-tablet-cx-boreal-ii.jpg)
+[![Tablet CX Boreal II mostrando el panel](/images/labs/panel-tablet-cx-boreal-ii-thumb.png)](/images/labs/panel-tablet-cx-boreal-ii.png)
 
 El experimento salió bien, pero con límites claros. Esta tablet ya no sirve para navegación general, correo, redes sociales ni nada parecido. Aunque el sitio funcione en Firefox, las apps ya no acompañan y el equipo queda, en la práctica, reducido a ese navegador y a una función muy puntual.
 
 Su valor acá no está en “recuperarla por completo”, sino en asignarle una función mínima, visible y controlada.
 
-## Lo interesante del proceso
+## Reflexión final y lo bueno del proceso
 
 La parte más entretenida no fue solo que funcionara, sino cómo se llegó.
 
@@ -120,12 +118,5 @@ Durante las pruebas fui usando **Gemini** para explorar ideas, compatibilidades 
 
 **ChatGPT** aportó el código en general y los markdown de Hugo. Al final, entre uno y otro, salió algo funcional en tiempo récord.
 
-## Reflexión final
-
-De este trabajo quedan dudas profundas.
-
+Luego de terminar este trabajo me quedan dudas profundas...
 ¿Esto va en Notas, en Site Log o se ganó directamente un lugar propio? ¿Un menú Labs? ¿Nerdeadas? ¿Cosas raras? 🤔
-
-Y ahora queda la duda más importante de todas:
-
-¿Dónde corno ubico este pisapeles con el clima y la hora? 😄
