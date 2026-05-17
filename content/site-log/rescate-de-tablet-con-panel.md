@@ -1,203 +1,107 @@
 ---
-title: "Rescate de una tablet vieja como panel fijo"
+title: "Ajustes del sitio para sumar un panel fijo"
 date: 2026-04-04T18:30:00-03:00
 draft: false
-description: "Cómo terminé reutilizando una CX Boreal II de 2013 como panel fijo para el sitio."
-tags: ["android", "tablet", "hugo", "cloudflare", "firefox", "dashboard", "site log"]
+description: "Cambios en Hugo, Cloudflare y el panel público del sitio para reutilizar una tablet vieja como pantalla fija."
+tags: ["hugo", "cloudflare", "csp", "dashboard", "panel", "site log"]
 ---
 
-No fue un proyecto planeado desde el principio.
+La historia completa del rescate de la tablet quedó en Labs: [Rescate de una tablet vieja como panel fijo](/labs/panel-tablet-vieja/). Acá dejo registrado qué cambios hice en el sitio para que ese experimento funcionara: una página pública en `/panel/`, un layout propio en Hugo, consultas a APIs externas y un ajuste puntual en la política de seguridad del sitio.
 
-La idea apareció viendo una tablet vieja guardada, una **CX Boreal II de 9.7"**, con **Android 4.1.1**, de esas que ya quedaron demasiado atrás para un uso normal pero que todavía tienen pantalla, Wi-Fi y una batería que, con algo de paciencia, siguen sirviendo.
+## Nueva página `/panel/`
 
-La pregunta era simple: si ya no sirve como tablet, ¿todavía puede servir como terminal fija para mostrar algo útil?
+Agregué una página específica para usar como panel fijo:
 
-En vez de tirarla o dejarla juntando polvo, probé reconvertirla en un panel de monitoreo para mostrar una página propia del sitio: [**`/panel/`**](https://www.marchiori.ar/panel).
+[**`/panel/`**](https://www.marchiori.ar/panel/)
 
-## El punto de partida
+La idea fue mantenerla separada del resto del sitio. No usa la estructura normal de notas, ni navegación, ni elementos visuales pensados para lectura. Es una pantalla de consulta rápida.
 
-El hardware era este:
-
-- Tablet CX Boreal II 9.7"
-- Android 4.1.1 Jelly Bean
-- API 16
-- Equipo de 2013, con recursos claramente limitados para estándares actuales
-
-No tenía sentido intentar devolverla a un uso general.  
-La idea fue mucho más acotada: usarla como una pantalla fija para ver:
-
-- reloj
-- fecha
-- calendario mensual
-- feriados
-- clima de Marcos Juárez
-
-Nada más.
-
-## La primera intuición
-
-La parte curiosa de este experimento es que la idea inicial no nació del código sino del descarte.
-
-Primero pensé en usos obvios para una tablet vieja: lector de PDFs, reloj, marco digital, navegador secundario. Pero como para lectura ya tenía otras opciones, empecé a mirar la posibilidad de dejarla como [**panel fijo**](https://www.marchiori.ar/panel).
-
-Ahí apareció una ventaja inesperada: para ese uso no hacía falta que la tablet “sirviera” en el sentido moderno. No necesitaba productividad, ni apps pesadas, ni Play Store, ni sincronización completa. Solo tenía que abrir una pantalla y sostenerla.
-
-## Lo que no funcionó
-
-Antes de llegar a la solución final, hubo bastante descarte.
-
-### Navegadores y certificados
-
-Con los navegadores nativos de Android 4.1 apareció enseguida el problema clásico de este tipo de equipos: errores de certificado y avisos de conexión no privada.
-
-En equipos tan viejos, eso ya no sorprende. El sistema operativo quedó congelado hace años y la confianza HTTPS moderna empieza a romperse por certificados raíz desactualizados, cambios en la cadena de validación y compatibilidad cada vez más pobre con sitios actuales.
-
-Eso dejaba a la tablet en una situación bastante limitada para cualquier navegación más o menos normal.
-
-### Apps modernas
-
-También probé el camino de “usar una app para esto” en lugar de una página propia.
-
-Ahí el resultado fue el esperable:
-
-- muchas apps directamente no instalaban
-- otras fallaban con error de análisis del paquete
-- varias ya exigen versiones mínimas de Android bastante más nuevas
-- el equipo se arrastraba incluso antes de abrir nada útil
-
-Se probaron alternativas tipo kiosk, repositorios alternativos y herramientas livianas, pero el patrón era siempre el mismo: el hardware todavía encendía, pero el ecosistema de software ya lo había dejado atrás.
-
-## La limpieza mínima
-
-Antes de seguir, hice algo básico pero necesario: sacar ruido.
-
-No fue una “optimización milagrosa”, pero sí una limpieza razonable para que el equipo dejara de pelearse solo con procesos inútiles.
-
-En términos prácticos, la intervención fue:
-
-- deshabilitar aplicaciones de fábrica que no aportaban nada
-- reducir procesos en segundo plano
-- evitar que servicios pesados consumieran memoria de forma constante
-- dejar el dispositivo lo más cerca posible de una función única
-
-En equipos de esta época, eso no los convierte en rápidos.  
-Solo evita que sean inutilizables.
-
-## El giro que destrabó todo
-
-La solución real apareció cuando dejé de insistir con el navegador stock y probé **Firefox ESR para Android viejo**.
-
-Ese fue el cambio importante.
-
-Con Firefox, la tablet pudo abrir correctamente el sitio y mostrar el panel. No hizo falta “revivir Android”. No hizo falta modificar el sistema. No hizo falta convertirla en otra cosa. Alcanzó con encontrar un navegador que todavía pudiera manejar mejor ese contexto.
-
-Ahí el proyecto dejó de ser una prueba vaga y pasó a ser algo concreto: la tablet podía cumplir una sola tarea, pero podía cumplirla bien.
-
-## El panel
-
-En vez de depender de una app externa, preferí hacer una página específica dentro del sitio.
-
-Eso resolvía varias cosas a la vez:
-
-- no dependía de Play Store
-- no quedaba atado a una app abandonada
-- seguía dentro del mismo proyecto Hugo
-- se podía ajustar exactamente a lo que necesitaba esa pantalla
-- evitaba meterle a una tablet de 2013 más complejidad de la necesaria
-
-El panel final quedó como una página simple con:
-
-- reloj grande
-- fecha
-- clima de Marcos Juárez
-- calendario mensual
-- lista de feriados del mes
-
-La idea no era hacer una app disfrazada de página.  
-Era justamente lo contrario: una página lo bastante liviana como para que incluso un equipo muy viejo pudiera sostenerla.
-
-## Qué se hizo del lado del sitio
-
-La página del panel terminó publicada como una ruta separada dentro del mismo sitio, con una versión más simple y visualmente limpia que el resto.
-
-Además, se conectó a dos APIs públicas:
-
-- clima desde `api.open-meteo.com`
-- feriados desde `api.argentinadatos.com`
-
-Ese detalle no era visible en local, pero en producción obligó a tocar la política de seguridad del sitio en Cloudflare para permitir esas conexiones salientes mediante `connect-src`.
-
-En otras palabras: el panel funcionaba, pero el hardening existente no dejaba consultar esas APIs hasta agregar los permisos puntuales que necesitaba.
-
-## Lo que sí quedó funcionando
-
-El resultado final fue bastante mejor de lo que parecía probable al principio.
-
-La tablet hoy puede quedar como terminal fija mostrando:
+El panel muestra:
 
 - hora
 - fecha
-- clima
-- calendario
-- feriados
+- clima de Marcos Juárez
+- calendario mensual
+- feriados del mes
 
-sin exigirle nada para lo que ya no está preparada.
+La página está pensada para quedar abierta en una pantalla secundaria, una tablet vieja o cualquier dispositivo que pueda funcionar como terminal fija.
 
-No volvió a ser una tablet útil en sentido general.  
-Volvió a ser útil para una sola cosa.
+## Layout propio en Hugo
 
-Y en este caso, eso alcanza.
+Para no depender del diseño general del sitio, armé un layout específico para el panel.
 
-## Lo que no haría con un equipo así
+La página quedó publicada con una ruta simple (`/panel/`) y un HTML más directo, con estilos embebidos y JavaScript propio. La prioridad no era hacer una página elegante, sino una pantalla estable, legible y liviana.
 
-El experimento salió bien, pero con límites claros.
+Ese criterio también ayuda con dispositivos viejos. Cuantas menos dependencias externas, menos chances de que algo falle por navegador, certificados, librerías o compatibilidad.
 
-No usaría una tablet de este tipo para:
+## Ajuste de CSP en Cloudflare
 
-- navegación general
-- cuentas personales
-- correo
-- banca
-- redes sociales
-- nada sensible
+El panel funcionaba bien en local, pero al publicarlo en producción no podía consultar los datos externos que usa para clima y feriados.
 
-Su valor acá no está en “recuperarla por completo”, sino en asignarle una función mínima, visible y controlada.
+El problema no estaba en Hugo ni en el JavaScript. Era la política de seguridad del sitio.
 
-## Lo interesante del proceso
+La Content Security Policy que tenía configurada en Cloudflare permitía conexiones al propio sitio y a Cloudflare Insights, pero no a las APIs públicas que necesitaba el panel (`api.open-meteo.com` y `api.argentinadatos.com`).
 
-La parte más entretenida no fue solo que funcionara, sino cómo se llegó.
+La directiva original de `connect-src` era:
 
-Durante las pruebas fui usando **Gemini** para explorar ideas, compatibilidades posibles, alternativas de software y caminos de descarte. No para reemplazar la validación real, sino para acelerar la parte más tediosa del recorrido: qué probar, qué probablemente no iba a instalar, qué enfoques tenían más sentido con Android 4.1 y qué había que dejar de insistir.
+```text
+connect-src 'self' https://cloudflareinsights.com;
+```
 
-La solución final no salió de una receta única ni de una sola herramienta. Salió de mezclar prueba real, descarte técnico y una implementación propia bastante más simple que cualquier “solución completa” que al principio parecía necesaria.
+Para que el panel pudiera consultar clima y feriados, agregué los dos dominios necesarios:
 
-## Lugar para foto
+```text
+connect-src 'self' https://cloudflareinsights.com https://api.open-meteo.com https://api.argentinadatos.com;
+```
 
-![Tablet CX Boreal II mostrando el panel](../images/panel-tablet-cx-boreal-ii.jpg)
+La CSP completa quedó así:
 
-*Acá iría una foto de la tablet funcionando con el panel abierto.*
+```text
+default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; font-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://api.open-meteo.com https://api.argentinadatos.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests
+```
 
-## Estado final
+No fue una relajación general del hardening. Fue un permiso puntual para que esa página pueda conectarse solo a los endpoints que necesita.
 
-No quedó convertida en una tablet moderna.  
-Quedó convertida en algo mejor para su edad: una terminal fija con una única función útil.
+## Pantalla completa
 
-Y para un equipo de 2013, eso ya es bastante.
+También agregué un comportamiento simple para usar el panel como pseudo-kiosco.
 
----
-
-## Nota técnica: intento de pantalla completa
-
-También quedó pendiente probar un pequeño script para pedir fullscreen desde el navegador mediante interacción del usuario:
+Al tocar la pantalla una vez, el navegador intenta pasar el documento a pantalla completa. El script queda limitado al primer toque para evitar que vuelva a pedir fullscreen en cada interacción.
 
 ```html
 <script>
-document.addEventListener("click", function() {
+var fullscreenRequested = false;
+
+function requestFullscreenOnce() {
+    if (fullscreenRequested) {
+        return;
+    }
+
     var doc = window.document;
     var docEl = doc.documentElement;
-    var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+    var requestFullScreen =
+        docEl.requestFullscreen ||
+        docEl.mozRequestFullScreen ||
+        docEl.webkitRequestFullScreen ||
+        docEl.msRequestFullscreen;
+
     if (requestFullScreen) {
+        fullscreenRequested = true;
         requestFullScreen.call(docEl);
     }
-});
+}
+
+document.addEventListener("click", requestFullscreenOnce);
+document.addEventListener("touchstart", requestFullscreenOnce);
 </script>
+```
+
+En Firefox sobre la tablet vieja funcionó bien. No lo tomo como una solución universal, pero para este caso alcanzó.
+
+## Resultado
+
+El sitio ahora tiene una página específica para panel fijo, separada del flujo normal de notas y con permisos CSP ajustados para consultar las APIs necesarias.
+
+La parte más experimental y de rescate del hardware quedó en Labs. Esta entrada queda como registro del cambio técnico aplicado al sitio.
+
+Por ahora, el panel vive en `/panel/` y la historia completa de la tablet queda donde corresponde: [Labs](/labs/panel-tablet-vieja/).

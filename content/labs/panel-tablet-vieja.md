@@ -12,7 +12,7 @@ La usé un tiempo para leer PDFs, pero ya se tornaba tedioso pasarle archivos po
 
 Entonces: **¿para qué se puede usar? ¿Todavía puede servir como terminal fija para mostrar algo útil?**
 
-Vamos a reconvertirla en un panel de monitoreo para mostrar una página propia del sitio: [**`/panel/`**](https://www.marchiori.ar/panel).
+Terminé reconvirtiéndola en un panel fijo para mostrar una página propia del sitio: [**`/panel/`**](https://www.marchiori.ar/panel).
 
 <div style="display: flex; align-items: center; gap: 16px; margin: 1.2rem 0;">
   <img
@@ -32,7 +32,7 @@ El hardware era este:
 - Tablet CX Boreal II 9.7" (2013 aprox.)
 - Android 4.1.1 Jelly Bean
 - API 16
-- Equipo de 2013, con recursos claramente limitados para estándares actuales
+- recursos claramente limitados para estándares actuales
 
 La idea era usarla como una pantalla fija para ver:
 
@@ -65,7 +65,7 @@ Con los navegadores nativos de Android 4.1 apareció enseguida el problema de er
 
 En equipos tan viejos, eso no sorprende. El sistema operativo quedó congelado hace años y la confianza HTTPS moderna empieza a romperse por certificados raíz desactualizados, cambios en la cadena de validación y compatibilidad cada vez más pobre con sitios actuales.
 
-Busqué en F-Droid algún navegador compatible. También insistí un poco más con alternativas tipo kiosk, pero las versiones para Android 4.1.1 ya no estaban disponibles. Chrome ya no funciona en esa versión, así que fui a algo seguro: el viejo y confiable **Firefox** (`fennec-68.11.0.multi.android-arm.apk`). Usa certificados raíz propios, así que no hizo falta depender de los del sistema.
+Busqué en F-Droid algún navegador compatible. También insistí un poco más con alternativas tipo kiosk, pero las versiones para Android 4.1.1 ya no estaban disponibles. Chrome ya no me resolvía nada en esa versión, así que fui a algo seguro para este caso: el viejo y confiable **Firefox** (`fennec-68.11.0.multi.android-arm.apk`). En esa versión, Firefox se manejó mejor que el navegador del sistema con los certificados del sitio, así que no tuve que seguir peleando con el WebView viejo de Android.
 
 Antes de seguir, hice una limpieza razonable para que el equipo quedara un poco más liviano. En términos prácticos, fue deshabilitar aplicaciones de fábrica que no aportaban nada y dejar el dispositivo lo más cerca posible de una función única.
 
@@ -92,7 +92,7 @@ El comportamiento final quedó limitado al primer toque, para que no intente ent
 
 ## Lo que quedó funcionando
 
-El resultado final fue bastante mejor de lo que parecía probable al principio.
+Para una tablet que parecía destinada al cajón, el resultado quedó bastante digno.
 
 La tablet hoy puede quedar como terminal fija mostrando:
 
@@ -106,11 +106,13 @@ sin exigirle nada para lo que ya no está preparada.
 
 [![Tablet CX Boreal II mostrando el panel](/images/labs/panel-tablet-cx-boreal-ii-thumb.png)](/images/labs/panel-tablet-cx-boreal-ii.png)
 
+*La CX Boreal II corriendo el panel desde Firefox. No revive como tablet moderna, pero como pantalla fija todavía tiene sentido.*
+
 El experimento salió bien, pero con límites claros. Esta tablet ya no sirve para navegación general, correo, redes sociales ni nada parecido. Aunque el sitio funcione en Firefox, las apps ya no acompañan y el equipo queda, en la práctica, reducido a ese navegador y a una función muy puntual.
 
 Su valor acá no está en “recuperarla por completo”, sino en asignarle una función mínima, visible y controlada.
 
-## Reflexión final y lo bueno del proceso
+## Lo bueno: el proceso
 
 La parte más entretenida no fue solo que funcionara, sino cómo se llegó.
 
@@ -120,3 +122,5 @@ Durante las pruebas fui usando **Gemini** para explorar ideas, compatibilidades 
 
 Luego de terminar este trabajo me quedan dudas profundas...
 ¿Esto va en Notas, en Site Log o se ganó directamente un lugar propio? ¿Un menú Labs? ¿Nerdeadas? ¿Cosas raras? 🤔
+
+Por ahora, quedó en Labs. Bastante justo.

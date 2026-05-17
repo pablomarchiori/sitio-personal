@@ -6,8 +6,9 @@ description: "Cuando cada área mira solo su propia pantalla, cualquier error pu
 tags: ["infraestructura", "desarrollo", "diagnóstico", "IA", "soporte"]
 categories: ["Notas"]
 ---
-*Cuando nadie mira más allá de su propio ombligo —o de su propia pantalla—.*
 ![Imagen de portada](/images/notas/infraestructura-y-prejuicio-portada.png)
+
+## Cuando nadie mira más allá de su propio ombligo (o de su propia pantalla).
 
 Decime si no te pasó algo parecido alguna vez: un usuario avisa que una aplicación tiró un error, alguien de Infraestructura mira el mensaje y alcanza a decir “esto parece de la aplicación”, pero del otro lado ya apareció el diagnóstico express: “debe ser la red”.
 
@@ -35,7 +36,7 @@ PepeDios: —Imposible. Es la red. En mi máquina funciona.
 Y después, suele venir una explicación digna de 7 temporadas, con la precisión técnica del abuelo Simpson contando lo de mil novecientos tijiri dos.
 <img src="/images/notas/varias/abraham-simpson.jpg" alt="Abraham Simpson explicando algo con una precisión técnica discutible" style="float:right; width:120px; margin:0 0 1rem 1rem; border-radius:8px;">	
 
-A partir de ahi, cuando dicen “es la red”, muchas veces Infraestructura queda obligada a demostrar que no lo era. Y ojo: la red falla. Los firewalls fallan. El DNS falla. Los switches fallan. Los enlaces fallan. No se trata de negar eso.
+A partir de ahí, cuando dicen “es la red”, muchas veces Infraestructura queda obligada a demostrar que no lo era. Y ojo: la red falla. Los firewalls fallan. El DNS falla. Los switches fallan. Los enlaces fallan. No se trata de negar eso.
 
 **El problema es otro: el diagnóstico automático, cómodo y sin evidencia. Ese reflejo de saltar directo a Infraestructura antes de leer el error completo, revisar logs, mirar qué operación estaba haciendo la aplicación o verificar si el problema ocurre en todos lados o solo en un ambiente específico.**
 
@@ -49,9 +50,9 @@ El ciclo suele tener etapas bastante reconocibles:
 **Aceptación forzada:** “Ah, entonces debe ser otra cosa”.  
 **Resolución:** aparece un parche que casualmente corrige el problema que no era de la aplicación.
 
-Ojo, no digo que haya mala fe explícita —o sí 🤨?—. A veces hay apuro, exceso de confianza, poca investigación o directamente desconocimiento. El problema aparece cuando esa falta de análisis se disfraza de certeza técnica.
+Ojo, no digo que siempre haya mala fe explícita (o sí 🤨). A veces hay apuro, exceso de confianza, poca investigación o directamente desconocimiento. El problema aparece cuando esa falta de análisis se disfraza de certeza técnica.
 
-> El “complejo de Dios” suele aplicar por acá —no como diagnóstico psicológico 😅—. Alcanza con verlo como una mezcla bastante humana de exceso de confianza, sesgo de confirmación y apego al propio código.
+> El “complejo de Dios” aparece bastante por acá (no como diagnóstico psicológico 😅). Alcanza con verlo como una mezcla bastante humana de exceso de confianza, sesgo de confirmación y apego al propio código.
 > Cuando alguien asume que su lógica es infalible, deja de investigar y empieza a defender territorio. Y ahí el problema ya no es técnico: es cultural.
 
 ## La red como éter místico
@@ -64,12 +65,10 @@ Ojo: también hay algo nuestro. Muchas veces Infraestructura se vende peor de lo
 
 Y explicar hacia “arriba” tampoco siempre es fácil. A veces hay que traducir logs, capturas, pruebas de conectividad y detalles técnicos para gente que cree que un senior de Infraestructura se fabrica con un cursito de seis meses y que las cosas andan por magia.
 
-Es entendible —pero no justificable— que a veces se le crea más al que vende una hipótesis con seguridad escénica que a quienes aparecemos con cara de “esto ya lo revisé tres veces”.
-
-, medio Richmond Avenal en *The IT Crowd*
+Es entendible (pero no justificable) que a veces se le crea más al que vende una hipótesis con seguridad escénica que a quienes aparecemos con cara de “esto ya lo revisé tres veces”.
 
 ![Infraestructura invisible](/images/notas/varias/richmond-avenal.jpg)
-*Desde afuera, todavía nos imaginan encerrados en el cuarto de servidores como Richmond Avenal, el “Server Room Guy” de The IT Crowd.*
+*A veces, desde afuera, todavía nos imaginan encerrados en el cuarto de servidores como Richmond Avenal, el “Server Room Guy” de The IT Crowd.*
 
 ## No alcanza con que funcione en tu máquina
 
@@ -97,7 +96,7 @@ Es una métrica absurda, pero bastante real. Porque cuando el diagnóstico empie
 >
 > Empieza en capa 7, aplicación, pero por comodidad baja hasta capa 3, capa 2 o directamente capa 1. Ahí queda esperando que Infraestructura lo suba de nuevo, con evidencia, logs, capturas y pruebas de conectividad.
 
-## El giro: ahora tenemos más herramientas
+## La IA como primer filtro
 
 Pero esta nota no es solo para quejarme. Acá viene el giro: apareció la IA para darnos una mano.
 
@@ -105,7 +104,7 @@ Con IA no desaparece la necesidad de saber. Tampoco convierte a cualquiera en de
 
 No reemplaza el criterio técnico. No tiene magia. Pero ayuda a separar un timeout de conexión de un timeout de ejecución, una caída de red de un bloqueo SQL, una sospecha razonable de una excusa cómoda.
 
-Antes, cuando alguien decía “es la red”, muchas veces Infraestructura quedaba obligada a demostrar que no lo era. Si del otro lado no se revisaban logs, no se analizaba la excepción o directamente no se sabía qué estaba pasando, la discusión quedaba apoyada en autoridad, costumbre o prejuicio.
+Antes, ese intercambio dependía demasiado del criterio (o de la voluntad) de quien tenía que revisar el problema.
 
 La IA no resuelve el problema por nosotros, pero puede ayudar a formular mejores preguntas. Y a veces eso ya cambia bastante la conversación.
 
@@ -128,21 +127,21 @@ Error:
 Además, sugerime qué pruebas mínimas harías para orientar el análisis hacia el componente correcto.
 ```
 
-No es magia. No reemplaza al desarrollador, al DBA ni a Infraestructura. Pero puede servir como primer filtro para no convertir una sospecha en diagnóstico.
+No resuelve el problema, pero puede ordenar el primer diagnóstico y evitar que una sospecha salga vestida de certeza.
 
-Y acá aparece otro detalle interesante: ¿probaste alguna vez analizar un ejecutable con herramientas actuales? Te sorprendería cuánto puede quedar adentro de un `.exe`: cadenas de conexión, nombres de servidores, rutas internas, nombres de desarrolladores, configuraciones, endpoints, tokens mal guardados o datos que nunca deberían haber viajado dentro del binario.
+Y acá aparece otro detalle interesante: ¿probaste alguna vez analizar un ejecutable con herramientas actuales? Te sorprendería cuánto puede llegar a quedar adentro de un `.exe`: cadenas de conexión, nombres de servidores, rutas internas, nombres de desarrolladores, configuraciones, endpoints, tokens mal guardados o datos que nunca deberían haber viajado dentro del binario.
 
 Eso no significa que haya que subir alegremente una aplicación interna a ChatGPT, Gemini o Claude. Justamente al revés: significa que hay que tomar conciencia de lo que se está compilando, distribuyendo y dejando expuesto. Un ejecutable no siempre es una caja negra. Muchas veces es más parecido a una valija mal cerrada.
 
 ## Mirar el cuadro completo
 
-Amo —mentira 😜— cierta palabrería moderna del “trabajemos en equipo”. Se repite mucho, pero después cada uno mira su tamagotchi y dice: “el mío está vivo”, la versión corporativa de: “en mi máquina anda”.
+Amo (mentira 😜) cierta palabrería moderna del “trabajemos en equipo”. Se repite mucho, pero después cada uno mira su tamagotchi y dice: “el mío está vivo”, la versión corporativa de: “en mi máquina anda”.
 
-Pero un sistema no funciona por islas. Funciona por integración. Cliente, aplicación, API, base de datos, red, DNS, firewall, permisos, storage, usuarios, horarios pico, versiones, logs y todas esas cosas incómodas que no entran en la frase “yo no toqué nada”.
+Pero las cosas no funcionan por islas. Funcionan porque muchas partes se hablan bien entre sí. Cliente, aplicación, API, base de datos, red, DNS, firewall, permisos, storage, usuarios, horarios pico, versiones, logs y todas esas cosas incómodas que no entran en la frase “yo no toqué nada”.
 
-El objetivo no es que Infraestructura gane una discusión. El objetivo es que el diagnóstico empiece donde corresponde: en la evidencia.
+No se trata de que Infraestructura gane una discusión. Se trata de dejar de diagnosticar por reflejo y empezar por la evidencia.
 
-Porque si cada uno mira solo su ombligo —o su propia pantalla— nadie ve el cuadro completo.
+Si cada uno mira solo su ombligo (o su propia pantalla), nadie ve el cuadro completo.
 
 Y cuando nadie ve el cuadro completo, cualquier error termina pareciendo red.
 
