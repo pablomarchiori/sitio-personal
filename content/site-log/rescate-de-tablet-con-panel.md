@@ -40,7 +40,7 @@ El panel funcionaba bien en local, pero al publicarlo en producción no podía c
 
 El problema no estaba en Hugo ni en el JavaScript. Era la política de seguridad del sitio.
 
-La Content Security Policy que tenía configurada en Cloudflare permitía conexiones al propio sitio y a Cloudflare Insights, pero no a las APIs públicas que necesitaba el panel (`api.open-meteo.com` y `api.argentinadatos.com`).
+La Content Security Policy que tenía configurada en Cloudflare permitía conexiones al propio sitio y a Cloudflare Insights, pero no a las APIs públicas que necesitaba el panel.
 
 La directiva original de `connect-src` era:
 
@@ -48,19 +48,27 @@ La directiva original de `connect-src` era:
 connect-src 'self' https://cloudflareinsights.com;
 ```
 
-Para que el panel pudiera consultar clima y feriados, agregué los dos dominios necesarios:
+Para que el panel pudiera consultar clima y feriados, agregué los dominios necesarios:
 
 ```text
 connect-src 'self' https://cloudflareinsights.com https://api.open-meteo.com https://api.argentinadatos.com;
 ```
 
-La CSP completa quedó así:
+Más adelante, al sumar la opción Otra para buscar cualquier ciudad, también hizo falta permitir el endpoint de geocoding de Open-Meteo. Las ciudades predefinidas usan coordenadas ya cargadas en el JavaScript, pero la búsqueda libre necesita convertir el nombre de una ciudad en latitud y longitud.
+
+La directiva actual quedó así:
+```text
+connect-src 'self' https://cloudflareinsights.com https://api.open-meteo.com https://api.argentinadatos.com https://geocoding-api.open-meteo.com;
+```
+Y la CSP completa quedó en esta forma:
 
 ```text
-default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; font-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://api.open-meteo.com https://api.argentinadatos.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests
+default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; font-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://api.open-meteo.com https://api.argentinadatos.com https://geocoding-api.open-meteo.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests
 ```
-
 No fue una relajación general del hardening. Fue un permiso puntual para que esa página pueda conectarse solo a los endpoints que necesita.
+
+<small>Actualizado el 2026-05-17: se agregó https://geocoding-api.open-meteo.com a connect-src para habilitar la búsqueda libre de ciudad desde el panel.</small>
+
 
 ## Pantalla completa
 
@@ -105,3 +113,4 @@ El sitio ahora tiene una página específica para panel fijo, separada del flujo
 La parte más experimental y de rescate del hardware quedó en Labs. Esta entrada queda como registro del cambio técnico aplicado al sitio.
 
 Por ahora, el panel vive en `/panel/` y la historia completa de la tablet queda donde corresponde: [Labs](/labs/panel-tablet-vieja/).
+

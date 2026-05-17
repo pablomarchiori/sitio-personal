@@ -79,55 +79,6 @@
       margin-bottom: 14px;
     }
 
-
-    .location-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: -4px 0 14px 0;
-    }
-
-    .location-btn {
-      appearance: none;
-      border: 1px solid var(--line);
-      background: var(--button-bg);
-      color: var(--text);
-      border-radius: 999px;
-      padding: 7px 11px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .location-btn:hover,
-    .location-btn.active {
-      background: var(--button-hover);
-      border-color: var(--accent);
-    }
-
-    .location-search {
-      display: none;
-      grid-template-columns: 1fr auto;
-      gap: 8px;
-      margin: -4px 0 14px 0;
-    }
-
-    .location-input {
-      width: 100%;
-      border: 1px solid var(--line);
-      background: #0f131b;
-      color: var(--text);
-      border-radius: 10px;
-      padding: 9px 10px;
-      font-size: 15px;
-    }
-
-    .location-search-message {
-      grid-column: 1 / -1;
-      color: var(--muted);
-      font-size: 13px;
-      min-height: 18px;
-    }
-
     .weather-top {
       display: grid;
       grid-template-columns: 84px 1fr;
@@ -307,17 +258,6 @@
         font-size: 42px;
       }
 
-
-      .location-search {
-        grid-template-columns: 1fr;
-      }
-
-      .location-btn {
-        font-size: 13px;
-        padding: 6px 9px;
-      }
-
-
       .weather-top {
         grid-template-columns: 68px 1fr;
       }
@@ -357,21 +297,7 @@
 
     <div class="grid">
       <div class="card">
-        <div id="weatherTitle" class="title">Clima en Marcos Juárez</div>
-
-        <div id="locationBar" class="location-bar">
-          <button class="location-btn" type="button" data-location="marcos-juarez">Marcos Juárez</button>
-          <button class="location-btn" type="button" data-location="cordoba">Córdoba</button>
-          <button class="location-btn" type="button" data-location="rosario">Rosario</button>
-          <button class="location-btn" type="button" data-location="buenos-aires">Buenos Aires</button>
-          <button id="otherLocationBtn" class="location-btn" type="button">Otra</button>
-        </div>
-
-        <div id="locationSearch" class="location-search">
-          <input id="locationInput" class="location-input" type="text" placeholder="Buscar ciudad..." autocomplete="off">
-          <button id="searchLocationBtn" class="location-btn" type="button">Buscar</button>
-          <div id="locationSearchMessage" class="location-search-message"></div>
-        </div>
+        <div class="title">Clima en Marcos Juárez</div>
 
         <div class="weather-top">
           <img id="weatherIcon" class="weather-icon" src="/images/weather/unknown.svg" alt="Estado del tiempo">
@@ -456,203 +382,6 @@
       var holidayDataByYear = {};
       var visibleDate = new Date();
       visibleDate = new Date(visibleDate.getFullYear(), visibleDate.getMonth(), 1);
-
-      var defaultLocationKey = "marcos-juarez";
-      var presetLocations = {
-        "marcos-juarez": { key: "marcos-juarez", name: "Marcos Juárez", lat: -32.6978, lon: -62.1067, detail: "Córdoba, Argentina" },
-        "cordoba": { key: "cordoba", name: "Córdoba", lat: -31.4201, lon: -64.1888, detail: "Córdoba, Argentina" },
-        "rosario": { key: "rosario", name: "Rosario", lat: -32.9442, lon: -60.6505, detail: "Santa Fe, Argentina" },
-        "buenos-aires": { key: "buenos-aires", name: "Buenos Aires", lat: -34.6037, lon: -58.3816, detail: "Argentina" }
-      };
-      var currentLocation = presetLocations[defaultLocationKey];
-
-
-      function getQueryParam(name) {
-        var query = window.location.search || "";
-        var pairs;
-        var i;
-        var parts;
-
-        if (query.charAt(0) === "?") {
-          query = query.substring(1);
-        }
-
-        pairs = query.split("&");
-        for (i = 0; i < pairs.length; i++) {
-          parts = pairs[i].split("=");
-          if (decodeURIComponent(parts[0] || "") === name) {
-            return decodeURIComponent((parts[1] || "").replace(/\+/g, " "));
-          }
-        }
-
-        return "";
-      }
-
-      function readStoredLocation() {
-        var raw;
-        var loc;
-
-        try {
-          raw = window.localStorage ? window.localStorage.getItem("panelWeatherLocation") : null;
-          if (!raw) {
-            return null;
-          }
-
-          loc = JSON.parse(raw);
-          if (loc && loc.name && typeof loc.lat !== "undefined" && typeof loc.lon !== "undefined") {
-            return loc;
-          }
-        } catch (e) {}
-
-        return null;
-      }
-
-      function saveStoredLocation(loc) {
-        try {
-          if (window.localStorage && loc) {
-            window.localStorage.setItem("panelWeatherLocation", JSON.stringify(loc));
-          }
-        } catch (e) {}
-      }
-
-      function updateLocationTitle() {
-        var title = document.getElementById("weatherTitle");
-        var message = document.getElementById("locationSearchMessage");
-        var buttons = document.querySelectorAll ? document.querySelectorAll("[data-location]") : [];
-        var i;
-        var key;
-
-        if (title && currentLocation) {
-          title.innerHTML = "Clima en " + currentLocation.name;
-        }
-
-        if (message && currentLocation && currentLocation.detail) {
-          message.innerHTML = "Ubicación actual: " + currentLocation.name + " (" + currentLocation.detail + ")";
-        }
-
-        for (i = 0; i < buttons.length; i++) {
-          key = buttons[i].getAttribute("data-location");
-          if (currentLocation && currentLocation.key === key) {
-            buttons[i].className = "location-btn active";
-          } else {
-            buttons[i].className = "location-btn";
-          }
-        }
-      }
-
-      function setCurrentLocation(loc, save) {
-        if (!loc) {
-          loc = presetLocations[defaultLocationKey];
-        }
-
-        currentLocation = loc;
-        updateLocationTitle();
-
-        if (save) {
-          saveStoredLocation(loc);
-        }
-
-        loadEnhancedWeather();
-      }
-
-      function initLocation() {
-        var queryCity = getQueryParam("city");
-        var stored;
-
-        if (queryCity && presetLocations[queryCity]) {
-          currentLocation = presetLocations[queryCity];
-          saveStoredLocation(currentLocation);
-        } else {
-          stored = readStoredLocation();
-          if (stored) {
-            currentLocation = stored;
-          } else {
-            currentLocation = presetLocations[defaultLocationKey];
-          }
-        }
-
-        updateLocationTitle();
-      }
-
-      function formatLocationResult(item) {
-        var parts = [];
-        if (item.admin1) {
-          parts.push(item.admin1);
-        }
-        if (item.country) {
-          parts.push(item.country);
-        }
-        return parts.join(", ");
-      }
-
-      function searchLocationByName(name) {
-        var xhr = new XMLHttpRequest();
-        var url;
-        var message = document.getElementById("locationSearchMessage");
-
-        if (!name || name.length < 3) {
-          if (message) {
-            message.innerHTML = "Escribí al menos 3 caracteres.";
-          }
-          return;
-        }
-
-        if (message) {
-          message.innerHTML = "Buscando ubicación...";
-        }
-
-        url = "https://geocoding-api.open-meteo.com/v1/search?name=" + encodeURIComponent(name) + "&count=1&language=es&format=json";
-
-        xhr.onreadystatechange = function () {
-          var data;
-          var item;
-          var loc;
-
-          if (xhr.readyState === 4) {
-            if (xhr.status >= 200 && xhr.status < 300) {
-              try {
-                data = JSON.parse(xhr.responseText);
-                if (data && data.results && data.results.length > 0) {
-                  item = data.results[0];
-                  loc = {
-                    key: "custom",
-                    name: item.name,
-                    lat: item.latitude,
-                    lon: item.longitude,
-                    detail: formatLocationResult(item)
-                  };
-
-                  setCurrentLocation(loc, true);
-                  if (message) {
-                    message.innerHTML = "Ubicación actual: " + loc.name + (loc.detail ? " (" + loc.detail + ")" : "");
-                  }
-                } else {
-                  if (message) {
-                    message.innerHTML = "No encontré esa ciudad.";
-                  }
-                }
-              } catch (e) {
-                if (message) {
-                  message.innerHTML = "No se pudo interpretar la búsqueda.";
-                }
-              }
-            } else {
-              if (message) {
-                message.innerHTML = "No se pudo consultar la búsqueda.";
-              }
-            }
-          }
-        };
-
-        try {
-          xhr.open("GET", url, true);
-          xhr.send();
-        } catch (e) {
-          if (message) {
-            message.innerHTML = "Búsqueda no disponible en este navegador.";
-          }
-        }
-      }
 
       function degToCompass(deg) {
         if (deg === null || typeof deg === "undefined") {
@@ -903,9 +632,7 @@
 
       function loadEnhancedWeather() {
         var xhr = new XMLHttpRequest();
-        var lat = currentLocation && typeof currentLocation.lat !== "undefined" ? currentLocation.lat : -32.6978;
-        var lon = currentLocation && typeof currentLocation.lon !== "undefined" ? currentLocation.lon : -62.1067;
-        var url = "https://api.open-meteo.com/v1/forecast?latitude=" + encodeURIComponent(lat) + "&longitude=" + encodeURIComponent(lon) + "&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,wind_direction_10m&hourly=precipitation_probability&daily=temperature_2m_max,temperature_2m_min&timezone=auto&forecast_days=1";
+        var url = "https://api.open-meteo.com/v1/forecast?latitude=-32.6978&longitude=-62.1067&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,wind_direction_10m&hourly=precipitation_probability&daily=temperature_2m_max,temperature_2m_min&timezone=auto&forecast_days=1";
 
         xhr.onreadystatechange = function () {
           var data;
@@ -920,7 +647,6 @@
                 data = JSON.parse(xhr.responseText);
 
                 if (data && data.current) {
-                  updateLocationTitle();
                   document.getElementById("weatherTemp").innerHTML = Math.round(data.current.temperature_2m) + "°C";
                   document.getElementById("weatherMain").innerHTML = weatherCodeToText(data.current.weather_code);
                   document.getElementById("weatherIcon").src = weatherCodeToIconPath(data.current.weather_code);
@@ -1057,63 +783,8 @@
         goToNextMonth();
       }
 
-      function setupLocationControls() {
-        var buttons = document.querySelectorAll ? document.querySelectorAll("[data-location]") : [];
-        var otherBtn = document.getElementById("otherLocationBtn");
-        var searchBox = document.getElementById("locationSearch");
-        var searchBtn = document.getElementById("searchLocationBtn");
-        var input = document.getElementById("locationInput");
-        var i;
-
-        for (i = 0; i < buttons.length; i++) {
-          buttons[i].onclick = function (event) {
-            var key;
-            if (event && event.preventDefault) {
-              event.preventDefault();
-            }
-            key = this.getAttribute("data-location");
-            if (presetLocations[key]) {
-              setCurrentLocation(presetLocations[key], true);
-            }
-          };
-        }
-
-        if (otherBtn && searchBox) {
-          otherBtn.onclick = function (event) {
-            if (event && event.preventDefault) {
-              event.preventDefault();
-            }
-            searchBox.style.display = searchBox.style.display === "grid" ? "none" : "grid";
-            if (searchBox.style.display === "grid" && input) {
-              input.focus();
-            }
-          };
-        }
-
-        if (searchBtn && input) {
-          searchBtn.onclick = function (event) {
-            if (event && event.preventDefault) {
-              event.preventDefault();
-            }
-            searchLocationByName(input.value);
-          };
-
-          input.onkeydown = function (event) {
-            event = event || window.event;
-            if (event.keyCode === 13) {
-              if (event.preventDefault) {
-                event.preventDefault();
-              }
-              searchLocationByName(input.value);
-            }
-          };
-        }
-      }
-
       document.getElementById("prevMonthBtn").addEventListener("click", handlePrevMonth);
       document.getElementById("nextMonthBtn").addEventListener("click", handleNextMonth);
-      setupLocationControls();
-      initLocation();
 
       PanelApp.updateClock();
       loadEnhancedWeather();
