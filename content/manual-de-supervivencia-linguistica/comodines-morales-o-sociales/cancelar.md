@@ -2,7 +2,7 @@
 title: "Cancelar"
 draft: false
 date: 2026-04-09T09:15:00-03:00
-tags: ["lenguaje", "manual", "otros-desvios"]
+tags: ["lenguaje", "manual", "comodines"]
 ---
 
 ## Uso común
@@ -24,6 +24,6 @@ Boicotear, criticar, dejar de apoyar.
 “Mucha gente dejó de apoyarlo.”  
 “Recibió muchas críticas en redes.”
 
-**Desvío:** desplazamiento de sentido.
+**Desvío:** comodín social / desplazamiento de sentido.
 
 ---

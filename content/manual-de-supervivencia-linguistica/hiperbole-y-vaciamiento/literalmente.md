@@ -12,18 +12,21 @@ tags: ["lenguaje", "manual", "hiperbole"]
 
 ## Sentido original
 
-**Literalmente** significa exactamente como se dice, sin metáfora.  
-Usarlo para exagerar produce el efecto contrario.
+**Literalmente** significa de manera literal: sin metáfora, sin exageración, conforme al sentido exacto de las palabras.
+
+## Desvío
+
+Hoy muchas veces se usa como intensificador, incluso en frases que son claramente figuradas.
 
 ## Más preciso
 
-Realmente, de verdad, en serio.
+Realmente, de verdad, en serio, muchísimo.
 
 ## Otras formas de decirlo
 
 “Me reí muchísimo.”  
 “De verdad se llenó de mensajes.”
 
-**Desvío:** hipérbole / vaciamiento.
+**Desvío:** uso enfático / hipérbole.
 
 ---

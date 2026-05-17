@@ -13,7 +13,7 @@ tags: ["lenguaje", "manual", "anglicismos"]
 ## Problema
 
 En inglés, *eventually* significa finalmente o con el tiempo.  
-En español, **eventualmente** significa algo incierto, ocasional o que podría ocurrir.  
+En español, **eventualmente** significa incierta, casual o provisionalmente.  
 Usarlo como traducción directa cambia el sentido de la frase.
 
 ## Más preciso
