@@ -125,6 +125,11 @@ Luego de terminar este trabajo me quedan dudas profundas...
 
 Por ahora, quedó en Labs. Bastante justo.
 
+> Podés descargar una copia de los archivos principales del panel acá:  
+> [panel-tablet-vieja.zip](/downloads/panel-tablet-vieja/panel-tablet-vieja.zip).
+>
+> Incluye el layout HTML, el script base, el JSON local de feriados y los íconos del clima.
+
 -----------
 <div class="nota-update">
 
