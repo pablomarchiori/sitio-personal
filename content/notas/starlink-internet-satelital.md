@@ -1,6 +1,6 @@
 ---
 title: "Internet en (casi) todo el planeta: por qué Starlink cambió el internet satelital"
-date: 2026-05-17T17:00:00-03:00
+date: 2026-05-17T16:00:00-03:00
 draft: false
 description: "Starlink no inventó el internet por satélite. Cambió la arquitectura: órbita baja, miles de satélites, estaciones terrenas, lanzamientos frecuentes y antenas capaces de cambiar de enlace mientras los satélites se mueven todo el tiempo."
 tags: ["starlink", "satélites", "internet", "spacex", "arsat"]
