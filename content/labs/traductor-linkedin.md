@@ -121,10 +121,9 @@ btn.addEventListener("click", async () => {
 });
 </script>
 
+>
 > El Worker de Gemini ha dicho: “Podéis hacerme 20 preguntas al día.”
->
 > Así que debés ser inteligente y cuidar tus preguntas, muchacho. Esto cuesta dinero, muchacho, y no pienso pagar por tu diversión.
->
 > Esto es el Barrio Chino y todo el maldito sistema está fuera de lugar.
->
 > Espero que hayan sido iluminados. Si no, “Gracias. Vuelva prontos.”
+>

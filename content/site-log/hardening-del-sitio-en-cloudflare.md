@@ -9,46 +9,38 @@ categories: ["Site Log"]
 
 **2026-04-04 — Update sobre Content Security Policy (CSP) y panel del sitio:** [agregué `connect-src` para habilitar consultas a APIs externas del panel sin romper el hardening original](#update-2026-04-04-csp-y-panel).
 
----
+**2026-05-17 — Update sobre Permissions-Policy y geolocalización del panel:** [habilité `geolocation=(self)` para que el panel pueda usar la ubicación del navegador sin abrir cámara ni micrófono](#update-2026-05-17-permissions-policy-y-geolocalizacion-del-panel).
 
-El sitio funcionaba bien, tenía HTTPS y respondía sin problemas, pero al pasarlo por [SecurityHeaders](https://securityheaders.com/?q=marchiori.ar&followRedirects=on) la nota era **F**.
-
-Eso fue interesante porque el sitio, a simple vista, parecía estar bien: cargaba normal, tenía HTTPS y mostraba el “candado” del navegador.  
-Pero hoy eso ya no alcanza. Además del certificado, se esperan otras capas de protección, y en este caso la **postura de seguridad del lado del navegador** todavía era débil.
-
-En otras palabras: una cosa es que el sitio cargue, y otra bastante distinta es que tenga una configuración de seguridad sólida.
-
-
-## ¿Qué implica que un sitio dé F?
-
-Que un sitio obtenga una **F** en un scanner de headers no significa automáticamente que esté comprometido ni que tenga una vulnerabilidad crítica explotable.
-
-Lo que sí indica, en general, es una **postura débil de seguridad del lado del navegador**.
-
-Eso incluye cosas como:
-
-- no forzar correctamente HTTPS
-- no usar HSTS
-- no limitar framing
-- no controlar MIME sniffing
-- no restringir capacidades del navegador
-- no definir una política de contenido razonable
-
-En resumen: el sitio puede funcionar bien y aun así estar flojo desde el punto de vista de hardening.
+**2026-05-17 — Update sobre Content Security Policy (CSP) y traductor LinkedIn:** [agregué `connect-src` para habilitar la conexión al Cloudflare Worker del traductor sin modificar el criterio general de hardening](#update-2026-05-17-csp-y-traductor-linkedin).
 
 ---
 
-## El “hardening”
+El sitio funcionaba bien, tenía HTTPS y cargaba sin problemas. Pero al pasarlo por [SecurityHeaders](https://securityheaders.com/?q=marchiori.ar&followRedirects=on), la nota era **F**.
 
-**Hardening** es **mejorar la seguridad técnica de un sistema** para reducir su superficie de ataque, limitar comportamientos inseguros por defecto y agregar capas de protección que disminuyan riesgos ante errores, abusos o ataques.
+A simple vista parecía estar todo correcto: dominio publicado, certificado activo, candado del navegador y contenido cargando normal. Pero eso no alcanza para decir que un sitio está bien endurecido.
 
-Dicho más simple: no se trata solo de que algo funcione, sino de que funcione con menos exposición innecesaria.
+Una cosa es que el sitio cargue. Otra bastante distinta es que el navegador reciba instrucciones claras sobre qué puede cargar, desde dónde, con qué permisos y bajo qué restricciones.
 
----
+## Qué implica una F en SecurityHeaders
+
+Una **F** en un scanner de headers no significa automáticamente que el sitio esté comprometido ni que exista una vulnerabilidad crítica explotable.
+
+Sí indica una postura débil de seguridad del lado del navegador.
+
+En este caso faltaban capas básicas como:
+
+- forzar correctamente HTTPS;
+- usar HSTS;
+- limitar framing;
+- evitar MIME sniffing;
+- restringir permisos del navegador;
+- definir una política de contenido razonable.
+
+El sitio podía funcionar bien y, al mismo tiempo, estar flojo desde el punto de vista de hardening.
 
 ## El punto de partida
 
-El reporte marcaba faltantes bastante claros:
+El reporte marcaba faltantes claros:
 
 - `Strict-Transport-Security`
 - `Content-Security-Policy`
@@ -57,200 +49,145 @@ El reporte marcaba faltantes bastante claros:
 - `Referrer-Policy`
 - `Permissions-Policy`
 
-Eso no implicaba necesariamente una vulnerabilidad crítica explotable ni un sitio “roto”, pero sí mostraba una configuración incompleta de headers de seguridad.
-
----
+Eso no convertía al sitio en algo roto, pero sí mostraba una configuración incompleta de headers de seguridad.
 
 ## Qué se hizo
 
-Como el sitio está detrás de **Cloudflare**, la mejora se pudo hacer desde ahí, sin tocar Hugo ni el contenido del sitio.
+Como el sitio está detrás de **Cloudflare**, la mejora se pudo aplicar desde ahí, sin tocar Hugo ni el contenido publicado.
 
-Los cambios fueron estos:
+Los cambios fueron:
 
-1. **Always Use HTTPS**
-2. **HSTS**
-3. **Minimum TLS Version = 1.2**
-4. **Managed Transform: Add security headers**
-5. Reglas manuales para:
-   - `Permissions-Policy`
-   - `Content-Security-Policy`
+1. activar **Always Use HTTPS**;
+2. configurar **HSTS**;
+3. subir **Minimum TLS Version** a 1.2;
+4. activar el Managed Transform **Add security headers**;
+5. agregar reglas manuales para:
+   - `Permissions-Policy`;
+   - `Content-Security-Policy`.
 
----
+## Qué hace cada ajuste
 
-## Qué hace cada switch y cada encabezado
-
-### 1. Always Use HTTPS
+### Always Use HTTPS
 
 Fuerza la redirección de `http://` a `https://`.
 
-Es una capa básica, pero importante. El sitio ya respondía por HTTPS, pero con esto se evita que el acceso quede librado a si el usuario escribió bien la URL o a que primero entre por HTTP.
+El sitio ya respondía por HTTPS, pero con esto se evita que el acceso inicial quede librado a cómo escribió la URL el usuario o a si primero entra por HTTP.
 
+### HSTS
 
-### 2. HSTS
-
-**HSTS (HTTP Strict Transport Security)** es un header de seguridad que le indica al navegador que ese dominio debe abrirse únicamente por **HTTPS** durante un período determinado (`max-age`), evitando que vuelva a intentar conexiones por **HTTP**.
+**HSTS (HTTP Strict Transport Security)** le indica al navegador que ese dominio debe abrirse únicamente por **HTTPS** durante un período determinado (`max-age`).
 
 Para empezar, se configuró de forma prudente:
 
-- **Max Age:** 1 mes
-- **includeSubDomains:** apagado
-- **Preload:** apagado
+- **Max Age:** 1 mes;
+- **includeSubDomains:** apagado;
+- **Preload:** apagado.
 
-La idea fue mejorar seguridad sin dejar una política demasiado agresiva desde el primer paso.
+La idea fue mejorar seguridad sin aplicar de entrada una política demasiado agresiva.
 
-
-### 3. Minimum TLS Version = 1.2
+### Minimum TLS Version = 1.2
 
 Se subió la versión mínima de TLS a **1.2**.
 
-Esto elimina compatibilidad con versiones viejas del protocolo que hoy ya no conviene mantener habilitadas salvo que exista una necesidad muy puntual.
+Eso elimina compatibilidad con versiones viejas de TLS que hoy no tiene sentido mantener.
 
+### Managed Transform: Add security headers
 
-### 4. Managed Transform: Add security headers
+Cloudflare tiene un transform administrado que agrega varios headers comunes sin armarlos uno por uno.
 
-Cloudflare tiene un transform administrado que agrega varios headers comunes sin necesidad de armarlos uno por uno.
+Sirvió para cubrir parte del hardening básico sin bajar al detalle desde el primer minuto.
 
-Eso resolvió parte del trabajo más básico de hardening sin tener que bajar al detalle desde el principio.
+### X-Frame-Options
 
-
-### 5. `X-Frame-Options`
-
-Este header ayuda a evitar que el sitio sea cargado dentro de un `frame` o `iframe` de terceros.
+`X-Frame-Options` ayuda a evitar que el sitio sea cargado dentro de un `frame` o `iframe` de terceros.
 
 Su utilidad principal es mitigar escenarios de **clickjacking**, donde una página legítima puede ser embebida por otra con fines engañosos.
 
+### X-Content-Type-Options
 
-### 6. `X-Content-Type-Options: nosniff`
+`X-Content-Type-Options: nosniff` le indica al navegador que no reinterprete una respuesta como si fuera de otro tipo distinto del declarado por el servidor.
 
-Le indica al navegador que no reinterprete un archivo o una respuesta como si fuera de otro tipo distinto del declarado por el servidor.
+Si el servidor dice que algo es una imagen, un CSS o un JavaScript, el navegador no debería intentar adivinar otra cosa por su cuenta.
 
-Por ejemplo: si el servidor dice “esto es una imagen” o “esto es un archivo CSS”, el navegador debe tratarlo como eso y no intentar adivinar otra cosa por su cuenta.
+### Referrer-Policy
 
-Sirve para reducir riesgos asociados a contenido mal servido o mal identificado.
+`Referrer-Policy` controla cuánta información de la página de origen envía el navegador cuando el usuario sigue un enlace o carga un recurso hacia otro destino.
 
+Por ejemplo: si alguien está en una URL con parámetros y desde ahí sale a otro sitio, la política puede limitar si se envía la URL completa, solo el dominio de origen o directamente nada.
 
-### 7. `Referrer-Policy`
+No cambia cómo se ve el sitio, pero reduce información de navegación expuesta hacia afuera.
 
-Controla cuánta información de la página de origen envía el navegador cuando el usuario sigue un enlace o carga un recurso hacia otro destino.
+### Permissions-Policy
 
-Por ejemplo: si alguien está en `https://marchiori.ar/notas/hardening-cloudflare/?origen=linkedin` y desde ahí sale a otro sitio, según la política configurada el navegador puede enviar la URL completa, solo el dominio de origen o directamente no enviar nada.
+`Permissions-Policy` permite negar o limitar APIs del navegador como:
 
-No cambia cómo se ve el sitio, pero sí permite limitar qué información de navegación se expone hacia afuera.
+- cámara;
+- micrófono;
+- geolocalización;
+- pagos;
+- sensores.
 
+En un sitio estático, muchas de esas capacidades no tienen sentido. Por eso conviene dejarlas explícitamente deshabilitadas, salvo cuando una página concreta las necesite.
 
-### 8. `Permissions-Policy`
+### Content-Security-Policy
 
-Permite negar o limitar APIs del navegador como:
+La **Content Security Policy (CSP)** define qué recursos puede cargar el navegador y desde dónde: scripts, estilos, imágenes, fuentes, conexiones, frames, etc.
 
-- cámara
-- micrófono
-- geolocalización
-- pago
-- sensores
+Es una de las capas más potentes para endurecer un sitio web, pero también una de las más fáciles de romper si se configura sin mirar qué necesita realmente la página.
 
-En un sitio estático como este, muchas de esas capacidades no tienen ningún sentido. Justamente por eso conviene dejarlas explícitamente deshabilitadas.
+La política aplicada fue prudente, no máxima. La prioridad fue mejorar seguridad sin bloquear recursos legítimos del sitio.
 
+Cuando algo se rompe por CSP, la consola del navegador suele marcarlo con mensajes del tipo `Refused to load...` o `Refused to connect...`. Ahí aparece el origen bloqueado y la directiva que lo rechazó.
 
-### 9. `Content-Security-Policy` (CSP)
-
-La **CSP** define qué recursos puede cargar el navegador y desde dónde: scripts, estilos, imágenes, fuentes, conexiones, etc.
-
-Es una de las capas más potentes para endurecer un sitio web, pero también una de las más fáciles de romper si se la configura mal.
-
-La política aplicada fue **prudente, no máxima**. La idea fue mejorar seguridad sin bloquear de entrada recursos legítimos del sitio.
-
-Y acá apareció algo valioso: **si algo se rompe, casi siempre la consola del navegador lo muestra con mensajes del tipo `Refused to load...`**, indicando qué origen faltó autorizar o qué directiva bloqueó el recurso. Esa es la forma normal de ajustar una CSP: no a ciegas, sino en base a evidencia concreta.
-
-La parte más útil de este ajuste no fue improvisar hasta que algo funcionara, sino entender qué herramientas usar y qué mirar en cada capa. En seguridad web, avanzar a ciegas no sirve: una política no “va a salir a bailar” por más que uno le insista. Hace falta criterio, validación y señales concretas para ajustar cada cosa donde corresponde.
-
----
+Esa fue la parte útil del proceso: no ajustar a ciegas, sino mirar qué bloquea el navegador y autorizar únicamente lo necesario.
 
 ## El resultado
 
 Después de aplicar esos cambios, el sitio pasó de **F** a **A** en SecurityHeaders.
 
-No cambió el contenido del sitio.  
-No cambió el diseño.  
-No cambió Hugo.  
+No cambió el contenido. No cambió el diseño. No cambió Hugo.
 
-Lo que cambió fue el **endurecimiento de la respuesta HTTP**.
-
----
+Cambió la respuesta HTTP y la forma en que el navegador queda limitado al cargar el sitio.
 
 ## La advertencia que quedó
 
 El reporte quedó en **A**, pero con una advertencia.
 
-La CSP actual contiene una configuración prudente que todavía no busca ser la más estricta posible. En este caso, la prioridad fue lograr una mejora real, estable y sin romper la carga del sitio.
+La CSP actual es prudente. No busca ser la más estricta posible. Para endurecerla más habría que revisar scripts inline, hashes, nonces y dependencias externas con más detalle.
 
-Eso deja una segunda etapa posible: endurecer más la CSP si en algún momento vale la pena ajustar scripts inline, hashes, nonces o dependencias externas con más detalle.
+No quedó perfecto. Quedó bastante mejor, y el siguiente paso ya está claro.
 
-O sea: no quedó “perfecto”, pero sí **mucho mejor endurecido** y con el próximo paso claramente identificado.
+## Si no estuviera Cloudflare
 
----
+Cloudflare simplificó bastante el trabajo porque varias políticas se aplicaron en el **edge**, antes de llegar al servidor de origen.
 
-## ¿Y si no tuviera Cloudflare?
+Si el sitio estuviera publicado directamente sobre un **IIS en una vCloud**, la lógica sería la misma, pero la implementación cambiaría de lugar:
 
-En este caso, resolverlo desde Cloudflare simplificó bastante el trabajo porque muchas políticas se pudieron aplicar en el **edge de Cloudflare**, o sea, en la capa intermedia desde la que Cloudflare publica y protege el sitio antes de llegar al servidor de origen, sin tocar la publicación del sitio.
+- el certificado HTTPS y su binding quedarían en IIS;
+- la redirección HTTP → HTTPS se haría en IIS o en el balanceador;
+- HSTS se configuraría en IIS;
+- los demás headers se agregarían como custom response headers o desde un proxy inverso;
+- cualquier ajuste fino de CSP dependería más de cómo esté armada la aplicación.
 
-Si el mismo sitio estuviera publicado directamente sobre un **IIS en una vCloud**, la lógica sería la misma, pero la implementación cambiaría de lugar:
+No cambia la necesidad. Cambia dónde se resuelve.
 
-- el certificado HTTPS y su binding quedarían en IIS
-- la redirección de HTTP a HTTPS se haría en IIS o en el balanceador
-- HSTS se configuraría en IIS
-- los demás headers se agregarían como custom response headers o desde el proxy inverso
-- cualquier ajuste fino de CSP dependería mucho más de cómo esté armada la aplicación
-
-O sea: no cambia la necesidad, cambia **dónde** se resuelve.
-
-Con Cloudflare fue más rápido y limpio.  
-Sin Cloudflare, se puede hacer igual, pero con más trabajo sobre el servidor, el hosting y, muchas veces, la propia aplicación.
-
----
+Con Cloudflare fue más rápido y limpio. Sin Cloudflare se puede hacer igual, pero con más trabajo sobre el servidor, el hosting y, muchas veces, la propia aplicación.
 
 ## Infraestructura, desarrollo y especialización
 
-Aunque esta mejora se aplicó desde infraestructura, mantener un sitio realmente seguro no es una tarea que pueda sostenerse solo desde ese lado.
+En el mismo día uno puede pasar de asistir a un usuario con un cambio de contraseña a hacer hardening sobre un sitio web. Sin transición.
 
-Para hacerlo bien, hace falta trabajo conjunto con **desarrollo**.
+Cada vez se agregan más capas técnicas, pero la operación diaria no siempre separa soporte básico, infraestructura, seguridad web y desarrollo con tanta prolijidad como los organigramas.
 
-La razón es bastante clara: hoy las capas de seguridad web no pasan solo por un certificado o un redirect. También dependen de cómo está construida la aplicación, si usa scripts inline, qué recursos externos carga, cómo administra dependencias, qué contenido se publica y cómo se despliega.
+## El rol de la IA
 
-Y ahí aparece un contraste bastante real en IT: en el mismo día uno puede pasar de asistir a un usuario con un cambio de contraseña a hacer hardening sobre un sitio web. Cada vez se agregan más capas, más exigencia técnica y más necesidad de especialización, pero la realidad operativa muchas veces obliga a saltar de soporte básico a tareas de seguridad web bastante más finas sin transición alguna.
+Sin asistencia de IA, este proceso habría sido más largo y más tedioso.
 
----
+No porque la IA reemplace la validación real, sino porque ayudó a ordenar el recorrido inicial: qué headers mirar primero, en qué secuencia probarlos y cómo llegar a una CSP razonable sin perder horas entre documentación dispersa.
 
-## La parte más práctica que me dejó esto
+Después hubo que revisar, probar y validar igual. Como punto de partida para no perder horas entre documentación dispersa, funcionó bien.
 
-Más allá del resultado puntual, lo más valioso del proceso fue el aprendizaje que dejó: meterse de lleno en un aspecto de seguridad web que muchas veces se deja de lado, se posterga o queda para el final.
-
-Porque una vez que HTTPS ya está funcionando, aparece otra capa de trabajo menos visible pero igual de importante: headers, políticas, compatibilidad TLS, restricciones del navegador, validaciones externas y ajustes finos para reforzar la publicación sin afectar el funcionamiento normal del sitio.
-
-Ahí es donde empieza la parte más interesante.
-
----
-
-## El rol de la IA en todo esto
-
-También hubo algo bastante concreto: **sin asistencia de IA, este proceso habría sido mucho más largo y tedioso**.
-
-No porque la IA reemplace la validación real ni las pruebas, sino porque me aceleró muchísimo el recorrido inicial.
-
-Me ayudó a identificar qué headers convenía mirar primero, a ordenar mejor la secuencia de implementación, a llegar más rápido a una CSP razonable y a no perder horas entre documentación dispersa o pruebas mal enfocadas.
-
-Después hubo que revisar, probar y validar igual. Pero como acelerador de contexto y de camino inicial, la diferencia fue muy clara.
-
-También dejó algo práctico: una vez hecho todo el proceso, la publicación de referencia se vuelve mucho más clara y la documentación sale bastante más rápido. De hecho, después de recorrerlo, documentarlo termina siendo mucho más ágil que intentar armar todo manualmente desde cero.
-
----
-
-## Cierre
-
-El sitio pasó de **F** a **A** en SecurityHeaders con una serie de cambios que no tocaron el contenido, pero sí mejoraron de forma concreta su postura de seguridad.
-
-Más importante que la nota final fue el proceso: entender qué hace cada encabezado, cómo se aplica una política prudente sin romper el sitio y por qué hoy el hardening web exige bastante más criterio que simplemente activar HTTPS y darlo por terminado.
-
-
+También dejó algo práctico: una vez recorrido el proceso, documentarlo resulta mucho más claro que intentar armar todo desde cero.
 
 ---
 
@@ -258,7 +195,7 @@ Más importante que la nota final fue el proceso: entender qué hace cada encabe
 
 Después de publicar una página tipo panel para usar en una tablet vieja, apareció un detalle que no era visible en local pero sí en producción.
 
-El panel cargaba bien en `localhost`, pero al publicarlo en el dominio no podía consultar el clima ni los feriados desde APIs externas. La causa real era la **Content Security Policy (CSP)** que ya tenía definida en Cloudflare como parte del hardening del sitio.
+El panel cargaba bien en `localhost`, pero al publicarlo en el dominio no podía consultar el clima ni los feriados desde APIs externas. La causa era la **Content Security Policy (CSP)** definida en Cloudflare como parte del hardening del sitio.
 
 La política original permitía conexiones solo al propio sitio y a Cloudflare Insights:
 
@@ -273,21 +210,52 @@ https://api.open-meteo.com
 https://api.argentinadatos.com
 ```
 
-La corrección fue mínima: mantener la política existente y ampliar únicamente connect-src para permitir esas dos APIs.
-
-La directiva quedó así:
+La directiva quedó ampliada así:
 
 ```text
 connect-src 'self' https://cloudflareinsights.com https://api.open-meteo.com https://api.argentinadatos.com;
 ```
 
-Y la CSP completa quedó en esta forma:
+La CSP completa quedó en esta forma:
 
 ```text
 default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; font-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://api.open-meteo.com https://api.argentinadatos.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests
 ```
 
-No fue un cambio de criterio ni una relajación general de seguridad. Fue un ajuste puntual para que una funcionalidad nueva pudiera operar dentro del mismo esquema de endurecimiento ya aplicado.
+No fue una relajación general de seguridad. Fue un ajuste puntual para que el panel pudiera consultar solo las APIs externas que realmente necesitaba.
 
-En otras palabras: el sitio seguía seguro, pero ahora con permiso explícito para que ese panel consulte solo los endpoints que realmente necesita.
+## Update 2026-05-17: Permissions-Policy y geolocalización del panel {#update-2026-05-17-permissions-policy-y-geolocalizacion-del-panel}
 
+Al agregar ubicación automática al panel, hizo falta ajustar `Permissions-Policy`.
+
+El panel necesitaba usar la geolocalización del navegador para obtener la ubicación del dispositivo y consultar el clima correspondiente. La política anterior bloqueaba esa API:
+
+```text
+Permissions-Policy: geolocation=(), camera=(), microphone=()
+```
+
+La corrección fue habilitar geolocalización solo para el propio sitio y mantener bloqueados cámara y micrófono:
+
+```text
+Permissions-Policy: geolocation=(self), camera=(), microphone=()
+```
+
+El cambio fue puntual: permitir que el panel use ubicación del navegador, sin abrir permisos innecesarios para otras funciones.
+
+## Update 2026-05-17: CSP y traductor LinkedIn {#update-2026-05-17-csp-y-traductor-linkedin}
+
+Al publicar el traductor LinkedIn, la página no podía conectarse con el Cloudflare Worker desde producción.
+
+La corrección fue agregar el endpoint del Worker en `connect-src`:
+
+```text
+https://traductor-linkedin.mnerd.workers.dev
+```
+
+La directiva quedó ampliada así:
+
+```text
+connect-src 'self' https://cloudflareinsights.com https://api.open-meteo.com https://api.argentinadatos.com https://traductor-linkedin.mnerd.workers.dev;
+```
+
+Motivo: permitir que la página del traductor consulte únicamente el Worker necesario, sin cambiar el criterio general de hardening.
