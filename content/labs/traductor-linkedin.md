@@ -122,8 +122,8 @@ btn.addEventListener("click", async () => {
 </script>
 
 >
-> El Worker de Gemini ha dicho: “Podéis hacerme 20 preguntas al día.”
-> Así que debés ser inteligente y cuidar tus preguntas, muchacho. Esto cuesta dinero, muchacho, y no pienso pagar por tu diversión.
-> Esto es el Barrio Chino y todo el maldito sistema está fuera de lugar.
-> Espero que hayan sido iluminados. Si no, “Gracias. Vuelva prontos.”
+> Dicho ha la API de Gemini: «Podéis formular a aqueste servidor veinte demandas por cada jornada».
+> Por tanto, conviene que seades discreto y cauteloso en vuestras cuestiones, mancebo. Que esta labor cuesta valiosos maravedís, rapaz, y no está en mi ánimo sufragar vuestro vano solaz.
+>
+>Plegue a Dios que hayades sido alumbrado; donde no, quede dicho: «Agradecido os quedo. Tornad presto».
 >

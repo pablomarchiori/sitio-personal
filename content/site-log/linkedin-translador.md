@@ -42,9 +42,7 @@ Si podía quedar como un Lab más dentro de Hugo, mejor.
 
 La página quedó en:
 
-```text
-/labs/traductor-linkedin/
-```
+[Traductor a lenguaje LinkedIn](/labs/traductor-linkedin/)
 
 ## La parte técnica
 
