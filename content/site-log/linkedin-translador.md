@@ -1,6 +1,6 @@
 ---
 title: "Traductor LinkedIn: pompa épica corporativa bajo demanda"
-date: 2026-05-17T21:00:00-03:00
+date: 2026-05-18T14:00:00-03:00
 draft: false
 description: "Un experimento simple en Labs: tomar una frase común y convertirla, con Gemini y Cloudflare Workers, en una publicación inflada con propósito, resiliencia y épica corporativa innecesaria."
 tags: ["linkedin", "ia", "gemini", "cloudflare-workers", "hugo", "labs"]
@@ -88,11 +88,6 @@ Gemini en modo gratuito no da margen infinito. En esta prueba quedó con un lím
 
 Más que eso cuesta dinero, muchacho, y no pienso pagar por tu diversión. Así que debés ser inteligente y cuidar tus preguntas, muchacho.
 
-Espero que al final salgan iluminados. Si no:
-
-Gracias. Vuelva prontos (mañana).
-
-Si el límite aparece, aparece. Es parte del experimento.
 
 ## El resultado
 
