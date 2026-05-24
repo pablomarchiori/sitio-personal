@@ -7,12 +7,6 @@ tags: ["linkedin", "satira", "ia", "labs"]
 categories: ["Labs"]
 ---
 
-En estos tiempos de oquedad 🎶  
-de oscuridad iluminada 🎶  
-de distracción a perpetuidad 🎶  
-de imbecilidad tan programada 🎶  
-hay que sabeeer el lenguaajeee corpooorativooo 🎶
-
 Esto es simple: pegás una frase normal, chabacana, sin brillos, y la convertís en una publicación con propósito, resiliencia, sinergia, con toda la pompa épica que necesitás para pertenecer al mundo corporativo que LinkedIn custodia para todos nosotros, los plebeyos.
 
 <div class="linkedin-translator">
