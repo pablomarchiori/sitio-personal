@@ -16,7 +16,7 @@ Terminé reconvirtiéndola en un panel fijo para mostrar una página propia del 
 
 <div style="display: flex; align-items: center; gap: 16px; margin: 1.2rem 0;">
   <img
-    src="/images/homero-momento.png"
+    src="/images/notas/homero-momento.png"
     alt="Homero pensando"
     style="width: 90px; height: auto; flex: 0 0 auto; margin: 0;"
   >

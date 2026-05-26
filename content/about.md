@@ -26,7 +26,7 @@ También es un pequeño homenaje a la eterna lucha entre [nerds](https://simpson
 > **Aviso:**
 > *Este sitio refleja opiniones personales y humor. No busca ofender a personas ni a religiones. Si algo no te gusta, sos libre de no leerlo. No respondo debates doctrinarios ni >discusiones moralizantes; sí leo correcciones y sugerencias puntuales sobre el contenido.*
 
-![Touched by His Noodly Appendage](/images/touched.png)
+![Touched by His Noodly Appendage](/images/home/touched.png)
 *R'amén.*
 
  

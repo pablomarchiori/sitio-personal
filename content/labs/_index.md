@@ -5,8 +5,6 @@ draft: false
 ---
 Proyectos, experimentos y cacharreo con hardware y software. Cosas que se construyen, no solo se comentan.
 
-
-
 <div class="lab-buttons">
   <a class="lab-button" href="/panel/">
     <span class="lab-button-icon">☁️</span>
@@ -23,3 +21,5 @@ Proyectos, experimentos y cacharreo con hardware y software. Cosas que se constr
     <span>LinkedIn Translator</span>
   </a>
 </div>
+
+![Banner animado nerd](/images/home/banner-nerd3.webp)
