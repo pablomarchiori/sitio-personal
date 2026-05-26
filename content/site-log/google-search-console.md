@@ -1,11 +1,14 @@
 ---
 title: "Google Search Console… you lazy bit!"
-date: 2026-05-17T18:10:00-03:00
+date: 2026-05-25T18:10:00-03:00
 draft: false
-description: "Search Console seguía mostrando un problema viejo de breadcrumbs, aunque la página actual ya estaba corregida."
-tags: ["google-search-console", "seo", "breadcrumbs", "site-log"]
+description: "Search Console seguía mostrando problemas viejos o enlaces rotos que había que separar entre errores históricos y referencias reales del sitio."
+tags: ["google-search-console", "seo", "breadcrumbs", "404", "cloudflare", "moonjs", "site-log"]
 categories: ["Site Log"]
 ---
+
+**Texto original:** 17/05/26  
+**Actualización:** 26/05/26 — [404 que sí venían de enlaces reales](#actualizacion-404)
 
 Un caso chico, pero útil para dejar anotado: Google Search Console seguía mostrando un error en una página que ya estaba corregida.
 
@@ -74,3 +77,84 @@ Cuando Search Console marque un problema, conviene mirar dos cosas antes de modi
 Si el informe viejo marca error, pero la prueba en tiempo real ya ve la página bien, probablemente solo falta que Google actualice el estado.
 
 No es magia negra. Es Google mostrando dos momentos distintos de la misma URL.
+
+<a id="actualizacion-404"></a>
+## Otra vuelta: 404 que sí venían de enlaces reales
+
+Actualización 26/05/26: Otro aviso de Search Console, esta vez bajo **No se ha encontrado (404)**. La lista no apuntaba a notas normales del sitio, sino a direcciones del simulador **Moonjs**:
+
+```text
+/cgi-bin/logger.php
+/moonjs/svtsim.com/svtsim.html
+/moonjs/svtsim.com/hemosim.html
+/moonjs/info@sandroid.org
+/data/feriados-
+/cdn-cgi/l/email-protection
+```
+
+La búsqueda en el repositorio confirmó que varias referencias salían del código copiado de **Moonjs**:
+
+```cmd
+findstr /S /I /N /C:"logger.php" /C:"svtsim.com" /C:"hemosim" /C:"info@sandroid" /C:"feriados-" /C:"email-protection" *.md *.html *.js *.json *.xml
+```
+
+Si bien algunas URLs estaban dentro de `public`, ese no era el lugar correcto para tocar nada. En Hugo, `public` es salida generada. Si se corrige ahí, el próximo build puede pisar el cambio. La fuente real está en:
+
+```text
+static\moonjs\agc.html
+static\moonjs\agc_sp.html
+```
+
+En los archivos de Moonjs había llamadas a un logger que no existe en este sitio. Ese endpoint probablemente tenía sentido en el sitio original del emulador, pero acá solo generaba una URL rota.
+
+
+```js
+$.get("/cgi-bin/logger.php", {"s": "moonjs", "v": "11", "r": Math.random()});
+```
+
+También había enlaces externos escritos como relativos:
+
+```html
+<a href="svtsim.com/svtsim.html">
+<a href="svtsim.com/hemosim.html">
+```
+
+El navegador interpretaba eso como rutas internas dentro de `/moonjs/`, por ejemplo:
+
+```text
+https://www.marchiori.ar/moonjs/svtsim.com/svtsim.html
+```
+
+La corrección fue pasarlos a URLs absolutas:
+
+```html
+<a href="https://svtsim.com/svtsim.html">
+<a href="https://svtsim.com/hemosim.html">
+```
+
+También había direcciones de correo usadas como si fueran enlaces comunes:
+
+```html
+<a href="info@sandroid.org">
+<a href="mail://siravan@svtsim.com">
+```
+
+Eso se corrigió usando `mailto:`:
+
+```html
+<a href="mailto:info@sandroid.org">
+<a href="mailto:siravan@svtsim.com">
+```
+
+La URL `/data/feriados-` venía de un script del panel que arma dinámicamente el nombre del JSON según el año:
+
+```js
+var jsonUrl = "/data/feriados-" + year + ".json";
+```
+
+Eso no era un enlace roto común, sino una ruta construida por JavaScript. Mientras los archivos reales existan con el año correspondiente, no había que inventar una redirección rara para esa URL incompleta.
+
+La ruta `/cdn-cgi/l/email-protection` venía de Cloudflare, no del contenido normal del repositorio. Eso pertenece a la protección de direcciones de correo de Cloudflare. No era algo para resolver editando Markdown o plantillas de Hugo.
+
+Después de eso, correspondía regenerar el sitio, publicar y pedir a Google que reindexe.
+
