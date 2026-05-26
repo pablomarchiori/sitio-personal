@@ -182,7 +182,7 @@
 <!--    
         <button id="pause">Pause</button>
     --></div>
-<div style="position: relative; left: 100px; top: 30px; width: 760px; background-color: #eeeeee;">Moonjs is an online Apollo Guidance Computer (AGC) simulator. It is a port of <a href="http://www.ibiblio.org/apollo/">Virtual AGC</a> by <a href="info@sandroid.org">Ronald Burkey</a> from C to javascript/<a href="http://asmjs.org">asm.js</a> using the <a href="https://github.com/kripken/emscripten/wiki">Emscripten compiler</a>.
+<div style="position: relative; left: 100px; top: 30px; width: 760px; background-color: #eeeeee;">Moonjs is an online Apollo Guidance Computer (AGC) simulator. It is a port of <a href="http://www.ibiblio.org/apollo/">Virtual AGC</a> by <a href="mailto:info@sandroid.org">Ronald Burkey</a> from C to javascript/<a href="http://asmjs.org">asm.js</a> using the <a href="https://github.com/kripken/emscripten/wiki">Emscripten compiler</a>.
 <p>AGC was the main computer system of the Apollo program that successfully landed 12 astronauts on Moon. There was one AGC on each of the Apollo Command Modules and another one on each Lunar Module. There was also a second backup computer system called Abort Guidance System (AGS) on the Lunar Modules, which is simulated by Virtual AGC, but not the current version of Moonjs.</p>
 <p>Astronauts interacted with AGC by using DSKY, a combination of 7-segment numerical displays, indicator lights and a simple keypad, which is simulated on this page.</p>
 <div><img src="Apollo_DSKY_interface.svg.png" alt="" /></div>
@@ -197,8 +197,8 @@
 </ul>
 <p>For many more examples and details about AGC, its programming and operation, two great sources are the excellent <a href="http://www.ibiblio.org/apollo/">Virtual AGC</a> website by Ronald Burkey and "The Apollo guidance computer : architecture and operation" by Frank O'Brien. The Wikipedia <a href="http://en.wikipedia.org/wiki/Apollo_Guidance_Computer">page</a> for AGC also contains lots of useful information and a comprehensive bibliography.</p>
 <h4>Why Javascript?</h4>
-<p>Recent advances in the javascript language - such as optimized engines, ahead-of-time (AOT) compilation, and asm.js - make it possible to write computationally extensive applications in javascript. My previous experience with online javascript-based simulation (<a href="svtsim.com/svtsim.html">svtsim</a> and <a href="svtsim.com/hemosim.html">hemosim</a>) was very positive and convinced me of the suitablity of the HTML5/javascript combination in writing portable, easy-to-use simulators. <strong>Moonjs</strong> is the logical next step that uses Emscripten compiler to convert existing C code into asm.js, a highly-optimizable subset of javascript.</p>
-<footer><hr />@2013-2024 Shahriar Iravanian (<a href="mail://siravan@svtsim.com">siravan@svtsim.com</a>)</footer></div>
+<p>Recent advances in the javascript language - such as optimized engines, ahead-of-time (AOT) compilation, and asm.js - make it possible to write computationally extensive applications in javascript. My previous experience with online javascript-based simulation (<a href="https://svtsim.com/svtsim.html">svtsim</a> and <a href="https://svtsim.com/hemosim.html">hemosim</a>) was very positive and convinced me of the suitablity of the HTML5/javascript combination in writing portable, easy-to-use simulators. <strong>Moonjs</strong> is the logical next step that uses Emscripten compiler to convert existing C code into asm.js, a highly-optimizable subset of javascript.</p>
+<footer><hr />@2013-2024 Shahriar Iravanian (<a href="mailto:siravan@svtsim.com">siravan@svtsim.com</a>)</footer></div>
 <script type="text/javascript">// <![CDATA[
 if(!window.console){    // for older IE
         window.console = {
@@ -221,10 +221,7 @@ if(!window.console){    // for older IE
 <script src="agc11.js"></script>
 <script type="text/javascript">// <![CDATA[
 "use strict";
-
-    $.get("/cgi-bin/logger.php", {"s": "moonjs", "v": "11", "r": Math.random()});
-
-    // the main interface functions to the emscripten compiled code    
+// the main interface functions to the emscripten compiled code    
     var advance = Module.cwrap('advance', 'number', []);                        // int advance()
     var sendPort = Module.cwrap('sendPort', 'number', ['number', 'number', 'number']);    // int sendPort(port, val, mask)    
     var scanPort = Module.cwrap('scanPort', 'number', ['number']);              // int scanPort(mask)
@@ -915,8 +912,7 @@ if(!window.console){    // for older IE
         liftoff = true;                
         dsky.liftoff();
         $('#SIC').css('background-color', '#ffc200');
-        $.get("/cgi-bin/logger.php", {"s": "launch", "v": "11", "r": Math.random()});
-    });
+});
 
     $('#shutdown').click(function(){
         if(!liftoff) return;

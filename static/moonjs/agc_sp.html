@@ -189,7 +189,7 @@
 <!--    
         <button id="pause">Pause</button>
     --></div>
-<div style="position: relative; left: 100px; top: 30px; width: 760px; background-color: #eeeeee;">Moonjs es un simulador online del Apollo Guidance Computer (AGC). Es un port de <a href="http://www.ibiblio.org/apollo/">Virtual AGC</a> de <a href="info@sandroid.org">Ronald Burkey</a>, llevado de C a javascript/<a href="http://asmjs.org">asm.js</a> usando el <a href="https://github.com/kripken/emscripten/wiki">compilador Emscripten</a>.
+<div style="position: relative; left: 100px; top: 30px; width: 760px; background-color: #eeeeee;">Moonjs es un simulador online del Apollo Guidance Computer (AGC). Es un port de <a href="http://www.ibiblio.org/apollo/">Virtual AGC</a> de <a href="mailto:info@sandroid.org">Ronald Burkey</a>, llevado de C a javascript/<a href="http://asmjs.org">asm.js</a> usando el <a href="https://github.com/kripken/emscripten/wiki">compilador Emscripten</a>.
 <p>El AGC fue el sistema informático principal del programa Apollo, el que llevó a 12 astronautas a caminar sobre la Luna. Había un AGC en cada módulo de comando Apollo y otro en cada módulo lunar. También existía un segundo sistema de respaldo llamado Abort Guidance System (AGS) en los módulos lunares, que sí es simulado por Virtual AGC, pero no por esta versión actual de Moonjs.</p>
 <p>Los astronautas interactuaban con el AGC usando el DSKY, una combinación de pantallas numéricas de 7 segmentos, luces indicadoras y un teclado simple, que es lo que se simula en esta página.</p>
 <div><img src="Apollo_DSKY_interface.svg.png" alt="" /></div>
@@ -204,8 +204,8 @@
 </ul>
 <p>Para muchos más ejemplos y detalles sobre el AGC, su programación y su operación, dos fuentes muy buenas son el excelente sitio <a href="http://www.ibiblio.org/apollo/">Virtual AGC</a> de Ronald Burkey y el libro "The Apollo guidance computer: architecture and operation" de Frank O'Brien. La <a href="https://en.wikipedia.org/wiki/Apollo_Guidance_Computer">página de Wikipedia</a> del AGC también tiene bastante información útil y una bibliografía amplia.</p>
 <h4>¿Por qué Javascript?</h4>
-<p>Los avances más recientes del lenguaje javascript, como los motores optimizados, la compilación ahead-of-time (AOT) y asm.js, hacen posible escribir aplicaciones computacionalmente exigentes en javascript. Mi experiencia previa con simulación online basada en javascript (<a href="svtsim.com/svtsim.html">svtsim</a> y <a href="svtsim.com/hemosim.html">hemosim</a>) fue muy positiva y me convenció de que la combinación HTML5/javascript sirve bien para escribir simuladores portables y fáciles de usar. <strong>Moonjs</strong> es el paso lógico siguiente: usa el compilador Emscripten para convertir código existente en C a asm.js, un subconjunto de javascript altamente optimizable.</p>
-<footer><hr />@2013-2024 Shahriar Iravanian (<a href="mail://siravan@svtsim.com">siravan@svtsim.com</a>)</footer></div>
+<p>Los avances más recientes del lenguaje javascript, como los motores optimizados, la compilación ahead-of-time (AOT) y asm.js, hacen posible escribir aplicaciones computacionalmente exigentes en javascript. Mi experiencia previa con simulación online basada en javascript (<a href="https://svtsim.com/svtsim.html">svtsim</a> y <a href="https://svtsim.com/hemosim.html">hemosim</a>) fue muy positiva y me convenció de que la combinación HTML5/javascript sirve bien para escribir simuladores portables y fáciles de usar. <strong>Moonjs</strong> es el paso lógico siguiente: usa el compilador Emscripten para convertir código existente en C a asm.js, un subconjunto de javascript altamente optimizable.</p>
+<footer><hr />@2013-2024 Shahriar Iravanian (<a href="mailto:siravan@svtsim.com">siravan@svtsim.com</a>)</footer></div>
 
 <script type="text/javascript">// <![CDATA[
 if(!window.console){    // for older IE
@@ -229,10 +229,7 @@ if(!window.console){    // for older IE
 <script src="agc11.js"></script>
 <script type="text/javascript">// <![CDATA[
 "use strict";
-
-    $.get("/cgi-bin/logger.php", {"s": "moonjs", "v": "11", "r": Math.random()});
-
-    // the main interface functions to the emscripten compiled code    
+// the main interface functions to the emscripten compiled code    
     var advance = Module.cwrap('advance', 'number', []);                        // int advance()
     var sendPort = Module.cwrap('sendPort', 'number', ['number', 'number', 'number']);    // int sendPort(port, val, mask)    
     var scanPort = Module.cwrap('scanPort', 'number', ['number']);              // int scanPort(mask)
@@ -923,8 +920,7 @@ if(!window.console){    // for older IE
         liftoff = true;                
         dsky.liftoff();
         $('#SIC').css('background-color', '#ffc200');
-        $.get("/cgi-bin/logger.php", {"s": "launch", "v": "11", "r": Math.random()});
-    });
+});
 
     $('#shutdown').click(function(){
         if(!liftoff) return;
