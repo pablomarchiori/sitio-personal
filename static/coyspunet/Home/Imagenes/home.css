@@ -1,0 +1,171 @@
+TD.industrial {
+	FONT-SIZE: xx-small; COLOR: #125f96; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+TD.left {
+	BORDER-RIGHT: peru 1px; BORDER-TOP: #8db3ce 1px solid; FONT-SIZE: xx-small; BORDER-LEFT: chocolate; COLOR: white; BORDER-BOTTOM: #124061 1px solid; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.CopyrightLink {
+	FONT-SIZE: xx-small; COLOR: #472b57; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+TD.Copyright {
+	FONT-SIZE: xx-small; COLOR: #472b67; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.CopyrightLink:hover {
+	FONT-SIZE: xx-small; COLOR: green; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.Table {
+	BORDER-RIGHT: #125f96 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #125f96 1px solid; PADDING-LEFT: 5px; FONT-SIZE: xx-small; BORDER-LEFT: #125f96 1px solid; COLOR: #125f96; BORDER-BOTTOM: #125f96 1px solid; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.Inputs {
+	FONT-SIZE: xx-small; COLOR: black; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.right_bot {
+	BORDER-RIGHT: #facd65 1px solid; BORDER-TOP: #facd65 1px solid; FONT-SIZE: xx-small; BORDER-LEFT: #facd65 1px solid; BORDER-BOTTOM: #facd65 1px solid; FONT-FAMILY: Verdana, Arial; TEXT-ALIGN: left; TEXT-DECORATION: none
+}
+.Idioma {
+	FONT-SIZE: xx-small; COLOR: black; BORDER-BOTTOM: #125f96 1px; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.Right {
+	FONT-SIZE: xx-small; COLOR: white; FONT-FAMILY: Verdana; TEXT-DECORATION: none
+}
+A.Right:hover {
+	FONT-SIZE: xx-small; COLOR: black; FONT-FAMILY: Verdana; TEXT-DECORATION: none
+}
+A.Tiendas {
+	FONT-SIZE: xx-small; COLOR: black; FONT-FAMILY: Verdana; TEXT-DECORATION: none
+}
+A.Modulo1 {
+	FONT-SIZE: xx-small; COLOR: black; FONT-FAMILY: Verdana; TEXT-DECORATION: none
+}
+A.Modulo2 {
+	FONT-SIZE: xx-small; COLOR: black; FONT-FAMILY: Verdana; TEXT-DECORATION: none
+}
+A.Tiendas:hover {
+	FONT-SIZE: xx-small; COLOR: black; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.Oferta {
+	FONT-SIZE: xx-small; COLOR: black; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.Text:hover {
+	FONT-SIZE: xx-small; COLOR: black; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.Text {
+	FONT-SIZE: xx-small; COLOR: black; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.text {
+	FONT-SIZE: xx-small; COLOR: black; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+TD.Separacion {
+	FONT-SIZE: 2px; FONT-FAMILY: Verdana; HEIGHT: 3px; BACKGROUND-COLOR: #4c8bb8; TEXT-DECORATION: none
+}
+TD.Modulo1 {
+	BORDER-RIGHT: #a7cdd1 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #005994 1px solid; PADDING-LEFT: 10px; FONT-SIZE: xx-small; BORDER-LEFT: #005994 1px solid; BORDER-BOTTOM: #a7cdd1 1px solid; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+TD.Modulo2 {
+	BORDER-RIGHT: #d42c22 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #8e0f07 1px solid; PADDING-LEFT: 10px; FONT-SIZE: xx-small; BORDER-LEFT: #8e0f07 1px solid; BORDER-BOTTOM: #d42c22 1px solid; FONT-FAMILY: Arial, Verdana; TEXT-DECORATION: none
+}
+.PortaldeCompras {
+	BORDER-RIGHT: #efd197 1px solid; BORDER-TOP: #efd197 1px solid; PADDING-LEFT: 30px; BORDER-LEFT: #efd197 1px solid; BORDER-BOTTOM: #efd197; TEXT-DECORATION: none
+}
+.industrial {
+	FONT-SIZE: xx-small; COLOR: #125f96; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+TD.left {
+	BORDER-RIGHT: peru 1px; BORDER-TOP: #8db3ce 1px solid; FONT-SIZE: xx-small; BORDER-LEFT: chocolate; COLOR: white; BORDER-BOTTOM: #124061 1px solid; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.CopyrightLink {
+	FONT-WEIGHT: bolder; FONT-SIZE: xx-small; COLOR: #472b57; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+TD.Copyright {
+	FONT-SIZE: xx-small; COLOR: #472b67; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.CopyrightLink:hover {
+	FONT-SIZE: xx-small; COLOR: green; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+TD.Tit_Left {
+	BORDER-RIGHT: black 1px; BORDER-TOP: #6f282c 1px; PADDING-LEFT: 0px; FONT-WEIGHT: bolder; FONT-SIZE: xx-small; BORDER-BOTTOM-COLOR: #ffe9c9; BORDER-LEFT: black 1px; COLOR: #6f282c; LINE-HEIGHT: normal; FONT-STYLE: normal; TEXT-DECORATION: none; BORDER-BOTTOM-STYLE: none; botonera: Verdana, Arial, Helvetica, sans-serif
+}
+.botonera {
+	BORDER-TOP: #775919 1px solid; FONT-SIZE: xx-small; COLOR: #775919; BORDER-BOTTOM: #ffe9c7 1px solid; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.Naranja {
+	FONT-SIZE: xx-small; COLOR: #a0650f; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.linea_nar_izq {
+	BORDER-LEFT: #d08311 1px solid
+}
+.DiviTop {
+	BORDER-RIGHT: #125f96; BORDER-TOP: #09324f 1px solid; FONT-SIZE: 4pt; BORDER-LEFT: #125f96; BORDER-BOTTOM: #125f96; FONT-FAMILY: Verdana; BACKGROUND-COLOR: #6b81a3; TEXT-DECORATION: none
+}
+.RightTd {
+	BORDER-RIGHT: peachpuff 1px solid; BORDER-TOP: peachpuff 1px solid; FONT-WEIGHT: bolder; FONT-SIZE: xx-small; PADDING-BOTTOM: 2px; BORDER-LEFT: peachpuff 1px solid; COLOR: white; PADDING-TOP: 2px; BORDER-BOTTOM: #d18210 1px solid; FONT-FAMILY: Verdana, Arial; BACKGROUND-COLOR: #fda21f; TEXT-DECORATION: none
+}
+.RightTdnuevo {
+	BORDER-RIGHT: peachpuff 1px solid; BORDER-TOP: #ffdab9 1px solid; FONT-SIZE: xx-small; BORDER-LEFT: peachpuff 1px solid; COLOR: white; BORDER-BOTTOM: #d18210 1px solid; FONT-FAMILY: Verdana, Arial; BACKGROUND-COLOR: #f6cd90; TEXT-DECORATION: none
+}
+.STitRight {
+	BORDER-RIGHT: #e8e8e8 1px solid; BORDER-TOP: #e8e8e8 1px solid; FONT-SIZE: xx-small; BORDER-LEFT: #e8e8e8 1px solid; COLOR: white; BORDER-BOTTOM: #e8e8e8 1px solid; FONT-FAMILY: Verdana, Arial; TEXT-ALIGN: left
+}
+.TableIdioma {
+	BORDER-BOTTOM: #125f96 1px solid; TEXT-DECORATION: none
+}
+.TableLeft {
+	BORDER-TOP: white 1px solid; BORDER-LEFT: white 1px solid; TEXT-DECORATION: none
+}
+.TableOferta {
+	BORDER-RIGHT: #125f96 2px solid; BORDER-TOP: #125f96 2px solid; FONT-SIZE: xx-small; TEXT-TRANSFORM: uppercase; BORDER-LEFT: #125f96 2px solid; BORDER-BOTTOM: #125f96 2px solid; FONT-FAMILY: Verdana, Arial; BACKGROUND-COLOR: white; TEXT-DECORATION: none
+}
+.text3lineas {
+	FONT-WEIGHT: bold; FONT-SIZE: xx-small; COLOR: black; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.textbold {
+	FONT-WEIGHT: bold; FONT-SIZE: xx-small; COLOR: black; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.TitRight {
+	BORDER-RIGHT: silver 1px solid; BORDER-TOP: silver 1px solid; FONT-WEIGHT: bolder; FONT-SIZE: 8pt; BORDER-LEFT: silver 1px solid; COLOR: white; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.Tophorainput {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-SIZE: xx-small; BACKGROUND-IMAGE: url(../../templates/images/Home/fondo.gif); BORDER-LEFT: medium none; COLOR: white; BORDER-BOTTOM: medium none; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.Lefttext {
+	FONT-SIZE: xx-small; COLOR: #6e272b; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.LinksChicos {
+	FONT-SIZE: xx-small; COLOR: #246698; FONT-FAMILY: Verdana; TEXT-DECORATION: none
+}
+A.LinksChicos:hover {
+	FONT-SIZE: xx-small; COLOR: #472b67; FONT-FAMILY: Verdana; TEXT-DECORATION: none
+}
+A.NuevoClick {
+	FONT-WEIGHT: bolder; FONT-SIZE: 7pt; COLOR: white; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.NuevoClick:hover {
+	FONT-WEIGHT: bolder; FONT-SIZE: 7pt; COLOR: #fda21f; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.Nuevosi {
+	FONT-SIZE: 6.5pt; COLOR: white; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.Rightbotlink {
+	FONT-SIZE: xx-small; COLOR: black; FONT-FAMILY: Verdana; TEXT-DECORATION: none
+}
+A.Rightbotlink:hover {
+	FONT-SIZE: xx-small; COLOR: black; FONT-FAMILY: Verdana; TEXT-DECORATION: none
+}
+A.TTitLeft {
+	BORDER-RIGHT: 1px; BORDER-TOP: 1px; FONT-SIZE: xx-small; BORDER-LEFT: 1px; COLOR: black; BORDER-BOTTOM: 1px; FONT-FAMILY: Verdana; TEXT-DECORATION: none
+}
+TD.TitLeft {
+	BORDER-RIGHT: peachpuff 1px solid; BORDER-TOP: peachpuff 1px solid; PADDING-LEFT: 0px; FONT-WEIGHT: bolder; FONT-SIZE: xx-small; BORDER-LEFT: peachpuff 1px solid; COLOR: white; BORDER-BOTTOM: #d18210 1px solid; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.botonera2 {
+	BORDER-TOP: #e8e9e1 1px solid; FONT-SIZE: xx-small; COLOR: #6c2a2c; BORDER-BOTTOM: #fefff5 1px solid; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.botonera_2 {
+	BORDER-TOP: #e8e9e1 1px solid; FONT-SIZE: xx-small; COLOR: #6c2a2c; BORDER-BOTTOM: #fefff5 1px solid; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.Top_Hora {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-SIZE: xx-small; BORDER-LEFT: medium none; COLOR: white; BORDER-BOTTOM: medium none; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.TopHora {
+	FONT-SIZE: xx-small; COLOR: white; FONT-FAMILY: Verdana, Arial
+}

@@ -1,0 +1,8 @@
+r1,r2,r3,r4,idencuesta,activa,nopciones,inicio,fin,tr1,tr2,tr3,tr4,pregunta
+0,0,0,0,1,False,4,2003-04-21 00:00:00,2003-04-21 00:00:00,1,2,3,4,pregunta
+4,1,4,14,2,False,4,2003-04-21 00:00:00,2003-04-22 00:00:00,no se,quiza,ni enpedo,si!!!,Esto va a funcionar
+0,0,0,0,3,False,4,2003-04-22 00:00:00,2003-04-22 00:00:00,Clemente,Inodoro Pereyra,Juan Pirulo,La Pipistrela,Quien gana las elecciones?
+0,0,0,0,4,False,4,2003-04-22 00:00:00,2003-04-22 00:00:00,Clemente,Inodoro Pereyra,Juan Pirulo,La Pipistrela,Quien gana las elecciones?
+0,0,0,0,5,False,4,2003-04-22 00:00:00,2003-04-22 00:00:00,Clemente,Inodoro Pereyra,Juan Pirulo,La Pipistrela,Quien gana las elecciones?
+0,0,0,0,6,False,4,2003-04-22 00:00:00,2003-04-22 00:00:00,Clemente,Inodoro Pereyra,Juan Pirulo,La Pipistrela,Quien gana las elecciones?
+0,37,29,4,7,True,4,2003-04-22 00:00:00,,Respuesta 1,Respuesta 2,Respuesta 3,Respuesta 4,Pregunta?

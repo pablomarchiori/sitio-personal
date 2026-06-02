@@ -1,0 +1,85 @@
+<script LANGUAGE="JavaScript">
+
+function Validar(form)
+{
+  if (form.EmailOrigen.value == "")
+  { alert("Por favor ingrese su dirección de e-mail"); form.EmailOrigen.focus(); return; }
+
+  if (form.sitio.value == "")
+  { alert("Por favor ingrese su domicilio"); form.sitio.focus(); return; }
+
+  if (form.sitio.value.indexOf('.', 0) == -1 ||
+      form.sitio.value.indexOf('.', 0) == -1)
+  { alert("URL de sitio inválida"); form.sitio.focus(); return; }
+
+  if (form.EmailOrigen.value.indexOf('@', 0) == -1 ||
+      form.EmailOrigen.value.indexOf('.', 0) == -1)
+  { alert("Dirección de e-mail inválida"); form.EmailOrigen.focus(); return; }
+
+  window.open('', 'SugieraLinkASP', 'WIDTH=500, HEIGHT=150');
+  form.submit();
+
+}
+
+</script>
+
+
+<!-- Celda de banda derecha -->
+          <TD vAlign=top noWrap align=left width=130 bgColor=#eeeeee height=64>
+            <IMG height=1 src="Blanco.gif" width=130><BR>
+
+
+            <!-- Sugiera un Sitio -->
+            <TABLE cellSpacing=0 cellPadding=1 width="98%" align=center bgColor=#f0f0f0 border=0>
+              <TBODY>
+              <TR vAlign=top align=middle bgColor=#6f749f>
+                <TD>
+                  <DIV align=center><B><FONT style="FONT-SIZE: 8pt; FONT-FAMILY: tahoma" color=#ffffff>Sugiera un Sitio</FONT></B>
+                  </DIV>
+                </TD>
+              </TR>
+              <TR vAlign=top align=left bgColor=#f8f8f8>
+                <TD style="BORDER-RIGHT: rgb(208,208,208) 1px solid; PADDING-RIGHT: 7px; PADDING-LEFT: 7px; PADDING-BOTTOM: 7px; BORDER-LEFT: rgb(208,208,208) 1px solid; PADDING-TOP: 7px; BORDER-BOTTOM: rgb(208,208,208) 1px solid">
+                  <TABLE cellSpacing=0 cellPadding=5 width="100%" align=center border=0>
+
+                    <TBODY>
+                    <TR vAlign=top align=left bgColor=#f7f7f7>
+                      <TD vAlign=top align=left>
+                        <DIV align=center><FONT style="FONT-SIZE: 8pt; FONT-FAMILY: tahoma" color=#000000><B></B></FONT>
+                        </DIV>
+                      </TD>
+                    </TR>
+                    <TR vAlign=top align=left bgColor=#f7f7f7>
+                      <TD vAlign=top align=left>
+                        <FONT face=Verdana size=1>
+
+                        <form name="sugieralink" method="post" action="Links_Sugiera.html" target="SugieraLinkASP">
+						  <p>* Su e-mail:<br>
+						  <input type="text" name="EmailOrigen" size="23"><br>
+						  Su nombre:<br>
+						  <input type="text" name="Nombre" size="23"><br>
+						  * Dirección del sitio:<br>
+						  <input type="text" name="sitio" size="23" value="http://"><br>
+						  Comentarios:<br>
+						  <textarea rows=8 cols=14 name="Comentario"></textarea></p>
+						  <p><input type="button" value="Enviar" onClick="Validar(this.form)">
+						  <input type="reset" value="Borrar" name="reset"></p>
+
+						  </form>
+
+                        </FONT>
+                      </TD>
+                    </TR>
+                    </FORM>
+                    </TBODY>
+                  </TABLE>
+                </TD>
+              </TR>
+              </TBODY>
+            </TABLE>
+            <BR>
+		  </TD>
+
+
+
+<!-- Fin Tablas y fin pagina -->

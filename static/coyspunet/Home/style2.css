@@ -1,0 +1,95 @@
+INPUT {
+	FONT-SIZE: 8pt; COLOR: black; TEXT-INDENT: 0pt
+}
+.textbutton {
+	BORDER-RIGHT: rgb(128,128,128) 1px solid; BORDER-TOP: rgb(128,128,128) 1px solid; FONT-SIZE: 8pt; BORDER-LEFT: rgb(128,128,128) 1px solid; COLOR: rgb(0,0,0); BORDER-BOTTOM: rgb(128,128,128) 1px solid; FONT-FAMILY: Verdana; BACKGROUND-COLOR: rgb(233,233,233)
+}
+BODY {
+	FONT-SIZE: 8pt; FONT-FAMILY: tahoma
+}
+P {
+	FONT-SIZE: 8pt; FONT-FAMILY: tahoma
+}
+DIV {
+	FONT-SIZE: 8pt; FONT-FAMILY: tahoma
+}
+SPAN {
+	FONT-SIZE: 8pt; FONT-FAMILY: tahoma
+}
+TH {
+	FONT-SIZE: 8pt; FONT-FAMILY: tahoma
+}
+TD {
+	FONT-SIZE: 8pt; FONT-FAMILY: tahoma,verdana,arial,sans-serif
+}
+A:active {
+	COLOR:White;
+	 TEXT-DECORATION: none
+}
+A {
+	COLOR: White;
+	TEXT-DECORATION: none;
+	font : bold;
+}
+A:visited {
+	COLOR: White;
+	TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0000A0
+}
+.petit {
+	FONT-SIZE: 11px; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+.enlace:visited {
+	COLOR: navy; TEXT-DECORATION: none
+}
+.enlace:active {
+	COLOR: navy
+}
+.enlace:hover {
+	COLOR: #0066ff; TEXT-DECORATION: none
+}
+.enlace:link {
+	COLOR: navy; TEXT-DECORATION: none
+}
+.blanco:visited {
+	COLOR: white; TEXT-DECORATION: none
+}
+.blanco:active {
+	COLOR: white
+}
+.blanco:hover {
+	COLOR: #0066ff; TEXT-DECORATION: none
+}
+.blanco:link {
+	COLOR: white; TEXT-DECORATION: none
+}
+.justificar {
+	TEXT-ALIGN: justify
+}
+.blanco2 {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.Celda{
+	background : #FFFFFF;
+	border-right : 1px solid Gray;
+	border-left : 1px solid Gray;
+	border-bottom : 1px solid Gray;
+	border-top : 1px solid Gray;
+}
+.Cabecera{
+	background : #E9E9E9;
+	border-right : 1px solid Gray;
+	border-left : 1px solid Gray;
+	border-bottom : 1px solid Gray;
+	border-top : 1px solid Gray;
+	font-weight: bold;
+
+}
+.TituloParrafo {
+	FONT-SIZE: 8pt;
+	FONT-FAMILY: tahoma;
+	font-weight : bolder;
+}

@@ -1,0 +1,133 @@
+<html>
+<head>
+<meta charset="utf-8">
+
+<script language="javascript">
+function create(form) {
+if (confirm("¿Estas seguro?")) {
+if (form.input1.value != "") {
+form.story.value +="<META NAME=\"Title\" CONTENT=\"" +
+form.input1.value + "\">\n";
+}
+if (form.input2.value != "") {
+form.story.value +="<META NAME=\"Author\" CONTENT=\"" +
+form.input2.value + "\">\n";
+}
+if (form.input3.value != "") {
+form.story.value +="<META NAME=\"Subject\" CONTENT=\"" +
+form.input3.value + "\">\n";
+}
+if (form.input4.value != "") {
+form.story.value +="<META NAME=\"Description\" CONTENT=\"" +
+form.input4.value + "\">\n";
+}
+if (form.input5.value != "") {
+form.story.value +="<META NAME=\"Keywords\" CONTENT=\"" +
+form.input5.value + "\">\n";
+}
+if (form.input6.value != "") {
+form.story.value +="<META NAME=\"Generator\" CONTENT=\"" +
+form.input6.value + "\">\n";
+}
+if (form.input7.value != "") {
+form.story.value +="<META NAME=\"Language\" CONTENT=\"" +
+form.input7.value + "\">\n";
+}
+if (form.input8.value != "") {
+form.story.value +="<META NAME=\"Expires\" CONTENT=\"" +
+form.input8.value + "\">\n";
+}
+if (form.input9.value != "") {
+form.story.value +="<META NAME=\"Abstract\" CONTENT=\"" +
+form.input9.value + "\">\n";
+}
+if (form.input10.value != "") {
+form.story.value +="<META NAME=\"Copyright\" CONTENT=\"© " +
+form.input10.value + "\">\n";
+}
+if (form.input11.value != "") {
+form.story.value +="<META NAME=\"Designer\" CONTENT=\"" +
+form.input11.value + "\">\n";
+}
+if (form.input12.value != "") {
+form.story.value +="<META NAME=\"Publisher\" CONTENT=\"" +
+form.input12.value + "\">\n";
+}
+if (form.input13.value != "") {
+form.story.value +="<META NAME=\"Revisit-After\" CONTENT=\"" +
+form.input13.value + " \Days\">\n";
+}
+if (form.input14.value != "") {
+form.story.value +="<META NAME=\"Distribution\" CONTENT=\"" +
+form.input14.options[form.input14.selectedIndex].value + "\">\n";
+}
+if (form.input15.value != "") {
+form.story.value +="<META NAME=\"Robots\" CONTENT=\"" +
+form.input15.options[form.input15.selectedIndex].value + "\">\n";
+}
+}
+}
+</script>
+
+
+<style id="coyspu-static-layout-fix">
+td[width="451"], td[width="480"] { white-space: normal !important; overflow-wrap: break-word; }
+</style>
+</head>
+<body>
+
+<table align="center" width="600" border="0" cellspacing="0" cellpadding="0">
+<tr><th>Generador de META Tags</th></tr>
+<tr>
+<td>
+<form>
+<table class=normal BORDER="0" CELLPADDING="2">
+<tr><td>Title:</td><td><input TYPE="text" NAME="input1" SIZE="40"></td></tr>
+<tr><td>Author:</td><td><input TYPE="text" NAME="input2" SIZE="40"></td></tr>
+<tr><td>Subject:</td><td><input TYPE="text" NAME="input3" SIZE="40"></td></tr>
+<tr><td>Description:</td><td><input TYPE="text" NAME="input4" SIZE="40"></td></tr>
+<tr><td>Keywords:</td><td><input TYPE="text" NAME="input5" SIZE="40"></td></tr>
+<tr><td>Generator:</td><td><input TYPE="text" NAME="input6" SIZE="40"></td></tr>
+<tr><td>Language:</td><td><input TYPE="text" NAME="input7" SIZE="40"></td></tr>
+<tr><td>Expires:</td><td><input TYPE="text" NAME="input8" SIZE="40"></td></tr>
+<tr><td>Abstract:</td><td><input TYPE="text" NAME="input9" SIZE="40"></td></tr>
+<tr><td>Copyright:</td><td><input TYPE="text" NAME="input10" SIZE="40"></td></tr>
+<tr><td>Designer:</td><td><input TYPE="text" NAME="input11" SIZE="40"></td></tr>
+<tr><td>Publisher:</td><td><input TYPE="text" NAME="input12" SIZE="40"></td></tr>
+<tr><td>Revisit-After:</td><td><input TYPE="text" NAME="input13" SIZE="40"></td></tr>
+<tr><td>Distribution:</td>
+<td>
+<select NAME="input14" size="1">
+<option VALUE="" SELECTED>Select One</option>
+<option VALUE="Global">1. Global</option>
+<option VALUE="Local">2. Local</option>
+<option VALUE="IU">3. Intern Use</option>
+</select>
+</td>
+</tr>
+<tr><td>Robots:</td>
+<td>
+<select NAME="input15" size="1">
+<option VALUE="" SELECTED>Select One</option>
+<option VALUE="All">1. All</option>
+<option VALUE="None">2. None</option>
+<option VALUE="Index">3. Index</option>
+<option VALUE="No Index">4. No Index</option>
+<option VALUE="Follow">5. Follow</option>
+<option VALUE="No Follow">6. No Follow</option>
+</select>
+</td>
+</tr>
+</table>
+<br>
+<input TYPE="button" VALUE="Crear META tags" ONCLICK="create(this.form)">
+<br>
+<textarea WRAP NAME="story" ROWS="12" COLS="45"></textarea>
+</form>
+</td>
+</tr>
+</table>
+
+</body>
+</html>
+

@@ -1,0 +1,167 @@
+[
+  {
+    "ID_cat": 1,
+    "Orden": 1,
+    "Nombre": "Destacados"
+  },
+  {
+    "ID_cat": 2,
+    "Orden": 2,
+    "Nombre": "Agencias de Noticias"
+  },
+  {
+    "ID_cat": 3,
+    "Orden": 3,
+    "Nombre": "Arquitectura & Decoración"
+  },
+  {
+    "ID_cat": 4,
+    "Orden": 4,
+    "Nombre": "Arte & Literatura"
+  },
+  {
+    "ID_cat": 5,
+    "Orden": 5,
+    "Nombre": "Automóviles"
+  },
+  {
+    "ID_cat": 6,
+    "Orden": 6,
+    "Nombre": "Bancos"
+  },
+  {
+    "ID_cat": 7,
+    "Orden": 7,
+    "Nombre": "Buscadores"
+  },
+  {
+    "ID_cat": 8,
+    "Orden": 8,
+    "Nombre": "Campo"
+  },
+  {
+    "ID_cat": 9,
+    "Orden": 9,
+    "Nombre": "Chicos"
+  },
+  {
+    "ID_cat": 10,
+    "Orden": 10,
+    "Nombre": "Ciencia"
+  },
+  {
+    "ID_cat": 11,
+    "Orden": 11,
+    "Nombre": "Deportes"
+  },
+  {
+    "ID_cat": 12,
+    "Orden": 12,
+    "Nombre": "Descargas de Archivos"
+  },
+  {
+    "ID_cat": 13,
+    "Orden": 13,
+    "Nombre": "Diarios"
+  },
+  {
+    "ID_cat": 14,
+    "Orden": 14,
+    "Nombre": "Drivers"
+  },
+  {
+    "ID_cat": 15,
+    "Orden": 15,
+    "Nombre": "Ecología"
+  },
+  {
+    "ID_cat": 16,
+    "Orden": 16,
+    "Nombre": "Economía"
+  },
+  {
+    "ID_cat": 17,
+    "Orden": 17,
+    "Nombre": "Educación"
+  },
+  {
+    "ID_cat": 18,
+    "Orden": 18,
+    "Nombre": "El Tiempo"
+  },
+  {
+    "ID_cat": 19,
+    "Orden": 19,
+    "Nombre": "Humor"
+  },
+  {
+    "ID_cat": 20,
+    "Orden": 20,
+    "Nombre": "Juegos"
+  },
+  {
+    "ID_cat": 21,
+    "Orden": 21,
+    "Nombre": "Medicina y Salud"
+  },
+  {
+    "ID_cat": 22,
+    "Orden": 22,
+    "Nombre": "Moda"
+  },
+  {
+    "ID_cat": 23,
+    "Orden": 23,
+    "Nombre": "Música"
+  },
+  {
+    "ID_cat": 24,
+    "Orden": 24,
+    "Nombre": "Portales"
+  },
+  {
+    "ID_cat": 25,
+    "Orden": 25,
+    "Nombre": "Radios On-Line"
+  },
+  {
+    "ID_cat": 26,
+    "Orden": 26,
+    "Nombre": "Revistas"
+  },
+  {
+    "ID_cat": 27,
+    "Orden": 27,
+    "Nombre": "Sitios Gubernamentales"
+  },
+  {
+    "ID_cat": 28,
+    "Orden": 28,
+    "Nombre": "Sitios Locales"
+  },
+  {
+    "ID_cat": 29,
+    "Orden": 29,
+    "Nombre": "Tarjetas y Servicios"
+  },
+  {
+    "ID_cat": 30,
+    "Orden": 30,
+    "Nombre": "Tiempo Libre"
+  },
+  {
+    "ID_cat": 31,
+    "Orden": 31,
+    "Nombre": "Turismo"
+  },
+  {
+    "ID_cat": 32,
+    "Orden": 32,
+    "Nombre": "Cooperativismo"
+  },
+  {
+    "ID_cat": 33,
+    "Orden": 33,
+    "Nombre": "Correo electrónico"
+  }
+]

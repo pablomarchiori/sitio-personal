@@ -1,0 +1,89 @@
+<head>
+<meta charset="utf-8">
+<script LANGUAGE="JavaScript">
+function Validar(form)
+{
+
+  if (form.titular.value == "")
+  { alert("Debe ingresar algo para buscar"); form.titular.focus(); return; }
+
+  if (form.titular.value.length < 3)
+  { alert("Al menos debe ingresar 3 caracteres"); form.titular.focus(); return; }
+
+
+}
+</script>
+
+
+<script LANGUAGE="JavaScript">
+function Validar2(form)
+{
+var checkstr = trim(form.titular.value);
+
+alert(checkstr());
+
+  if (checkstr.length < 3)
+    { alert("Debe ingresar al menos 3 letras del nombre"); form.titular.focus(); return; }
+
+form.submit();
+
+}
+
+</script>
+
+
+<style id="coyspu-static-layout-fix">
+td[width="451"], td[width="480"] { white-space: normal !important; overflow-wrap: break-word; }
+</style>
+</head>
+
+            <TABLE border=0 align="center" cellPadding=0 cellSpacing=0>
+              <TR>
+                <TD><IMG height=4 src="Imagenes/Cajon_ar_izq.gif" width=4></TD>
+                <TD><IMG height=4 src="Imagenes/Cajon_ar.gif" width=400></TD>
+                <TD><IMG height=4 src="Imagenes/Cajon_ar_der.gif" width=4></TD>
+			  </TR>
+              <TR>
+                <TD><IMG height=26 src="Imagenes/Cajon_izq.gif" width=4></TD>
+                <TD align=middle bgColor=#226697>
+				  <IMG src="Imagenes/Tit.gif" width="400" height="11">
+                </TD>
+                <TD><IMG height=26 src="Imagenes/Cajon_der.gif" width=4></TD>
+			  </TR>
+              <TR>
+                <TD><IMG height=2 src="Imagenes/Cajon_izq_med.gif" width=4></TD>
+                <TD><IMG height=2 src="Imagenes/Cajon_med.gif" width=400></TD>
+                <TD><IMG height=2 src="Imagenes/Cajon_der_med.gif" width=4></TD>
+			  </TR>
+              <TR>
+                <TD><IMG height=88 src="Imagenes/Cajon_izq.gif" width=4></TD>
+                <TD class=text align=middle bgColor=#4c8bb8>
+                <table width=300 border=0 align="center" cellpadding=0 cellspacing=0>
+                  <tbody>
+                    <tr>
+                      <td colspan=2 height=25>
+                        <div align="left"><img height=8 src="Imagenes/Bullet.gif" width=4> Ingrese
+                          el nombre del titular de la linea:</div>
+                      </td>
+                    </tr>
+                    <tr >
+                      <td colspan=2 height=25>
+                        <form name=busqueda method="post" action="Guiatelefonos_busqueda.html" >
+                          <input class=text maxlength=50 size=50 name=titular>
+                          <br>
+                          <input class="boton" type="image" alt=Enviar src="Imagenes/Boton_Buscar.gif" border="0" onClick="Validar(this.form)">
+                        </form>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table></TD>
+                <TD><IMG height=88 src="Imagenes/Cajon_der.gif" width=4></TD>
+			  </TR>
+              <TR>
+                <TD><IMG height=4 src="Imagenes/Cajon_izq_ab.gif" width=4></TD>
+                <TD><IMG height=4 src="Imagenes/Cajon_ab.gif" width=400></TD>
+                <TD><IMG height=4 src="Imagenes/Cajon_der_ab.gif" width=4></TD>
+			  </TR>
+</TABLE>
+
+

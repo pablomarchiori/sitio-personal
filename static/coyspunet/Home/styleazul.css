@@ -1,0 +1,123 @@
+
+INPUT {
+	FONT-SIZE: 9px; COLOR: #333399; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+
+.textbutton {
+	BORDER-RIGHT: rgb(128,128,128) 1px solid; BORDER-TOP: rgb(128,128,128) 1px solid; FONT-SIZE: 8pt; BORDER-LEFT: rgb(128,128,128) 1px solid; COLOR: rgb(0,0,0); BORDER-BOTTOM: rgb(128,128,128) 1px solid; FONT-FAMILY: Verdana; BACKGROUND-COLOR: rgb(233,233,233)
+}
+
+.textbuttonazul {
+	BORDER: 1px solid #95B7F3;
+	FONT-FAMILY: Verdana;
+	BACKGROUND-COLOR: rgb(233,233,233);
+	background : url(Imagenes/FondoTextbuttonAzul.jpg);
+}
+
+BODY {
+	FONT-SIZE: 8pt; FONT-FAMILY: tahoma
+}
+P {
+	FONT-SIZE: 8pt; FONT-FAMILY: tahoma
+}
+DIV {
+	FONT-SIZE: 8pt; FONT-FAMILY: tahoma
+}
+SPAN {
+	FONT-SIZE: 8pt; FONT-FAMILY: tahoma
+}
+TH {
+	FONT-SIZE: 8pt; FONT-FAMILY: tahoma
+}
+TD {
+	FONT-SIZE: 8pt; FONT-FAMILY: tahoma,verdana,arial,sans-serif
+}
+A:active {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #559aa6
+}
+.petit {
+	FONT-SIZE: 11px; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+.enlace:visited {
+	COLOR: navy; TEXT-DECORATION: none
+}
+.enlace:active {
+	COLOR: navy
+}
+.enlace:hover {
+	COLOR: #0066ff; TEXT-DECORATION: none
+}
+.enlace:link {
+	COLOR: navy; TEXT-DECORATION: none
+}
+.blanco {
+	COLOR: white; TEXT-DECORATION: none
+}
+.blanco:visited {
+	COLOR: white; TEXT-DECORATION: none
+}
+.blanco:active {
+	COLOR: white
+}
+.blanco:hover {
+	COLOR: #0066ff; TEXT-DECORATION: none
+}
+.blanco:link {
+	COLOR: white; TEXT-DECORATION: none
+}
+.justificar {
+	TEXT-ALIGN: justify
+}
+.blanco2 {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.blancoBold {
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight : bold;
+	
+}
+
+.Celda{
+	background : #FFFFFF;
+	border-right : 1px solid Gray;
+	border-left : 1px solid Gray;
+	border-bottom : 1px solid Gray;
+	border-top : 1px solid Gray;
+}
+.Cabecerag {
+	background : #F7F7F7;
+	border-bottom : 1px solid D6D6D6;
+	border-top : 1px solid D6D6D6;
+}
+.Cabecera {
+	BORDER: 1px solid #95B7F3;
+	FONT-FAMILY: Verdana;
+    BACKGROUND-COLOR: rgb(233,233,233);
+    background : url(Imagenes/FondoTextbuttonAzul.jpg);
+	font-weight: bold;
+}
+
+.ItemMenu {
+	MARGIN-LEFT: 13px;
+	background : #CEDEFA;
+
+}
+
+
+.TituloParrafo {
+	FONT-SIZE: 8pt;
+	FONT-FAMILY: tahoma;
+	font-weight : bolder;
+}

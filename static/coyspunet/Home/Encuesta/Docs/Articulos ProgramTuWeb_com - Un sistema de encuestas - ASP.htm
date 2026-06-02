@@ -1,0 +1,641 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0059)http://www.programatuweb.com/articulos/wmprint.php?ArtID=31 -->
+<HTML><HEAD><TITLE>Articulos ProgramTuWeb.com - Un sistema de encuestas - ASP</TITLE>
+<meta charset="utf-8"><LINK 
+href="Articulos ProgramTuWeb_com - Un sistema de encuestas - ASP_archivos/wm.css" 
+rel=stylesheet>
+<SCRIPT language=Javascript src=""></SCRIPT>
+
+<META http-equiv=Cache-Control content=no-cache>
+<META http-equiv=Pragma content=no-cache>
+<META http-equiv=Expires content=-1>
+<META content=15 name=revisit-after>
+<META content=Noticias name=classification>
+<META 
+content="Lingkungan Santo Mikael, Puspita Loka BSD, Paroki Santa Monika Serpong Tangerang" 
+name=description>
+<META 
+content="Catholic, Katolik, Komunitas, Lingkungan, Santo, Mikael, Monika, Paroki, Gereja, Serpong, Tangerang, BSD, Bumi Serpong Damai, Warta Mikael, Buletin, " 
+name=keywords>
+<META content=ALL name=robots>
+<META content="MSHTML 6.00.2800.1141" name=GENERATOR>
+<style id="coyspu-static-layout-fix">
+td[width="451"], td[width="480"] { white-space: normal !important; overflow-wrap: break-word; }
+</style>
+</head>
+<BODY text=#b0ac00 vLink=#21218c aLink=#21218c link=#21218c bgColor=#ffffff 
+leftMargin=20 topMargin=20 marginheight="20" marginwidth="20">
+<H2>Articulos ProgramTuWeb.com - http://www.programatuweb.com/articulos - 
+ASP</H2>
+<P><SPAN class=bigtitle><FONT color=#21218c>Un sistema de 
+encuestas</FONT></SPAN> - <I>26 Septiembre 2001 - 00:00 </I><BR>
+<P>
+<P>
+<P>Este ejemplo muestra como montar un sistemas de encuestas en nuestra web</P>
+<P>Lo basamos en una bd que contendrá la pregunta y las posibles respuestas a 
+estas, esto nos evitar tocar el código html cada vez que variemos la encuesta. 
+Mantendremos un registro por cada encuesta y un campo en dicho registro indicara 
+cual es la encuesta activa en ese momento.</P>
+<P>La estructura de la tabla <FONT color=#0000ff>encuestas</FONT> en la BD <FONT 
+color=#ff00ff>Tencuestas</FONT> es :</P>
+<P align=center><IMG height=288 
+src="Articulos ProgramTuWeb_com - Un sistema de encuestas - ASP_archivos/bdencuesta.gif" 
+width=459 border=0></P>
+<P>Nuestra aplicación consta de 2 módulos principales( encuesta.asp y 
+verencuesta.asp) mas un modulo de visualización de todas las encuestas 
+(historico.asp).</P>
+<P>Además he incluido el código de 2 módulos de mantenimiento, que nos servirán 
+para incluir nuevas encuestas desde la web (crearencuesta.htm y 
+crearencuesta.asp). El uso de estos módulos implica la creación en la bd de una 
+nueva tabla para el almacenamiento de la clave de creación de encuestas.</P>
+<P>Estructura de la tabla <FONT color=#0000ff>clave </FONT>en la BD <FONT 
+color=#ff00ff>Tencuestas</FONT></P>
+<P align=center><IMG height=83 
+src="Articulos ProgramTuWeb_com - Un sistema de encuestas - ASP_archivos/bdencuesta2.gif" 
+width=466 border=0></P>
+<TABLE width="100%" border=1>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <P align=center><FONT color=#0000ff size=1>&lt;!-- #include 
+      file="encuesta.asp" --&gt;</FONT></P></TD></TR></TBODY></TABLE>
+<P>Lo que nos permite mostrar la encuesta en cualquier página con solo una línea 
+de código. el aspecto seria el que podeis ver en la página principal de <A 
+href="http://www.asptutor.com/" target=_blank>http://www.asptutor.com/</A> 
+<P>&nbsp;</P>
+<P><B><U>Módulos básicos del sistema</U></B></P>
+<P><B><U>encuesta.asp</U></B></P>
+<P><TEXTAREA name=S1 rows=8 cols=57>&lt;%Set Connae = Server.CreateObject("ADODB.Connection")
+Connae.Open("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" &amp; Server.MapPath("/xxxxx/Tencuestas.mdb"))
+
+
+
+
+set rse=createobject("ADODB.Recordset")
+sqltxt="SELECT  * from encuestas where activa=true"
+rse.open sqltxt,connae
+if not rse.EOF then
+%&gt;
+
+
+
+&lt;div align="center"&gt;
+  &lt;center&gt;
+  &lt;table border="1" width="150" bgcolor="#C0C0C0" bordercolor="#0000FF"&gt;
+    &lt;tr&gt;
+      &lt;td width="100%"&gt;
+        &lt;form method="POST" action="encuestas/verencuesta.html" target="_blank"&gt;
+          &lt;table border="0" width="100%"&gt;
+            &lt;tr&gt;
+              &lt;td width="100%" bgcolor="#0000FF"&gt;
+                &lt;p align="center"&gt;&lt;font face="Verdana" size="1" color="#00FFFF"&gt;&lt;b&gt;&lt;i&gt;Encuesta
+                del mes&lt;/i&gt;&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td width="100%"&gt;
+                &lt;p align="center"&gt;&lt;font face="Verdana" size="1"&gt;&lt;b&gt;&lt;%=rse("pregunta")%&gt;&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;%for i = 0 to rse("nopciones")-1 step 1	%&gt;
+            &lt;tr&gt;
+              &lt;td width="100%"&gt;&lt;input type="radio" value="&lt;%=i%&gt;" name="opcion" checked&gt;
+                &lt;font face="Verdana" size="1"&gt;&lt;%=rse(i)%&gt;&lt;/font&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;%next
+            rse.close%&gt;
+          &lt;/table&gt;
+          &lt;p align="center"&gt;
+          &lt;input border="0" src="../images/opinar.gif" name="I1" type="image"&gt;&lt;/p&gt;
+        &lt;/form&gt;
+  &lt;/center&gt;
+      &lt;p align="center"&gt;&lt;a href="encuestas/historico.html" target="_blank"&gt;&lt;img border="0" src="images/ir.gif" alt="Historico de encuestas"&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+&lt;%else
+rse.close
+end if
+connae.close
+set connae=nothing
+%&gt;
+</TEXTAREA></P>
+<P><B><U>verencuesta.asp</U></B></P><TEXTAREA name=S1 rows=8 cols=57>&lt;% @LCID = 1034 %&gt;
+&lt;%response.expires=-1000%&gt;
+
+&lt;%
+Set Conn = Server.CreateObject("ADODB.Connection")
+Conn.Open("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" &amp; Server.MapPath("/xxxxx/Tencuestas.mdb"))
+
+
+if request.form("opcion")&lt;&gt;"" then
+
+
+	select case true
+
+	case request.form("opcion")=0
+ 	  campo="r1"
+	case request.form("opcion")=1
+		campo="r2"
+	case request.form("opcion")=2
+   		campo="r3"
+	case request.form("opcion")=3
+   		campo="r4"
+	end select    
+
+	sqltxt="update encuestas set "&amp;campo&amp;" = "&amp;campo&amp;"+1 where activa=True"
+	
+	conn.execute sqltxt
+end if
+%&gt;
+
+&lt;html&gt;
+
+&lt;head&gt;
+
+&lt;title&gt;Las encuestas de AspTutor&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;%if request.form("opcion")&lt;&gt;"" then%&gt;
+&lt;p align="center"&gt;&lt;font color="#FF0000"&gt;&lt;b&gt;&lt;font face="Verdana" size="1" color="#FF0000"&gt;Muchas gracias por participar en la
+encuesta&lt;/font&gt;&lt;br&gt;
+&lt;/b&gt;&lt;/font&gt;&lt;br&gt;
+
+&lt;%end if
+dim colores(3)
+colores(0)="red"
+colores(1)="blue"
+colores(2)="green"
+colores(3)="black"
+tamatabla=400  'tamaño de la tabla
+
+
+
+set rs=createobject("ADODB.Recordset")
+sqltxt="SELECT  * from encuestas where activa=true"
+rs.open sqltxt,conn
+if not rs.EOF then
+%&gt;
+
+&lt;div align="center"&gt;
+  &lt;center&gt;
+  &lt;table border="1" width="&lt;%=tamatabla%&gt;" bgcolor="#C0C0C0" bordercolor="#0000FF"&gt;
+    &lt;tr&gt;
+      &lt;td width="&lt;%=tamatabla%&gt;" bgcolor="#0000FF"&gt;
+        &lt;p align="center"&gt;&lt;font color="#FFFFFF" face="Verdana" size="1"&gt;&lt;b&gt;&lt;%=rs("pregunta")%&gt;&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td width="&lt;%=tamatabla%&gt;"&gt;
+      
+        &lt;table border="0" width="&lt;%=tamatabla%&gt;"&gt;
+         &lt;%totvotos=rs("r1")+rs("r2")+rs("r3")+rs("r4")
+         if totvotos&lt; 1 then totvotos=1
+         for i = 0 to rs("nopciones")-1 step 1	%&gt;
+         &lt;%porcentaje=formatnumber(rs(i+4)*100/totvotos,2)%&gt;
+          &lt;tr&gt;
+           &lt;td width="&lt;%=tamatabla*30/100%&gt;" valign="top"&gt;&lt;font face="Verdana" size="1"&gt;&lt;b&gt;&lt;%=rs(i)%&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;
+           &lt;font face="Verdana" color="#FFFFFF" size="1"&gt;&lt;b&gt;&lt;%=porcentaje%&gt;%&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;       
+                
+            &lt;td width="&lt;%=tamatabla*70/100%&gt;"&gt;
+              
+              &lt;table border="0" width="&lt;%=round(porcentaje)%&gt;%" bgcolor="&lt;%=colores(i)%&gt;"&gt;
+                &lt;tr&gt;  
+                    &lt;td width="100%"&gt;&nbsp;     
+               &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt; 
+          &lt;%next
+            
+%&gt;
+        &lt;/table&gt;
+       
+
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td width="300"&gt;
+        &lt;p align="center"&gt;&lt;font face="Verdana" size="1"&gt;&lt;b&gt;Total de  votos: &lt;font color="#FF0000"&gt;&lt;%=totvotos%&gt;&lt;/font&gt; &lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;%if rs("inicio")&lt;&gt;"" then%&gt; 
+
+    &lt;tr&gt;
+      &lt;td width="300"&gt;
+        &lt;font face="Verdana" size="1"&gt;Fecha de inicio: &lt;%=rs("inicio")%&gt;&lt;/font&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;&lt;%end if%&gt;
+
+    &lt;%if rs("fin")&lt;&gt;"" then%&gt; 
+    &lt;tr&gt;
+      &lt;td width="300"&gt;
+        &lt;font face="Verdana" size="1"&gt;Fecha de cierre: &lt;%=formatdatetime(rs("fin"),2)%&gt;&lt;/font&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;%end if%&gt;
+  &lt;/table&gt;
+  &lt;/center&gt;
+&lt;/div&gt;
+&lt;%rs.close
+set conn = nothing
+end if%&gt;
+&lt;p align="center"&gt;&lt;font face="Verdana" size="1"&gt;&lt;a href="javascript:close();"&gt;Cerrar
+ventana&lt;/a&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p align="center"&gt;&lt;font face="Verdana" size="1"&gt;&lt;a href="historico.html"&gt;Ver
+todas las encuestas&lt;/a&gt;&lt;/font&gt;&lt;/p&gt;
+
+&lt;p align="right"&gt;&lt;font face="Verdana" size="1"&gt;Sistema de encuestas de &lt;a href="http://www.asptutor.com" target="_blank"&gt;&lt;img border="0" src="http://www.asptutor.com/images/asptutor88x31.gif" align="center"&gt;&lt;/a&gt;&lt;/font&gt;&lt;/p&gt;
+
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</TEXTAREA> 
+<P>&nbsp;</P>
+<P><B><U>historico.asp</U></B></P><TEXTAREA name=S1 rows=8 cols=57>&lt;html&gt;
+
+&lt;head&gt;
+
+&lt;title&gt;Historico de encuestas&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;font face="Verdana, Arial, Helvetica, sans-serif" size="2"&gt;&lt;h3
+
+
+
+    style="background-color: rgb(0,255,255)"&gt;&lt;b&gt;Histórico de encuestas&lt;/b&gt; &lt;/h3&gt;
+        &lt;/font&gt;
+    &lt;br&gt;
+
+&lt;%
+Set Conn = Server.CreateObject("ADODB.Connection")
+Conn.Open("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" &amp; Server.MapPath("/xxxxx/Tencuestas.mdb"))
+dim colores(3)
+colores(0)="red"
+colores(1)="blue"
+colores(2)="green"
+colores(3)="black"
+tamatabla=400  'tamaño de la tabla
+
+
+
+set rs=createobject("ADODB.Recordset")
+sqltxt="SELECT  * from encuestas order by idencuesta desc"
+rs.open sqltxt,conn
+do while not rs.EOF%&gt;
+
+&lt;div align="center"&gt;
+  &lt;center&gt;
+  &lt;table border="1" width="&lt;%=tamatabla%&gt;" bgcolor="#C0C0C0" bordercolor="#0000FF"&gt;
+    &lt;tr&gt;
+      &lt;td width="&lt;%=tamatabla%&gt;" bgcolor="#0000FF"&gt;
+        &lt;p align="center"&gt;&lt;font color="#FFFFFF" face="Verdana" size="1"&gt;&lt;b&gt;&lt;%=rs("pregunta")%&gt;&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td width="&lt;%=tamatabla%&gt;"&gt;
+      
+        &lt;table border="0" width="&lt;%=tamatabla%&gt;"&gt;
+         &lt;%totvotos=rs("r1")+rs("r2")+rs("r3")+rs("r4")
+         if totvotos&lt; 1 then totvotos=1
+         for i = 0 to rs("nopciones")-1 step 1	%&gt;
+         &lt;%porcentaje=formatnumber(rs(i+4)*100/totvotos,2)%&gt;
+          &lt;tr&gt;
+           &lt;td width="&lt;%=tamatabla*30/100%&gt;" valign="top"&gt;&lt;font face="Verdana" size="1"&gt;&lt;b&gt;&lt;%=rs(i)%&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;
+           &lt;font face="Verdana" color="#FFFFFF" size="1"&gt;&lt;b&gt;&lt;%=porcentaje%&gt;%&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;       
+                
+            &lt;td width="&lt;%=tamatabla*70/100%&gt;"&gt;
+              
+              &lt;table border="0" width="&lt;%=round(porcentaje)%&gt;%" bgcolor="&lt;%=colores(i)%&gt;"&gt;
+                &lt;tr&gt;  
+                    &lt;td width="100%"&gt;&nbsp;     
+               &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt; 
+          &lt;%next
+            
+%&gt;
+        &lt;/table&gt;
+       
+
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td width="300"&gt;
+        &lt;p align="center"&gt;&lt;font face="Verdana" size="1"&gt;&lt;b&gt;Total de  votos: &lt;font color="#FF0000"&gt;&lt;%=totvotos%&gt;&lt;/font&gt; &lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;&lt;%if rs("inicio")&lt;&gt;"" then%&gt; 
+
+    &lt;tr&gt;
+      &lt;td width="300"&gt;
+        &lt;font face="Verdana" size="1"&gt;Fecha de inicio: &lt;%=rs("inicio")%&gt;&lt;/font&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;&lt;%end if%&gt;
+
+    &lt;%if rs("fin")&lt;&gt;"" then%&gt; 
+    &lt;tr&gt;
+      &lt;td width="300"&gt;
+        &lt;font face="Verdana" size="1"&gt;Fecha de cierre: &lt;%=formatdatetime(rs("fin"),2)%&gt;&lt;/font&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;%end if%&gt;
+  &lt;/table&gt;
+  &lt;/center&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;%rs.movenext
+loop
+rs.close
+set rs=nothing
+conn.close
+set conn=nothing
+
+%&gt;
+
+&lt;p align="right"&gt;&lt;font face="Verdana" size="1"&gt;Sistema de encuestas de &lt;a href="http://www.asptutor.com" target="_blank"&gt;&lt;img border="0" src="http://www.asptutor.com/images/asptutor88x31.gif" align="center"&gt;&lt;/a&gt;&lt;/font&gt;&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</TEXTAREA> 
+<P>&nbsp;</P>
+<P><B><U>Módulos de mantenimiento</U></B></P>
+<P><B><U>crearencuesta.htm</U></B></P><TEXTAREA name=S1 rows=8 cols=57>&lt;html&gt;
+
+&lt;head&gt;
+
+&lt;title&gt;Crear una nueva encuesta&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;div align="center"&gt;
+  &lt;center&gt;
+  &lt;table border="0" width="80%"&gt;
+    &lt;tr&gt;
+      &lt;td width="100%" bgcolor="#0000FF"&gt;
+
+&lt;p align="center"&gt;&lt;font color="#FFFFFF"&gt;Crear una nueva encuesta&lt;/font&gt;&lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td width="100%" bgcolor="#C0C0C0"&gt;
+        &lt;p align="center"&gt;&lt;font face="Verdana" size="1"&gt;Sistema de encuestas de &lt;a href="http://www.asptutor.com" target="_blank"&gt;&lt;img border="0" src="http://www.asptutor.com/images/asptutor88x31.gif" align="center"&gt;&lt;/a&gt;&lt;/font&gt;&lt;/p&gt;
+
+        &lt;form method="POST" action="crearencuesta.html"&gt;
+  &lt;div align="center"&gt;
+    &lt;center&gt;
+    &lt;table border="0" width="90%"&gt;
+      &lt;tr&gt;
+        &lt;td width="34%" bgcolor="#0000FF"&gt;&lt;font color="#FFFFFF"&gt;Pregunta&lt;/font&gt;&lt;/td&gt;
+        &lt;td width="66%" align="center"&gt;&lt;input type="text" name="pregunta" size="40"&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td width="34%" bgcolor="#0000FF"&gt;&lt;font color="#FFFFFF"&gt;Respuesta 1&lt;/font&gt;&lt;/td&gt;
+        &lt;td width="66%" align="center"&gt;&lt;input type="text" name="tr1" size="40"&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td width="34%" bgcolor="#0000FF"&gt;&lt;font color="#FFFFFF"&gt;Respuesta 2&lt;/font&gt;&lt;/td&gt;
+        &lt;td width="66%" align="center"&gt;&lt;input type="text" name="tr2" size="40"&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td width="34%" bgcolor="#0000FF"&gt;&lt;font color="#FFFFFF"&gt;Respuesta 3&lt;/font&gt;&lt;/td&gt;
+        &lt;td width="66%" align="center"&gt;&lt;input type="text" name="tr3" size="40"&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td width="34%" bgcolor="#0000FF"&gt;&lt;font color="#FFFFFF"&gt;Respuesta 4&lt;/font&gt;&lt;/td&gt;
+        &lt;td width="66%" align="center"&gt;&lt;input type="text" name="tr4" size="40"&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td width="34%"&gt;&nbsp;&lt;/td&gt;
+        &lt;td width="66%" align="center"&gt;&nbsp;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td width="34%" bgcolor="#0000FF"&gt;&lt;font color="#FFFFFF"&gt;Clave de creación&lt;/font&gt;&lt;/td&gt;
+        &lt;td width="66%" align="center"&gt;&lt;input type="password" name="clave" size="40"&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;/center&gt;
+  &lt;/div&gt;
+  &lt;p align="center"&gt;&lt;input type="checkbox" name="activar" value="ON"&gt;&nbsp;&nbsp;
+  Activar la encuesta una vez insertada&lt;/p&gt;
+  &lt;p align="center"&gt;&lt;input type="submit" value="Enviar" name="B1"&gt;&lt;input type="reset" value="Restablecer" name="B2"&gt;&lt;br&gt;
+  &lt;/p&gt;
+&lt;/form&gt;
+&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</TEXTAREA> 
+<P><B><U>crearencuesta.asp</U></B></P><TEXTAREA name=S1 rows=8 cols=57>&lt;html&gt;
+
+&lt;head&gt;
+
+&lt;title&gt;Creacion de encuestas&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;&lt;%
+Const adOpenForwardOnly = 0
+Const adOpenKeyset = 1
+Const adOpenDynamic = 2
+Const adOpenStatic = 3
+Const adLockReadOnly = 1
+Const adLockPessimistic = 2
+Const adLockOptimistic = 3
+Const adLockBatchOptimistic = 4
+
+
+Set Conn = Server.CreateObject("ADODB.Connection")
+Conn.Open("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" &amp; Server.MapPath("/xxxxx/Tencuestas.mdb"))
+
+
+
+set rs=createobject("ADODB.Recordset")
+if request.form("activar")="ON" then
+fin=month(date)&amp;"/"&amp;day(date)&amp;"/"&amp;year(date)
+
+
+sqltxt="update encuestas set fin=#"&amp;fin&amp;"# where activa=True"
+'response.write sqltxt
+conn.execute sqltxt
+
+sqltxt="update encuestas set activa=False where activa=True"
+conn.execute sqltxt
+
+end if
+
+sqltxt="select * from clave"
+rs.open sqltxt,conn
+if rs("clave")&lt;&gt; request.form("clave") then
+rs.close
+%&gt;
+&lt;div align="center"&gt;
+  &lt;center&gt;
+  &lt;table border="0" width="50%"&gt;
+    &lt;tr&gt;
+      &lt;td width="100%"&gt;
+        &lt;table border="10" width="100%" bgcolor="#FF0000" bordercolor="#000000"&gt;
+          &lt;tr&gt;
+            &lt;td width="100%"&gt;
+              &lt;p align="center"&gt;&lt;font color="#FFFFFF"&gt;Clave ERRONEA&lt;/font&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td width="100%"&gt;
+        &lt;p align="center"&gt;&lt;a href="javascript:window.history.back()"&gt;Intentalo de nuevo&lt;/a&gt;
+&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;/center&gt;
+&lt;/div&gt;
+&lt;%else
+rs.close
+pregunta=trim(request.form("pregunta"))
+tr1=trim(request.form("tr1"))
+tr2=trim(request.form("tr2"))
+tr3=trim(request.form("tr3"))
+tr4=trim(request.form("tr4"))
+if request.form("activar")="ON" then
+    activar=True
+else
+    activar=false
+end if        
+
+if tr1="" or tr2="" or pregunta="" then%&gt;
+&lt;div align="center"&gt;
+  &lt;center&gt;
+  &lt;table border="0" width="50%"&gt;
+    &lt;tr&gt;
+      &lt;td width="100%"&gt;
+        &lt;table border="10" width="100%" bgcolor="#FF0000" bordercolor="#000000"&gt;
+          &lt;tr&gt;
+            &lt;td width="100%"&gt;
+              &lt;p align="center"&gt;&lt;font color="#FFFFFF"&gt;Al menos se deben ofrecer una pregunta y
+              las alternativas 1 y 2&nbsp;&lt;/font&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td width="100%"&gt;
+        &lt;p align="center"&gt;&lt;a href="javascript:window.history.back()"&gt;Intentalo de nuevo&lt;/a&gt;
+&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;/center&gt;
+&lt;/div&gt;
+
+
+
+
+
+&lt;%
+else
+nopciones=2
+rs.CursorType = adOpenKeyset 
+rs.LockType = adLockOptimistic 
+rs.open "encuestas",conn
+rs.addnew
+rs("pregunta")=pregunta
+rs("tr1")=tr1
+rs("r1")=0
+rs("tr2")=tr2
+rs("r2")=0
+if tr3 &lt;&gt; "" then
+   nopciones=3
+   rs("tr3")=tr3
+   rs("r3")=0
+   if tr4 &lt;&gt; "" then
+     nopciones=4
+     rs("tr4")=tr4
+     rs("r4")=0
+   end if
+end if
+rs("nopciones")=nopciones
+rs("activa")=activar
+if request.form("activar")="ON" then
+ rs("inicio")=date
+end if
+rs.update%&gt;
+&lt;div align="center"&gt;
+  &lt;center&gt;
+  &lt;table border="0" width="90%" cellpadding="2" bgcolor="#C0C0C0"&gt;
+    &lt;tr&gt;
+      &lt;td width="100%" bgcolor="#0000FF"&gt;
+      &lt;p align="center"&gt;&lt;font color="#FFFFFF"&gt;Nueva Encuesta creada&lt;/font&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td width="100%"&gt;&lt;br&gt;&lt;div align="center"&gt;
+  &lt;center&gt;
+   &lt;table border="0" width="80%"&gt;
+  &lt;tr&gt;
+    &lt;td width="21%" bgcolor="#0000FF"&gt;&lt;font color="#FFFFFF"&gt;identificador&nbsp;&lt;/font&gt;&lt;/td&gt;
+    &lt;td width="79%" bgcolor="#FFFFFF"&gt;&lt;%=rs("idencuesta")%&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width="21%" bgcolor="#0000FF"&gt;&lt;font color="#FFFFFF"&gt;Pregunta&lt;/font&gt;&lt;/td&gt;
+    &lt;td width="79%" bgcolor="#FFFFFF"&gt;&lt;%=rs("pregunta")%&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width="21%" bgcolor="#0000FF"&gt;&lt;font color="#FFFFFF"&gt;Opción 1&lt;/font&gt;&lt;/td&gt;
+    &lt;td width="79%" bgcolor="#FFFFFF"&gt;&lt;%=rs("tr1")%&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width="21%" bgcolor="#0000FF"&gt;&lt;font color="#FFFFFF"&gt;Opción 2&lt;/font&gt;&lt;/td&gt;
+    &lt;td width="79%" bgcolor="#FFFFFF"&gt;&lt;%=rs("tr2")%&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width="21%" bgcolor="#0000FF"&gt;&lt;font color="#FFFFFF"&gt;Opción 3&lt;/font&gt;&lt;/td&gt;
+    &lt;td width="79%" bgcolor="#FFFFFF"&gt;&lt;%=rs("tr3")%&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width="21%" bgcolor="#0000FF"&gt;&lt;font color="#FFFFFF"&gt;Opción 4&lt;/font&gt;&lt;/td&gt;
+    &lt;td width="79%" bgcolor="#FFFFFF"&gt;&lt;%=rs("tr4")%&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width="21%" bgcolor="#0000FF"&gt;&lt;font color="#FFFFFF"&gt;Activacion&lt;/font&gt;&lt;/td&gt;
+    &lt;td width="79%" bgcolor="#FFFFFF"&gt;&lt;%=activar%&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/center&gt;
+&lt;/div&gt;
+
+        &lt;br&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;/center&gt;
+&lt;/div&gt;
+&lt;p&gt;&nbsp;&lt;/p&gt;
+
+
+&lt;%rs.close
+conn.close
+end if
+end if%&gt;
+
+&lt;p align="right"&gt;&lt;font face="Verdana" size="1"&gt;Sistema de encuestas de &lt;a href="http://www.asptutor.com" target="_blank"&gt;&lt;img border="0" src="http://www.asptutor.com/images/asptutor88x31.gif" align="center"&gt;&lt;/a&gt;&lt;/font&gt;&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</TEXTAREA> 
+<P>&nbsp;</P>
+<P>Nota: podéis usar y modificar este código a vuestro antojo, pero en el caso 
+de su uso en Internet, deberá mantener una referencia a <A 
+href="http://www.asptutor.com/">http://www.asptutor.com/</A> (es justo ¿no?)</P>
+<P>&nbsp;</P>&nbsp;[WM] 
+<P><A href="javascript:history.go(-1)">Regresar</A> </P></BODY></HTML>

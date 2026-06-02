@@ -1,0 +1,134 @@
+Conversión estática de sitio ASP clásico
+=======================================
+
+Resumen:
+- Archivos ASP convertidos a HTML: 122
+- Archivos estáticos copiados: 408
+- Archivos excluidos por ser de servidor/base/backup (.mdb, .ldb, .asa, .bak): 10
+- Includes no encontrados o excluidos: 1
+- Copias de compatibilidad agregadas para referencias heredadas: 6
+
+Limitaciones:
+- No se ejecutó ASP clásico: se convirtió a HTML estático.
+- Las secciones con ADODB, DSN, Request, Session, Application, FileSystemObject o Response.Write dinámico fueron conservadas como HTML cuando era posible; si dependían totalmente del servidor se reemplazaron por una nota visible.
+- No se incluyeron bases .mdb/.ldb ni global.asa porque no son necesarios para un sitio estático y no conviene publicarlos.
+
+Principales dependencias dinámicas detectadas:
+- default.asp: Redirect; SSI include
+- Home/Contador/contador_escribe.asp: FileSystemObject
+- Home/Ayuda.asp: SSI include
+- Home/Default_Derecha.asp: Application; SSI include
+- Home/Contador/contador_lee.asp: FileSystemObject; Response.Write
+- Home/calendario.asp: Request/formulario; Response.Write
+- Home/Consumos.asp: SSI include
+- Home/Consumos_Listado.asp: CreateObject/COM; ADODB/base de datos; Response.Write
+- Home/Contacto.asp: SSI include
+- Home/Contenido.asp: SSI include
+- Home/Noticias_Titulares.asp: CreateObject/COM; ADODB/base de datos; Response.Write
+- Home/efemerides.asp: CreateObject/COM; ADODB/base de datos; Response.Write
+- Home/CoyspuDigital.asp: SSI include
+- Home/Default.asp: SSI include
+- Home/Default_Derecha_contadorpropio.asp: Application; SSI include
+- Home/Default_Derecha_popup.asp: Application
+- Home/Default_old.asp: SSI include
+- Home/EncuestasEspecialesMail.asp: Request/formulario; SSI include
+- Home/Encuesta/Especiales/EncuestaADSL/EncuestaADSLConfirmar.asp: Request/formulario; Response.Write
+- Home/Encuesta/Especiales/EncuestaADSL/EncuestaADSLUpdate.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Guiatelefonos.asp: SSI include
+- Home/Guiatelefonos_busqueda.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Links.asp: SSI include
+- Home/LinksLista.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Links_Sugiera.asp: CreateObject/COM; Request/formulario; Response.Write
+- Home/noticias.asp: SSI include
+- Home/Noticias_Contenido.asp: Request/formulario; SSI include
+- Home/NuestraCooperativa.asp: SSI include
+- Home/PlanesInternet.asp: SSI include
+- Home/RedMulticampus.asp: SSI include
+- Home/Servicios.asp: SSI include
+- Home/Telefonia.asp: SSI include
+- Home/Telefonia_Guia.asp: SSI include
+- Home/Telefonia_Guia_busqueda.asp: SSI include
+- Home/Telefonia_Guia_Muestra.asp: SSI include
+- Home/Telefonia_Guia_Muestra_listado.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Session; Response.Write
+- Home/Telefonia_tarifas.asp: SSI include
+- Home/Telefonia_ticoca.asp: SSI include
+- Home/Contador/contador_completo.asp: FileSystemObject
+- Home/Encuesta/crearencuesta.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Encuesta/encuesta.asp: CreateObject/COM; ADODB/base de datos
+- Home/Encuesta/historico.asp: CreateObject/COM; ADODB/base de datos
+- Home/Encuesta/verencuesta.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Encuesta/verencuesta_img.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Gestion/Enlaces/Agregar.asp: CreateObject/COM; ADODB/base de datos; Response.Write
+- Home/Gestion/Enlaces/Agregar_enlace.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Gestion/Enlaces/borrar.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Gestion/Enlaces/borrar_enlace.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Gestion/Enlaces/enlace.asp: CreateObject/COM; ADODB/base de datos; Request/formulario
+- Home/Gestion/Enlaces/listado.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Gestion/Enlaces/Modificar.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Gestion/Enlaces/Modificar_enlace.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Gestion/Enlaces/Modificar_ingreso_cambios.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Gestion/Enlaces/test.asp: Request/formulario; Response.Write
+- Home/Gestion/Noticias/agrega_noticia.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Gestion/Noticias/borrar.asp: CreateObject/COM; ADODB/base de datos
+- Home/Gestion/Noticias/borrar_noticia.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Gestion/Noticias/listado.asp: CreateObject/COM; ADODB/base de datos; Response.Write
+- Home/Gestion/Noticias/Modificar.asp: CreateObject/COM; ADODB/base de datos
+- Home/Gestion/Noticias/Modificar_ingreso_cambios.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Gestion/Noticias/Modificar_noticia.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Gestion/Noticias/noticia.asp: CreateObject/COM; ADODB/base de datos; Request/formulario
+- Home/Encuesta/backs/crearencuesta.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Encuesta/backs/encuesta.asp: CreateObject/COM; ADODB/base de datos
+- Home/Encuesta/backs/historico.asp: CreateObject/COM; ADODB/base de datos
+- Home/Encuesta/backs/verencuesta.asp: CreateObject/COM; ADODB/base de datos; Request/formulario
+- Home/Encuesta/backs/2/crearencuesta.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+- Home/Encuesta/backs/2/encuesta.asp: CreateObject/COM; ADODB/base de datos
+- Home/Encuesta/backs/2/historico.asp: CreateObject/COM; ADODB/base de datos
+- Home/Encuesta/backs/2/verencuesta.asp: CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+
+Includes no encontrados/excluidos:
+- Home/Servicios.asp: Home\Servicios_Contenido.asp
+
+Copias de compatibilidad agregadas:
+- Home/style.css -> style.css
+- Home/Banners/1cnf/bannerCoysputel1000gracias.gif -> Home/Banners/bannerCoysputel1000gracias.gif
+- Home/Imagenes/Boton_ContestarNuevamente.gif -> Home/Encuesta/Especiales/EncuestaADSL/imagenes/Boton_ContestarNuevamente.gif
+- Home/Imagenes/Boton_EnviarEncuestav.gif -> Home/Encuesta/Especiales/EncuestaADSL/imagenes/Boton_EnviarEncuestav.gif
+- Home/Encuesta/Especiales/EncuestaADSL/mail_r5_c1.jpg -> Home/Encuesta/Especiales/EncuestaADSL/Encuesta/Especiales/EncuestaADSL/mail_r5_c1.jpg
+- Home/Imagenes/Boton_cerrar.gif -> Home/RedMulticampus/Imagenes/Boton_cerrar.gif
+
+Archivos excluidos:
+- global.asa
+- Home/Consumos_Listado.asp.bak
+- Home/Contenido.asp.bak
+- Home/Encuesta/verencuesta.asp.bak
+- Home/Encuesta/DB/Encuestas.mdb
+- Home/Encuesta/DB/tencuestas.mdb
+- Home/Encuesta/Docs/tencuestas.mdb
+- Home/Encuesta/backs/2/DB/backup.mdb
+- Home/Encuesta/backs/2/DB/tencuestas.ldb
+- Home/Encuesta/backs/2/DB/tencuestas.mdb
+
+Integración posterior de bases MDB
+================================
+- Coyspunet.mdb: Efemerides 833 registros; Links_Categorias 33; Links_lista 441; Noticias 4.
+- EncuestasEspeciales.mdb: EncuestaADSL 5 registros.
+- Home/Encuesta/DB/tencuestas.mdb dentro del ZIP original: Encuestas 7 registros.
+- No se publicó la tabla Seguridad ni claves administrativas.
+- La DSN guiatelefono no está incluida; la guía telefónica dinámica no pudo reconstruirse desde base.
+- Las secciones recuperadas quedaron como HTML/JS estático: noticias, efemérides, enlaces y resultados históricos de encuestas.
+
+Actualización posterior:
+- Se normalizó el charset de todas las páginas HTML/HTM a UTF-8.
+- Se corrigió el problema de mojibake en páginas que declaraban iso-8859-1 aunque el archivo estaba en UTF-8.
+- Se agregaron copias locales de los banners históricos de clima y cotización del dólar:
+  Home/Banners/forecast_marcosjuarez.gif
+  Home/Banners/dolarpeso.gif
+- Se reemplazaron las referencias externas muertas a wunderground.com y dolarpeso.com por esos archivos locales.
+
+Ajustes posteriores:
+- El archivo Home/Banners/bannerCoysputel1000gracias.gif no era una imagen GIF válida: contenía metadatos de FrontPage Server Extensions (vti_*). Se reemplazó por un banner GIF estático recreado para evitar la imagen rota.
+- Se creó Home/webmail_no_disponible.html y se redirigieron allí los enlaces del webmail original http://mail.coyspu.com.ar:3000.
+- Los enlaces superiores a http://www.coyspu.com.ar se cambiaron a Default.html dentro del sitio estático.
+- El texto "Fecha original generada dinámicamente por ASP" se reemplazó por el enlace "Volver a Mirada Nerd" hacia https://www.marchiori.ar/.
+- Se quitó nowrap de columnas de contenido que forzaban páginas largas hacia la derecha, por ejemplo NuestraCooperativa.html.
+- Se agregó una carpeta Home/banners en minúscula para compatibilidad con hosting Linux sensible a mayúsculas/minúsculas.

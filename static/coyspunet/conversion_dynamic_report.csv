@@ -1,0 +1,71 @@
+archivo,dependencias_detectadas
+default.asp,Redirect; SSI include
+Home/Contador/contador_escribe.asp,FileSystemObject
+Home/Ayuda.asp,SSI include
+Home/Default_Derecha.asp,Application; SSI include
+Home/Contador/contador_lee.asp,FileSystemObject; Response.Write
+Home/calendario.asp,Request/formulario; Response.Write
+Home/Consumos.asp,SSI include
+Home/Consumos_Listado.asp,CreateObject/COM; ADODB/base de datos; Response.Write
+Home/Contacto.asp,SSI include
+Home/Contenido.asp,SSI include
+Home/Noticias_Titulares.asp,CreateObject/COM; ADODB/base de datos; Response.Write
+Home/efemerides.asp,CreateObject/COM; ADODB/base de datos; Response.Write
+Home/CoyspuDigital.asp,SSI include
+Home/Default.asp,SSI include
+Home/Default_Derecha_contadorpropio.asp,Application; SSI include
+Home/Default_Derecha_popup.asp,Application
+Home/Default_old.asp,SSI include
+Home/EncuestasEspecialesMail.asp,Request/formulario; SSI include
+Home/Encuesta/Especiales/EncuestaADSL/EncuestaADSLConfirmar.asp,Request/formulario; Response.Write
+Home/Encuesta/Especiales/EncuestaADSL/EncuestaADSLUpdate.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Guiatelefonos.asp,SSI include
+Home/Guiatelefonos_busqueda.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Links.asp,SSI include
+Home/LinksLista.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Links_Sugiera.asp,CreateObject/COM; Request/formulario; Response.Write
+Home/noticias.asp,SSI include
+Home/Noticias_Contenido.asp,Request/formulario; SSI include
+Home/NuestraCooperativa.asp,SSI include
+Home/PlanesInternet.asp,SSI include
+Home/RedMulticampus.asp,SSI include
+Home/Servicios.asp,SSI include
+Home/Telefonia.asp,SSI include
+Home/Telefonia_Guia.asp,SSI include
+Home/Telefonia_Guia_busqueda.asp,SSI include
+Home/Telefonia_Guia_Muestra.asp,SSI include
+Home/Telefonia_Guia_Muestra_listado.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Session; Response.Write
+Home/Telefonia_tarifas.asp,SSI include
+Home/Telefonia_ticoca.asp,SSI include
+Home/Contador/contador_completo.asp,FileSystemObject
+Home/Encuesta/crearencuesta.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Encuesta/encuesta.asp,CreateObject/COM; ADODB/base de datos
+Home/Encuesta/historico.asp,CreateObject/COM; ADODB/base de datos
+Home/Encuesta/verencuesta.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Encuesta/verencuesta_img.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Gestion/Enlaces/Agregar.asp,CreateObject/COM; ADODB/base de datos; Response.Write
+Home/Gestion/Enlaces/Agregar_enlace.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Gestion/Enlaces/borrar.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Gestion/Enlaces/borrar_enlace.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Gestion/Enlaces/enlace.asp,CreateObject/COM; ADODB/base de datos; Request/formulario
+Home/Gestion/Enlaces/listado.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Gestion/Enlaces/Modificar.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Gestion/Enlaces/Modificar_enlace.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Gestion/Enlaces/Modificar_ingreso_cambios.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Gestion/Enlaces/test.asp,Request/formulario; Response.Write
+Home/Gestion/Noticias/agrega_noticia.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Gestion/Noticias/borrar.asp,CreateObject/COM; ADODB/base de datos
+Home/Gestion/Noticias/borrar_noticia.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Gestion/Noticias/listado.asp,CreateObject/COM; ADODB/base de datos; Response.Write
+Home/Gestion/Noticias/Modificar.asp,CreateObject/COM; ADODB/base de datos
+Home/Gestion/Noticias/Modificar_ingreso_cambios.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Gestion/Noticias/Modificar_noticia.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Gestion/Noticias/noticia.asp,CreateObject/COM; ADODB/base de datos; Request/formulario
+Home/Encuesta/backs/crearencuesta.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Encuesta/backs/encuesta.asp,CreateObject/COM; ADODB/base de datos
+Home/Encuesta/backs/historico.asp,CreateObject/COM; ADODB/base de datos
+Home/Encuesta/backs/verencuesta.asp,CreateObject/COM; ADODB/base de datos; Request/formulario
+Home/Encuesta/backs/2/crearencuesta.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
+Home/Encuesta/backs/2/encuesta.asp,CreateObject/COM; ADODB/base de datos
+Home/Encuesta/backs/2/historico.asp,CreateObject/COM; ADODB/base de datos
+Home/Encuesta/backs/2/verencuesta.asp,CreateObject/COM; ADODB/base de datos; Request/formulario; Response.Write
