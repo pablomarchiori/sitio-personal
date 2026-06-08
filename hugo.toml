@@ -50,16 +50,21 @@ pageRef = "labs"
 weight = 20
 
 [[menus.main]]
+name = "Escritos"
+url = "/escritos/"
+weight = 30
+
+[[menus.main]]
 name = "Lenguaje"
 pageRef = "manual-de-supervivencia-linguistica"
-weight = 30
+weight = 40
 
 [[menus.main]]
 name = "Site Log"
 pageRef = "site-log"
-weight = 40
+weight = 50
 
 [[menus.main]]
 name = "Acerca de"
 pageRef = "/about"
-weight = 50
+weight = 60

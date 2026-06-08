@@ -1,0 +1,50 @@
+{{ define "main" }}
+  <article class="max-w-full">
+    {{ if .Params.showBreadcrumbs | default true }}
+      {{ partial "breadcrumbs.html" . }}
+    {{ end }}
+
+    <header>
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        {{ .Title }}
+      </h1>
+    </header>
+
+    <section class="prose mt-6 max-w-none dark:prose-invert">
+      {{ .Content }}
+    </section>
+
+    <section class="not-prose mt-12">
+      {{ range sort (.Pages.GroupByDate "2006") "Key" "asc" }}
+        <section class="mt-10">
+          <h2 class="mb-4 text-2xl font-extrabold text-neutral-900 dark:text-neutral">
+            {{ .Key }}
+          </h2>
+
+          <div class="space-y-2">
+            {{ range .Pages.ByDate }}
+              <a
+                href="{{ .RelPermalink }}"
+                class="group block rounded-lg px-4 py-3 no-underline transition hover:bg-neutral-100 dark:hover:bg-neutral-800"
+              >
+                <h3 class="m-0 text-xl font-semibold text-neutral-900 group-hover:text-primary-600 dark:text-neutral-100 dark:group-hover:text-primary-400">
+                  {{ .Title }}
+                </h3>
+
+                <time class="mt-1 block text-sm text-neutral-500 dark:text-neutral-400" datetime="{{ .Date.Format "2006-01-02" }}">
+                  {{ .Date.Format "02/01/2006" }}
+                </time>
+
+                {{ with .Params.description }}
+                  <p class="m-0 mt-2 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+                    {{ . }}
+                  </p>
+                {{ end }}
+              </a>
+            {{ end }}
+          </div>
+        </section>
+      {{ end }}
+    </section>
+  </article>
+{{ end }}

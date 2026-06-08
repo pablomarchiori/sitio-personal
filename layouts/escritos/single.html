@@ -1,0 +1,30 @@
+{{ define "main" }}
+  <article class="max-w-full">
+    {{ if .Params.showBreadcrumbs | default true }}
+      {{ partial "breadcrumbs.html" . }}
+    {{ end }}
+
+    <header>
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        {{ .Title }}
+      </h1>
+
+      <time class="mt-2 block text-sm text-neutral-500 dark:text-neutral-400" datetime="{{ .Date.Format "2006-01-02" }}">
+        {{ .Date.Format "02/01/2006" }}
+      </time>
+    </header>
+
+    <section class="prose mt-8 max-w-none dark:prose-invert">
+      {{ .Content }}
+    </section>
+
+    <footer class="mt-12 border-t border-neutral-200 pt-6 dark:border-neutral-700">
+      <a
+        href="{{ .CurrentSection.RelPermalink }}"
+        class="text-sm font-medium text-neutral-600 no-underline transition hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"
+      >
+        ← Volver a Escritos
+      </a>
+    </footer>
+  </article>
+{{ end }}
