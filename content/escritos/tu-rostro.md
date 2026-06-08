@@ -58,5 +58,5 @@ donde puedo imaginarte un rostro.
 No siento esa paz.  
 Sé que no estás ahí.
 
-
+---
 _Archivo personal 08/09/2013. Revisión ortográfica y de puntuación posterior, sin reescritura desde el presente._

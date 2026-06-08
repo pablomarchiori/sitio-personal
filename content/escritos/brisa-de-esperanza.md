@@ -17,5 +17,5 @@ Una brisa que alienta mi desechada esperanza se escucha en mis oídos; tan solo 
 
 ¿O será la necesidad de las velas por llevar la nave a un nuevo viaje?
 
-
+---
 _Archivo personal 11/07/2015. Revisión ortográfica y de puntuación posterior, sin reescritura desde el presente._

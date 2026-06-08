@@ -32,5 +32,5 @@ vacío en el interior,
 vacío…  
 otra vez.
 
-
+---
 _Archivo personal 12/09/2013. Revisión ortográfica y de puntuación posterior, sin reescritura desde el presente._

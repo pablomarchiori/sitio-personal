@@ -18,5 +18,5 @@ Los fabrica cuando se pone un barbijo de nacionalismo cursi.
 
 Mi patria es una fábrica de héroes, y con cada uno de ellos tapa un poco de derrota, de desidia, de corrupción, de postergación, de abandono.  
 
-
+---
 _Archivo personal 14/04/2020. Revisión ortográfica y de puntuación posterior, sin reescritura desde el presente._

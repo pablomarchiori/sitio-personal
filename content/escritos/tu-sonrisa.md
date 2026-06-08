@@ -29,5 +29,5 @@ pero que no me atrevo a lanzar,
 y te descubra regalándome tu sonrisa sin cuidado,  
 apagándola contra la mía.
 
-
+---
 _Archivo personal 12/09/2013 . Revisión ortográfica y de puntuación posterior, sin reescritura desde el presente._

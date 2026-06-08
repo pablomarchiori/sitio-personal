@@ -22,5 +22,5 @@ Sigo esperando el momento,
 ese instante perfecto en que me transforme en lo que deseas,  
 el que, por ventura, cambie tu indiferencia por un tal vez.
 
-
+---
 _Archivo personal. Fecha del archivo: 31/05/2014 21:24. Revisión ortográfica y de puntuación posterior, sin reescritura desde el presente._

@@ -40,5 +40,5 @@ como su esperanza.
 
 Sus capullitos ya no están con él.
 
-
+---
 _Archivo personal 25/10/2011. Revisión ortográfica y de puntuación posterior, sin reescritura desde el presente._

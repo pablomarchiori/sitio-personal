@@ -45,5 +45,5 @@ Ella fue a posarse en otro horizonte,
 a iluminar otra habitación,  
 pero él aún puede ver sus ojos claros cuando cierra los suyos…
 
-
+---
 _Archivo personal 24/07/2014. Revisión ortográfica y de puntuación posterior, sin reescritura desde el presente._

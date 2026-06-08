@@ -4,6 +4,7 @@ description: "Textos breves, memoria e introspección"
 date: 2026-06-07T22:00:00-03:00
 draft: false
 ---
+![Ilustración en blanco y negro para Inicio](/images/escritos/index.png)
 
 Esta sección reúne textos breves escritos en distintos momentos.
 

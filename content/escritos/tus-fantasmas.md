@@ -29,5 +29,5 @@ Y escapás, solo un momento, de tu propio vacío,
 escapás,  
 al menos, eso es lo que te gusta creer.
 
-
+---
 _Archivo personal 16/05/2011. Revisión ortográfica y de puntuación posterior, sin reescritura desde el presente._
