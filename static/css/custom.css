@@ -1,23 +1,28 @@
+/* Ajuste de listas dentro de artículos */
+
 article ul,
 article ol {
-margin-top: 0.5rem !important;
-margin-bottom: 0.5rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
 article li {
-margin-top: 0 !important;
-margin-bottom: 0 !important;
-line-height: 1.35 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  line-height: 1.35 !important;
 }
 
 article li + li {
-margin-top: 0 !important;
+  margin-top: 0 !important;
 }
 
 article li p {
-margin-top: 0 !important;
-margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
+
+
+/* Botones para Labs */
 
 .lab-buttons {
   display: flex;
@@ -66,3 +71,86 @@ margin-bottom: 0 !important;
     justify-content: center;
   }
 }
+
+
+/* Galerías comparativas */
+
+.galeria-comparativa {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.galeria-comparativa a,
+.galeria-comparativa a:hover,
+.galeria-comparativa a:focus,
+.galeria-comparativa a:active {
+  display: block;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  text-decoration: none !important;
+}
+
+.galeria-comparativa img {
+  display: block;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+
+/* Galería de dos imágenes */
+
+.galeria-doble a {
+  flex: 0 1 200px;
+}
+
+.galeria-doble img {
+  width: 100%;
+  max-width: 200px;
+}
+
+
+/* Galería de tres imágenes */
+
+.galeria-triple a {
+  flex: 0 1 160px;
+}
+
+.galeria-triple img {
+  width: 100%;
+  max-width: 160px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 800px) {
+  .galeria-comparativa {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .galeria-doble a,
+  .galeria-triple a {
+    flex: 0 1 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .galeria-doble img,
+  .galeria-triple img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
