@@ -107,18 +107,16 @@ article li p {
   box-shadow: none;
 }
 
-
 /* Galería de dos imágenes */
 
 .galeria-doble a {
-  flex: 0 1 200px;
+  flex: 0 1 220px;
 }
 
 .galeria-doble img {
-  width: 100%;
-  max-width: 200px;
+  width: 220px;
+  max-width: 100%;
 }
-
 
 /* Galería de tres imágenes */
 
@@ -127,10 +125,9 @@ article li p {
 }
 
 .galeria-triple img {
-  width: 100%;
-  max-width: 160px;
+  width: 160px;
+  max-width: 100%;
 }
-
 
 /* Responsive */
 
@@ -143,14 +140,15 @@ article li p {
   .galeria-doble a,
   .galeria-triple a {
     flex: 0 1 auto;
-    width: 100%;
-    max-width: 100%;
   }
 
-  .galeria-doble img,
+  .galeria-doble img {
+    width: 220px;
+    max-width: 92vw;
+  }
+
   .galeria-triple img {
-    width: 100%;
-    max-width: 100%;
+    width: 160px;
+    max-width: 92vw;
   }
 }
-

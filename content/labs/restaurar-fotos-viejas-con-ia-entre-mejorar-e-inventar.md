@@ -8,7 +8,7 @@ categories: ["Labs"]
 ---
 
 ![Ilustración en blanco y negro para Inicio](/images/labs/restaurar-fotos-viejas-gemini-portada.png)
-	*A veces la IA divaga....*
+	*A veces la IA divaga...*
 
 ## Fotos viejas, frío y una excusa para probar IA
 
@@ -91,7 +91,7 @@ La segunda prueba fue con una foto familiar a color, con poca luz, mucho grano, 
 
 Con el primer prompt, Gemini limpió ruido, levantó detalle, ordenó la iluminación y reconstruyó las caras con mucha más definición — pero también empezó a inventar.
 
-El cambio más evidente está en la martineta colorada que aparece en la foto original. En casa le decíamos “una colorada”. En la primera restauración ya no se reconoce como ave: Gemini la transforma en una especie de objeto con alas de madera, como si hubiera reinterpretado las plumas y la forma general sin entender del todo qué estaba mirando.
+El cambio más evidente está en la martineta colorada (o simplemente "colorada" ☺️)que aparece en la foto original. En la primera restauración ya no se reconoce como ave: Gemini la transforma en una especie de objeto con alas de madera, como si hubiera reinterpretado las plumas y la forma general sin entender del todo qué estaba mirando.
 
 Cuando la IA divaga, el resultado puede quedar más cerca del [Ecce Homo de Borja](https://www.infobae.com/cultura/2022/08/08/10-anos-del-ecce-homo-de-borja-la-peor-restauracion-de-la-historia-icono-pop-o-arte/) que de una recuperación fiel. No siempre tan extremo, pero la lógica es parecida.
 
