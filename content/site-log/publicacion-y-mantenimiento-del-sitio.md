@@ -1,11 +1,14 @@
 ---
 title: "Cómo mantener, publicar y no romper el sitio"
-date: 2026-03-28T17:30:00-03:00
+date: 2026-07-23T17:30:00-03:00
 draft: false
 description: "Guía práctica para agregar contenido, manejar drafts, entender fechas y publicar cambios en GitHub Pages sin hacer lío."
 tags: ["hugo", "git", "github-pages", "markdown", "site-log"]
 categories: ["Site Log"]
 ---
+
+Texto original: 28/03/26  
+Actualización: 30/05/26 — [Recuperación de un archivo borrado por Duplicate Cleaner](#recuperar-un-archivo-borrado-por-error)
 
 # Objetivo
 
@@ -20,6 +23,7 @@ La idea de esta nota es cubrir lo práctico:
 - qué pasó con el error de la fecha futura
 - qué hacen `git add`, `git commit` y `git push`
 - cómo publicar cambios sin hacer lío
+- cómo detectar y recuperar un archivo borrado por error
 
 ## La estructura mental básica
 
@@ -238,6 +242,38 @@ Eso muestra:
 - archivos borrados
 - si hay algo que no se quería subir
 
+## Recuperar un archivo borrado por error
+
+Durante una limpieza con Duplicate Cleaner desapareció este archivo:
+
+`layouts/_partials/functions/warnings.html`
+
+Aunque el archivo está vacío, cumple una función concreta: actúa como override local y evita que Hugo use un partial incompatible del tema Congo. Al faltar, el sitio dejó de compilar y reapareció el error relacionado con `.Author`.
+
+Para revisar si Git detecta archivos borrados:
+
+`git status --short`
+
+Este comando muestra un resumen compacto de los cambios. Los archivos eliminados aparecen marcados con `D`.
+
+Para listar únicamente los archivos versionados que faltan en la carpeta local:
+
+`git diff --name-only --diff-filter=D`
+
+El filtro `D` limita el resultado a archivos borrados. Así se puede revisar qué falta antes de restaurar nada.
+
+Para recuperar solo el archivo afectado desde el último commit:
+
+`git restore --source=HEAD -- layouts/_partials/functions/warnings.html`
+
+`HEAD` representa el último commit local. El comando recupera ese archivo puntual sin modificar el resto del proyecto.
+
+Después conviene verificar que volvió a aparecer:
+
+`dir layouts\_partials\functions`
+
+Si Git muestra varios archivos borrados, es mejor revisarlos uno por uno. No conviene ejecutar una restauración general sin comprobar antes si hay cambios locales que se quieran conservar.
+
 ## Qué hacer si local se ve bien pero online no
 
 Revisar en este orden:
@@ -257,6 +293,7 @@ En este sitio ya quedó comprobado que:
 - el contenido no se publica por arte de magia: sin `commit` y `push`, no sale
 - GitHub Pages compila después del push, no antes
 - conviene separar el contenido general en `notas` y la bitácora técnica del sitio en `site-log`
+- un archivo vacío puede ser necesario y Git permite recuperarlo desde el último commit
 
 ## Recomendación práctica para no perder tiempo
 
@@ -269,6 +306,7 @@ Antes de pensar que Hugo “anda mal”, revisar siempre esto:
 - ¿el server está levantado con `-D`?
 - ¿ya hice commit y push?
 - ¿terminó el workflow de GitHub?
+- ¿Git detecta algún archivo borrado?
 
 La mitad de los problemas raros suelen venir de ahí.
 
