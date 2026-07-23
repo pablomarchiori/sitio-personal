@@ -9,8 +9,6 @@ categories: ["Notas"]
 
 ![Una biblioteca digital caótica que atraviesa un portal y aparece ordenada](/images/notas/ordenando-mi-biblioteca-digital-con-codex-portada.png)
 
-# Ordenando mi biblioteca digital con Codex
-
 Antes del streaming y de las suscripciones para todo, los “internautas” descargábamos cuanta cosa encontrábamos por ahí, convencidos de que algún día nos iba a servir.
 
 En mi caso, el paso de los años demostró que la mayoría terminó sirviendo poco, pero dejó una acumulación digital de libros, historietas, manuales, documentos y material multimedia que todavía conservo 😅. Todo quedó reunido en una carpeta de OneDrive que se alimentó de distintas fuentes, formatos y épocas de mi vida.
@@ -63,8 +61,6 @@ Entre los HTML había cosas muy diferentes. Algunos eran índices, manuales o pe
 
 Para esas obras, Codex reconstruyó el orden de los capítulos, generó el índice, reunió las imágenes y armó un EPUB. El resultado se podía abrir y recorrer desde cualquier lector compatible.
 
-![Algunos de los libros convertidos, vistos en Calibre](/images/notas/ordenando-mi-biblioteca-digital-con-codex-calibre.png)
-
 Después de revisar uno, noté que le faltaba la portada. No sé si Codex no la había identificado o si simplemente nunca habíamos hablado del tema.
 
 Así que asumí mi rol de liderazgo y le dije:
@@ -72,6 +68,8 @@ Así que asumí mi rol de liderazgo y le dije:
 > Ponele la portada.
 
 Buscó entre los recursos de la obra, encontró la imagen correspondiente y la incorporó. No tuve que señalarle el nombre del archivo ni explicarle dónde estaba.
+
+![Algunos de los libros convertidos, vistos en Calibre](/images/notas/ordenando-mi-biblioteca-digital-con-codex-calibre.png)
 
 ## EPUB o PDF
 
