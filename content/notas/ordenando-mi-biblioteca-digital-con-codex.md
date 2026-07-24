@@ -97,6 +97,10 @@ Cuando algo no estaba claro, conservaba el original y dejaba ese caso pendiente.
 
 Hoy probablemente lo haría por etapas más chicas, empezando por un solo tipo de archivo y ajustando las reglas antes de escalar al resto. Aun así, creo que el trabajo quedó hecho en una fracción del tiempo que me habría llevado hacerlo a mano.
 
+Codex tampoco viene con uso ilimitado. Yo pago la suscripción Plus, veinte dólares por mes, y días después de terminar con la biblioteca (mientras seguía probando con otras carpetas) me quedé sin cuota. La aplicación avisó que se restablecería una semana más tarde. Hasta entonces, las opciones eran esperar, comprar créditos, pasar al plan Pro o gastar uno de los reinicios que tenía guardados sin saberlo.
+
+Recién ahí me puse a mirar cómo se consume. Habitualmente uso razonamiento alto en ChatGPT Classic sin haber alcanzado un límite y di por sentado que en Codex sería igual. No lo es. Acá el consumo no depende simplemente de cuántos mensajes mandás: se calcula a partir de tokens y varía según el tamaño y la complejidad del trabajo, el modelo elegido y la duración de la sesión. En una tarea como esta, leer miles de archivos y mantener todo ese contexto puede gastar muchísimo más que una conversación larga.
+
 Codex hizo el trabajo repetitivo sobre una biblioteca de 58.667 archivos. Yo intervine donde hacía falta decidir qué conservar, qué transformar y cuándo frenar.
 
 ¿Fue útil organizar una colección que casi no uso? No lo sé. Pero esas dos tardes me sirvieron para descubrir una aplicación práctica de Codex que no conocía 🤓.
