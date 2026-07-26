@@ -35,7 +35,7 @@ En algunos cómics, por ejemplo, la carpeta principal contenía otra carpeta y r
 
 La tarea es sencilla cuando aparece una vez. Repetida en cientos de carpetas se vuelve el tipo de trabajo que uno deja pendiente durante años.
 
-Ya había intentado resolver algunas de estas cosas con herramientas más tradicionales, pero siempre terminaba armando una regla rígida para un caso puntual. Acá las reglas podían ajustarse a medida que aparecían excepciones.
+Ya había intentado resolver algunas de estas cosas con herramientas más tradicionales, pero siempre terminaba armando una regla rígida para un caso puntual.
 
 ## Modernizar formatos antiguos
 
@@ -81,23 +81,13 @@ Los HTML originales y sus recursos también quedaron guardados.
 
 ## Cómo terminó la cosa
 
-Fueron un par de tardes y no me exigieron atención constante. Podía hacer otras cosas y volver cuando Codex terminaba una etapa o necesitaba consultarme algo.
+Finalmente fueron un par de tardes. Podía hacer otras cosas y volver cuando Codex terminaba una etapa o necesitaba consultarme algo.
 
-Codex no se la llevó fácil tampoco, mirando el registro, el primer script que ejecutó ni siquiera llegó a correr: PowerShell rechazó la combinación de parámetros. Tuvo que corregirlo, volver a correr la simulación y revisar el registro nuevo. Se econtró con reglas que funcionaban en una carpeta pero no en otra, y conversiones que necesitaron más de un intento.
-
-La validación terminó concentrándose en unos pocos puntos:
-
-- texto e imágenes completos;
-- enlaces y capítulos en el orden correcto;
-- documentos que mantuvieran su diseño;
-- videos con la misma duración y resolución;
-- EPUB que abrieran y se pudieran recorrer.
-
-Cuando algo no estaba claro, conservaba el original y dejaba ese caso pendiente.
+Codex tampoco la tuvo fácil. Según el registro, el primer script ni siquiera llegó a ejecutarse: PowerShell rechazó la combinación de parámetros. Tuvo que corregirlo, volver a correr la simulación y revisar el registro nuevo. También encontró reglas que funcionaban en una carpeta pero no en otra, y conversiones que necesitaron más de un intento. Cuando algo no estaba claro, conservaba el original y dejaba ese caso pendiente.
 
 Hoy probablemente lo haría por etapas más chicas, empezando por un solo tipo de archivo y ajustando las reglas antes de escalar al resto. Aun así, creo que el trabajo quedó hecho en una fracción del tiempo que me habría llevado hacerlo a mano.
 
-Codex tampoco la tuvo fácil. Según el registro, el primer script ni siquiera llegó a ejecutarse: PowerShell rechazó la combinación de parámetros. Tuvo que corregirlo, volver a correr la simulación y revisar el registro nuevo. También encontró reglas que funcionaban en una carpeta pero no en otra, y conversiones que necesitaron más de un intento
+Codex tampoco viene con uso ilimitado. Pago la suscripción Plus, veinte dólares por mes, y días después de terminar con la biblioteca (mientras seguía probando con otras carpetas) me quedé sin cuota. La aplicación avisó que se restablecería una semana más tarde. Hasta entonces, las opciones eran esperar, comprar créditos, pasar al plan Pro o gastar uno de los reinicios que tenía guardados sin saberlo.
 
 Recién ahí me puse a mirar cómo se consume. Habitualmente uso razonamiento alto en ChatGPT Classic sin haber alcanzado un límite y di por sentado que en Codex sería igual. No lo es. Acá el consumo no depende simplemente de cuántos mensajes mandás: se calcula a partir de tokens y varía según el tamaño y la complejidad del trabajo, el modelo elegido y la duración de la sesión. En una tarea como esta, leer miles de archivos y mantener todo ese contexto puede gastar muchísimo más que una conversación larga.
 
