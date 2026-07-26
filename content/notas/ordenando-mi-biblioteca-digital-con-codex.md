@@ -11,7 +11,7 @@ categories: ["Notas"]
 
 Antes del streaming y de las suscripciones para todo, los “internautas” descargábamos cuanta cosa encontrábamos por ahí, convencidos de que algún día nos iba a servir.
 
-En mi caso, el paso de los años demostró que la mayoría terminó sirviendo poco, pero dejó una acumulación digital de libros, historietas, manuales, documentos y material multimedia que todavía conservo 😅. Todo quedó reunido en una carpeta de OneDrive que se alimentó de distintas fuentes, formatos y épocas de mi vida.
+En mi caso, el paso de los años demostró que la mayoría terminó sirviendo poco 😅, pero dejó una acumulación digital de libros, historietas, manuales, documentos y material multimedia que todavía conservo. Todo quedó reunido en una carpeta de OneDrive que se alimentó de distintas fuentes, formatos y épocas de mi vida.
 
 Aunque la colección nunca fue un caos absoluto, con el tiempo aparecieron nombres escritos de varias maneras, carpetas innecesarias, formatos antiguos y archivos que ya no se abrían bien con programas actuales. Siempre tuve en mente revisarla, pero hacerlo a mano no me parecía una posibilidad muy realista: son 58.667 archivos distribuidos en 2.558 carpetas.
 
@@ -83,7 +83,7 @@ Los HTML originales y sus recursos también quedaron guardados.
 
 Fueron un par de tardes y no me exigieron atención constante. Podía hacer otras cosas y volver cuando Codex terminaba una etapa o necesitaba consultarme algo.
 
-El primer script ni siquiera llegó a ejecutarse: PowerShell rechazó la combinación de parámetros. Hubo que corregirlo, volver a correr la simulación y revisar el registro nuevo. Después aparecieron reglas que funcionaban en una carpeta pero no en otra, y conversiones que necesitaron más de un intento.
+Codex no se la llevó fácil tampoco, mirando el registro, el primer script que ejecutó ni siquiera llegó a correr: PowerShell rechazó la combinación de parámetros. Tuvo que corregirlo, volver a correr la simulación y revisar el registro nuevo. Se econtró con reglas que funcionaban en una carpeta pero no en otra, y conversiones que necesitaron más de un intento.
 
 La validación terminó concentrándose en unos pocos puntos:
 
@@ -97,10 +97,8 @@ Cuando algo no estaba claro, conservaba el original y dejaba ese caso pendiente.
 
 Hoy probablemente lo haría por etapas más chicas, empezando por un solo tipo de archivo y ajustando las reglas antes de escalar al resto. Aun así, creo que el trabajo quedó hecho en una fracción del tiempo que me habría llevado hacerlo a mano.
 
-Codex tampoco viene con uso ilimitado. Yo pago la suscripción Plus, veinte dólares por mes, y días después de terminar con la biblioteca (mientras seguía probando con otras carpetas) me quedé sin cuota. La aplicación avisó que se restablecería una semana más tarde. Hasta entonces, las opciones eran esperar, comprar créditos, pasar al plan Pro o gastar uno de los reinicios que tenía guardados sin saberlo.
+Codex tampoco la tuvo fácil. Según el registro, el primer script ni siquiera llegó a ejecutarse: PowerShell rechazó la combinación de parámetros. Tuvo que corregirlo, volver a correr la simulación y revisar el registro nuevo. También encontró reglas que funcionaban en una carpeta pero no en otra, y conversiones que necesitaron más de un intento
 
 Recién ahí me puse a mirar cómo se consume. Habitualmente uso razonamiento alto en ChatGPT Classic sin haber alcanzado un límite y di por sentado que en Codex sería igual. No lo es. Acá el consumo no depende simplemente de cuántos mensajes mandás: se calcula a partir de tokens y varía según el tamaño y la complejidad del trabajo, el modelo elegido y la duración de la sesión. En una tarea como esta, leer miles de archivos y mantener todo ese contexto puede gastar muchísimo más que una conversación larga.
-
-Codex hizo el trabajo repetitivo sobre una biblioteca de 58.667 archivos. Yo intervine donde hacía falta decidir qué conservar, qué transformar y cuándo frenar.
 
 ¿Fue útil organizar una colección que casi no uso? No lo sé. Pero esas dos tardes me sirvieron para descubrir una aplicación práctica de Codex que no conocía 🤓.
