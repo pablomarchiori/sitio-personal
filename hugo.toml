@@ -1,5 +1,5 @@
 baseURL = "https://www.marchiori.ar/"
-languageCode = "es-ar"
+locale = "es-ar"
 title = "Mirada Nerd"
 theme = "congo"
 
