@@ -40,7 +40,7 @@ Linux puede no tener costo de licencia, pero eso no vuelve gratuita toda la solu
 
 Treinta años después, la computadora ya no es una isla. Ahí se guardan claves, se abren adjuntos, se entra al banco, se sincronizan archivos y se manejan datos de clientes, todo en línea. Seguir pensando el software como un directorio que se copia de una máquina a otra es sostener una costumbre vieja en un entorno completamente distinto.
 
-**Y acá cambia la responsabilidad. Si hoy vendés, armás o configurás una computadora, sos vos quien debería explicarle al cliente qué necesita, cuánto cuesta y qué alternativas tiene. No decidir por él que "total, se lo ponemos trucho".**
+Y acá cambia la responsabilidad. Si hoy vendés, armás o configurás una computadora, **sos vos quien debería explicarle al cliente qué necesita, cuánto cuesta y qué alternativas tiene.** No decidir por él que "total, se lo ponemos trucho".
 
 Todavía se escucha "te la dejo con Windows, Office y todo andando" como si fuera una gentileza del técnico. Pero conviene preguntarse qué estamos entregando de verdad. ¿Una herramienta lista para trabajar o una máquina que depende de un activador bajado de vaya uno a saber dónde?
 
@@ -52,9 +52,9 @@ Todavía se escucha "te la dejo con Windows, Office y todo andando" como si fuer
 > Describe la actitud de alguien que reduce o raciona exageradamente lo que gasta, lo que invierte o lo que comparte con los demás.  
 > También "pijotero" puede usarse como estafador, embustero o tramposo.
 
-Crackear Office no es ahorrar. Es pijotear justo en la herramienta que el cliente va a usar todos los días, la misma que quizá le da de morfar.
+Meterle un Office crackeado al cliente para que el presupuesto cierre no es ahorrar. Es pijotear justo en la herramienta que va a usar todos los días, la misma que quizá le da de morfar.
 
-En una casa, [Microsoft 365 Familia](https://www.microsoft.com/es-ar/microsoft-365/p/microsoft-365-family/cfq7ttc0k5dm) puede compartirse entre varias personas e incluye almacenamiento en OneDrive. Para una oficina o una empresa se busca el plan comercial que corresponda. La idea no es vender Microsoft porque sí, sino mostrar que hay alternativas legales que se pueden comparar y presupuestar.
+En una casa, [Microsoft 365 Familia](https://www.microsoft.com/es-ar/microsoft-365/p/microsoft-365-family/cfq7ttc0k5dm) puede compartirse entre varias personas e incluye almacenamiento en OneDrive. Para una oficina o una empresa se busca el plan comercial que corresponda. Microsoft 365 es solamente un ejemplo; hay alternativas legales que se pueden comparar y presupuestar.
 
 Si esa PC va a manejar contratos, declaraciones juradas o datos de clientes, ya no estamos hablando de la máquina con la que alguien mira una serie. El técnico que instala un activador porque "son todos iguales" está tomando por su cuenta una decisión de seguridad y continuidad que le corresponde al cliente.
 
@@ -68,11 +68,11 @@ Eso no alcanza para saber qué se compró. Puede ser Retail, OEM o provenir de u
 
 En una computadora doméstica, alguien puede aceptar ese riesgo conociéndolo. Eso no vuelve legítimo el origen de la clave; solamente cambia la exposición y el riesgo que esa persona decide asumir.
 
-La clave barata, por lo menos, puede evitarte el crack o el activador. Y eso no es menor: muchos activadores obligan a desactivar temporalmente el antivirus o agregar exclusiones para que funcionen. Si ese ejecutable hace algo más de lo que promete, justamente acabás de pedirle al antivirus que mire para otro lado.
+La clave barata, por lo menos, evita el crack o el activador. Muchos activadores obligan a desactivar temporalmente el antivirus o agregar exclusiones para que funcionen. Si ese ejecutable hace algo más de lo que promete, justamente el antivirus quedó configurado para mirar para otro lado.
 
-Lo que la clave barata no resuelve es el otro problema, saber si esa licencia viene de un canal legítimo y si realmente tenés derecho a usarla. En una oficina o empresa, lo razonable es comprar la PC con Windows de fábrica o usar un canal identificable, con documentación que permita entender dentro de cinco años qué se compró y para qué equipo.
+Lo que la clave barata no resuelve es el otro problema, saber si esa licencia viene de un canal legítimo y si realmente respalda un derecho de uso válido para ese equipo. En una oficina o empresa, lo razonable es comprar la PC con Windows de fábrica o usar un canal identificable, con documentación que permita entender dentro de cinco años qué se compró y para qué equipo.
 
-Tener factura es el primer paso, pero no alcanza por sí sola. Una factura por una clave de origen dudoso demuestra que le pagaste a alguien por esa clave; no demuestra necesariamente que ese vendedor tenía derecho a vendértela ni que vos adquiriste una licencia válida para ese equipo. Hay que poder relacionar la compra con un proveedor identificable, el tipo de licencia y el derecho de uso correspondiente. Si la única explicación del vendedor es "es original porque activa", suerte con eso cuando tengas que defenderlo en una auditoría.
+Tener factura es el primer paso, pero no alcanza por sí sola. Una factura por una clave de origen dudoso demuestra que alguien pagó por esa clave; no necesariamente que el vendedor tenía derecho a revenderla ni que existe una licencia válida para ese equipo. Hay que poder relacionar la compra con un proveedor identificable, el tipo de licencia y el derecho de uso correspondiente. Si la única explicación del vendedor es "es original porque activa", suerte con eso el día que haya que defender esa instalación en una auditoría.
 
 ## Dejarla lista también es pensar en el respaldo
 
