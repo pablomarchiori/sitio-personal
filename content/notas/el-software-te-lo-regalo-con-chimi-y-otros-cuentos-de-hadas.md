@@ -33,9 +33,9 @@ Así quedó una costumbre difícil de sacar. El fierro se cobra y el software no
 
 > Fuera de lo legal, también se entiende por qué deberías pagar el software. El desarrollador y el técnico no se nutren de bits succionados de un conector RJ45, o 8P8C para los canónicos 😊.
 
-Pero treinta años después cambia la responsabilidad. Si hoy vendés, armás o configurás una computadora, sos vos quien debería explicarle al cliente qué necesita, cuánto cuesta y qué alternativas tiene, en lugar de decidir por él “total, se lo ponemos trucho”. Dejarla con “Windows, Office y todo andando” parece una gentileza, pero conviene preguntarse si realmente le estamos entregando una herramienta lista para trabajar o una máquina que depende de un activador de origen y comportamiento desconocidos.
+Pero treinta años después cambia la responsabilidad. Si hoy vendés, armás o configurás una computadora, sos vos quien debería explicarle al cliente qué necesita, cuánto cuesta y qué alternativas tiene, en lugar de decidir por él “total, se lo ponemos trucho”. Dejarla con “Windows, Office y todo andando” parece una gentileza, pero conviene preguntarse si realmente le estamos entregando una herramienta lista para trabajar o una máquina que depende de un activador bajado de vaya uno a saber dónde y que hace vaya uno a saber qué cosa.
 
-> Microsoft será una corporación malvada, pero X-Force, Team RETAiL, EAT, Paradox o Razor 1911, que hacen los activadores, seguro son gente piola y de confianza 🤔.
+> Microsoft será una corporación malvada, pero seguro TeamDaz, Ratiborus, los de KMSpico o SolidSQUAD son gente piola y de confianza 🤔.
 
 ## Fierro y software, mens sana in corpore sano
 
@@ -47,7 +47,7 @@ Eso tampoco significa que haya que pagar licencias porque sí. En una casa, [Mic
 
 Lo gratis a veces tiene otros costos. Linux, por ejemplo, puede no tener costo de licencia, pero alguien tiene que instalarlo, mantenerlo y dar soporte, y que el sistema operativo sea gratuito tampoco vuelve gratuito todo lo que corre arriba. Puede haber bases de datos, backup, monitoreo, soporte empresarial o productos como Db2 que también cuestan.
 
-La cuestión es entender qué necesita el cliente y cuánto cuesta resolverlo bien, meterle un Office crackeado para que el número cierre no es ahorrar, Es pijotear justo en la herramienta que usa para trabajar, a la que le confía sus datos y, muchas veces, también los de sus clientes.
+La cuestión es entender qué necesita el cliente y cuánto cuesta resolverlo bien. Meterle un Office crackeado para que el número cierre no es ahorrar: es pijotear justo en la herramienta que usa para trabajar, a la que le confía sus datos y, muchas veces, también los de sus clientes.
 
 ![Mesa de trabajo con una soldadora, herramientas físicas y una notebook al lado](/images/notas/varias/windows-gratis-cuentos-de-hadas-herramientas.png)
 
@@ -83,4 +83,4 @@ El trabajo del técnico debería llegar un poco más lejos que “ponerle los pr
 
 En los noventa hacíamos lo que sabíamos y lo que el entorno permitía. Treinta años después la computadora es otra cosa, y también debería serlo el trabajo de quien la vende o la configura.
 
-Si alguien te compra una máquina para trabajar, deberíamos explicarle qué necesita, cuánto cuesta y qué riesgos está aceptando. Si existe una alternativa buena y más barata, se usa; si el software libre resuelve el problema, perfecto; y si para trabajar bien hace falta pagar una licencia, debe entrar en el presupuesto como cualquier otra herramienta.
+El cliente puede elegir ahorrar y asumir el riesgo. Meterle un crack para que el número cierre, sin que sepa lo que está aceptando, no es hacerle un favor. Es tomar por él una decisión que le corresponde al cliente, no al técnico.
