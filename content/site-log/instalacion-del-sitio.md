@@ -6,12 +6,14 @@ description: "Primera nota del sitio: instalación de Hugo, Git, Congo y puesta 
 tags: ["hugo", "windows", "github", "sitio-personal"]
 categories: ["Notas"]
 ---
+**Actualización: 07/09/2026 — compartir, modo claro/oscuro y búsqueda**  
+Agregué funciones de compartir en Notas, Labs y Escritos, el selector de apariencia junto a esos enlaces y la búsqueda general del sitio. [Ver anexo](#anexo-compartir-apariencia-y-búsqueda).
 
 **Actualización: 24/08/2026 — Hugo 0.165.0 y Congo 2.14.0**  
 Meses después de la instalación original actualicé Hugo y Congo. [Ver anexo](#anexo-actualización-de-hugo-y-congo).
 
 # Objetivo
-
+**Original: 28/03/2026**
 Dejar funcionando un sitio personal con **Hugo en Windows**, usando **Git**, el tema **Congo** y publicación en **GitHub Pages**, dejando además el camino preparado para usar dominio propio más adelante.
 
 ## Punto de partida
@@ -195,3 +197,74 @@ El problema no estaba en `tar`: la URL apuntaba a una versión inexistente y `cu
 Entonces corrigiendo solo: `0.165.1` por: `0.165.0`, el workflow volvió a ejecutar normalmente.
 
 Y listo!, quedaron alineados los dos entornos: **Hugo 0.165.0 Extended + Congo 2.14.0**
+
+---
+
+## Anexo: compartir, apariencia y búsqueda
+
+El 07/09/2026 agregué tres funciones de navegación y uso general sobre Congo, sin modificar cada contenido en forma individual.
+
+### Compartir enlaces
+
+En Notas, Labs y Escritos aparece debajo del encabezado una pequeña barra con:
+
+- **Facebook**
+- **Compartir**
+- **Copiar enlace**
+- selector **claro/oscuro**
+
+El código quedó centralizado en:
+
+```text
+layouts/partials/extend-footer.html
+```
+
+El partial se carga solo para estas secciones:
+
+```go-html-template
+{{ if and .IsPage (in (slice "notas" "labs" "escritos") .Section) }}
+```
+
+El botón **Facebook** abre el diálogo de compartir de esa red.
+
+**Compartir** usa la función nativa del navegador o del teléfono (`navigator.share`), por lo que en un celular puede ofrecer Instagram, WhatsApp, Telegram u otras aplicaciones instaladas.
+
+**Copiar enlace** guarda la URL actual en el portapapeles y confirma brevemente la acción.
+
+El mismo bloque aprovecha el selector de apariencia de Congo para alternar entre modo claro y oscuro.
+
+Aunque el partial se llama desde el footer, un pequeño fragmento de JavaScript mueve visualmente el bloque hasta debajo del encabezado de la publicación.
+
+### Búsqueda
+
+Congo incluye búsqueda interna basada en el contenido generado por Hugo.
+
+En `hugo.toml` quedó habilitada con:
+
+```toml
+[params]
+enableSearch = true
+```
+
+y la portada genera también la salida JSON que usa el buscador:
+
+```toml
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+```
+
+La lupa se agregó como una acción más del menú principal:
+
+```toml
+[[menus.main]]
+identifier = "search"
+weight = 60
+
+[menus.main.params]
+action = "search"
+icon = "search"
+```
+
+El peso se ajustó para dejar la búsqueda antes de **Acerca de**.
+
+El resultado final mantiene el menú principal simple, pero agrega búsqueda, compartir, copia de URL y cambio de apariencia sin tener que repetir código en cada archivo Markdown.

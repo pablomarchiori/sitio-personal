@@ -6,12 +6,12 @@ draft: false
 
 ## Un pequeño disparador
 
-Hace un tiempo, viendo *Cómo entrenar a tu dragón*, me llamó la atención el nombre del jefe de la aldea: **Estoico el Vasto**. Me pareció brillante por su simpleza: lograban transmitir la personalidad del personaje solo con su nombre. ¡Y además sonaba bien!.
+Hace un tiempo, viendo *Cómo entrenar a tu dragón*, me llamó la atención el nombre del jefe de la aldea: **Estoico el Vasto**. Me pareció brillante por su simpleza: lograban transmitir la personalidad del personaje solo con su nombre. ¡Y además sonaba bien!
 
 **Estoico** remite a alguien firme, entero, capaz de resistir sin quebrarse.  
 **Vasto**, a algo amplio, abarcador.
 
-Lo llamativo no fue esa interpretación, sino que tuve que mostrarle el diccionario a la persona que me acompañaba para demostrarle que **estoico** era, efectivamente, una palabra real.  
+Tuve que mostrarle el diccionario a quien me acompañaba para probarle que **estoico** era, efectivamente, una palabra real.  
 ¿Cuánto nos perdemos por la falta de vocabulario?  
 ¿Por la falta de comunicación?  
 ¿Por no leer?
@@ -29,7 +29,7 @@ Si cada uno le da a las palabras el significado que quiere,
 ¿cómo nos entendemos?  
 ¿Dónde está el diccionario de eso?
 
-Esto es apenas un intento de comprender mejor lo que decimos, lo que escuchamos y lo que perdemos.
+Esto es apenas un intento de comprender mejor lo que decimos, lo que escuchamos y lo que perdemos. Porque cuando dejamos de conocer las palabras, se nos escapa lo que el otro quiso decir. Y ahí nos empezamos a desentender.
 
 No todos los desvíos son iguales. Algunos vienen del inglés, otros del uso clínico fuera de lugar, otros de la exageración constante o de palabras que se volvieron comodines.
 
@@ -60,7 +60,7 @@ Corrimientos de sentido, vaguedades o simplificaciones que no encajan del todo e
 
 ## El cierre Filosó_fico 😊
 
-El lenguaje se transforma, muta, cambia. Cambiar es natural. Aunque no todo cambio es una mejora.
+El lenguaje cambia, muta. Cambiar es natural. Aunque no todo cambio es una mejora.
 
 El lenguaje mejora y se enriquece cuando se nutre de nuevos hechos, inventos e ideas, incluso de otros lenguajes.
 

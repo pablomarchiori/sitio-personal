@@ -1,14 +1,13 @@
 {{ if and .IsPage (in (slice "notas" "labs" "escritos") .Section) }}
 
 <div class="mn-share">
-  <span class="mn-share-title">Compartir:</span>
 
   <button type="button" id="mn-share-facebook">
     Facebook
   </button>
 
   <button type="button" id="mn-share-native">
-    Instagram / Compartir
+    Compartir
   </button>
 
   <button type="button" id="mn-copy-url">
@@ -16,38 +15,84 @@
   </button>
 
   <span id="mn-copy-ok" hidden>Copiado ✓</span>
+
+  <span class="mn-share-separator">·</span>
+
+  <button
+    id="appearance-switcher-share"
+    type="button"
+    class="mn-appearance"
+    aria-label="Cambiar apariencia"
+  >
+    <span class="dark:hidden" title="Modo oscuro">
+      {{ partial "icon.html" "moon" }}
+    </span>
+
+    <span class="hidden dark:inline" title="Modo claro">
+      {{ partial "icon.html" "sun" }}
+    </span>
+  </button>
+
 </div>
 
 <style>
   .mn-share {
-    margin: 2.5rem auto 1rem;
-    max-width: 65ch;
+    margin: 2.2rem 0 1.8rem;
     padding-top: 1rem;
     border-top: 1px solid rgba(128, 128, 128, 0.3);
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.8rem;
+    justify-content: flex-start;
+    gap: 0.85rem;
+
     font-size: 0.9rem;
   }
 
-  .mn-share-title {
-    font-weight: 600;
-  }
-
   .mn-share button {
+    padding: 0;
     cursor: pointer;
     text-decoration: underline;
     text-underline-offset: 3px;
   }
 
+  .mn-share-separator {
+    opacity: 0.45;
+  }
+
+  .mn-appearance {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.2rem;
+    height: 1.2rem;
+    text-decoration: none !important;
+  }
+
+  .mn-appearance svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
   #mn-copy-ok {
-    opacity: 0.7;
+    opacity: 0.65;
   }
 </style>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+
+  /*
+   * Mueve el bloque desde el footer hasta debajo
+   * del encabezado de la nota.
+   */
+  const shareBlock = document.querySelector(".mn-share");
+  const articleHeader = document.querySelector("main article > header");
+
+  if (shareBlock && articleHeader) {
+    articleHeader.insertAdjacentElement("afterend", shareBlock);
+  }
 
   const url = window.location.href;
   const title = document.title;
@@ -56,7 +101,97 @@ document.addEventListener("DOMContentLoaded", function () {
   const compartir = document.getElementById("mn-share-native");
   const copiar = document.getElementById("mn-copy-url");
   const copiado = document.getElementById("mn-copy-ok");
+  const path = window.location.pathname;
+const today = new Date().toISOString().slice(0, 10);
+const viewKey = "mn-view-" + path + "-" + today;
 
+function crearContadorLecturas() {
+  const header = document.querySelector("main article > header");
+  if (!header) return null;
+
+  const elements = header.querySelectorAll("*");
+  let metadata = null;
+
+  for (const el of elements) {
+    const text = el.textContent.trim();
+
+    if (
+      (text.includes(" min") || text.includes(" mins")) &&
+      !Array.from(el.children).some(child =>
+        child.textContent.includes(" min") ||
+        child.textContent.includes(" mins")
+      )
+    ) {
+      metadata = el;
+      break;
+    }
+  }
+
+  if (!metadata) return null;
+
+  const span = document.createElement("span");
+  span.id = "mn-view-count";
+  span.textContent = " · — lecturas";
+
+  metadata.appendChild(span);
+
+  return span;
+}
+
+async function cargarLecturas() {
+  const contador = crearContadorLecturas();
+
+  if (!contador) return;
+
+  /*
+   * En localhost mostramos el lugar del contador,
+   * pero no consultamos Cloudflare.
+   */
+  if (
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1"
+  ) {
+    return;
+  }
+
+  try {
+    const yaContada = localStorage.getItem(viewKey);
+    const method = yaContada ? "GET" : "POST";
+
+    const response = await fetch(
+      "/api/views?path=" + encodeURIComponent(path),
+      { method: method }
+    );
+
+    if (!response.ok) return;
+
+    const data = await response.json();
+    const views = Number(data.views || 0);
+
+    contador.textContent =
+      " · " +
+      views +
+      (views === 1 ? " lectura" : " lecturas");
+
+    /*
+     * Marcamos la lectura recién después
+     * de que Cloudflare respondió correctamente.
+     */
+    if (method === "POST") {
+      localStorage.setItem(viewKey, "1");
+    }
+
+  } catch (e) {
+    // Dejamos "— lecturas" si el contador no está disponible.
+  }
+}
+
+cargarLecturas();
+
+
+  /*
+   * Facebook
+   */
   if (facebook) {
     facebook.addEventListener("click", function () {
       const shareUrl =
@@ -71,23 +206,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  /*
+   * Compartir mediante el menú nativo del dispositivo.
+   */
   if (compartir) {
-    compartir.addEventListener("click", async function () {
-      if (navigator.share) {
+    if (!navigator.share) {
+      compartir.hidden = true;
+    } else {
+      compartir.addEventListener("click", async function () {
         try {
           await navigator.share({
             title: title,
             url: url
           });
         } catch (e) {
-          // El usuario canceló: no hacemos nada.
+          /*
+           * Si el usuario cancela, no hacemos nada.
+           */
         }
-      } else {
-        await copiarURL();
-      }
-    });
+      });
+    }
   }
 
+  /*
+   * Copiar URL
+   */
   if (copiar) {
     copiar.addEventListener("click", copiarURL);
   }

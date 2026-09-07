@@ -23,6 +23,7 @@ summaryLength = 30
   subtitle = "Apuntes técnicos con mirada propia"
   description = "Notas sobre tecnología, infraestructura, seguridad web y demases."
   mainSections = ["notas", "labs", "site-log"]
+  enableSearch = true
 
 [params.homepage]
   layout = "page"
@@ -65,6 +66,14 @@ pageRef = "site-log"
 weight = 50
 
 [[menus.main]]
+identifier = "search"
+weight = 60
+
+[menus.main.params]
+action = "search"
+icon = "search"
+
+[[menus.main]]
 name = "Acerca de"
 pageRef = "/about"
-weight = 60
+weight = 99
