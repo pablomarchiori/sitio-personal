@@ -1,0 +1,119 @@
+{{ if and .IsPage (in (slice "notas" "labs" "escritos") .Section) }}
+
+<div class="mn-share">
+  <span class="mn-share-title">Compartir:</span>
+
+  <button type="button" id="mn-share-facebook">
+    Facebook
+  </button>
+
+  <button type="button" id="mn-share-native">
+    Instagram / Compartir
+  </button>
+
+  <button type="button" id="mn-copy-url">
+    Copiar enlace
+  </button>
+
+  <span id="mn-copy-ok" hidden>Copiado ✓</span>
+</div>
+
+<style>
+  .mn-share {
+    margin: 2.5rem auto 1rem;
+    max-width: 65ch;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.3);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .mn-share-title {
+    font-weight: 600;
+  }
+
+  .mn-share button {
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  #mn-copy-ok {
+    opacity: 0.7;
+  }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const url = window.location.href;
+  const title = document.title;
+
+  const facebook = document.getElementById("mn-share-facebook");
+  const compartir = document.getElementById("mn-share-native");
+  const copiar = document.getElementById("mn-copy-url");
+  const copiado = document.getElementById("mn-copy-ok");
+
+  if (facebook) {
+    facebook.addEventListener("click", function () {
+      const shareUrl =
+        "https://www.facebook.com/sharer/sharer.php?u=" +
+        encodeURIComponent(url);
+
+      window.open(
+        shareUrl,
+        "facebook-share",
+        "width=700,height=500"
+      );
+    });
+  }
+
+  if (compartir) {
+    compartir.addEventListener("click", async function () {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: title,
+            url: url
+          });
+        } catch (e) {
+          // El usuario canceló: no hacemos nada.
+        }
+      } else {
+        await copiarURL();
+      }
+    });
+  }
+
+  if (copiar) {
+    copiar.addEventListener("click", copiarURL);
+  }
+
+  async function copiarURL() {
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch (e) {
+      const temp = document.createElement("textarea");
+      temp.value = url;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand("copy");
+      temp.remove();
+    }
+
+    if (copiado) {
+      copiado.hidden = false;
+
+      setTimeout(function () {
+        copiado.hidden = true;
+      }, 2000);
+    }
+  }
+
+});
+</script>
+
+{{ end }}
