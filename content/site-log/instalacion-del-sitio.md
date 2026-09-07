@@ -1,6 +1,6 @@
 ---
 title: "Instalación del sitio personal con Hugo en Windows"
-date: 2026-03-27T21:55:00-03:00
+date: 2026-08-24T21:55:00-03:00
 draft: false
 description: "Primera nota del sitio: instalación de Hugo, Git, Congo y puesta en marcha local."
 tags: ["hugo", "windows", "github", "sitio-personal"]
@@ -91,9 +91,7 @@ En esta etapa armé apenas una base funcional y dejé los ajustes finos para des
 
 ### 8. Corrección de compatibilidad
 
-La segunda contrariedad fue más concreta: apareció un error de compatibilidad entre la versión actual de Hugo y un **partial** (una plantilla reutilizable del tema) de Congo.
-
-La solución aplicada fue anular localmente ese partial creando el archivo:  
+La segunda contrariedad fue más concreta: apareció un error de compatibilidad entre la versión actual de Hugo y un **partial** (una plantilla reutilizable del tema) de Congo. La solución aplicada fue anular localmente ese partial creando el archivo:  
 `layouts/partials/functions/warnings.html`
 
 vacío, para que el sitio pudiera renderizar sin romper. Fue la primera vez que tuve que sobrescribir localmente un partial para seguir adelante.
@@ -110,9 +108,7 @@ Ese `-D` fue importante porque permite ver también los contenidos que siguen ma
 
 ### 10. Publicación en GitHub
 
-Con el sitio funcionando localmente, el paso siguiente fue inicializar el repositorio correctamente, hacer el primer commit y subir el proyecto a GitHub.
-
-Después se configuró el despliegue con **GitHub Pages** usando **GitHub Actions**, de forma que cada `push` a la rama principal vuelva a compilar y publicar el sitio automáticamente.
+Con el sitio funcionando localmente, el paso siguiente fue inicializar el repositorio correctamente, hacer el primer commit y subir el proyecto a GitHub. Después se configuró el despliegue con **GitHub Pages** usando **GitHub Actions**, de forma que cada `push` a la rama principal vuelva a compilar y publicar el sitio automáticamente.
 
 ### 11. Primera publicación visible en línea
 
@@ -123,9 +119,7 @@ El sitio ya estaba publicado y accesible desde Internet.
 
 ## 12. Ajuste visual final
 
-Ya con el sitio funcionando, apareció un detalle menor pero molesto: el espaciado entre bullets dentro de las notas quedaba demasiado abierto.
-
-Primero intenté resolverlo con un archivo `assets/css/custom.css`, pero en este caso no estaba siendo tomado por el tema como esperaba.
+Ya con el sitio funcionando, apareció un detalle menor pero molesto: el espaciado entre bullets dentro de las notas quedaba demasiado abierto. Primero intenté resolverlo con un archivo `assets/css/custom.css`, pero en este caso no estaba siendo tomado por el tema como esperaba.
 
 La solución que sí funcionó fue otra:  
 - crear `static/css/custom.css`
@@ -155,9 +149,7 @@ Quedaron pendientes:
 
 ## Cierre
 
-El sitio quedó funcionando, publicado y documentado.
-
-Entre instalación, errores y correcciones ya había material suficiente como para empezar a dejar registro de cómo estaba armado.
+El sitio quedó funcionando, publicado y documentado. Entre instalación, errores y correcciones ya había material suficiente como para empezar a dejar registro de cómo estaba armado.
 
 Ahora hay que aprenderse esto! 😅  
 `git add content\site-log\instalacion-del-sitio.md`  
