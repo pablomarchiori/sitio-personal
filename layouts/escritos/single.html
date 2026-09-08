@@ -10,7 +10,7 @@
       </h1>
 
       <time class="mt-2 block text-sm text-neutral-500 dark:text-neutral-400" datetime="{{ .Date.Format "2006-01-02" }}">
-        {{ .Date.Format "02/01/2006" }}
+        {{ .Date.Format "02/01/2006" }} · {{ .ReadingTime }} {{ if eq .ReadingTime 1 }}min{{ else }}mins{{ end }}
       </time>
     </header>
 

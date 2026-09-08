@@ -10,7 +10,7 @@ tags: ["lenguaje", "manual", "jerga-digital"]
 “Después lo posteo.”  
 “Posteó una foto del viaje.”
 
-## Problema
+## El desvío
 
 **Postear** viene del inglés *post*.  
 Está muy instalado en redes, pero muchas veces reemplaza sin necesidad a verbos ya existentes en español.
@@ -24,6 +24,6 @@ Publicar, subir, compartir.
 “Después lo publico.”  
 “Publicó una foto del viaje.”
 
-**Desvío:** anglicismo de redes.
+**Tipo:** anglicismo de redes.
 
 ---

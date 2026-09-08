@@ -10,10 +10,10 @@ tags: ["lenguaje", "manual", "anglicismos"]
 
 “Eventualmente lo vamos a hacer.”
 
-## Problema
+## El desvío
 
 En inglés, *eventually* significa finalmente o con el tiempo.  
-En español, **eventualmente** significa incierta, casual o provisionalmente.  
+En español, **eventualmente** significa “incierta o casualmente”; no “finalmente” ni “con el tiempo”.  
 Usarlo como traducción directa cambia el sentido de la frase.
 
 ## Más preciso
@@ -25,6 +25,6 @@ Finalmente, con el tiempo, en algún momento.
 “Con el tiempo lo vamos a hacer.”  
 “Finalmente lo vamos a resolver.”
 
-**Desvío:** falso amigo / calco semántico.
+**Tipo:** falso amigo / calco semántico.
 
 ---

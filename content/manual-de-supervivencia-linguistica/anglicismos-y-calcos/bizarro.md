@@ -11,11 +11,11 @@ tags: ["lenguaje", "manual", "anglicismos"]
 “Ese video es re bizarro.”  
 “Fue una situación muy bizarra.”
 
-## Sentido original
+## El desvío
 
-En español tradicional, **bizarro** significa valiente o gallardo.  
-El uso como “extraño” se difundió por influencia del inglés *bizarre*.  
-Con el tiempo se generalizó tanto que la RAE terminó incorporándolo también con ese sentido.
+En español tradicional, **bizarro** significa valiente o gallardo. El sentido de “extraño” o “extravagante” se difundió por influencia del francés *bizarre* y también del inglés *bizarre*.
+
+El sentido moderno está aceptado y recogido en el diccionario académico. La preferencia editorial del manual sigue siendo elegir **extraño**, **extravagante** o **insólito** cuando expresan mejor el matiz buscado; esa preferencia no convierte el uso moderno en un error.
 
 ## Más preciso
 
@@ -26,6 +26,6 @@ Extraño, extravagante, insólito, estrafalario.
 “Ese video es muy extraño.”  
 “Fue una situación bastante insólita.”
 
-**Desvío:** anglicismo semántico.
+**Tipo:** anglicismo semántico.
 
 ---

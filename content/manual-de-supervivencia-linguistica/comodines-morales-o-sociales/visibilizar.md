@@ -11,10 +11,11 @@ tags: ["lenguaje", "manual", "comodines"]
 “Hay que visibilizar el problema.”  
 “Buscamos visibilizar esta situación.”
 
-## Sentido original
+## El desvío
 
-**Visibilizar** significa hacer visible algo que no se veía.  
-Muchas veces reemplaza simplemente a mostrar o dar a conocer.
+**Visibilizar** significa hacer visible. Su uso social es una extensión metafórica: dar presencia o reconocimiento público a algo que pasaba inadvertido.
+
+La extensión no es un error en sí misma. El desvío aparece cuando funciona como fórmula genérica y no aclara si se busca mostrar, difundir, denunciar o dar a conocer algo.
 
 ## Más preciso
 
@@ -25,6 +26,6 @@ Mostrar, dar a conocer, exponer.
 “Queremos dar a conocer el problema.”  
 “Buscan mostrar esa situación.”
 
-**Desvío:** comodín conceptual.
+**Tipo:** comodín conceptual.
 
 ---

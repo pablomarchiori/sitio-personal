@@ -11,7 +11,7 @@ tags: ["lenguaje", "manual", "comodines"]
 “Queremos empoderar a la comunidad.”  
 “Este programa empodera a las personas.”
 
-## Sentido original
+## El desvío
 
 **Empoderar** existe en español y puede significar dar poder, autoridad, influencia o conocimiento para hacer algo.
 
@@ -26,6 +26,6 @@ Fortalecer, dar autonomía, capacitar, dar herramientas.
 “El programa busca fortalecer a la comunidad.”  
 “Este curso les da más herramientas para decidir.”
 
-**Desvío:** comodín social.
+**Tipo:** comodín social.
 
 ---

@@ -11,7 +11,7 @@ tags: ["lenguaje", "manual", "anglicismos"]
 “Mañana tenés la inducción.”  
 “Estamos preparando la inducción del personal.”
 
-## Problema
+## El desvío
 
 **Inducción** existe en español, pero en empresas suele usarse para nombrar la bienvenida, iniciación o capacitación inicial de una persona que ingresa.
 
@@ -26,4 +26,6 @@ Introducción, capacitación inicial, bienvenida, proceso de ingreso.
 “Mañana tenés la capacitación inicial.”  
 “Habrá una bienvenida para el personal nuevo.”
 
-**Desvío:** anglicismo corporativo.
+**Tipo:** anglicismo corporativo.
+
+---

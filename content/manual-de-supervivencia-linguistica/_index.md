@@ -6,7 +6,7 @@ draft: false
 
 ## Un pequeño disparador
 
-Hace un tiempo, viendo *Cómo entrenar a tu dragón*, me llamó la atención el nombre del jefe de la aldea: **Estoico el Vasto**. Me pareció brillante por su simpleza: lograban transmitir la personalidad del personaje solo con su nombre. ¡Y además sonaba bien!
+Hace un tiempo, viendo *Cómo entrenar a tu dragón*, me llamó la atención el nombre del jefe de la aldea: **Estoico el Vasto** ([Stoick the Vast](https://howtotrainyourdragon.fandom.com/wiki/Stoick_the_Vast_(Franchise)) en el original). Me pareció brillante por su simpleza: lograban transmitir la personalidad del personaje solo con su nombre. ¡Y además sonaba bien!
 
 **Estoico** remite a alguien firme, entero, capaz de resistir sin quebrarse.  
 **Vasto**, a algo amplio, abarcador.
@@ -29,17 +29,15 @@ Si cada uno le da a las palabras el significado que quiere,
 ¿cómo nos entendemos?  
 ¿Dónde está el diccionario de eso?
 
-Esto es apenas un intento de comprender mejor lo que decimos, lo que escuchamos y lo que perdemos. Porque cuando dejamos de conocer las palabras, se nos escapa lo que el otro quiso decir. Y ahí nos empezamos a desentender.
-
-No todos los desvíos son iguales. Algunos vienen del inglés, otros del uso clínico fuera de lugar, otros de la exageración constante o de palabras que se volvieron comodines.
+Esto es apenas un intento de comprender mejor lo que decimos, lo que escuchamos y lo que perdemos.
 
 ## Tipos de desvíos
 
 ### [Anglicismos y calcos]({{< relref "/manual-de-supervivencia-linguistica/anglicismos-y-calcos/" >}})
-Sentidos importados del inglés que desplazan palabras mejores que ya existían en español.
+Palabras y sentidos importados del inglés que desplazan formas que ya existían en español.
 
 ### [Patologización]({{< relref "/manual-de-supervivencia-linguistica/patologizacion-de-lo-cotidiano/" >}})
-Términos clínicos usados para nombrar malestares, distracciones o estados comunes.
+Palabras del ámbito psicológico o clínico que se generalizan o exageran para nombrar malestares y estados cotidianos.
 
 ### [Hipérbole y vaciamiento]({{< relref "/manual-de-supervivencia-linguistica/hiperbole-y-vaciamiento/" >}})
 Palabras intensas que, por usarse para todo, terminan perdiendo fuerza.
@@ -51,7 +49,7 @@ Palabras que muchas veces ya no describen con claridad: etiquetan, presionan o r
 Palabras que suenan más profesionales, pero no siempre dicen más.
 
 ### [Jerga digital y memética]({{< relref "/manual-de-supervivencia-linguistica/jerga-digital-y-memetica/" >}})
-Términos importados de redes, gaming o cultura online que sobreviven aunque ya casi nadie recuerde qué significaban.
+Términos de redes, software, gaming o cultura online que se importan, se transforman o desplazan formas más claras del español.
 
 ### [Otros desvíos]({{< relref "/manual-de-supervivencia-linguistica/otros-desvios/" >}})
 Corrimientos de sentido, vaguedades o simplificaciones que no encajan del todo en las categorías anteriores.
@@ -60,7 +58,7 @@ Corrimientos de sentido, vaguedades o simplificaciones que no encajan del todo e
 
 ## El cierre Filosó_fico 😊
 
-El lenguaje cambia, muta. Cambiar es natural. Aunque no todo cambio es una mejora.
+El lenguaje se transforma, muta, cambia. Cambiar es natural. Aunque no todo cambio es una mejora.
 
 El lenguaje mejora y se enriquece cuando se nutre de nuevos hechos, inventos e ideas, incluso de otros lenguajes.
 

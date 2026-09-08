@@ -10,7 +10,7 @@ tags: ["lenguaje", "manual", "patologizacion"]
 “Estaba re disociado en la reunión.”  
 “Quedé disociado viendo una serie.”
 
-## Sentido original
+## El desvío
 
 La **disociación** es un fenómeno psicológico donde aparece una desconexión entre procesos mentales que normalmente están integrados, como la conciencia, la memoria, la percepción o la respuesta emocional.  
 No es simplemente estar distraído, colgado o cansado.
@@ -24,6 +24,6 @@ Distraído, colgado, desconectado.
 “Estaba re distraído en la reunión.”  
 “Quedé colgado viendo una serie.”
 
-**Desvío:** patologización.
+**Tipo:** patologización.
 
 ---

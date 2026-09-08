@@ -10,7 +10,7 @@ tags: ["lenguaje", "manual", "jerga-digital"]
 “Ese tipo es un Chad.”  
 “Re Chad lo que hizo.”
 
-## Problema
+## El desvío
 
 **Chad** viene de la jerga de internet y se usa como figura del varón idealizado, dominante, seguro o admirado.  
 No es una palabra del español: es un símbolo memético importado.
@@ -24,6 +24,6 @@ Capo, seguro de sí mismo, ganador, ideal masculino caricaturesco.
 “Ese tipo es muy seguro de sí mismo.”  
 “Quedó como un capo.”
 
-**Desvío:** jerga memética importada.
+**Tipo:** jerga memética importada.
 
 ---

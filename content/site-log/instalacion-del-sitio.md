@@ -1,11 +1,14 @@
 ---
 title: "Instalación del sitio personal con Hugo en Windows"
-date: 2026-08-24T21:55:00-03:00
+date: 2026-09-07T16:55:00-03:00
 draft: false
 description: "Primera nota del sitio: instalación de Hugo, Git, Congo y puesta en marcha local."
 tags: ["hugo", "windows", "github", "sitio-personal"]
 categories: ["Notas"]
 ---
+**Actualización: 07/09/2026 — contador de lecturas por página**  
+Agregué un contador de lecturas para Notas, Labs y Escritos usando Cloudflare Workers y D1. [Ver anexo](#anexo-contador-de-lecturas-con-cloudflare).
+
 **Actualización: 07/09/2026 — compartir, modo claro/oscuro y búsqueda**  
 Agregué funciones de compartir en Notas, Labs y Escritos, el selector de apariencia junto a esos enlaces y la búsqueda general del sitio. [Ver anexo](#anexo-compartir-apariencia-y-búsqueda).
 
@@ -13,7 +16,7 @@ Agregué funciones de compartir en Notas, Labs y Escritos, el selector de aparie
 Meses después de la instalación original actualicé Hugo y Congo. [Ver anexo](#anexo-actualización-de-hugo-y-congo).
 
 # Objetivo
-**Original: 28/03/2026**
+**Original: 28/03/2026**  
 Dejar funcionando un sitio personal con **Hugo en Windows**, usando **Git**, el tema **Congo** y publicación en **GitHub Pages**, dejando además el camino preparado para usar dominio propio más adelante.
 
 ## Punto de partida
@@ -268,3 +271,115 @@ icon = "search"
 El peso se ajustó para dejar la búsqueda antes de **Acerca de**.
 
 El resultado final mantiene el menú principal simple, pero agrega búsqueda, compartir, copia de URL y cambio de apariencia sin tener que repetir código en cada archivo Markdown.
+
+---
+
+## Anexo: contador de lecturas con Cloudflare
+
+El contador muestra las lecturas junto a la fecha y el tiempo estimado de lectura:
+
+```text
+6 de septiembre de 2026 · 5 mins · 27 lecturas
+```
+
+La implementación quedó dividida entre Cloudflare y Hugo.
+
+### Cloudflare D1
+
+Creé una base D1 llamada:
+
+```text
+mirada-nerd-views
+```
+
+con una tabla simple para guardar una cuenta por ruta:
+
+```sql
+CREATE TABLE page_views (
+  path TEXT PRIMARY KEY,
+  views INTEGER NOT NULL DEFAULT 0
+);
+```
+
+### Cloudflare Worker
+
+Creé el Worker:
+
+```text
+mirada-nerd-counter
+```
+
+y lo vinculé a D1 mediante un binding llamado:
+
+```text
+DB
+```
+
+El Worker expone:
+
+```text
+/api/views?path=/ruta/de/la/pagina/
+```
+
+y hace dos cosas:
+
+- `GET`: devuelve la cantidad actual de lecturas
+- `POST`: suma una lectura y devuelve el nuevo total
+
+La ruta quedó publicada sobre el mismo dominio:
+
+```text
+www.marchiori.ar/api/views*
+```
+
+De esa forma el sitio sigue servido normalmente y solo esa ruta pasa por el Worker.
+
+### Integración con Hugo
+
+El contador se agregó en el mismo:
+
+```text
+layouts/partials/extend-footer.html
+```
+
+que ya usaba para compartir enlaces y cambiar el modo claro/oscuro.
+
+El JavaScript obtiene la ruta actual con:
+
+```javascript
+window.location.pathname
+```
+
+y consulta:
+
+```text
+/api/views?path=...
+```
+
+El valor devuelto se agrega a la misma línea donde Congo muestra la fecha y el tiempo de lectura.
+
+### Evitar sumar cada recarga
+
+Para no contar cada `F5` como una nueva lectura, el navegador guarda una marca en `localStorage` por página y por día.
+
+La clave tiene este formato:
+
+```text
+mn-view-/notas/politica-de-marca-blanca/-2026-09-07
+```
+
+Si la página ya fue contada ese día desde ese navegador, el sitio hace solo un `GET`. Si todavía no fue contada, hace un `POST`.
+
+No pretende ser una medición exacta de personas únicas; es un contador práctico de lecturas que evita inflar el número por recargas repetidas.
+
+### Prueba en local
+
+En `localhost` no se consulta Cloudflare. El lugar del contador se mantiene visible como:
+
+```text
+· — lecturas
+```
+
+Al publicar el sitio, ese valor se reemplaza por el número real almacenado en D1.
+
+La ventaja de este esquema es que no hace falta tocar cada archivo Markdown: el contador se aplica automáticamente a las páginas donde ya se carga el partial.

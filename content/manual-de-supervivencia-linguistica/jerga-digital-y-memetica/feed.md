@@ -10,7 +10,7 @@ tags: ["lenguaje", "manual", "jerga-digital"]
 “Lo vi en el feed.”  
 “Tenés que cuidar el feed.”
 
-## Problema
+## El desvío
 
 **Feed** viene del inglés y se usa para referirse al flujo o conjunto de publicaciones que aparece en una plataforma.  
 Está bastante instalado, pero muchas veces reemplaza sin necesidad palabras más claras.
@@ -22,8 +22,8 @@ Inicio, contenido, muro, publicaciones, flujo.
 ## Otras formas de decirlo
 
 “Lo vi entre las publicaciones.”  
-“Tenés que cuidar cómo se ve el contenido.”
+“Tenés que cuidar cómo se ven tus publicaciones.”
 
-**Desvío:** anglicismo de redes / plataformas.
+**Tipo:** anglicismo de redes / plataformas.
 
 ---

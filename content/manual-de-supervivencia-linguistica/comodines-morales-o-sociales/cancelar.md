@@ -10,20 +10,20 @@ tags: ["lenguaje", "manual", "comodines"]
 “Cancelaron a ese actor.”  
 “Lo cancelaron en redes.”
 
-## Sentido original
+## El desvío
 
-**Cancelar** significa anular algo.  
-En redes suele referirse a repudio público o boicot social.
+**Cancelar** significa anular o dejar sin efecto algo.  
+En redes pasó a condensar acciones bastante distintas: criticar públicamente, repudiar, dejar de apoyar, boicotear o intentar excluir a alguien. Una sola palabra termina reemplazando acciones que no son necesariamente lo mismo.
 
 ## Más preciso
 
-Boicotear, criticar, dejar de apoyar.
+Criticar, repudiar, boicotear, dejar de apoyar.
 
 ## Otras formas de decirlo
 
 “Mucha gente dejó de apoyarlo.”  
 “Recibió muchas críticas en redes.”
 
-**Desvío:** comodín social / desplazamiento de sentido.
+**Tipo:** comodín social / desplazamiento de sentido.
 
 ---

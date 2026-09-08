@@ -10,20 +10,21 @@ tags: ["lenguaje", "manual", "otros-desvios"]
 “Ocupo el taladro para poner un estante.”  
 “Ocupo tu auto un rato.”
 
-## Sentido original
+## El desvío
 
-**Ocupar** significa tomar un lugar o llenarlo.  
-En muchos casos se usa en lugar de usar o necesitar.
+**Ocupar**, además de tomar o llenar un lugar, se usa con los sentidos de **usar** y **necesitar** en varias zonas de América. Son regionalismos legítimos.
+
+El interés está en su extensión a otras variedades por contacto y consumo cultural, no en marcar un error absoluto. Fuera de las regiones donde esos sentidos son habituales, conviene precisar si “ocupo tu auto” significa que lo uso o que lo necesito.
 
 ## Más preciso
 
-Usar, utilizar, emplear.
+Usar, utilizar, emplear, necesitar, según el sentido.
 
 ## Otras formas de decirlo
 
 “Uso el taladro para poner el estante.”  
 “¿Puedo usar tu auto un rato?”
 
-**Desvío:** desplazamiento de sentido.
+**Tipo:** desplazamiento de sentido.
 
 ---

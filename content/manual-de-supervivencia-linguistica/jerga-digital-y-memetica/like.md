@@ -10,7 +10,7 @@ tags: ["lenguaje", "manual", "jerga-digital"]
 “Dale like.”  
 “Tuvo muchos likes.”
 
-## Problema
+## El desvío
 
 **Like** viene del inglés y se usa como si fuera natural en español digital.  
 Aunque está muy extendido, desplaza expresiones más claras que ya existían.
@@ -24,6 +24,6 @@ Me gusta, aprobación, reacción positiva.
 “Dale me gusta.”  
 “Tuvo muchos me gusta.”
 
-**Desvío:** anglicismo de redes.
+**Tipo:** anglicismo de redes.
 
 ---

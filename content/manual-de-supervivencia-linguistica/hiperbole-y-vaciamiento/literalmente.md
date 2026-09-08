@@ -10,13 +10,9 @@ tags: ["lenguaje", "manual", "hiperbole"]
 “Literalmente me morí de risa.”  
 “Literalmente explotó internet.”
 
-## Sentido original
+## El desvío
 
-**Literalmente** significa de manera literal: sin metáfora, sin exageración, conforme al sentido exacto de las palabras.
-
-## Desvío
-
-Hoy muchas veces se usa como intensificador, incluso en frases que son claramente figuradas.
+**Literalmente** indica que algo debe entenderse conforme al sentido exacto de las palabras y no de manera figurada. Hoy se usa muchas veces como intensificador precisamente en frases que son metáforas o exageraciones.
 
 ## Más preciso
 
@@ -24,9 +20,9 @@ Realmente, de verdad, en serio, muchísimo.
 
 ## Otras formas de decirlo
 
-“Me reí muchísimo.”  
+“Me morí de risa.”  
 “De verdad se llenó de mensajes.”
 
-**Desvío:** uso enfático / hipérbole.
+**Tipo:** uso enfático / hipérbole.
 
 ---

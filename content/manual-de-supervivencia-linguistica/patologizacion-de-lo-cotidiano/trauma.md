@@ -10,10 +10,16 @@ tags: ["lenguaje", "manual", "patologizacion"]
 “Eso me traumó.”  
 “Fue traumático.”
 
-## Sentido original
+## El desvío
 
-El **trauma** psicológico implica una experiencia profundamente perturbadora.  
-Hoy se usa muchas veces para incomodidades menores.
+El **trauma** psicológico remite a una perturbación profunda, no a cualquier episodio desagradable. El desvío es llamar “trauma” a toda incomodidad o decepción, sin precisar qué ocurrió ni qué efecto dejó.
+
+1. pasar un mal rato durante un viaje → **mala experiencia**
+2. equivocarse delante de otros y sentirse expuesto → **vergüenza / situación incómoda**
+3. quedar defraudado por una salida y recordarla con disgusto → **decepción / mal recuerdo**
+4. referirse a una huella psíquica profundamente perturbadora → **trauma**
+
+Una experiencia desagradable no es necesariamente un trauma.
 
 ## Más preciso
 
@@ -24,6 +30,6 @@ Mal recuerdo, situación incómoda, experiencia desagradable.
 “Fue una experiencia desagradable.”  
 “Me quedó un mal recuerdo.”
 
-**Desvío:** patologización.
+**Tipo:** patologización.
 
 ---

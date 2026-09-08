@@ -10,24 +10,22 @@ tags: ["lenguaje", "manual", "jerga-digital"]
 “POV: lunes otra vez.”  
 “POV: yo sin ganas de trabajar.”
 
-## Sentido original
+## El desvío
 
 **POV** significa *point of view*: punto de vista.  
 Se usa para indicar que una escena está mostrada desde la perspectiva de alguien.
-
-## Problema
 
 Hoy muchas veces se usa como etiqueta genérica, aunque no haya un punto de vista claro.
 
 ## Más preciso
 
-Desde mi perspectiva, así se ve, cuando, yo.
+Punto de vista, perspectiva, desde la mirada de...
 
 ## Otras formas de decirlo
 
 “Yo otra vez un lunes.”  
 “Así se ve llegar al trabajo sin ganas.”
 
-**Desvío:** jerga digital vaciada.
+**Tipo:** jerga digital vaciada.
 
 ---

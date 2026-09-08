@@ -10,7 +10,7 @@ tags: ["lenguaje", "manual", "jerga-digital"]
 “Ese título es clickbait.”  
 “Hicieron un clickbait blando para que entren.”
 
-## Problema
+## El desvío
 
 **Clickbait** viene del inglés y se usa para hablar de títulos o miniaturas pensados para atraer clics, muchas veces exagerando o engañando.  
 En español podría decirse de forma más clara sin depender del término importado.
@@ -19,11 +19,11 @@ En español podría decirse de forma más clara sin depender del término import
 
 Título engañoso, anzuelo, cebo para clics.
 
-## Alternativas
+## Otras formas de decirlo
 
 “Ese título es engañoso.”  
 “Pusieron un anzuelo para que entren.”
 
-**Desvío:** anglicismo de redes.
+**Tipo:** anglicismo de redes.
 
 ---

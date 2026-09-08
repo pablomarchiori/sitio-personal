@@ -10,10 +10,11 @@ tags: ["lenguaje", "manual", "hiperbole"]
 “Ese asado fue legendario.”  
 “Qué noche legendaria.”
 
-## Sentido original
+## El desvío
 
-**Legendario** remite a algo propio de una leyenda o digno de ser recordado como tal.  
-Usarlo para cualquier cosa memorable lo vacía.
+**Legendario** remite a las leyendas y también se usa para destacar algo extraordinario o digno de ser recordado. Ese uso expresivo no es un simple error.
+
+El desvío aparece por generalización: si cada asado, cada salida y cada anécdota son legendarios, la palabra deja de señalar algo excepcional. La repetición le quita la fuerza que buscaba aportar.
 
 ## Más preciso
 
@@ -24,6 +25,6 @@ Memorable, espectacular, muy bueno.
 “Ese asado fue memorable.”  
 “Qué noche espectacular.”
 
-**Desvío:** hipérbole / vaciamiento.
+**Tipo:** hipérbole / vaciamiento.
 
 ---

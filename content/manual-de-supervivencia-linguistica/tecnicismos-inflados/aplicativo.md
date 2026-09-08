@@ -10,9 +10,11 @@ tags: ["lenguaje", "manual", "tecnicismos"]
 “Te paso el link del aplicativo.”  
 “El aplicativo no responde.”
 
-## Problema
+## El desvío
 
 En muchos contextos se usa como si fuera más técnico o más profesional que **aplicación**, pero no agrega claridad.
+
+El *link* del ejemplo es deliberado: muestra cómo se acumula la jerga en una misma frase.
 
 ## Más preciso
 
@@ -23,6 +25,6 @@ Aplicación, sistema, programa.
 “Te paso el link de la aplicación.”  
 “La aplicación no responde.”
 
-**Desvío:** tecnicismo inflado.
+**Tipo:** tecnicismo inflado.
 
 ---

@@ -7,23 +7,28 @@ tags: ["lenguaje", "manual", "patologizacion"]
 
 ## Uso común
 
-“Estoy deprimido porque llueve.”  
-“Entré en depresión el lunes.”
+“Entré en depresión porque terminó la serie.”  
+“Los lunes me dan depresión.”
 
-## Sentido original
+## El desvío
 
-La **depresión** es un trastorno clínico serio.  
-Usarla para estados de ánimo pasajeros banaliza el término.
+**Depresión** no es una palabra exclusivamente clínica: también puede nombrar un decaimiento del ánimo. El desvío aparece cuando cualquier tristeza, desánimo, aburrimiento o bajón pasajero se convierte automáticamente en “depresión”, sin distinguir qué se siente ni con qué intensidad.
+
+1. estar triste por algo → **tristeza**
+2. quedar bajoneado después de una mala noticia → **desánimo**
+3. aburrirse un domingo → **aburrimiento**
+4. perder las ganas por un rato → **bajón**
+5. atravesar un cuadro depresivo → **depresión**
 
 ## Más preciso
 
-Triste, desanimado, bajoneado.
+Tristeza, desánimo, aburrimiento, bajón, según lo que se quiera expresar.
 
 ## Otras formas de decirlo
 
 “Estoy medio desanimado.”  
 “Hoy estoy un poco bajoneado.”
 
-**Desvío:** patologización.
+**Tipo:** patologización.
 
 ---

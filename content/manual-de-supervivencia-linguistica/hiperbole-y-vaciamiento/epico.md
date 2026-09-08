@@ -10,10 +10,11 @@ tags: ["lenguaje", "manual", "hiperbole"]
 “Ese gol fue épico.”  
 “Fue una hamburguesa épica.”
 
-## Sentido original
+## El desvío
 
-**Épico** se refiere a hechos heroicos o extraordinarios, propios de una epopeya.  
-Usarlo para cualquier cosa termina vaciando la palabra.
+Además de su relación con la epopeya y los hechos heroicos, el DLE admite el sentido ponderativo de **épico**: “grandioso o fuera de lo común”.
+
+El desvío no está en ese sentido aceptado, sino en el vaciamiento por abuso. Si el gol, la hamburguesa, la salida y la siesta son épicos, la palabra pierde intensidad y deja de distinguir lo extraordinario de lo que simplemente estuvo muy bien.
 
 ## Más preciso
 
@@ -24,6 +25,6 @@ Excelente, impresionante, muy bueno.
 “El gol fue impresionante.”  
 “La hamburguesa estaba muy buena.”
 
-**Desvío:** hipérbole / vaciamiento.
+**Tipo:** hipérbole / vaciamiento.
 
 ---

@@ -9,22 +9,29 @@ tags: ["lenguaje", "manual", "comodines"]
 ## Uso común
 
 “Tené empatía y no me reclames.”  
-“Falta empatía en este equipo.”
+“Hacer una pausa antes de hablar también es empatía.”
 
-## Sentido original
+## El desvío
 
-**Empatía** es comprender lo que otra persona siente.  
-Comprender no implica necesariamente justificar conductas ni suspender un límite.
+**Empatía** es comprender lo que otra persona siente. El desvío aparece cuando funciona como palabra paraguas para prudencia, respeto, paciencia, consideración o tacto: no toda buena disposición es empatía.
+
+1. esperar antes de hablar → **prudencia**
+2. no prejuzgar → **cautela / prudencia**
+3. tratar bien a alguien → **respeto**
+4. tolerar una demora → **paciencia**
+5. entender cómo se siente → **empatía**
+
+Comprender no obliga a justificar conductas ni a suspender límites.
 
 ## Más preciso
 
-Consideración, comprensión, paciencia.
+Prudencia, cautela, respeto, paciencia, empatía, según el caso.
 
 ## Otras formas de decirlo
 
 “Tené un poco de consideración hoy.”  
 “Podrías tener un poco más de paciencia.”
 
-**Desvío:** comodín moral.
+**Tipo:** comodín moral.
 
 ---

@@ -10,12 +10,10 @@ tags: ["lenguaje", "manual", "jerga-digital"]
 “Messi es el GOAT.”  
 “Es la cabra.”
 
-## Sentido original
+## El desvío
 
 **GOAT** es una sigla en inglés: *Greatest Of All Time*.  
 No significa literalmente “cabra”, aunque el chiste venga de ahí.
-
-## Problema
 
 Se importa la sigla inglesa como si fuera natural, y a veces hasta se traduce el meme sin sentido.
 
@@ -28,6 +26,6 @@ El mejor de todos, el número uno, una leyenda.
 “Messi es el mejor de todos.”  
 “Es una leyenda.”
 
-**Desvío:** jerga memética importada.
+**Tipo:** jerga memética importada.
 
 ---

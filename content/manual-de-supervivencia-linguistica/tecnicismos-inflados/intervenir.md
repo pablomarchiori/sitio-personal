@@ -10,7 +10,7 @@ tags: ["lenguaje", "manual", "tecnicismos"]
 “Intervinieron la plaza.”  
 “Van a intervenir el edificio.”
 
-## Sentido original
+## El desvío
 
 **Intervenir** suele implicar participar para modificar algo.  
 En urbanismo muchas veces reemplaza simplemente a arreglar o remodelar.
@@ -24,6 +24,6 @@ Remodelar, modificar, restaurar.
 “Remodelaron la plaza.”  
 “Van a restaurar el edificio.”
 
-**Desvío:** tecnicismo inflado.
+**Tipo:** tecnicismo inflado.
 
 ---

@@ -11,7 +11,7 @@ tags: ["lenguaje", "manual", "anglicismos"]
 “Parece un alien.”  
 “Ese bicho era un alien.”
 
-## Problema
+## El desvío
 
 **Alien** viene del inglés y entró sobre todo por el cine y la cultura pop.  
 En español ya existían palabras para eso, como **extraterrestre** o **alienígena**.  
@@ -26,6 +26,6 @@ Extraterrestre, alienígena.
 “Parece un extraterrestre.”  
 “Ese bicho era alienígena.”
 
-**Desvío:** anglicismo pop-cultural.
+**Tipo:** anglicismo pop-cultural.
 
 ---

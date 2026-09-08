@@ -11,20 +11,21 @@ tags: ["lenguaje", "manual", "comodines"]
 “No hay que normalizar esto.”  
 “Se está normalizando.”
 
-## Sentido original
+## El desvío
 
-**Normalizar** significa volver algo normal o habitual.  
-En debates se usa muchas veces como juicio moral.
+**Normalizar** puede significar hacer que algo se vuelva normal o habitual. En ese sentido, “se está normalizando” puede describir un cambio en lo que una sociedad considera corriente.
+
+El desvío aparece cuando se usa indiscriminadamente por **aceptar**, **aprobar**, **justificar** o **tolerar**. Que algo se vuelva habitual no significa necesariamente que se apruebe; tolerarlo tampoco equivale siempre a justificarlo. Conviene precisar si se habla de frecuencia, aceptación o valoración.
 
 ## Más preciso
 
-Aceptar, tolerar, volver habitual.
+Volver habitual, aceptar, aprobar, justificar o tolerar, según el caso.
 
 ## Otras formas de decirlo
 
 “No deberíamos aceptar eso.”  
 “Se está volviendo habitual.”
 
-**Desvío:** comodín moral.
+**Tipo:** comodín moral.
 
 ---

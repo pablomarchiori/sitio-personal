@@ -11,7 +11,7 @@ tags: ["lenguaje", "manual", "comodines"]
 “Esa es tu narrativa.”  
 “Quieren instalar una narrativa.”
 
-## Sentido original
+## El desvío
 
 **Narrativa** es el modo en que se organiza o construye un relato.  
 Hoy se usa muchas veces como palabra inflada para decir versión, discurso o interpretación.
@@ -25,6 +25,6 @@ Versión, relato, discurso, interpretación.
 “Esa es tu versión.”  
 “Quieren instalar ese discurso.”
 
-**Desvío:** comodín inflado.
+**Tipo:** comodín inflado.
 
 ---

@@ -10,7 +10,7 @@ tags: ["lenguaje", "manual", "otros-desvios"]
 “Le pasó por karma.”  
 “Eso fue karma.”
 
-## Sentido original
+## El desvío
 
 **Karma** no significa simplemente castigo.  
 En su origen remite a la relación entre las acciones y sus consecuencias dentro de tradiciones filosóficas y religiosas mucho más complejas.
@@ -24,6 +24,6 @@ Consecuencia, castigo, devolución, justicia poética.
 “Fue una consecuencia de lo que hizo.”  
 “Pareció una especie de justicia poética.”
 
-**Desvío:** simplificación cultural.
+**Tipo:** simplificación cultural.
 
 ---

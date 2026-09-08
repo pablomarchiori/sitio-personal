@@ -11,20 +11,21 @@ tags: ["lenguaje", "manual", "comodines"]
 “Ese sistema es opresor.”  
 “Ese grupo es opresor.”
 
-## Sentido original
+## El desvío
 
-Un **opresor** es quien ejerce dominación o tiranía.  
-En debates actuales a veces se usa como etiqueta amplia para desacreditar.
+**Opresor** puede ser un término correcto para quien somete o ejerce una dominación que oprime. El desvío aparece cuando desacuerdo, restricción, autoridad, abuso y opresión se mezclan bajo la misma palabra.
+
+Que alguien discrepe no lo vuelve opresor; una restricción necesita contexto y ejercer autoridad no equivale por sí solo a abusar de ella. Cuando hay abuso u opresión, conviene nombrar la conducta y explicar cómo se ejerce el poder, en lugar de usar la etiqueta como sustituto de esa explicación.
 
 ## Más preciso
 
-Autoridad abusiva, dominante, restrictivo.
+Desacuerdo, restricción, ejercicio de autoridad, abuso u opresión, según lo que ocurra.
 
 ## Otras formas de decirlo
 
 “Ese sistema es muy restrictivo.”  
 “Ese modelo concentra demasiado poder.”
 
-**Desvío:** comodín moral.
+**Tipo:** comodín moral.
 
 ---

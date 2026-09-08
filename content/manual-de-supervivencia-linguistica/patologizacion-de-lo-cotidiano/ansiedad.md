@@ -7,23 +7,30 @@ tags: ["lenguaje", "manual", "patologizacion"]
 
 ## Uso común
 
-“Tengo ansiedad por el estreno.”  
-“Me da ansiedad esperar.”
+“Me da ansiedad que tarde tanto en cargar.”  
+“El ruido del tránsito me da ansiedad.”
 
-## Sentido original
+## El desvío
 
-La **ansiedad** es un trastorno o estado psicológico específico.  
-Hoy se usa muchas veces para describir nervios o expectativa.
+**Ansiedad** también puede nombrar un estado de agitación, inquietud o zozobra; no implica necesariamente un trastorno clínico.
+
+El desvío es la exageración o generalización: nervios, impaciencia, molestia e incomodidad no son automáticamente ansiedad. En “El ruido del tránsito me da ansiedad”, si lo que se quiere decir es que el ruido molesta, **molestia** es más preciso. En “Me da ansiedad que tarde tanto en cargar”, cuando lo que se expresa es querer que termine de una vez, el matiz es **impaciencia**.
+
+1. querer que la página termine de cargar ya → **impaciencia**
+2. estar inquieto antes de una entrevista → **nervios**
+3. sentirse fastidiado por el ruido del tránsito → **molestia**
+4. no sentirse a gusto en una reunión → **incomodidad**
+5. sentir agitación o zozobra ante lo que podría pasar → **ansiedad**
 
 ## Más preciso
 
-Nervios, expectativa, inquietud.
+Nervios, inquietud, impaciencia, molestia, incomodidad.
 
 ## Otras formas de decirlo
 
-“Estoy nervioso por el estreno.”  
-“Me cuesta esperar.”
+“Me pone impaciente que tarde tanto en cargar.”  
+“El ruido del tránsito me molesta.”
 
-**Desvío:** patologización.
+**Tipo:** patologización.
 
 ---

@@ -11,10 +11,11 @@ tags: ["lenguaje", "manual", "comodines"]
 “Eso es un privilegio.”  
 “Vivís desde el privilegio.”
 
-## Sentido original
+## El desvío
 
-Un **privilegio** es un beneficio exclusivo otorgado a alguien.  
-Hoy muchas veces se usa de forma amplia para describir ventajas sociales.
+Un **privilegio** es una ventaja exclusiva o especial. Puede estar ligada a una posición social y no necesita ser una concesión formal.
+
+El desvío aparece cuando se vuelve una etiqueta general para cualquier posición favorable, sin precisar cuál es la ventaja ni respecto de quién. Hablar de privilegio puede ser pertinente; nombrar el acceso, el recurso o el trato diferencial permite entender la comparación.
 
 ## Más preciso
 
@@ -22,9 +23,9 @@ Ventaja, beneficio, posición favorable.
 
 ## Otras formas de decirlo
 
-“Partís de una situación más favorable.”  
-“Tenés algunas ventajas en ese contexto.”
+“Tenés acceso a una formación que otros no pueden pagar.”  
+“En ese trámite recibís un trato preferencial frente a los demás.”
 
-**Desvío:** comodín moral.
+**Tipo:** comodín moral.
 
 ---

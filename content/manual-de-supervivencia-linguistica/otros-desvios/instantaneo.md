@@ -10,13 +10,15 @@ tags: ["lenguaje", "manual", "otros-desvios"]
 “La respuesta fue instantánea.”  
 “Tuvo fama instantánea.”
 
-## Sentido original
+## El desvío
 
-**Instantáneo** significa que ocurre al instante, sin demora o casi sin intervalo perceptible.
+**Instantáneo** señala algo que ocurre al instante o dura apenas un instante. El desvío es la exageración temporal: acortar mucho una espera no siempre equivale a eliminarla.
 
-## Problema
+1. recibir una respuesta en pocos minutos → **rápido**
+2. recibirla enseguida, sin una espera apreciable o con una demora mínima → **inmediato / casi inmediato**
+3. describir algo que ocurre en un instante, como un destello → **instantáneo**
 
-Muchas veces se usa para cosas que solo fueron rápidas, no instantáneas.
+“Inmediato” e “instantáneo” pueden coincidir en ciertos contextos. La distinción útil es no presentar como ausencia de demora lo que solo ocurrió en poco tiempo: ganar fama rápidamente no equivale necesariamente a tener fama instantánea.
 
 ## Más preciso
 
@@ -27,6 +29,6 @@ Rápido, inmediato, en poco tiempo.
 “La respuesta fue muy rápida.”  
 “Ganó fama en muy poco tiempo.”
 
-**Desvío:** hipérbole temporal.
+**Tipo:** hipérbole temporal.
 
 ---

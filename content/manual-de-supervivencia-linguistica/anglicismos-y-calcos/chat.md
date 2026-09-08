@@ -11,7 +11,7 @@ tags: ["lenguaje", "manual", "anglicismos"]
 “Te lo mando por chat.”  
 “Después seguimos por chat.”
 
-## Problema
+## El desvío
 
 **Chat** está ampliamente usado y bastante aceptado, pero no deja de ser un préstamo innecesario en muchos contextos.  
 Desplazó palabras que ya existían.
@@ -25,6 +25,6 @@ Mensaje, conversación, charla escrita, mensajería.
 “Te lo mando por mensaje.”  
 “Después seguimos por escrito.”
 
-**Desvío:** préstamo asentado.
+**Tipo:** préstamo asentado.
 
 ---
