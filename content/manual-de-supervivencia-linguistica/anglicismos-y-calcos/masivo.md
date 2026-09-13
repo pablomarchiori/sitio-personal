@@ -3,7 +3,7 @@ title: "Masivo"
 draft: false
 tags: ["lenguaje", "manual", "anglicismos"]
 ---
-
+![Sátira sobre el la traducción literal de massive y push](/images/manual-de-supervivencia-linguistica/massive_pushing_large.png)  
 ## Uso común
 
 “Hubo una falla masiva en el servidor.”  

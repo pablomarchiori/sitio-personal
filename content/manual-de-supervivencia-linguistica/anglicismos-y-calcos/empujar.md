@@ -3,7 +3,7 @@ title: "Empujar"
 draft: false
 tags: ["lenguaje", "manual", "anglicismos"]
 ---
-
+![Sátira sobre el la traducción literal de massive y push](/images/manual-de-supervivencia-linguistica/massive_pushing_large.png)  
 ## Uso común
 
 “Tenemos que seguir empujando.”  
@@ -16,6 +16,8 @@ En inglés, *push* no siempre significa **empujar** físicamente.
 En deportes, trabajo o situaciones difíciles, expresiones como *keep pushing* pueden transmitir la idea de **seguir esforzándose, persistir, seguir adelante o no aflojar**.
 
 Como ejemplo, en una entrevista después de una carrera de Fórmula 1, un piloto contó que había sufrido una [*massive failure*]({{< relref "/manual-de-supervivencia-linguistica/anglicismos-y-calcos/masivo/" >}}), lamentó el resultado y agregó que había que "*keep pushing*". El comentarista en castellano tradujo esa última expresión literalmente como **“seguir empujando”**. Se entiende por contexto, pero el piloto no estaba hablando de empujar nada: quería decir que había que seguir esforzándose, seguir adelante o no aflojar.
+
+
 
 Con la repetición, expresiones como **“seguir empujando”** pueden terminar asentándose y dejar de sonar extrañas, especialmente cuando se consumen transmisiones y contenidos muy pegados al inglés.
 
