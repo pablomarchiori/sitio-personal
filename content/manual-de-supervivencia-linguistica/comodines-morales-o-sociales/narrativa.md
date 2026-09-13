@@ -1,7 +1,6 @@
 ---
 title: "Narrativa"
 draft: false
-weight: 50
 date: 2026-04-02T09:15:00-03:00
 tags: ["lenguaje", "manual", "comodines"]
 ---

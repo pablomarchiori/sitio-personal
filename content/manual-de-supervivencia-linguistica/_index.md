@@ -13,23 +13,18 @@ Hace un tiempo, viendo *Cómo entrenar a tu dragón*, me llamó la atención el 
 
 Tuve que mostrarle el diccionario a quien me acompañaba para probarle que **estoico** era, efectivamente, una palabra real.  
 ¿Cuánto nos perdemos por la falta de vocabulario?  
-¿Por la falta de comunicación?  
-¿Por no leer?
+¿Por la falta de comunicación? ¿Por no leer?
 
 Solo esa diferencia en la forma de comprender lo que el autor transmitió con ese pequeño detalle del nombre ya daba lugar a **dos experiencias distintas en dos personas sentadas frente al mismo televisor**.
 
 ## ¿Por dónde va esto?
 
 Esto no es una serie para mostrar [grandilocuencia](https://dle.rae.es/grandilocuencia) 🎩.  
-Tampoco busca traducciones perfectas, frases académicas ni equivalencias palabra por palabra.
-
-La idea es recordar que existen palabras que muchos ya no conocen, o que repetimos sin pensar porque es lo que consumimos a diario. Antes, quizá, parte de esto entraba bajo una palabra más grande: globalización.
-
+Esto es apenas un intento de comprender mejor lo que decimos, lo que escuchamos y lo que perdemos.  
+No busco traducciones perfectas, frases académicas ni equivalencias palabra por palabra. La idea es recordar que existen palabras que muchos ya no conocen, o que repetimos sin pensar porque es lo que consumimos a diario. 
 Si cada uno le da a las palabras el significado que quiere,  
-¿cómo nos entendemos?  
-¿Dónde está el diccionario de eso?
+¿cómo nos entendemos? ¿Dónde está el diccionario de eso?
 
-Esto es apenas un intento de comprender mejor lo que decimos, lo que escuchamos y lo que perdemos.
 
 ## Tipos de desvíos
 
@@ -53,7 +48,6 @@ Términos de redes, software, gaming o cultura online que se importan, se transf
 
 ### [Otros desvíos]({{< relref "/manual-de-supervivencia-linguistica/otros-desvios/" >}})
 Corrimientos de sentido, vaguedades o simplificaciones que no encajan del todo en las categorías anteriores.
-
 
 
 ## El cierre Filosó_fico 😊

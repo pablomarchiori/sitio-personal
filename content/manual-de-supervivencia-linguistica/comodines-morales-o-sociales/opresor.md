@@ -1,7 +1,6 @@
 ---
 title: "Opresor"
 draft: false
-weight: 40
 date: 2026-04-09T09:15:00-03:00
 tags: ["lenguaje", "manual", "comodines"]
 ---

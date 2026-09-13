@@ -1,7 +1,6 @@
 ---
 title: "Empatía"
 draft: false
-weight: 10
 date: 2026-04-21T09:15:00-03:00
 tags: ["lenguaje", "manual", "comodines"]
 ---

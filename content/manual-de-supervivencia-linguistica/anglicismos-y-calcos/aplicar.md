@@ -2,7 +2,6 @@
 title: "Aplicar"
 aliases: ["/manual-de-supervivencia-linguistica/anglicismos-y-calcos/apply/"]
 draft: false
-weight: 20
 date: 2026-03-30T09:15:00-03:00
 tags: ["lenguaje", "manual", "anglicismos"]
 ---
