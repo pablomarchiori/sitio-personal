@@ -35,6 +35,14 @@ No hace falta ocultar el pasado. Muchas veces alcanza con diseñar una campaña 
 
 El marketing empezó ayudando a vender ideas y terminó, demasiadas veces, reemplazándolas por candidatos.
 
+<figure>
+  <a href="/images/notas/politica_de_marca_blanca_esquina.png" target="_blank">
+    <img src="/images/notas/politica_de_marca_blanca_esquina_thumb.png"
+         alt="Contraste: cartelera nueva para candidatos, carteles rotos en la obra pública">
+  </a>
+  <figcaption>Contraste: cartelera nueva para candidatos, carteles rotos en la obra pública.</figcaption>
+</figure>
+
 ## El candidato como producto
 
 Cuando una campaña gira casi por completo alrededor de una persona, el partido empieza a parecer accesorio. Un sello que deja de estar disponible puede reemplazarse por otro, una alianza incómoda puede quedar atrás y una marca nacional que resta votos puede cederle el lugar a un nombre local mucho más neutro.
