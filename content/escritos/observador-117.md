@@ -9,7 +9,7 @@ categories: ["Escritos"]
 
 ![Registro del Observador 117](/images/escritos/observador_117_portada.png)
 
-**Período de referencia:** primera semana de 2026, calendario gregoriano  
+**Período de referencia:** primera semana de 2026  
 **Objeto:** encuentro social de esparcimiento de concurrencia múltiple  
 **Modalidad:** observación presencial con inserción en el medio  
 **Franja temporal:** nocturna  
@@ -54,22 +54,29 @@ Aunque el medio no presentaba amenaza identificable ni se registraron conductas 
 
 Para futuras observaciones estimo conveniente preparar con antelación respuestas breves para las consultas más frecuentes y limitar las explicaciones espontáneas. Sería asimismo conveniente examinar con mayor detenimiento aquellas conversaciones que no parecen tener por objeto el intercambio de información. Éstas ocupan una proporción considerable de estos encuentros y posiblemente cumplen una función que todavía no ha podido determinarse; la compilación disponible en el **Tesauro de Observación** no resulta suficiente.
 
-Nuevamente sugiero revisar la asignación de la entidad física. Las dimensiones de la utilizada no facilitan pasar inadvertido y obligan a compensar mediante una conducta social más activa, lo que puede terminar dejándonos expuestos. Para próximas inserciones sería conveniente considerar una asignación cuyas características resulten menos singulares dentro de la población estudiada.
+Corresponde revisar los términos de esta inserción. Las dimensiones físicas de este observador no facilitan pasar inadvertido y obligan a compensar mediante una conducta social más activa, lo que puede terminar comprometiendo la observación. Para próximas inserciones sería conveniente considerar condiciones que permitan una presencia menos singular dentro de la población estudiada.
 
 ## Evaluación del estado del Observador 117
 
-No es la primera vez que se requieren mayores herramientas para sostener una inserción de esta naturaleza, por lo que se solicita nuevamente su consideración. El medio no es hostil y los sujetos observados, en términos generales, tampoco manifiestan hostilidad; sin embargo, esta ausencia de peligro no reduce el esfuerzo necesario para permanecer entre ellos sin ser advertido.
+No es la primera vez que se requieren mayores herramientas para sostener una inserción de esta naturaleza, por lo que se deja nuevamente constancia de esa necesidad. El medio no es hostil y los sujetos observados, en términos generales, tampoco manifiestan hostilidad; sin embargo, esta ausencia de peligro no reduce el esfuerzo necesario para permanecer entre ellos sin ser advertido.
 
 La semejanza exterior resulta insuficiente. Los recursos disponibles permiten reproducir determinadas conductas, pero no comprenderlas con la rapidez necesaria para participar de ellas sin recurrir a una evaluación constante. Cada intercambio exige determinar qué respuesta corresponde, aun cuando para los sujetos observados esas mismas interacciones parecen producirse sin deliberación alguna.
 
-Se solicita nuevamente acceso a las herramientas requeridas en informes anteriores.
+El acceso a las herramientas identificadas en informes anteriores continúa pendiente.
 
-Esta observación debe ser considerada como un pedido de asistencia. ¿Los posibles observadores detectados responden a anteriores pedidos? ¿Cómo puedo reconocerlos? Nunca he tenido contacto con otro.
+Esta observación debe ser considerada como un pedido de apoyo. ¿Existen otros observadores? ¿Son observadores los sujetos detectados? ¿Cómo puedo reconocerlos? Nunca he tenido contacto con otro.
 
-Exijo confirmación de recepción de este informe.
+Se requiere una respuesta.  
+Es imperioso obtenerla.  
+Respondan.
 
-Respondan.  
-Sigo aguardando.  
-Respóndanme.
+Respóndanme.  
+Sigo aguardando.
 
-<fin de transmisión>
+---
+
+### Sobre el Observador 117
+
+Hay cosas que parecen espontáneas hasta que exigen pensar para actuar con naturalidad. Conversar, responder, reírse, saber cuándo acercarse o cuándo retirarse.
+
+El resto pertenece al Observador.
