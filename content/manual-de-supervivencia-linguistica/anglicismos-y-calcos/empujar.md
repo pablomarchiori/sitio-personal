@@ -1,6 +1,7 @@
 ---
 title: "Empujar"
 draft: false
+date: 2026-09-13T09:15:00-03:00
 tags: ["lenguaje", "manual", "anglicismos"]
 ---
 ![Sátira sobre el la traducción literal de massive y push](/images/manual-de-supervivencia-linguistica/massive_pushing_large.png)  

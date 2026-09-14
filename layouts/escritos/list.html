@@ -15,14 +15,14 @@
     </section>
 
     <section class="not-prose mt-12">
-      {{ range sort (.Pages.GroupByDate "2006") "Key" "asc" }}
+      {{ range sort (.Pages.GroupByDate "2006") "Key" "desc" }}
         <section class="mt-10">
           <h2 class="mb-4 text-2xl font-extrabold text-neutral-900 dark:text-neutral">
             {{ .Key }}
           </h2>
 
           <div class="space-y-2">
-            {{ range .Pages.ByDate }}
+            {{ range .Pages.ByDate.Reverse }}
               <a
                 href="{{ .RelPermalink }}"
                 class="group block rounded-lg px-4 py-3 no-underline transition hover:bg-neutral-100 dark:hover:bg-neutral-800"
