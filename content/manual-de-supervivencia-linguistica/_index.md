@@ -4,6 +4,8 @@ description: "Una serie sobre palabras desgastadas, importadas, infladas o vacia
 draft: false
 ---
 
+![Ilustración del Manual de supervivencia lingüística](/images/manual-de-supervivencia-linguistica/featured.png)
+
 ## Un pequeño disparador
 
 Hace un tiempo, viendo *Cómo entrenar a tu dragón*, me llamó la atención el nombre del jefe de la aldea: **Estoico el Vasto** ([Stoick the Vast](https://howtotrainyourdragon.fandom.com/wiki/Stoick_the_Vast_(Franchise)) en el original). Me pareció brillante por su simpleza: lograban transmitir la personalidad del personaje solo con su nombre. ¡Y además sonaba bien!
