@@ -10,6 +10,13 @@
       {{ .Content }}
     </section>
 
+    <div class="mt-6">
+      <a href="{{ .Parent.RelPermalink }}"
+         class="text-sm text-neutral-600 hover:underline dark:text-neutral-400">
+        ← Volver a {{ .Parent.Title }}
+      </a>
+    </div>
+
     <section class="mt-10">
       {{ range .RegularPages.ByTitle }}
         <article class="mb-8">
