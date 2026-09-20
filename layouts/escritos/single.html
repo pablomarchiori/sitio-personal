@@ -12,6 +12,15 @@
       <time class="mt-2 block text-sm text-neutral-500 dark:text-neutral-400" datetime="{{ .Date.Format "2006-01-02" }}">
         {{ .Date.Format "02/01/2006" }} · {{ .ReadingTime }} {{ if eq .ReadingTime 1 }}min{{ else }}mins{{ end }}
       </time>
+
+      {{ with .Resources.GetMatch "feature.*" }}
+        <div class="prose mt-8 max-w-none dark:prose-invert">
+          {{ partial "picture.html" (dict "img" . "alt" $.Params.featureAlt "class" "mb-6 rounded-md" "lazy" false "webp" ($.Site.Params.enableImageWebp | default true)) }}
+          {{ with $.Params.coverCaption }}
+            <figcaption class="-mt-3 mb-6 text-center">{{ . | markdownify }}</figcaption>
+          {{ end }}
+        </div>
+      {{ end }}
     </header>
 
     <section class="prose mt-8 max-w-none dark:prose-invert">
