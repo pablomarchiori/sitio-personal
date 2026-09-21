@@ -6,6 +6,9 @@ description: "Primera nota del sitio: instalación de Hugo, Git, Congo y puesta 
 tags: ["hugo", "windows", "github", "sitio-personal"]
 categories: ["Notas"]
 ---
+**Actualización: 20/09/2026 — imágenes feature y miniaturas en listados**  
+Empecé a usar imágenes `feature` en las páginas para mejorar la vista previa al compartir enlaces. El cambio terminó sumando también miniaturas en algunos listados del sitio, entre ellos Reciente y Escritos. [Ver anexo](#anexo-imágenes-feature-y-miniaturas-en-listados).
+
 **Actualización: 07/09/2026 — contador de lecturas por página**  
 Agregué un contador de lecturas para Notas, Labs y Escritos usando Cloudflare Workers y D1. [Ver anexo](#anexo-contador-de-lecturas-con-cloudflare).
 
@@ -383,3 +386,40 @@ En `localhost` no se consulta Cloudflare. El lugar del contador se mantiene visi
 Al publicar el sitio, ese valor se reemplaza por el número real almacenado en D1.
 
 La ventaja de este esquema es que no hace falta tocar cada archivo Markdown: el contador se aplica automáticamente a las páginas donde ya se carga el partial.
+
+---
+
+## Anexo: imágenes feature y miniaturas en listados
+
+El 20/09/2026 empecé a usar imágenes `feature` para que las publicaciones tuvieran una vista previa al compartir enlaces en WhatsApp y otras plataformas.
+
+La primera prueba fue con **Masivo**, en el Manual de supervivencia lingüística. La solución inicial fue convertir:
+
+```text
+masivo.md
+```
+
+en un *page bundle*:
+
+```text
+masivo/
+├── index.md
+└── feature.png
+```
+
+Funcionó, aunque después encontré una forma bastante más simple. No hacía falta mover ni renombrar el Markdown. Hugo y Congo también reconocen la imagen dejando:
+
+```text
+instalacion-del-sitio.md
+
+instalacion-del-sitio/
+└── feature.png
+```
+
+Así se conserva el `.md` donde estaba y la carpeta homónima queda solamente para sus recursos.
+
+La otra sorpresa vino en la portada, porque Congo empezó a reutilizar esas imágenes como miniaturas en **Reciente**. El resultado me gustó y terminé aplicando la misma idea al listado de **Escritos**, que usa un layout propio.
+
+Cuando un escrito tiene una `feature`, ahora aparece una pequeña previsualización junto al título, fecha y descripción. Si no tiene imagen, el listado sigue funcionando como antes.
+
+Una imagen que originalmente agregué para compartir enlaces terminó sirviendo también para darle un poco más de vida a los listados del sitio.

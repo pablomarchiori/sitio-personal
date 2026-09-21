@@ -11,24 +11,57 @@
     </section>
 
     <div class="mt-6">
-      <a href="{{ .Parent.RelPermalink }}"
-         class="text-sm text-neutral-600 hover:underline dark:text-neutral-400">
+      <a
+        href="{{ .Parent.RelPermalink }}"
+        class="text-sm text-neutral-600 hover:underline dark:text-neutral-400"
+      >
         ← Volver a {{ .Parent.Title }}
       </a>
     </div>
 
     <section class="mt-10">
       {{ range .RegularPages.ByTitle }}
-        <article class="mb-8">
-          <h2 class="text-xl font-semibold">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          </h2>
+        {{ $images := .Resources.ByType "image" }}
+        {{ $feature := $images.GetMatch (.Params.feature | default "*feature*") }}
 
-          {{ if not .Draft }}
-            <div class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-              {{ time.Format ":date_long" .Date }} · 1 min
+        <article class="mb-8">
+          <a
+            href="{{ .RelPermalink }}"
+            class="group flex items-start no-underline"
+            style="gap: 1rem;"
+          >
+            {{ with $feature }}
+              {{ if eq .MediaType.SubType "svg" }}
+                <img
+                  src="{{ .RelPermalink }}"
+                  loading="lazy"
+                  class="w-24 flex-none rounded-md"
+                  alt=""
+                >
+              {{ else }}
+                <img
+                  src="{{ (.Fill "160x120 smart").RelPermalink }}"
+                  width="160"
+                  height="120"
+                  loading="lazy"
+                  class="w-24 flex-none rounded-md object-cover"
+                  alt=""
+                >
+              {{ end }}
+            {{ end }}
+
+            <div>
+              <h2 class="m-0 text-xl font-semibold text-neutral-900 group-hover:text-primary-600 dark:text-neutral-100 dark:group-hover:text-primary-400">
+                {{ .Title }}
+              </h2>
+
+              {{ if not .Draft }}
+                <div class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+                  {{ time.Format ":date_long" .Date }} · 1 min
+                </div>
+              {{ end }}
             </div>
-          {{ end }}
+          </a>
         </article>
       {{ end }}
     </section>
