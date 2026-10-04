@@ -1,6 +1,6 @@
 ---
 title: "Rescate de una tablet vieja como panel fijo"
-date: 2026-04-04T18:30:00-03:00
+date: 2026-10-01T18:30:00-03:00
 draft: false
 description: "Cómo terminé reutilizando una CX Boreal II de 2013 como panel fijo para el sitio."
 tags: ["android", "tablet", "hugo", "cloudflare", "firefox", "dashboard", "labs"]

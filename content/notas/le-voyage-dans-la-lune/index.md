@@ -1,6 +1,6 @@
 ---
 title: "Le Voyage dans la Lune (Viaje a la Luna)"
-date: 2026-10-04T20:00:00-03:00
+date: 2026-10-04T13:00:00-03:00
 draft: false
 description: "Artemis, Apollo, la Guerra Fría y por qué las teorías conspiranoicas sobre el alunizaje no resisten demasiado análisis."
 tags: ["luna", "apollo", "artemis", "espacio", "historia", "ciencia"]
