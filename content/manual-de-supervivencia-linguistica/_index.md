@@ -4,7 +4,7 @@ description: "Una serie sobre palabras desgastadas, importadas, infladas o vacia
 draft: false
 ---
 
-![Ilustración del Manual de supervivencia lingüística](/images/manual-de-supervivencia-linguistica/featured.png)
+![Ilustración del Manual de supervivencia lingüística](portada-seccion.png)
 
 ## Un pequeño disparador
 

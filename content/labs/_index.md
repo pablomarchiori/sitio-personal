@@ -22,4 +22,4 @@ Proyectos, experimentos y cacharreo con hardware y software. Cosas que se constr
   </a>
 </div>
 
-![Banner animado nerd](/images/home/banner-nerd3.webp)
+![Banner animado nerd](banner-nerd3.webp)

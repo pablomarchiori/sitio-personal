@@ -22,7 +22,6 @@
           {{ partial "article-meta.html" (dict "context" . "scope" "single") }}
         </div>
       {{ end }}
-      {{ if not .Params.featureInBody }}
       {{ with $feature }}
         <div class="prose">
           {{ $altText := $.Params.featureAlt | default $.Params.coverAlt | default "" }}
@@ -34,7 +33,7 @@
           {{ end }}
         </div>
       {{ end }}
-      {{ end }}
+
     </header>
     <section class="prose mt-0 flex max-w-full flex-col dark:prose-invert lg:flex-row">
       {{ if and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in .TableOfContents "<ul") }}

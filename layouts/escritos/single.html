@@ -13,7 +13,7 @@
         {{ .Date.Format "02/01/2006" }} · {{ .ReadingTime }} {{ if eq .ReadingTime 1 }}min{{ else }}mins{{ end }}
       </time>
 
-      {{ with .Resources.GetMatch "feature.*" }}
+      {{ with (.Resources.ByType "image").GetMatch (.Params.feature | default "*feature*") }}
         <div class="prose mt-8 max-w-none dark:prose-invert">
           {{ partial "picture.html" (dict "img" . "alt" $.Params.featureAlt "class" "mb-6 rounded-md" "lazy" false "webp" ($.Site.Params.enableImageWebp | default true)) }}
           {{ with $.Params.coverCaption }}
