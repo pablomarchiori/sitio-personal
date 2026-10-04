@@ -7,6 +7,8 @@ tags: ["luna", "apollo", "artemis", "espacio", "historia", "ciencia"]
 categories: ["Notas"]
 featureAlt: "Escena de *Le Voyage dans la Lune* (1902)"
 ---
+*Texto original: 11/04/2026, Actualización: 04/10/2026 — revisión editorial, imágenes y estructura.*
+
 > Frente a un logro humano extraordinario, siempre hay quien prefiere la explicación cómoda antes que el esfuerzo de entender cómo se hizo posible.
 
 El reciente lanzamiento de [Artemis II](https://www.nasa.gov/mission/artemis-ii/) volvió a poner los viajes a la Luna en el centro de la conversación. Aparece entre entusiastas, pero también entre personas que tuvieron poco o ningún contacto con la exploración espacial. Y en ese cruce también reaparece alguna teoría conspiranoica, a veces tratada como si fuera más verosímil la película [Viaje a la Luna](https://es.wikipedia.org/wiki/Viaje_a_la_Luna), de 1902, que la información acumulada por la [NASA](https://www.nasa.gov/) y otras agencias.
