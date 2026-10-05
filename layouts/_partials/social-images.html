@@ -1,0 +1,15 @@
+{{- /* Used only by social metadata. Keep Congo's cover/thumbnail processing intact. */ -}}
+{{- $images := slice -}}
+{{- if .IsPage -}}
+  {{- with .Resources.GetMatch "*feature*" -}}
+    {{- if and (eq .ResourceType "image") (in (slice "jpeg" "png" "webp" "gif" "tiff" "bmp") .MediaType.SubType) -}}
+      {{- $social := .Fill "1200x630 Smart jpg q82" -}}
+      {{- $images = slice $social -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- /* Preserve Hugo's explicit images and site defaults when no processable cover exists. */ -}}
+{{- if not $images -}}
+  {{- $images = partial "_funcs/get-page-images" . -}}
+{{- end -}}
+{{- return $images -}}

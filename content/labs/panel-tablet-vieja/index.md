@@ -5,6 +5,7 @@ draft: false
 description: "Cómo terminé reutilizando una CX Boreal II de 2013 como panel fijo para el sitio."
 tags: ["android", "tablet", "hugo", "cloudflare", "firefox", "dashboard", "labs"]
 ---
+*Texto original: 21/04/2026, Actualización: 01/10/2026 — revisión editorial, imágenes y estructura.*
 
 Acomodando un poco el cajón de los aparatos viejos, ese intermedio entre lo que sirve y lo que se tira, encontré una tablet vieja: una **CX Boreal II de 9.7"**, con **Android 4.1.1**.
 

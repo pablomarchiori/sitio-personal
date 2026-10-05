@@ -6,260 +6,124 @@ description: "Primera nota del sitio: instalación de Hugo, Git, Congo y puesta 
 tags: ["hugo", "windows", "github", "sitio-personal"]
 categories: ["Notas"]
 ---
-**Actualización: 20/09/2026 — imágenes feature y miniaturas en listados**  
-Empecé a usar imágenes `feature` en las páginas para mejorar la vista previa al compartir enlaces. El cambio terminó sumando también miniaturas en algunos listados del sitio, entre ellos Reciente y Escritos. [Ver anexo](#anexo-imágenes-feature-y-miniaturas-en-listados).
+**Actualización: 04/10/2026 — estructura de artículos, imágenes y AGENTS.md**  
+Reorganicé las publicaciones en carpetas que reúnen cada texto y sus archivos, ordené el uso de `content` y `static`, y documenté las convenciones en `AGENTS.md`. La copia local del sitio también genera imágenes optimizadas para compartir enlaces. [Ver anexo](#anexo-estructura-de-artículos-imágenes-y-agentsmd).
 
 **Actualización: 07/09/2026 — contador de lecturas por página**  
-Agregué un contador de lecturas para Notas, Labs y Escritos usando Cloudflare Workers y D1. [Ver anexo](#anexo-contador-de-lecturas-con-cloudflare).
+Agregué un contador de lecturas para Notas, Labs y Escritos con servicios de Cloudflare. [Ver anexo](#anexo-contador-de-lecturas-con-cloudflare).
 
 **Actualización: 07/09/2026 — compartir, modo claro/oscuro y búsqueda**  
-Agregué funciones de compartir en Notas, Labs y Escritos, el selector de apariencia junto a esos enlaces y la búsqueda general del sitio. [Ver anexo](#anexo-compartir-apariencia-y-búsqueda).
+Agregué las opciones para compartir, el selector de apariencia y la búsqueda general. [Ver anexo](#anexo-compartir-apariencia-y-búsqueda).
 
 **Actualización: 24/08/2026 — Hugo 0.165.0 y Congo 2.14.0**  
-Meses después de la instalación original actualicé Hugo y Congo. [Ver anexo](#anexo-actualización-de-hugo-y-congo).
+Actualicé las versiones usadas en Windows y en la publicación automática. [Ver anexo](#anexo-actualización-de-hugo-y-congo).
 
-# Objetivo
-**Original: 28/03/2026**  
-Dejar funcionando un sitio personal con **Hugo en Windows**, usando **Git**, el tema **Congo** y publicación en **GitHub Pages**, dejando además el camino preparado para usar dominio propio más adelante.
+## Instalación original — 28/03/2026
 
-## Punto de partida
+Quería un sitio personal que pudiera mantener por mi cuenta, escribir en Markdown y publicar con costo cero o casi. Venía de servicios como Blogger y buscaba una plataforma abierta, con una presentación sencilla y la posibilidad de conectar un dominio propio. También quería renegar un poco con casos prácticos para aprender cómo funcionaba todo.
 
-El proceso empezó con estos objetivos:
+Elegí Hugo, *un programa que convierte textos y plantillas en las páginas del sitio*, con el tema Congo para la presentación y Git para guardar el historial de cambios. Trabajé en Windows, con asistencia de ChatGPT 5.4 Thinking y algo de Gemini.
 
-- usar una plataforma abierta
-- evitar servicios cerrados tipo Blogger
-- mantener costo cero (o casi)
-- escribir en Markdown
-- tener un sitio limpio, legible y fácil de mantener
-- dejar abierta la posibilidad de conectar dominio propio más adelante
-- renegar un poco con casos prácticos para aprender la tecnología de verdad
+### Hugo, Git y el proyecto local
 
-## Entorno usado
+Descargué Hugo para Windows, dejé el ejecutable en una carpeta local y lo agregué al `PATH`, *la lista de carpetas donde Windows busca los programas cuando escribimos un comando*. Comprobé la instalación con `hugo version`.
 
-- Windows
-- Hugo Extended
-- Git for Windows
-- tema Congo
-- asistencia de ChatGPT 5.4 Thinking, y algo de Gemini
+Después instalé Git for Windows y lo verifiqué con `git --version`. Empecé usando Git Bash, pero terminé pasando a CMD porque me resultaba más cómodo para copiar y pegar comandos.
 
-## Proceso realizado
+Creé el proyecto con `hugo new project sitio-personal` e inicialicé su historial con `git init` dentro de esa carpeta.
 
-### 1. Instalación de Hugo
+### Congo y los primeros ajustes
 
-Primero descargué Hugo para Windows, dejé el ejecutable en una carpeta local y lo agregué al `PATH`.  
-La verificación inicial fue con: `hugo version`  
-Ese paso confirmó que Hugo ya estaba disponible desde la consola.
+La elección del tema llevó unas cuantas vueltas, con Gemini, ChatGPT y yo haciendo de árbitro. Congo me cerraba por su aspecto sobrio, el soporte para notas e imágenes y las posibilidades de ajuste.
 
-### 2. Instalación de Git
+Lo incorporé como **submódulo**, *un repositorio de Git incluido dentro de otro y fijado a una revisión concreta*, con este comando:
 
-Después instalé **Git for Windows** y verifiqué la instalación con:  
-`git --version`
+```text
+git submodule add https://github.com/jpanther/congo.git themes/congo
+```
 
-Al principio usé Git Bash, pero para este trabajo terminé pasando a **CMD**, simplemente porque me resultó más cómodo para copiar y pegar comandos en Windows.
+Enseguida apareció la primera contrariedad. Había descargado la edición estándar de Hugo y Congo requería **Hugo Extended**, que incluye las herramientas necesarias para procesar los estilos del tema. Reemplacé el ejecutable y preparé una configuración mínima en `hugo.toml`.
 
-### 3. Creación del proyecto
+El siguiente problema fue una incompatibilidad entre Hugo y un **partial** de Congo, *una plantilla reutilizable que otras plantillas pueden invocar*. Lo resolví creando un archivo vacío en `layouts/partials/functions/warnings.html`, que reemplazaba localmente ese partial sin modificar los archivos del tema.
 
-Con Hugo funcionando, creé el proyecto inicial con:  
-`hugo new project sitio-personal`
+Con esos ajustes, `hugo server -D` puso el sitio en marcha en `http://localhost:1313/`. La opción `-D` permite ver también las publicaciones marcadas como borrador.
 
-Después inicialicé Git dentro de la carpeta del proyecto con:  
-`git init`
+### Publicación y ajuste visual
 
-A partir de ahí ya tenía una base local sobre la cual empezar a trabajar.
+Guardé el primer **commit**, *una revisión de los archivos en el historial de Git*, y subí el proyecto a GitHub. Configuré GitHub Pages para alojarlo y GitHub Actions para construirlo y publicarlo. Su **workflow**, *la secuencia de tareas automáticas definida para el proyecto*, se ejecuta cada vez que envío cambios a la rama principal con `git push`.
 
-### 4. Elección del tema
+La primera versión quedó en [pablomarchiori.github.io/sitio-personal](https://pablomarchiori.github.io/sitio-personal/), con una portada básica, la sección Notas y la primera publicación.
 
-La elección del tema llevó más vueltas de las que parecía. Hubo discusión entre Gemini, ChatGPT y yo haciendo de árbitro, y la decisión final fue usar **Congo**.
+Todavía me molestaba el espacio excesivo entre los elementos de las listas. Probé con `assets/css/custom.css`, pero el tema no lo tomaba como esperaba. Funcionó al usar `static/css/custom.css` y cargarlo expresamente desde `layouts/partials/extend-head.html`.
 
-Terminé eligiendo Congo por cuatro cosas que me cerraban bastante bien:  
-- sobriedad
-- flexibilidad
-- soporte para notas, imágenes y esquemas
-- mantenimiento razonable
+Para más adelante quedaron el dominio propio, la organización de secciones y categorías y una guía para mantener el sitio y publicar nuevas notas. Por lo pronto, ya podía escribir, probar los cambios en mi equipo y subirlos. Faltaba acostumbrarme a la secuencia. 😅
 
-No era el tema más básico, pero tampoco uno exageradamente cargado ni orientado a algo corporativo.
+```text
+git add content\site-log\instalacion-del-sitio\index.md
+git commit -m "Actualizar nota de instalación del sitio"
+git push
+```
 
-### 5. Instalación del tema
-
-Una vez elegido, agregué Congo como submódulo del proyecto con:  
-`git submodule add https://github.com/jpanther/congo.git themes/congo`
-
-Con eso el tema quedó incorporado al repositorio sin mezclar su código directamente con el del sitio.
-
-### 6. Cambio a Hugo Extended
-
-La primera contrariedad apareció enseguida: **Congo requiere Hugo Extended**.
-
-Yo había arrancado con la edición estándar de Hugo, así que tuve que reemplazarla por la versión **Extended** para que el tema pudiera compilar correctamente.
-
-### 7. Configuración inicial
-
-Después armé un `hugo.toml` mínimo para que el sitio arrancara con una configuración básica y usable.  
-En esta etapa armé apenas una base funcional y dejé los ajustes finos para después.
-
-### 8. Corrección de compatibilidad
-
-La segunda contrariedad fue más concreta: apareció un error de compatibilidad entre la versión actual de Hugo y un **partial** (una plantilla reutilizable del tema) de Congo. La solución aplicada fue anular localmente ese partial creando el archivo:  
-`layouts/partials/functions/warnings.html`
-
-vacío, para que el sitio pudiera renderizar sin romper. Fue la primera vez que tuve que sobrescribir localmente un partial para seguir adelante.
-
-### 9. Prueba local
-
-Una vez resueltos esos puntos, el sitio quedó levantado localmente con:  
-`hugo server -D`
-
-y accesible en:  
-`http://localhost:1313/`
-
-Ese `-D` fue importante porque permite ver también los contenidos que siguen marcados como borrador.
-
-### 10. Publicación en GitHub
-
-Con el sitio funcionando localmente, el paso siguiente fue inicializar el repositorio correctamente, hacer el primer commit y subir el proyecto a GitHub. Después se configuró el despliegue con **GitHub Pages** usando **GitHub Actions**, de forma que cada `push` a la rama principal vuelva a compilar y publicar el sitio automáticamente.
-
-### 11. Primera publicación visible en línea
-
-Finalmente, el sitio quedó visible en línea en:  
-`https://pablomarchiori.github.io/sitio-personal/`
-
-El sitio ya estaba publicado y accesible desde Internet.
-
-## 12. Ajuste visual final
-
-Ya con el sitio funcionando, apareció un detalle menor pero molesto: el espaciado entre bullets dentro de las notas quedaba demasiado abierto. Primero intenté resolverlo con un archivo `assets/css/custom.css`, pero en este caso no estaba siendo tomado por el tema como esperaba.
-
-La solución que sí funcionó fue otra:  
-- crear `static/css/custom.css`
-- cargarlo explícitamente desde `layouts/partials/extend-head.html`
-
-Con eso pude ajustar el espaciado de listas sin tocar el tema Congo directamente. También quedó resuelto así el primer ajuste visual del sitio sin modificar archivos propios del tema.
-
-## Estado actual
-
-En este punto, el sitio ya quedó:
-
-- funcionando localmente
-- publicado en GitHub Pages
-- con una portada básica
-- con la sección `Notas` visible
-- con la primera nota publicada
-- y con una base lista para seguir creciendo
-
-## Qué sigue después
-
-Quedaron pendientes:
-
-- conectar el sitio con dominio propio
-- ordenar mejor las secciones reales del sitio
-- documentar cómo mantenerlo y publicar nuevas notas
-- definir una estructura más estable para categorías y contenido
-
-## Cierre
-
-El sitio quedó funcionando, publicado y documentado. Entre instalación, errores y correcciones ya había material suficiente como para empezar a dejar registro de cómo estaba armado.
-
-Ahora hay que aprenderse esto! 😅  
-`git add content\site-log\instalacion-del-sitio.md`  
-`git commit -m "Actualizar nota de instalación del sitio"`  
-`git push`
+La ruta del ejemplo corresponde a la organización actual de esta nota, adoptada en octubre.
 
 ---
 
 ## Anexo: actualización de Hugo y Congo
 
-El 24/08/2026 actualicé **Hugo Extended de 0.159.1 a 0.165.0**.
+El 24/08/2026 actualicé **Hugo Extended de 0.159.1 a 0.165.0**. En Windows alcanzó con reemplazar `hugo.exe` y comprobar la versión con `hugo version`.
 
-En Windows fue suficiente con reemplazar `hugo.exe` por la nueva versión Extended y verificarla con: `hugo version`
+Al iniciar el sitio aparecieron avisos sobre parámetros `deprecated`, *obsoletos y pendientes de retirada*, desde Hugo 0.158. En `hugo.toml` cambié `languageCode = "es-ar"` por `locale = "es-AR"`.
 
-Al levantar nuevamente el sitio aparecieron varios warnings por parámetros `deprecated` (obsoletos y pendientes de retirada) desde Hugo 0.158.
+Los avisos restantes venían de Congo. Entré en `themes\congo`, actualicé las referencias con `git fetch --tags` y seleccioné **Congo v2.14.0** con `git checkout v2.14.0`. Git mostró `detached HEAD`: *el submódulo había quedado en una revisión concreta, identificada por la etiqueta de esa versión, sin seguir una rama*. Era lo esperado para esa forma de instalar el tema.
 
-El primero correspondía a la configuración del sitio. En `hugo.toml` cambié: `languageCode = "es-ar"` por: `locale = "es-AR"`
+Congo v2.14.0 incorporaba los cambios para las nuevas propiedades de idioma de Hugo. Después de actualizarlo, el sitio volvió a compilar sin esos avisos.
 
-Los restantes venían de la versión de Congo que estaba usando. Como el tema está instalado como submódulo Git, entré en su carpeta: `cd themes\congo`
+### La versión usada por GitHub Pages
 
-y después actualicé las referencias y lo llevé a **Congo v2.14.0**:  
-`git fetch --tags`  
-`git checkout v2.14.0`
+También cambié `HUGO_VERSION: 0.159.1` por `HUGO_VERSION: 0.165.0` en `.github/workflows/hugo.yaml`, para que GitHub Actions usara la misma versión que mi equipo.
 
-Git mostró un aviso de `detached HEAD`, algo que parece normal en este caso porque el submódulo queda apuntando directamente al commit asociado al tag.
+En el primer intento escribí `0.165.1`. Esa versión no existía en ese momento y la descarga devolvió una respuesta de error. Al intentar descomprimirla, la instalación falló con estos mensajes:
 
-Congo v2.14.0 ya incorpora los cambios necesarios para las nuevas propiedades de idioma de Hugo. Después de actualizarlo, el sitio volvió a compilar sin warnings.
+```text
+tar: This does not look like a tar archive
+gzip: stdin: not in gzip format
+```
 
-### GitHub Pages
-
-Una vez actualizado Hugo en mi instalación local Actualizar de Windows, toca hacerlo en GitHub Actions.
-
-La versión estaba definida en: `.github/workflows/hugo.yaml` con: `HUGO_VERSION: 0.159.1`  
-y la cambié por: `HUGO_VERSION: 0.165.0`
-
-En el primer intento escribí por error: `HUGO_VERSION: 0.165.1`
-
-Y como esa versión no existía, GitHub Actions intentó descargar igualmente el archivo correspondiente y la instalación terminó con:  
-`tar: This does not look like a tar archive`  
-`gzip: stdin: not in gzip format`
-
-El problema no estaba en `tar`: la URL apuntaba a una versión inexistente y `curl` había descargado una respuesta de error en lugar del `.tar.gz`.
-Entonces corrigiendo solo: `0.165.1` por: `0.165.0`, el workflow volvió a ejecutar normalmente.
-
-Y listo!, quedaron alineados los dos entornos: **Hugo 0.165.0 Extended + Congo 2.14.0**
+La dirección de descarga era incorrecta: `curl` había guardado una respuesta de error donde se esperaba un archivo `.tar.gz`. Al corregir el número, el workflow volvió a funcionar. En esa actualización quedaron alineados los dos entornos con **Hugo 0.165.0 Extended y Congo 2.14.0**.
 
 ---
 
 ## Anexo: compartir, apariencia y búsqueda
 
-El 07/09/2026 agregué tres funciones de navegación y uso general sobre Congo, sin modificar cada contenido en forma individual.
+El 07/09/2026 agregué las opciones **Facebook**, **Compartir** y **Copiar enlace**, junto con el selector claro/oscuro, debajo del encabezado de Notas, Labs y Escritos.
 
-### Compartir enlaces
-
-En Notas, Labs y Escritos aparece debajo del encabezado una pequeña barra con:
-
-- **Facebook**
-- **Compartir**
-- **Copiar enlace**
-- selector **claro/oscuro**
-
-El código quedó centralizado en:
-
-```text
-layouts/partials/extend-footer.html
-```
-
-El partial se carga solo para estas secciones:
+La implementación de esa etapa quedó centralizada en `layouts/partials/extend-footer.html`, limitada a las páginas de esas secciones:
 
 ```go-html-template
 {{ if and .IsPage (in (slice "notas" "labs" "escritos") .Section) }}
 ```
 
-El botón **Facebook** abre el diálogo de compartir de esa red.
+**Facebook** abre el diálogo de esa red. **Compartir** usa la función nativa del navegador o del teléfono (`navigator.share`); las aplicaciones disponibles dependen del dispositivo. **Copiar enlace** guarda la dirección en el portapapeles y confirma la acción. El selector de apariencia aprovecha el de Congo.
 
-**Compartir** usa la función nativa del navegador o del teléfono (`navigator.share`), por lo que en un celular puede ofrecer Instagram, WhatsApp, Telegram u otras aplicaciones instaladas.
-
-**Copiar enlace** guarda la URL actual en el portapapeles y confirma brevemente la acción.
-
-El mismo bloque aprovecha el selector de apariencia de Congo para alternar entre modo claro y oscuro.
-
-Aunque el partial se llama desde el footer, un pequeño fragmento de JavaScript mueve visualmente el bloque hasta debajo del encabezado de la publicación.
+Aunque el bloque se cargaba desde el pie de página, un fragmento de JavaScript lo ubicaba debajo del encabezado. Así podía aplicarlo a las tres secciones sin editar cada publicación.
 
 ### Búsqueda
 
-Congo incluye búsqueda interna basada en el contenido generado por Hugo.
-
-En `hugo.toml` quedó habilitada con:
+Habilité la búsqueda interna de Congo en `hugo.toml`:
 
 ```toml
 [params]
 enableSearch = true
 ```
 
-y la portada genera también la salida JSON que usa el buscador:
+También agregué la salida JSON de la portada, *un archivo de datos que el buscador puede leer*:
 
 ```toml
 [outputs]
 home = ["HTML", "RSS", "JSON"]
 ```
 
-La lupa se agregó como una acción más del menú principal:
+La lupa quedó como una acción del menú principal, antes de **Acerca de**, con esta configuración:
 
 ```toml
 [[menus.main]]
@@ -271,31 +135,17 @@ action = "search"
 icon = "search"
 ```
 
-El peso se ajustó para dejar la búsqueda antes de **Acerca de**.
-
-El resultado final mantiene el menú principal simple, pero agrega búsqueda, compartir, copia de URL y cambio de apariencia sin tener que repetir código en cada archivo Markdown.
-
 ---
 
 ## Anexo: contador de lecturas con Cloudflare
 
-El contador muestra las lecturas junto a la fecha y el tiempo estimado de lectura:
+El 07/09/2026 agregué el contador de lecturas a Notas, Labs y Escritos. Aparece junto a la fecha y el tiempo estimado de lectura:
 
 ```text
 6 de septiembre de 2026 · 5 mins · 27 lecturas
 ```
 
-La implementación quedó dividida entre Cloudflare y Hugo.
-
-### Cloudflare D1
-
-Creé una base D1 llamada:
-
-```text
-mirada-nerd-views
-```
-
-con una tabla simple para guardar una cuenta por ruta:
+Usé **Cloudflare D1**, *el servicio de base de datos de Cloudflare*, para guardar una cuenta por dirección. La base se llama `mirada-nerd-views` y contiene esta tabla:
 
 ```sql
 CREATE TABLE page_views (
@@ -304,122 +154,85 @@ CREATE TABLE page_views (
 );
 ```
 
-### Cloudflare Worker
+Creé además `mirada-nerd-counter` como **Cloudflare Worker**, *un pequeño programa que se ejecuta en los servidores de Cloudflare*. Lo conecté a la base mediante un **binding** llamado `DB`, *el nombre con el que el programa accede a ese recurso*.
 
-Creé el Worker:
-
-```text
-mirada-nerd-counter
-```
-
-y lo vinculé a D1 mediante un binding llamado:
-
-```text
-DB
-```
-
-El Worker expone:
+El Worker atiende las consultas en esta dirección:
 
 ```text
 /api/views?path=/ruta/de/la/pagina/
 ```
 
-y hace dos cosas:
+Una petición `GET` consulta el total y una petición `POST` suma una lectura y devuelve el nuevo valor. La ruta configurada en Cloudflare es `www.marchiori.ar/api/views*`: solo las solicitudes que coinciden con ella pasan por el Worker; las demás páginas siguen servidas como antes.
 
-- `GET`: devuelve la cantidad actual de lecturas
-- `POST`: suma una lectura y devuelve el nuevo total
+### Integración y recargas
 
-La ruta quedó publicada sobre el mismo dominio:
+La integración inicial quedó en `layouts/partials/extend-footer.html`. El JavaScript toma la ruta de la página con `window.location.pathname`, consulta el contador y agrega el resultado a la línea de fecha y tiempo de lectura.
 
-```text
-www.marchiori.ar/api/views*
-```
-
-De esa forma el sitio sigue servido normalmente y solo esa ruta pasa por el Worker.
-
-### Integración con Hugo
-
-El contador se agregó en el mismo:
-
-```text
-layouts/partials/extend-footer.html
-```
-
-que ya usaba para compartir enlaces y cambiar el modo claro/oscuro.
-
-El JavaScript obtiene la ruta actual con:
-
-```javascript
-window.location.pathname
-```
-
-y consulta:
-
-```text
-/api/views?path=...
-```
-
-El valor devuelto se agrega a la misma línea donde Congo muestra la fecha y el tiempo de lectura.
-
-### Evitar sumar cada recarga
-
-Para no contar cada `F5` como una nueva lectura, el navegador guarda una marca en `localStorage` por página y por día.
-
-La clave tiene este formato:
+Para evitar que cada recarga sume una visita, guarda una marca por página y por día en `localStorage`, *un espacio de almacenamiento del navegador que persiste entre visitas*. La clave tiene este formato:
 
 ```text
 mn-view-/notas/politica-de-marca-blanca/-2026-09-07
 ```
 
-Si la página ya fue contada ese día desde ese navegador, el sitio hace solo un `GET`. Si todavía no fue contada, hace un `POST`.
+Si la marca ya existe, consulta el total con `GET`; de lo contrario, envía un `POST`. Cambiar de navegador o borrar sus datos permite que se vuelva a contar: es una cuenta práctica de lecturas, no una medición de personas únicas.
 
-No pretende ser una medición exacta de personas únicas; es un contador práctico de lecturas que evita inflar el número por recargas repetidas.
-
-### Prueba en local
-
-En `localhost` no se consulta Cloudflare. El lugar del contador se mantiene visible como:
-
-```text
-· — lecturas
-```
-
-Al publicar el sitio, ese valor se reemplaza por el número real almacenado en D1.
-
-La ventaja de este esquema es que no hace falta tocar cada archivo Markdown: el contador se aplica automáticamente a las páginas donde ya se carga el partial.
+En las pruebas con `localhost` no se consulta Cloudflare. El contador muestra `· — lecturas`; en el sitio publicado obtiene el valor almacenado en D1.
 
 ---
 
-## Anexo: imágenes feature y miniaturas en listados
+## Anexo: estructura de artículos, imágenes y AGENTS.md
 
-El 20/09/2026 empecé a usar imágenes `feature` para que las publicaciones tuvieran una vista previa al compartir enlaces en WhatsApp y otras plataformas.
+El 04/10/2026 normalicé la estructura de las publicaciones para mantener cada texto junto a sus imágenes y archivos. Hasta entonces, encontrar un recurso podía depender de recordar cómo había organizado esa nota.
 
-La primera prueba fue con **Masivo**, en el Manual de supervivencia lingüística. La solución inicial fue convertir:
+### Una carpeta por publicación
 
-```text
-masivo.md
-```
-
-en un *page bundle*:
+Las publicaciones de Notas, Labs, Escritos, Site Log y las entradas del Manual usan **page bundles**, *carpetas que reúnen una página de Hugo y sus recursos*. Para los artículos uso la variante *leaf*: el archivo `index.md` contiene la publicación individual, con sus imágenes al lado.
 
 ```text
-masivo/
-├── index.md
-└── feature.png
+content/
+  notas/
+    slug-de-la-nota/
+      index.md
+      featured.png
+      imagen-interna.jpg
 ```
 
-Funcionó, aunque después encontré una forma bastante más simple. No hacía falta mover ni renombrar el Markdown. Hugo y Congo también reconocen la imagen dejando:
+El **slug** es *el nombre corto y legible que identifica la página dentro de su dirección*. En `/notas/mi-primera-nota/`, es `mi-primera-nota`; en esta organización también da nombre a la carpeta.
 
-```text
-instalacion-del-sitio.md
+Las secciones conservan `_index.md`, *el archivo que define una sección capaz de contener otras páginas*. Por ejemplo, `content/notas/_index.md` corresponde a la sección Notas. Reemplazarlo por `index.md` cambiaría la forma en que Hugo interpreta esa carpeta.
 
-instalacion-del-sitio/
-└── feature.png
+Al principio de cada Markdown está el **front matter**, *el bloque entre separadores `---` que guarda el título, la fecha y otras opciones de la página*. La mudanza a carpetas conserva esos datos y las direcciones publicadas.
+
+### Portadas e imágenes para compartir
+
+La portada estándar se llama `featured.png`. Congo reconoce los archivos cuyo nombre contiene `feature` y los usa para la portada y las miniaturas. Dejo una sola imagen con ese patrón por publicación y no la repito en el cuerpo del texto, porque el tema ya la muestra arriba.
+
+Al estar dentro del bundle, la imagen es un **page resource**, *un archivo asociado a esa página que Hugo puede localizar y, si el formato lo permite, procesar*. Las imágenes internas se referencian por su nombre:
+
+```markdown
+![Descripción](imagen-interna.jpg)
 ```
 
-Así se conserva el `.md` donde estaba y la carpeta homónima queda solamente para sus recursos.
+Para compartir enlaces, la implementación ya presente en la copia local genera una variante de **1200 × 630 píxeles en JPEG, con calidad 82**, a partir de la imagen destacada. Usa un recorte automático (`Fill "1200x630 Smart jpg q82"`) para completar esas dimensiones, por lo que puede dejar fuera parte de los bordes. El `featured.png` original se conserva y la portada y las miniaturas mantienen su procesamiento habitual.
 
-La otra sorpresa vino en la portada, porque Congo empezó a reutilizar esas imágenes como miniaturas en **Reciente**. El resultado me gustó y terminé aplicando la misma idea al listado de **Escritos**, que usa un layout propio.
+Esa variante se indica en **Open Graph**, *los datos de la página que servicios como WhatsApp, Facebook o LinkedIn usan para armar la vista previa de un enlace*, y en las tarjetas de Twitter/X. Las etiquetas `og:image` y `twitter:image` apuntan al mismo JPEG generado, mediante una dirección absoluta.
 
-Cuando un escrito tiene una `feature`, ahora aparece una pequeña previsualización junto al título, fecha y descripción. Si no tiene imagen, el listado sigue funcionando como antes.
+La lógica está en `layouts/_partials/social-images.html`; `opengraph.html` y `twitter_cards.html`, en esa misma carpeta, la usan para completar las etiquetas. Se aplica a páginas individuales con una imagen destacada que Hugo pueda procesar, incluidas las portadas antiguas en otros formatos compatibles. Si no encuentra una, conserva la selección habitual de imágenes de Hugo. No requiere guardar una segunda portada a mano ni modificar `themes/congo`.
 
-Una imagen que originalmente agregué para compartir enlaces terminó sirviendo también para darle un poco más de vida a los listados del sitio.
+Al revisar esta actualización, los tres archivos estaban en el repositorio local, todavía sin incorporar a Git. La generación está implementada localmente; su publicación queda pendiente de incorporar esos cambios y desplegarlos.
+
+### Qué va en `content` y qué va en `static`
+
+Los artículos y sus recursos propios van en `content`; las aplicaciones y los recursos generales, en `static`.
+
+Apollo y CoyspuNET son aplicaciones completas con sus propios archivos, así que permanecen en `static/`. También quedan allí los iconos del clima y los datos del Panel, los iconos del sitio, los estilos y otros archivos compartidos. Las portadas de sección y los banners tampoco necesitan pertenecer a un artículo.
+
+El banner animado de Labs dio un motivo concreto para conservar esa distinción. Al moverlo de `static` a `content`, Hugo/Congo empezó a tratar ese WebP como un recurso procesable y cambió su presentación. Volvió a verse correctamente al devolverlo a `static`. Para ese banner, y para los recursos animados que necesiten conservar su comportamiento original, mantuve la ubicación que funcionaba.
+
+### Las convenciones en AGENTS.md
+
+Agregué `AGENTS.md` en la raíz del repositorio como guía para los asistentes que trabajen sobre el sitio. Hugo no lo publica como una página.
+
+Ahí quedan la organización de artículos y recursos, el uso de `featured.png` y su variante social, la función de `_index.md` y los cuidados al migrar contenido. También pide revisar el estado de Git antes de editar, comprobar las imágenes y sus etiquetas en el HTML generado, y mantener las personalizaciones fuera de `themes/congo`. El envío de cambios a GitHub requiere que lo pida expresamente.
+
+Cuando vuelva sobre el sitio desde otra conversación o con otro asistente, esas decisiones estarán junto a los archivos sobre los que vamos a trabajar.
