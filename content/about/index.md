@@ -5,6 +5,7 @@ draft: false
 ---
 {{< icon "instagram" >}} [Instagram](https://www.instagram.com/pablo_marchiori)
 {{< icon "linkedin" >}} [LinkedIn](https://www.linkedin.com/in/pablo-marchiori-68936725b/)
+{{< icon "youtube" >}} [YouTube](https://www.youtube.com/@PabloMarchiori)
 {{< icon "email" >}} [Correo](mailto:pablo@marchiori.ar)
 
 Mirada nerd es un sitio personal hecho por mí 😌, Pablo Marchiori, donde junto notas, aprendizajes y publicaciones sobre tecnología, infraestructura, seguridad web y otras cosas que (creo) vale la pena mirar con un poco más de detalle… o que, directamente, anoto para no olvidarme.

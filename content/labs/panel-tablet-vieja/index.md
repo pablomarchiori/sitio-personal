@@ -105,9 +105,6 @@ Por ahora, quedó en Labs. Bastante justo.
 
 -----------
 <div class="nota-update">
-
 <strong>Update 2026-05-17:</strong> el panel dejó de estar atado solo a Marcos Juárez. Ahora suma ciudades rápidas y un botón <strong>Otra</strong> para buscar cualquier ciudad mediante geocoding. Marcos Juárez sigue como opción por defecto, pero el panel guarda la última ciudad usada.
 
 </div>
-
------------
