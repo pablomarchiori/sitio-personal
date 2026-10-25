@@ -20,6 +20,13 @@ Proyectos, experimentos y cacharreo con hardware y software. Cosas que se constr
     <span class="lab-button-icon">💼</span>
     <span>LinkedIn Translator</span>
   </a>
+
+  <a class="lab-button" href="/descargas/ConvertirMD_v1_1.zip" download>
+    <span class="lab-button-icon">💾</span>
+    <span>Descargar ConvertirMD</span>
+  </a>
 </div>
+
+*Lo que comparto en Labs va tal como está y sin garantías. Si vas a instalar algo, ejecutar scripts o tocar archivos, probá primero y hacé un respaldo. Podés hacer cagadas y yo no me voy a hacer cargo de nada. 🤷‍♂️*
 
 ![Banner animado nerd](/images/home/banner-nerd3.webp)
