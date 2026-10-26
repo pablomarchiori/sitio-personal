@@ -8,38 +8,19 @@ categories: ["Notas"]
 featureAlt: "Imagen de portada"
 ---
 
+## Cuando nadie mira más allá de su propio ombligo (o de su propia pantalla)
 
-## Cuando nadie mira más allá de su propio ombligo (o de su propia pantalla).
+Decime si no te pasó algo parecido alguna vez: un usuario avisa que una aplicación tiró un error, alguien de Infraestructura mira el mensaje y alcanza a decir “esto parece de la aplicación”, pero del otro lado ya apareció el diagnóstico express... “es la red”.
 
-Decime si no te pasó algo parecido alguna vez: un usuario avisa que una aplicación tiró un error, alguien de Infraestructura mira el mensaje y alcanza a decir “esto parece de la aplicación”, pero del otro lado ya apareció el diagnóstico express: “debe ser la red”.
+Un timeout al guardar un registro: es la red. La aplicación falla en una sucursal: es la red. Se cuelga cuando varios usuarios trabajan al mismo tiempo: es la red. Y si solo falla esa aplicación mientras las demás siguen funcionando, bueno, también es la red. Para ciertos diagnósticos apurados, "la red", parece un éter místico y maligno que elige a qué proceso molestar mientras todo lo demás funciona.
 
-No falla. La red es ese sospechoso universal que siempre estaba cerca de la escena del crimen.
+Sí, "la red" es ese sospechoso universal que siempre esta cerca de la escena del crimen. Y cuando preguntás por qué es la culpable, la explicación suele tener con la precisión técnica de una historia del abuelo Simpson.
 
-```text
-Usuario: —Tengo un error en CrapApp.exe.
+<img src="abraham-simpson.jpg" alt="Abraham Simpson explicando algo con una precisión técnica discutible" style="float:right; width:120px; margin:0 0 1rem 1rem; border-radius:8px;">
 
-Infra: —Eso parece un error de la aplicación.
+Ojo, la red falla. Los firewalls fallan, el DNS falla, los switches fallan, los enlaces fallan, los etcéteras también fallan.
 
-Usuario: —PepeDios, el programador, Coder de la Tormenta
- y de la Casa Visual Studio, Primero de su Nombre,
- Rey de los métodos API y de los primeros EXE,
- Analista de los Siete Reinos, Protector de la Lógica,
- y el que no se equivoca,
- me dijo que era por el Wi-Fi.
-
-Infra: —Dame un rato que le pregunto.
-
-Infra: —Che, PepeDios, CrapApp.exe está dando este error.
-
-PepeDios: —Imposible. Es la red. En mi máquina funciona.
-```
-
-Y después, suele venir una explicación digna de 7 temporadas, con la precisión técnica del abuelo Simpson contando lo de mil novecientos tijiri dos.
-<img src="abraham-simpson.jpg" alt="Abraham Simpson explicando algo con una precisión técnica discutible" style="float:right; width:120px; margin:0 0 1rem 1rem; border-radius:8px;">	
-
-A partir de ahí, cuando dicen “es la red”, muchas veces Infraestructura queda obligada a demostrar que no lo era. Y ojo: la red falla. Los firewalls fallan. El DNS falla. Los switches fallan. Los enlaces fallan. No se trata de negar eso.
-
-**El problema es otro: el diagnóstico automático, cómodo y sin evidencia. Ese reflejo de saltar directo a Infraestructura antes de leer el error completo, revisar logs, mirar qué operación estaba haciendo la aplicación o verificar si el problema ocurre en todos lados o solo en un ambiente específico.**
+Mi queja (sí, dije queja, chupate esa, coach!) es ese diagnóstico automático, cómodo y sin evidencia. Saltar directo a Infraestructura antes de leer el error completo, revisar logs o averiguar qué estaba haciendo la aplicación cuando falló.
 
 ## El ciclo de vida de un bug “de infraestructura”
 
@@ -49,47 +30,35 @@ El ciclo suele tener etapas bastante reconocibles:
 **Delegación:** “Debe ser un problema de red o latencia”.  
 **Evidencia:** Infraestructura muestra conectividad, puertos, rutas, DNS, logs y todo eso que nadie pidió antes de culparla.  
 **Aceptación forzada:** “Ah, entonces debe ser otra cosa”.  
-**Resolución:** aparece un parche que casualmente corrige el problema que no era de la aplicación.
+**Resolución:** aparece un parche de la aplicación que casualmente corrige el problema que no era de la aplicación.
 
-Ojo, no digo que siempre haya mala fe explícita (o sí 🤨). A veces hay apuro, exceso de confianza, poca investigación o directamente desconocimiento. El problema aparece cuando esa falta de análisis se disfraza de certeza técnica.
+Ojo, no digo que siempre haya mala fe explícita (o sí 🤨). A veces hay apuro, exceso de confianza, poca investigación o directamente desconocimiento. Lo macana es cuando esa falta de análisis se disfraza de certeza técnica.
 
-> El “complejo de Dios” aparece bastante por acá (no como diagnóstico psicológico 😅). Alcanza con verlo como una mezcla bastante humana de exceso de confianza, sesgo de confirmación y apego al propio código.
-> Cuando alguien asume que su lógica es infalible, deja de investigar y empieza a defender territorio. Y ahí el problema ya no es técnico: es cultural.
+> Este “complejo de Dios” 😅 aparece cuando alguien asume que su lógica es infalible, deja de investigar y empieza a defender territorio.
 
-## La red como éter místico
+## Para empezar, mirarse el ombligo
 
-Infraestructura es como el backplane invisible del sistema: si anda bien, nadie lo nombra. Si algo falla, aparece como sospechoso antes de que alguien lea el mensaje de error.
+Ahh y la fatality... preguntás por qué no revisaron primero la aplicación y te contestan: “Tenés que entender que es programador, no sabe de Infraestructura”. Bárbaro, pero nadie le pidió que configurara un switch. Se le pidió que leyera el error, revisara qué estaba ejecutando su aplicación e hiciera alguna prueba antes de mandar el problema para otro lado. Y si no sabe qué está pasando, puede pedir ayuda. Bastante más colaborativo que desentenderse del asunto.
 
-Y la red, para ciertos diagnósticos apurados, es un éter místico y maligno que decide afectar justo a la parte del sistema que falla, mientras el ping responde, el puerto abre, el DNS resuelve y el resto de las aplicaciones siguen funcionando.
+En análisis de sistemas (lo que debería hacer el desarrollador) uno puede imaginar el proceso ideal. Después, cuando toca implementarlo, aparecen las limitaciones reales: red, base de datos, locks, timeouts, usuarios simultáneos, permisos, recursos y errores que jamás aparecieron en el equipo del desarrollador. Si hay una consulta SQL bloqueada, una transacción mal manejada o una excepción sin capturar, habrá que revisarlo. Y si el problema es efectivamente de red, lo resolveremos nosotros. Para eso estamos.
 
-Ojo: también hay algo nuestro. Muchas veces Infraestructura se vende peor de lo que trabaja. No necesariamente porque falten argumentos, sino porque solemos tener perfiles más introvertidos, más orientados a resolver que a explicar.
+Una aplicación tiene que sobrevivir en el ambiente donde realmente va a funcionar. Tenés que capturar errores, papá. Tenés que loguear. Tenés que pensar que tu aplicación va a ir a la guerra, no a una demo con café y aire acondicionado.
 
-Y explicar hacia “arriba” tampoco siempre es fácil. A veces hay que traducir logs, capturas, pruebas de conectividad y detalles técnicos para gente que cree que un senior de Infraestructura se fabrica con un cursito de seis meses y que las cosas andan por magia.
+## La mancha venenosa
 
-Es entendible (pero no justificable) que a veces se le crea más al que vende una hipótesis con seguridad escénica que a quienes aparecemos con cara de “esto ya lo revisé tres veces”.
+Y al grito de “es la red”, el problema cambia de escritorio. El que lo derivó gana tiempo y sigue con lo suyo. Mientras tanto, nuestra parte ya quedó señalada como culpable. Para colmo el que dijo “es la red” no tuvo que mostrar una sola prueba. Pero nosotros tenemos que dejar lo que estamos haciendo para demostrar que no era eso. Y urgente, por supuesto.
 
-![Infraestructura invisible](richmond-avenal.jpg)
-*A veces, desde afuera, todavía nos imaginan encerrados en el cuarto de servidores como Richmond Avenal, el “Server Room Guy” de The IT Crowd.*
+![«La red», el sospechoso universal, acechando desde el centro de datos](la-red-asesina.png)
 
-## No alcanza con que funcione en tu máquina
+Encima, si no ponés cara de preocupado y salís corriendo a revisar todo, ya sos poco colaborativo. Y ni se te ocurra preguntar qué pruebas hicieron antes de derivarlo, no vaya a ser que termines siendo vos el que tiene un problema de actitud.
 
-En análisis de sistemas uno puede imaginar el proceso ideal. Después, cuando toca implementarlo, aparecen las restricciones reales: red, base de datos, locks, timeouts, usuarios simultáneos, permisos, versiones, servidores, memoria, disco, latencia y errores que no aparecen en el equipo del desarrollador.
+Después aparece un parche de la apliación, un pase magico y el problema desaparece y nadie explica demasiado qué pasó (fue le perfíl roto del SQL ¿wtf?). El usuario vuelve a trabajar, el desarrollador sigue con lo suyo y nosotros quedamos con la sospecha encima. Aunque el error nunca hubiera estado en nuestra parte. Mil puntos para Gryffindor (por si quedan dudas, Infraestructura es Hufflepuff).
 
-Una aplicación no debería estar pensada solo para “mi equipo”. Tiene que estar pensada para sobrevivir al ambiente donde realmente va a correr.
-
-Tenés que capturar errores, papá. Tenés que loguear. Tenés que pensar que tu aplicación va a ir a la guerra, no a una demo con café y aire acondicionado.
-
-Y esto no es una defensa corporativa de Infraestructura. Si el problema es de red, se corrige la red. Si es de firewall, se corrige el firewall. Si es de DNS, se corrige el DNS. Pero si el problema está en una consulta SQL bloqueada, una transacción mal manejada, una excepción sin capturar o una aplicación que no tolera un timeout, también hay que decirlo.
-
-El punto no es ganar una discusión. El punto es encontrar el problema.
+Equivocarse en un diagnóstico le puede pasar a cualquiera. Lo que me molesta es que se puedan derivar problemas sin investigar, que nadie pida explicaciones y que quien intenta averiguar qué pasó termine siendo el complicado.
 
 ## Mean Time to Innocence
 
-No es algo aislado, ni pasa solamente en sistemas. En muchos equipos existe una métrica no oficial: el **Mean Time to Innocence**, o tiempo medio hasta demostrar inocencia.
-
-No mide cuánto se tarda en resolver el problema. Mide cuánto tarda un área en demostrar que el problema no era suyo. En el caso de Infraestructura: que no era la red, no era el firewall, no era el DNS, no era el servidor, no era el storage y no era “algo de comunicaciones”.
-
-Es una métrica absurda, pero bastante real. Porque cuando el diagnóstico empieza con prejuicio, el primer esfuerzo no se invierte en encontrar la causa, sino en despejar sospechas. Y eso es tiempo perdido para todos.
+Esto tampoco pasa solamente en sistemas. Hasta existe una expresión bastante irónica para describirlo: **Mean Time to Innocence**, o tiempo medio hasta demostrar inocencia. No mide cuánto se tarda en resolver el problema. Mide cuánto tarda un área en demostrar que el problema no era suyo. Es una métrica informal, pero bastante reconocible. Cuando el diagnóstico arranca con prejuicios, primero hay que despejar sospechas y recién después buscar la causa. Mientras tanto, el usuario sigue esperando.
 
 > **La ley de gravedad de los tickets**
 >
@@ -97,55 +66,61 @@ Es una métrica absurda, pero bastante real. Porque cuando el diagnóstico empie
 >
 > Empieza en capa 7, aplicación, pero por comodidad baja hasta capa 3, capa 2 o directamente capa 1. Ahí queda esperando que Infraestructura lo suba de nuevo, con evidencia, logs, capturas y pruebas de conectividad.
 
+## ¿Y por qué le creen?
+
+También influye quién está más cerca de los usuarios y la gerencia. Los desarrolladores suelen participar directamente de los proyectos de sistematización de procesos, hablar con las distintas áreas y tener más contacto con quienes toman decisiones. Su explicación llega primero y muchas veces se acepta sin demasiadas preguntas.
+
+Infraestructura, en cambio, es como el backplane invisible del sistema: si anda bien, nadie lo nombra. Si algo falla, aparece como sospechoso antes de que alguien lea el mensaje de error.
+
+Ojo, en eso ultimo también hay algo nuestro. Muchas veces Infraestructura se vende peor de lo que trabaja. Solemos tener perfiles más introvertidos, más orientados a resolver que a explicar. ~~Y no nos gusta mesclarnos con los ignaros.~~
+
+![Infraestructura invisible](richmond-avenal.jpg)
+
+*Todavía nos imaginan encerrados en el cuarto de servidores como Richmond Avenal, el “Server Room Guy” de [The IT Crowd](https://www.youtube.com/show/VLPLQxUFrtzYaUlfC1e_wcoaUGC02HPVHSW4?sbp=KgtOTlJRYURrUTdGOEAB). Otra idea para mi libro “Me lo dijo un coach”.*
+
+Y explicar hacia “arriba” tampoco siempre es fácil. A veces hay que traducir logs, capturas y pruebas técnicas para gente que cree que un senior de Infraestructura se fabrica con un cursito de seis meses y que las cosas andan por magia (ahí está el complejo de Dios del de RR. HH. o del coach, pero eso da para otra nota).
+
+Es entendible (pero no justificable) que a veces se le crea más al que vende una hipótesis con seguridad escénica que a quienes aparecemos con cara de “esto ya lo revisé tres veces” y las pruebas en la mano, claro... aca vienen los jueces (jefes, gernetes) que no tienen idea de lo que hablamos asi que le pueden decir que es la crapodina del micro y ~~ como no quieren dejar en evidencia que no saben un corno~~ terminan aceptando la primera versión que escuchan porque en la casa el wifi le falla mucho asi que si, es "la red". Al fin y al cabo no tienen ganas de meterse y otros prefieren evitar conflictos. 
+
+Si nadie pide explicaciones cuando aparece un diagnóstico equivocado, la próxima vez se repite la misma historia. Total, ya sabemos quién tiene que demostrar que no fue la red.
+
 ## La IA como primer filtro
 
-Pero esta nota no es solo para quejarme. Acá viene el giro: apareció la IA para darnos una mano.
+Hasta hace poco, cuando aparecía un error en una aplicación que no habías desarrollado, dependías bastante del conocimiento y de la buena voluntad de quien la había hecho. Si no conocías el lenguaje, las bibliotecas o la base de datos, interpretar una excepción podía ser complicado. Y si del otro lado no había muchas ganas de investigar, peor.
 
-Con IA no desaparece la necesidad de saber. Tampoco convierte a cualquiera en desarrollador, DBA o especialista en redes. Pero agrega una herramienta más para leer un error, ordenar indicios y orientar el diagnóstico con algún sustento.
+Hoy tenemos la IA para darnos una mano. No desaparece la necesidad de saber ni nos convierte automáticamente en desarrolladores o DBA, pero permite leer mejor una excepción, ordenar indicios y empezar a investigar con algún sustento.
 
-No reemplaza el criterio técnico. No tiene magia. Pero ayuda a separar un timeout de conexión de un timeout de ejecución, una caída de red de un bloqueo SQL, una sospecha razonable de una excusa cómoda.
+Podés distinguir un timeout de conexión de uno de ejecución, encontrar indicios de un bloqueo SQL o averiguar qué pruebas convendría hacer. Después habrá que comprobarlo, porque la IA también se equivoca.
 
-Antes, ese intercambio dependía demasiado del criterio (o de la voluntad) de quien tenía que revisar el problema.
+Pero ya no dependés exclusivamente de que alguien quiera explicarte qué significa el error. Podés investigar y llegar a una conversación técnica con algo más que una sospecha.
 
-La IA no resuelve el problema por nosotros, pero puede ayudar a formular mejores preguntas. Y a veces eso ya cambia bastante la conversación.
+Y hay otras herramientas para investigar sin tener el código fuente. ¿Probaste alguna vez inspeccionar un ejecutable? Te sorprendería cuánto puede quedar adentro de un `.exe`: cadenas de conexión, nombres de servidores, rutas internas, configuraciones, endpoints, tokens mal guardados o incluso datos personales.
+
+Eso tampoco significa que haya que subir alegremente aplicaciones internas a ChatGPT, Gemini o Claude. Al contrario. Hay que tener cuidado con lo que se distribuye y con lo que se comparte. Un ejecutable puede parecer una caja negra, pero a veces es más parecido a una valija mal cerrada.
 
 ## Un prompt antes de repartir diagnósticos
 
-No hace falta empezar con una investigación digna de la NASA. A veces alcanza con copiar el error completo, pegarlo en una IA y pedirle que ayude a separar indicios.
+No hace falta empezar con una investigación digna de la NASA. A veces alcanza con copiar el error completo, pegarlo en una IA y pedirle que ayude a separar indicios. Eso sí, quitando previamente contraseñas, datos personales o información sensible.
 
 Algo así:
 
 ```text
 Analizá este error de una aplicación conectada a una base de datos.
 
-Indicame si corresponde a error de red, error de conexión, timeout de ejecución, bloqueo de base de datos o problema de código.
+Indicame si corresponde a error de red, error de conexión,
+timeout de ejecución, bloqueo de base de datos o problema
+de código.
 
-Explicá qué operación estaba intentando hacer la aplicación y qué componente conviene revisar primero.
+Explicá qué operación estaba intentando hacer la aplicación
+y qué componente conviene revisar primero.
 
 Error:
 [pegar acá el texto completo del error]
 
-Además, sugerime qué pruebas mínimas harías para orientar el análisis hacia el componente correcto.
+Además, sugerime qué pruebas mínimas harías para orientar
+el análisis hacia el componente correcto.
 ```
 
-No resuelve el problema, pero puede ordenar el primer diagnóstico y evitar que una sospecha salga vestida de certeza.
+Con eso al menos tenés por dónde empezar a investigar. Después habrá que comprobar qué pasa realmente, pero ya no dependés solamente de la explicación que te dieron.
 
-Y acá aparece otro detalle interesante: ¿probaste alguna vez analizar un ejecutable con herramientas actuales? Te sorprendería cuánto puede llegar a quedar adentro de un `.exe`: cadenas de conexión, nombres de servidores, rutas internas, nombres de desarrolladores, configuraciones, endpoints, tokens mal guardados o datos que nunca deberían haber viajado dentro del binario.
-
-Eso no significa que haya que subir alegremente una aplicación interna a ChatGPT, Gemini o Claude. Justamente al revés: significa que hay que tomar conciencia de lo que se está compilando, distribuyendo y dejando expuesto. Un ejecutable no siempre es una caja negra. Muchas veces es más parecido a una valija mal cerrada.
-
-## Mirar el cuadro completo
-
-Amo (mentira 😜) cierta palabrería moderna del “trabajemos en equipo”. Se repite mucho, pero después cada uno mira su tamagotchi y dice: “el mío está vivo”, la versión corporativa de: “en mi máquina anda”.
-
-Pero las cosas no funcionan por islas. Funcionan porque muchas partes se hablan bien entre sí. Cliente, aplicación, API, base de datos, red, DNS, firewall, permisos, storage, usuarios, horarios pico, versiones, logs y todas esas cosas incómodas que no entran en la frase “yo no toqué nada”.
-
-No se trata de que Infraestructura gane una discusión. Se trata de dejar de diagnosticar por reflejo y empezar por la evidencia.
-
-Si cada uno mira solo su ombligo (o su propia pantalla), nadie ve el cuadro completo.
-
-Y cuando nadie ve el cuadro completo, cualquier error termina pareciendo red.
-
-
-
-(Por si después de todo esto te dieron ganas de ver [*The IT Crowd* hace clic acá](https://www.youtube.com/show/VLPLQxUFrtzYaUlfC1e_wcoaUGC02HPVHSW4?sbp=KgtOTlJRYURrUTdGOEAB)).
+Para todo el universo que queda fuera de la pantalla no tengo receta. ¡Ojalá te sea leve! 😁

@@ -27,6 +27,6 @@ Proyectos, experimentos y cacharreo con hardware y software. Cosas que se constr
   </a>
 </div>
 
-*Lo que comparto en Labs va tal como está y sin garantías. Si vas a instalar algo, ejecutar scripts o tocar archivos, probá primero y hacé un respaldo. Podés hacer cagadas y yo no me voy a hacer cargo de nada. 🤷‍♂️*
+*Lo que comparto en Labs va tal como está y sin garantías. Si vas a instalar algo, ejecutar scripts o tocar archivos, probá primero y hacé un respaldo. Podés hacer cagadas y yo no me hago cargo de nada, salamín ¯\_(ツ)_/¯.*
 
 ![Banner animado nerd](/images/home/banner-nerd3.webp)
