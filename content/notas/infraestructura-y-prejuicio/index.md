@@ -50,6 +50,8 @@ Y al grito de “es la red”, el problema cambia de escritorio. El que lo deriv
 
 ![«La red», el sospechoso universal, acechando desde el centro de datos](la-red-asesina.png)
 
+*«La red», la más mala de todas... ¡Muajajajá!*
+
 Encima, si no ponés cara de preocupado y salís corriendo a revisar todo, ya sos poco colaborativo. Y ni se te ocurra preguntar qué pruebas hicieron antes de derivarlo, no vaya a ser que termines siendo vos el que tiene un problema de actitud.
 
 Después aparece un parche de la apliación, un pase magico y el problema desaparece y nadie explica demasiado qué pasó (fue le perfíl roto del SQL ¿wtf?). El usuario vuelve a trabajar, el desarrollador sigue con lo suyo y nosotros quedamos con la sospecha encima. Aunque el error nunca hubiera estado en nuestra parte. Mil puntos para Gryffindor (por si quedan dudas, Infraestructura es Hufflepuff).
