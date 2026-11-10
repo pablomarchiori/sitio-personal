@@ -40,7 +40,7 @@ La herramienta funciona en Windows y utiliza Python, PowerShell y Microsoft Mark
 
 Al seleccionar una carpeta, busca `convertir-md.ini`. Si no existe, ofrece un asistente para crearlo. Desde allí podemos elegir el destino, los formatos incluidos, las carpetas que queremos excluir y algunas opciones de procesamiento.
 
-Antes de comenzar muestra un resumen del trabajo pendiente y, durante la conversión, informa qué está procesando. Al terminar presenta los resultados y posibles errores. Los originales permanecen intactos, mientras que el programa conserva la estructura de las subcarpetas y utiliza nombres como `Documento_docx.md` o `Planilla_xlsx.md`.
+Antes de comenzar muestra un resumen del trabajo pendiente y, durante la conversión, informa qué está procesando. Al terminar presenta los resultados y posibles errores. Los originales permanecen intactos, mientras que el programa conserva la estructura de las subcarpetas y utiliza nombres como `Documento_docx.md` o `Planilla_xlsx.md`. Desde la versión 1.2 también copia al destino los archivos `.md` que ya existen en origen, sin volver a convertirlos ni alterar su contenido.
 
 También calcula hashes SHA-256 para reconocer en las siguientes ejecuciones qué documentos no cambiaron y evitar convertirlos otra vez.
 
@@ -50,7 +50,7 @@ El resultado incluye un `INDICE.md`, con la relación de los documentos procesad
 
 ## Descarga e instalación
 
-[Descargar ConvertirMD 1.1 para Windows](/descargas/ConvertirMD_v1_1.zip)
+[Descargar ConvertirMD 1.2 para Windows](/descargas/ConvertirMD_v1_2.zip)
 
 **Advertencia:** ConvertirMD se entrega tal como está, sin garantías. Aunque está pensado para no tocar los originales, genera archivos en la carpeta de destino y puede sobrescribir conversiones anteriores. Probalo primero con copias y revisá bien las rutas y exclusiones antes de ejecutarlo. Si hacés cagadas, no me hago cargo.
 

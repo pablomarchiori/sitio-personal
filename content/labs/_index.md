@@ -21,7 +21,7 @@ Proyectos, experimentos y cacharreo con hardware y software. Cosas que se constr
     <span>LinkedIn Translator</span>
   </a>
 
-  <a class="lab-button" href="/descargas/ConvertirMD_v1_1.zip" download>
+  <a class="lab-button" href="/descargas/ConvertirMD_v1_2.zip" download>
     <span class="lab-button-icon">💾</span>
     <span>Descargar ConvertirMD</span>
   </a>
