@@ -1,7 +1,8 @@
 ---
-title: "Pasalo a criollo"
-date: 2026-11-11T08:16:00-03:00
-draft: true
+title: "Máquina de hacer chamuyo"
+date: 2026-11-17T04:16:00-03:00
+draft: false
+aliases: ["/labs/pasalo-a-criollo/"]
 description: "Una máquina de hacer chamuyo y una excusa para conectar Hugo, Cloudflare Workers, D1 y Gemini."
 tags: ["lunfardo", "argentinismos", "idioma", "ia", "labs"]
 categories: ["Labs"]
@@ -10,7 +11,7 @@ featureAlt: "Captura de la Máquina de hacer chamuyo, con sus pantallas de entra
 
 Con el [Traductor LinkedIn](/labs/traductor-linkedin/) ya había probado conectar una página de Hugo con Gemini mediante un Cloudflare Worker. La Máquina de hacer chamuyo funciona prácticamente igual, pero cambia el tema por los argentinismos y el lunfardo. Para que no fuera otro formulario plano, le dimos (ChatGPT y yo) aspecto de aparato retro con HTML, CSS y JavaScript: perillas, luces, agujas y un botón grandote. Además, el modo Lunfardo clásico aporta al modelo referencias de un glosario propio basado en Todo Tango (aunue las traducciones pueden salir medio disparatadas).
 
-<a href="/pasalo-a-criollo/" target="_blank" rel="noopener noreferrer"><strong>Abrir la Máquina de hacer chamuyo</strong></a>
+<a href="/maquina-de-chamuyo/" target="_blank" rel="noopener noreferrer"><strong>Abrir la Máquina de hacer chamuyo</strong></a>
 
 ## Qué hacen los botones
 

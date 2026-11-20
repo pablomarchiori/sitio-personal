@@ -9,6 +9,7 @@ Proyectos, experimentos y cacharreo con hardware y software. Cosas que se constr
   <a href="/panel/">Panel</a> ·
   <a href="/moonjs/agc_sp.html">Apollo AGC</a> ·
   <a href="/labs/traductor-linkedin/">LinkedIn Translator</a> ·
+  <a href="/maquina-de-chamuyo/">Máquina de chamuyo</a> ·
   <a href="/descargas/ConvertirMD_v1_2.zip" download>ConvertirMD ↓</a>
 </nav>
 
