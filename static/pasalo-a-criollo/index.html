@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#d8eee4">
+  <meta name="description" content="Máquina de hacer chamuyo: convertí frases al argentino cotidiano, al lunfardo y al castellano neutro. Un experimento de Mirada Nerd.">
+  <title>Máquina de hacer chamuyo · Pasalo a criollo — Mirada Nerd</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./config.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="site-brand" href="/">MIRADA <strong>NERD</strong></a>
+      <a class="back-link" href="/labs/">← Volver a Labs</a>
+    </header>
+    <main>
+      <div class="machine" aria-labelledby="machine-title">
+        <span class="rivet rivet-tl" aria-hidden="true"></span>
+        <span class="rivet rivet-tr" aria-hidden="true"></span>
+        <span class="rivet rivet-bl" aria-hidden="true"></span>
+        <span class="rivet rivet-br" aria-hidden="true"></span>
+
+        <div class="machine-header">
+          <div class="machine-heading">
+            <span class="model-label">MIRADA NERD · LABORATORIO DE IDIOMAS · MODELO 3000</span>
+            <h1 id="machine-title">Máquina de hacer <em>chamuyo</em></h1>
+            <p class="machine-subtitle">Pasalo a criollo</p>
+          </div>
+          <div class="machine-identification">
+            <div class="machine-plaque">Fabricado y ejecutado<br>con dudosa precisión.</div>
+            <span class="power-status"><span class="power-light" aria-hidden="true"></span> OPERATIVO</span>
+          </div>
+        </div>
+
+        <form id="traductor" autocomplete="off">
+          <div class="displays">
+            <div class="display display-input">
+              <div class="display-head">
+                <label class="display-label" for="original">ENTRADA</label>
+                <span class="display-detail" id="contador">0/1000</span>
+              </div>
+              <textarea id="original" name="texto" rows="5" maxlength="1000" required placeholder="Escribí una frase acá…" aria-describedby="texto-ayuda"></textarea>
+              <span id="texto-ayuda" class="display-hint">Escribí como te salga.</span>
+            </div>
+            <div class="display display-output" id="resultado-contenedor" aria-labelledby="salida-label">
+              <div class="display-head">
+                <span class="display-label" id="salida-label">SALIDA</span>
+                <button class="copy-control" id="copiar" type="button" disabled title="Copiar traducción">Copiar ↗</button>
+              </div>
+              <div class="output-window" aria-live="polite" aria-atomic="true">
+                <p class="output-placeholder" id="placeholder">La maravilla lingüística aparece de este lado.</p>
+                <p class="translated" id="resultado"></p>
+              </div>
+              <span class="display-hint">Resultado sujeto a cualquier cosa.</span>
+            </div>
+          </div>
+
+          <div class="control-deck">
+            <fieldset class="control-panel modes" aria-label="Modo de traducción">
+              <legend class="panel-label">01 · MODO DE TRADUCCIÓN</legend>
+              <div class="mode-inner">
+                <button id="selector-giratorio" type="button" class="rotary" aria-label="Pasar al siguiente modo de traducción" title="Girar selector">
+                  <span class="rotary-core" aria-hidden="true"><span class="rotary-grip"></span></span>
+                </button>
+                <div class="mode-options">
+                  <label class="mode-option"><input type="radio" name="modo" value="cotidiano" checked><span class="pilot" aria-hidden="true"></span><span>Argentino cotidiano</span></label>
+                  <label class="mode-option"><input type="radio" name="modo" value="lunfardo"><span class="pilot" aria-hidden="true"></span><span>Lunfardo clásico</span></label>
+                  <label class="mode-option"><input type="radio" name="modo" value="neutro"><span class="pilot" aria-hidden="true"></span><span>Castellano neutro</span></label>
+                  <label class="mode-option"><input type="radio" name="modo" value="humor"><span class="pilot" aria-hidden="true"></span><span>Modo exagerado</span></label>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="action-panel">
+              <button class="main-switch" id="enviar" type="submit" aria-label="Traducir el texto"><span class="switch-text">TRADUCIR</span><span class="switch-icon" aria-hidden="true">↗</span></button>
+              <button type="button" id="limpiar" class="clear-switch">↺ Limpiar</button>
+            </div>
+
+            <div class="control-panel meter-panel">
+              <div class="panel-label">02 · NIVEL DE CHAMUYO</div>
+              <div class="meter" role="img" aria-label="Medidor decorativo de chamuyo según el modo elegido">
+                <div class="meter-face">
+                  <div class="meter-scale" aria-hidden="true"></div>
+                  <div class="meter-needle" aria-hidden="true"></div>
+                  <div class="meter-pivot" aria-hidden="true"></div>
+                  <span class="meter-min">–</span><span class="meter-max">+</span>
+                </div>
+              </div>
+              <div class="meter-caption" id="indicador-modo">Modo tranqui</div>
+              <div class="counter-badge">CUPO DIARIO · <span id="cupo">20 CONSULTAS</span></div>
+            </div>
+          </div>
+
+          <div class="machine-bottom">
+            <div class="examples" aria-label="Frases de ejemplo">
+              <span class="examples-label">PROBÁ CON</span>
+              <button type="button" class="example" data-mode="cotidiano" data-text="No tengo dinero y hoy no tengo ganas de trabajar.">Sin un peso</button>
+              <button type="button" class="example" data-mode="neutro" data-text="Me clavó el visto y me dejó pagando.">Me dejó pagando</button>
+              <button type="button" class="example" data-mode="lunfardo" data-text="El hombre se fue sin pagar la cuenta.">Lunfardo de antes</button>
+            </div>
+            <div class="machine-status"><span class="status-led" aria-hidden="true"></span><p id="estado" role="status" aria-live="polite">Esperando una frase.</p></div>
+          </div>
+        </form>
+      </div>
+
+      <div class="below-machine">
+        <p>Una pavada hecha con <strong>Gemini</strong> y <strong>Cloudflare Workers</strong>. Conserva el sentido bastante mejor que una conversación de sobremesa, aunque no siempre.</p>
+        <p>No pegues información privada: el texto viaja a un servicio de IA. El <a href="https://www.todotango.com/comunidad/lunfardo/" target="_blank" rel="noopener noreferrer">diccionario de Todo Tango</a> fue una referencia para la idea, no una base de datos copiada.</p>
+      </div>
+    </main>
+    <footer class="site-footer">Un experimento de <a href="/">Mirada Nerd</a>.</footer>
+  </div>
+</body>
+</html>

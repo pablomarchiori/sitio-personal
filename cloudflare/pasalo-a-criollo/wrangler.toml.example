@@ -1,0 +1,14 @@
+name = "pasalo-a-criollo"
+main = "src/index.js"
+compatibility_date = "2026-11-11"
+workers_dev = true
+
+[vars]
+GEMINI_MODEL = "gemini-3.5-flash-lite"
+DAILY_LIMIT = "20"
+ALLOWED_ORIGINS = "https://www.marchiori.ar,https://marchiori.ar,http://localhost:1313,http://127.0.0.1:1313"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "pasalo-a-criollo-uso"
+database_id = "REEMPLAZAR_CON_UUID_DE_CLOUDFLARE"

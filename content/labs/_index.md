@@ -5,28 +5,15 @@ draft: false
 ---
 Proyectos, experimentos y cacharreo con hardware y software. Cosas que se construyen, no solo se comentan.
 
-<div class="lab-buttons">
-  <a class="lab-button" href="/panel/">
-    <span class="lab-button-icon">☁️</span>
-    <span>Panel</span>
-  </a>
+<nav class="labs-accesos" aria-label="Accesos de Labs">
+  <a href="/panel/">Panel</a> ·
+  <a href="/moonjs/agc_sp.html">Apollo AGC</a> ·
+  <a href="/labs/traductor-linkedin/">LinkedIn Translator</a> ·
+  <a href="/descargas/ConvertirMD_v1_2.zip" download>ConvertirMD ↓</a>
+</nav>
 
-  <a class="lab-button" href="/moonjs/agc_sp.html">
-    <span class="lab-button-icon">🌕</span>
-    <span>Apollo AGC</span>
-  </a>
+<p class="labs-aviso"><em>Lo que comparto en Labs va tal como está y sin garantías. Ojo que podés hacer cagadas y yo no me hago cargo, salamín ¯\(ツ)/¯.</em></p>
 
-  <a class="lab-button" href="/labs/traductor-linkedin/">
-    <span class="lab-button-icon">💼</span>
-    <span>LinkedIn Translator</span>
-  </a>
-
-  <a class="lab-button" href="/descargas/ConvertirMD_v1_2.zip" download>
-    <span class="lab-button-icon">💾</span>
-    <span>Descargar ConvertirMD</span>
-  </a>
+<div class="labs-banner">
+  <img src="/images/home/banner-nerd3.webp" alt="Banner animado nerd" width="350" height="88">
 </div>
-
-*Lo que comparto en Labs va tal como está y sin garantías. Si vas a instalar algo, ejecutar scripts o tocar archivos, probá primero y hacé un respaldo. Podés hacer cagadas y yo no me hago cargo de nada, salamín ¯\_(ツ)_/¯.*
-
-![Banner animado nerd](/images/home/banner-nerd3.webp)
