@@ -7,22 +7,18 @@ tags: ["hugo", "congo", "site log", "manual", "orden alfabetico", "layouts"]
 categories: ["Site Log"]
 ---
 
-No me gustaba cómo quedaba el **Manual de supervivencia lingüística**. Salía en orden cronológico de publicación y eso lo dejaba desordenado, sobre todo pensando en agregar más entradas a futuro. En un tema así, me resultaba mucho más lógico que quedara en **orden alfabético**.
+*Texto original: 02/04/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
 
-El theme, por defecto, mostraba el listado agrupado por fecha, con el año arriba y hasta un **0001** para lo que no tenía fecha definida.
+El **Manual de supervivencia lingüística** aparecía ordenado por fecha de publicación, con encabezados por año y hasta un **0001** para las entradas que no tenían fecha. Para consultar términos y desvíos del lenguaje me servía mucho más tenerlos en **orden alfabético**.
 
 ## El problema principal
 
-El primer intento fue con `weight`, aplicando un orden manual.
-
-Pero en esa vista no alcanzaba, porque el listado de la sección seguía respetando la lógica de fechas del theme.
-
-Después de bastante ida y vuelta, cambié el enfoque y terminé separando el problema en dos partes:
+Probé a definir el orden con `weight`, pero el listado seguía organizado por fechas. Terminé separando el trabajo en dos partes:
 
 - en la portada del manual, dejar una **lista manual de secciones**
 - en cada sección, dejar el **listado automático de artículos**, pero ordenado alfabéticamente por título
 
-Eso además resolvió otro detalle molesto en la portada: desaparecieron el bloque del año, los títulos repetidos y el borrador que caía como `0001`.
+La portada dejó de mostrar el año, los títulos duplicados y el borrador identificado como `0001`.
 
 ## La portada del manual: lista manual y sin listado automático abajo
 
@@ -51,7 +47,7 @@ Con eso, la portada quedó exactamente en el orden que quería y además permiti
 
 ## Cómo quité el listado automático de abajo
 
-No hacía falta reordenar ese bloque: directamente convenía que no apareciera. Para eso, agregué un layout específico solo para esa sección.
+En la portada no necesitaba el listado que agregaba Congo al final, así que preparé un layout específico para esa sección.
 
 ### Archivo creado
 
@@ -146,7 +142,7 @@ layouts/_default/lista-alfabetica.html
 {{ end }}
 ```
 
-La línea clave fue esta:
+El orden alfabético lo produce esta expresión:
 
 ```go-html-template
 {{ range .RegularPages.ByTitle }}
@@ -156,32 +152,12 @@ Ese `ByTitle` fue lo que dejó la lista en orden alfabético.
 
 ## Breadcrumbs: qué son
 
-En el medio, chatcito me ofreció hacer cosas con "los **breadcrumb**".  
-En castellano suele traducirse como **miga de pan** o, más claro en este contexto, **ruta de navegación**.  
-Es la línea que a veces aparece arriba del título y muestra algo como:
+En medio de la configuración, chatcito apareció con "los **breadcrumb**", esas **rutas de navegación** que suelen verse encima del título de una página y muestran dónde estamos:
 
 ```text
 Inicio / Manual de supervivencia lingüística / Anglicismos y calcos
 ```
 
-Sirve para:  
-- ubicarte dentro del sitio
-- volver a niveles anteriores
-- entender mejor la estructura de navegación
+Sirven para volver a niveles anteriores del sitio, aunque no era lo que estaba tratando de resolver con la lista alfabética.
 
-No era algo necesario para esta parte del sitio, pero quedó como aprendizaje del proceso.
-
-## Qué me dejó esta vuelta
-
-Con Hugo y los themes no siempre alcanza con tocar front matter y esperar que todo se acomode solo. A veces el problema no está en el contenido, sino en la forma en que el layout del theme genera el listado.
-
-Y sí, en el medio la asistencia de IA tuvo momentos de excursión innecesaria. Por momentos parecía que ChatGPT se había subido al Artemis II y estaba orbitando la Luna antes de volver con la respuesta.
-
-Aun así, sin ayuda de IA me hubiera llevado bastante más tiempo llegar a esta solución.
-
-En el proceso, además de dejarlo funcionando, me quedaron varias cosas claras:
-
-- cómo crear layouts específicos por sección
-- cómo anular un listado automático del theme
-- cómo ordenar páginas por título con `ByTitle`
-- y qué es un breadcrumb
+El ajuste quedó resuelto con los dos layouts, sin tocar el tema Congo. En la búsqueda hubo momentos en que ChatGPT parecía haberse subido al Artemis II y estar orbitando la Luna antes de volver con `ByTitle`, pero el camino quedó documentado en los archivos de arriba.

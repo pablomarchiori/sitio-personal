@@ -6,7 +6,9 @@ description: "Cambios en Hugo, Cloudflare y el panel público del sitio para reu
 tags: ["hugo", "cloudflare", "csp", "dashboard", "panel", "site log"]
 ---
 
-La historia completa del rescate de la tablet quedó en Labs: [Rescate de una tablet vieja como panel fijo](/labs/panel-tablet-vieja/). Acá dejo registrado qué cambios hice en el sitio para que ese experimento funcionara: una página pública en `/panel/`, un layout propio en Hugo, consultas a APIs externas y un ajuste puntual en la política de seguridad del sitio.
+*Texto original: 04/04/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
+
+El rescate de la tablet está contado en [Labs](/labs/panel-tablet-vieja/). Esta entrada registra los cambios hechos en Hugo y Cloudflare para que pudiera mostrar un panel propio: una ruta pública en `/panel/`, un layout independiente, consultas a APIs y permisos específicos en la política de seguridad.
 
 ## Nueva página `/panel/`
 
@@ -14,7 +16,7 @@ Agregué una página específica para usar como panel fijo:
 
 [**`/panel/`**](https://www.marchiori.ar/panel/)
 
-La idea fue mantenerla separada del resto del sitio. No usa la estructura normal de notas, ni navegación, ni elementos visuales pensados para lectura. Es una pantalla de consulta rápida.
+Quedó separada de las notas, sin navegación ni elementos pensados para leer artículos, porque necesitaba funcionar como pantalla de consulta rápida.
 
 El panel muestra:
 
@@ -24,23 +26,17 @@ El panel muestra:
 - calendario mensual
 - feriados del mes
 
-La página está pensada para quedar abierta en una pantalla secundaria, una tablet vieja o cualquier dispositivo que pueda funcionar como terminal fija.
+La página puede quedar abierta en una tablet vieja o cualquier otra pantalla secundaria.
 
 ## Layout propio en Hugo
 
-Para no depender del diseño general del sitio, armé un layout específico para el panel.
-
-La página quedó publicada con una ruta simple (`/panel/`) y un HTML más directo, con estilos embebidos y JavaScript propio. La prioridad no era hacer una página elegante, sino una pantalla estable, legible y liviana.
-
-Ese criterio también ayuda con dispositivos viejos. Cuantas menos dependencias externas, menos chances de que algo falle por navegador, certificados, librerías o compatibilidad.
+Armé un layout propio con HTML, estilos embebidos y JavaScript para no cargar toda la estructura visual del sitio. Con una tablet antigua, limitar las dependencias también reduce los problemas de compatibilidad con el navegador, las librerías y los certificados.
 
 ## Ajuste de CSP en Cloudflare
 
 El panel funcionaba bien en local, pero al publicarlo en producción no podía consultar los datos externos que usa para clima y feriados.
 
-El problema no estaba en Hugo ni en el JavaScript. Era la política de seguridad del sitio.
-
-La Content Security Policy que tenía configurada en Cloudflare permitía conexiones al propio sitio y a Cloudflare Insights, pero no a las APIs públicas que necesitaba el panel.
+La **Content Security Policy (CSP)** de Cloudflare permitía conexiones al propio sitio y a Cloudflare Insights, pero bloqueaba los dos servicios externos que consultaba el panel.
 
 La directiva original de `connect-src` era:
 
@@ -56,16 +52,16 @@ connect-src 'self' https://cloudflareinsights.com https://api.open-meteo.com htt
 
 Más adelante, al sumar la opción Otra para buscar cualquier ciudad, también hizo falta permitir el endpoint de geocoding de Open-Meteo. Las ciudades predefinidas usan coordenadas ya cargadas en el JavaScript, pero la búsqueda libre necesita convertir el nombre de una ciudad en latitud y longitud.
 
-La directiva actual quedó así:
+Al incorporar la búsqueda de ciudades, la directiva quedó así:
 ```text
 connect-src 'self' https://cloudflareinsights.com https://api.open-meteo.com https://api.argentinadatos.com https://geocoding-api.open-meteo.com;
 ```
-Y la CSP completa quedó en esta forma:
+En aquella etapa, la CSP completa tenía esta forma:
 
 ```text
 default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; font-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://api.open-meteo.com https://api.argentinadatos.com https://geocoding-api.open-meteo.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests
 ```
-No fue una relajación general del hardening. Fue un permiso puntual para que esa página pueda conectarse solo a los endpoints que necesita.
+La excepción se limitó a los destinos usados por el panel; el resto de la política seguía cerrado.
 
 <small>Actualizado el 2026-05-17: se agregó https://geocoding-api.open-meteo.com a connect-src para habilitar la búsqueda libre de ciudad desde el panel.</small>
 
@@ -105,12 +101,3 @@ document.addEventListener("touchstart", requestFullscreenOnce);
 ```
 
 En Firefox sobre la tablet vieja funcionó bien. No lo tomo como una solución universal, pero para este caso alcanzó.
-
-## Resultado
-
-El sitio ahora tiene una página específica para panel fijo, separada del flujo normal de notas y con permisos CSP ajustados para consultar las APIs necesarias.
-
-La parte más experimental y de rescate del hardware quedó en Labs. Esta entrada queda como registro del cambio técnico aplicado al sitio.
-
-Por ahora, el panel vive en `/panel/` y la historia completa de la tablet queda donde corresponde: [Labs](/labs/panel-tablet-vieja/).
-

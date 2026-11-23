@@ -3,8 +3,6 @@ title: "Site Log"
 description: "Bitácora técnica del armado, mantenimiento y cambios del sitio."
 ---
 
-Acá voy dejando el registro técnico del sitio: instalación, estructura, publicación, dominio, DNS y cambios futuros.
+Acá voy dejando el registro técnico del sitio: instalación, estructura, publicación, dominio, DNS, Cloudflare y los problemas que fueron apareciendo mientras lo armaba y mantenía.
 
-¿Se podría haber resuelto todo con WordPress o algo parecido? Sí, claro. Pero entonces buena parte de la diversión se perdía en el camino.
-
-La asistencia de IA hizo el proceso más ágil, eso también es cierto. Pero aprender de verdad casi siempre necesita un caso concreto, algo propio, algo que obligue a meter mano y entender qué está pasando. Ese es el espíritu de este sitio: no complicarla por deporte, sino elegir una alternativa que permita aprender mientras se construye.
+¿Se podría haber resuelto todo con WordPress o algo parecido? Sí, claro. Pero entonces buena parte de la diversión se perdía en el camino. La asistencia de IA ayudó bastante, aunque también hubo que probar, equivocarse y meter mano para entender qué estaba pasando.

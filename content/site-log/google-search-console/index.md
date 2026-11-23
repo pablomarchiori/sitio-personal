@@ -7,47 +7,37 @@ tags: ["google-search-console", "seo", "breadcrumbs", "404", "cloudflare", "moon
 categories: ["Site Log"]
 ---
 
+*Texto original: 17/05/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
+
 **Texto original:** 17/05/26  
-**Actualización:** 26/05/26 — [404 que sí venían de enlaces reales](#actualizacion-404)
+**Actualización:** 26/05/26 - [404 que sí venían de enlaces reales](#actualizacion-404)
 
-Un caso chico, pero útil para dejar anotado: Google Search Console seguía mostrando un error en una página que ya estaba corregida.
-
-El aviso era este:
+Search Console seguía marcando un error de datos estructurados en una página que ya había corregido. El aviso decía:
 
 ```text
 Se debe especificar "name" o "item.name" en "itemListElement"
 ```
 
-El problema aparecía en las rutas de exploración, o sea, en los breadcrumbs.
+El mensaje señalaba las rutas de navegación (*breadcrumbs*).
 
 ## El síntoma
 
-Al pedir la indexación de una página, Search Console mostraba un estado viejo con problemas. La página aparecía como si tuviera un elemento sin nombre.
-
-En el HTML que Google había visto antes, el problema era bastante claro: el título estaba vacío, el `h1` también, la fecha aparecía como `1 de enero de 1`, el contenido principal no estaba y el último elemento del breadcrumb quedaba sin nombre.
-
-No era un error misterioso de Google. Google había rastreado una versión rota de la página.
+Al pedir la indexación, el informe histórico todavía mostraba una versión rota de la página: título y `h1` vacíos, fecha `1 de enero de 1`, ausencia del contenido principal y último elemento del breadcrumb sin nombre. Era exactamente la clase de HTML que explicaba aquel aviso.
 
 ## La página actual ya estaba bien
 
-Después de corregir la página, hice la prueba en tiempo real desde Search Console.
-
-La URL ya aparecía disponible para Google. La página se podía rastrear, se podía indexar y ya no mostraba ese estado vacío que había generado el error anterior.
-
-También la revisé con el Rich Results Test de Google. En esa prueba ya aparecían elementos válidos:
+Después de corregirla, la **prueba en tiempo real** confirmó que Google podía rastrear e indexar la página actual. El **Rich Results Test** también detectó estos elementos válidos:
 
 ```text
 Article
 Breadcrumbs
 ```
 
-Eso cambiaba bastante el diagnóstico. El problema no parecía estar en la versión actual publicada, sino en el informe viejo que Search Console todavía estaba mostrando.
+La diferencia estaba entre el informe guardado por Google y el HTML que la página entregaba en ese momento.
 
 ## Índice viejo contra prueba en tiempo real
 
-Search Console no siempre muestra todos los estados en el mismo momento. Una cosa es la versión que Google tiene en su índice o en un informe generado antes. Otra cosa es la prueba en tiempo real, que vuelve a pedir la URL actual.
-
-En este caso, la diferencia era esa:
+El índice y los informes de Search Console no se actualizan necesariamente al mismo tiempo que la página. La prueba en tiempo real consulta la URL de nuevo, y las tres comprobaciones de aquel día dieron resultados distintos según el momento evaluado:
 
 ```text
 Índice / informe viejo: seguía mostrando el error.
@@ -55,33 +45,12 @@ Prueba en tiempo real: veía la página corregida.
 Rich Results Test: detectaba Article y Breadcrumbs válidos.
 ```
 
-Entonces no tenía sentido seguir tocando el sitio a ciegas. La versión actual ya estaba bien.
-
-## Qué hice
-
-La acción correcta fue pedir la indexación de nuevo y esperar a que Google actualizara el informe.
-
-Si las dos pruebas ya ven la página bien, no hay nada más para tocar.
-
-El punto importante es no confundir un error actual con un error histórico. Si uno toca cosas de más en ese momento, puede terminar rompiendo algo que ya estaba funcionando.
-
-## Lo que queda anotado
-
-Cuando Search Console marque un problema, conviene mirar dos cosas antes de modificar nada:
-
-```text
-1. Qué dice el índice o informe histórico.
-2. Qué dice la prueba en tiempo real.
-```
-
-Si el informe viejo marca error, pero la prueba en tiempo real ya ve la página bien, probablemente solo falta que Google actualice el estado.
-
-No es magia negra. Es Google mostrando dos momentos distintos de la misma URL.
+Pedí una nueva indexación y dejé que Google actualizara el informe, porque modificar otra vez el sitio no habría corregido un resultado histórico. En un aviso parecido, primero conviene comparar el índice con la prueba en tiempo real antes de tocar el HTML.
 
 <a id="actualizacion-404"></a>
 ## Otra vuelta: 404 que sí venían de enlaces reales
 
-Actualización 26/05/26: Otro aviso de Search Console, esta vez bajo **No se ha encontrado (404)**. La lista no apuntaba a notas normales del sitio, sino a direcciones del simulador **Moonjs**:
+**Actualización 26/05/26:** apareció otro aviso de Search Console, ahora bajo **No se ha encontrado (404)**. Esta vez había rutas que sí salían del código del simulador **Moonjs**:
 
 ```text
 /cgi-bin/logger.php
@@ -156,5 +125,4 @@ Eso no era un enlace roto común, sino una ruta construida por JavaScript. Mient
 
 La ruta `/cdn-cgi/l/email-protection` venía de Cloudflare, no del contenido normal del repositorio. Eso pertenece a la protección de direcciones de correo de Cloudflare. No era algo para resolver editando Markdown o plantillas de Hugo.
 
-Después de eso, correspondía regenerar el sitio, publicar y pedir a Google que reindexe.
-
+Después de corregir las fuentes correspondía regenerar y publicar el sitio, y pedir a Google que volviera a rastrear las URLs afectadas.

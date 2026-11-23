@@ -7,51 +7,47 @@ tags: ["hugo", "markdown", "goldmark", "site-log"]
 categories: ["Site Log"]
 ---
 
-A veces el problema no está en algo grande. No es el servidor, no es el theme de Hugo roto, no es GitHub haciendo algo raro. A veces es una línea en blanco, una opción de configuración o una mayúscula donde no va.
+*Texto original: 17/05/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
 
-Estos días me encontré con tres de esos problemas que no deberían llevar más de cinco minutos y terminan llevando bastante más.
+En unas cuantas pruebas con Hugo terminé perdiendo tiempo por detalles pequeños: la separación entre bloques de Markdown, una opción de Goldmark y una mayúscula en el nombre de una sección. Dejo los tres casos porque son fáciles de repetir cuando uno vuelve al sitio después de un tiempo.
 
 ## Un bloque Markdown que se veía mal
 
-El primer caso fue visual. El archivo `.md` parecía estar correcto, pero una parte de la página se renderizaba mal tanto en local como en GitHub.
+En la primera prueba, un fragmento del archivo `.md` se veía mal tanto en local como en GitHub, aunque las líneas parecían correctas.
 
 El bloque era algo simple:
 
 ```md
 ## Otras formas de decirlo
 
-“Dejalo con la configuración predeterminada.”  
-“Vino con la configuración inicial.”
+"Dejalo con la configuración predeterminada."  
+"Vino con la configuración inicial."
 
 **Desvío:** anglicismo técnico / traducción imprecisa.
 
 ----
 ```
 
-La solución fue bastante poco épica: agregar una línea en blanco más y dejar el salto de línea final del archivo.
-
-No era un problema del contenido. Era un problema de separación entre bloques. Markdown suele bancarse bastante, pero no siempre interpreta igual cuando un bloque queda demasiado pegado al siguiente o cuando el archivo termina sin un salto de línea final.
+Funcionó al agregar una línea en blanco entre bloques y dejar un salto de línea al final del archivo. El problema estaba en cómo Goldmark interpretaba esa separación, no en el texto que quería mostrar.
 
 La versión segura quedó así:
 
 ```md
 ## Otras formas de decirlo
 
-“Dejalo con la configuración predeterminada.”  
-“Vino con la configuración inicial.”
+"Dejalo con la configuración predeterminada."  
+"Vino con la configuración inicial."
 
 **Desvío:** anglicismo técnico / traducción imprecisa.
 
 ---
 ```
 
-No cambia la idea. Cambia cómo lo interpreta el renderizador.
+Con ese pequeño ajuste, el renderizado quedó como esperaba.
 
 ## HTML dentro de Markdown
 
-El segundo ajuste apareció cuando quise usar un bloque HTML dentro de una nota. La idea era simple: alinear una imagen con un texto al lado. No era una tabla de datos, sino un recurso de maquetación.
-
-El problema era que Hugo estaba bloqueando ese HTML dentro del Markdown. En este caso, el renderizador usado por Hugo es Goldmark, y por defecto no deja pasar HTML embebido.
+Después quise alinear una imagen con un texto mediante HTML dentro de una nota. Goldmark, el renderizador de Markdown que utiliza Hugo, no estaba mostrando ese HTML porque por defecto bloquea su procesamiento.
 
 La corrección fue agregar esto en `hugo.toml`:
 
@@ -62,15 +58,11 @@ La corrección fue agregar esto en `hugo.toml`:
       unsafe = true
 ```
 
-El nombre `unsafe` suena más dramático de lo que es para este caso. Básicamente le dice a Hugo que no ignore HTML escrito dentro del Markdown.
-
-Hay que usarlo con criterio. En un sitio personal donde el contenido lo escribo y lo controlo yo, me sirve para resolver casos puntuales donde Markdown se queda corto.
+`unsafe = true` permite que el HTML incluido en el Markdown llegue al resultado. Es una opción que requiere cuidado con contenido de origen desconocido; en este sitio, donde controlo lo que publico, me sirve para maquetaciones puntuales.
 
 ## Labs no aparecía en Reciente
 
-El tercer ajuste fue otra pavada clásica: la sección **Labs** no aparecía en el bloque de publicaciones recientes.
-
-El problema no estaba en la nota nueva ni en el home. Estaba en `hugo.toml`.
+La tercera sorpresa fue que **Labs** no aparecía en el listado de publicaciones recientes. La nota estaba bien; el error se encontraba en `hugo.toml`.
 
 Dentro de `mainSections` había quedado esto:
 
@@ -86,8 +78,4 @@ La corrección fue esta:
 mainSections = ["notas", "labs", "site-log"]
 ```
 
-Después de eso, las publicaciones de Labs volvieron a entrar en “Reciente” como correspondía.
-
-## Lo que queda anotado
-
-No fueron grandes problemas técnicos. Fueron detalles de mantenimiento que, una vez resueltos, parecen obvios. Por eso conviene dejarlos anotados: la próxima vez que aparezca algo parecido, al menos no arrancar de cero.
+Después de eso, las publicaciones de Labs volvieron a entrar en "Reciente" como correspondía.

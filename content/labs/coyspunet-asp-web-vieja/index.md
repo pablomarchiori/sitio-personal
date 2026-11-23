@@ -7,46 +7,38 @@ tags: ["labs", "web", "asp", "coyspunet", "internet"]
 categories: ["Labs"]
 ---
 
+*Texto original: 01/06/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
+
 ## Viejos tiempos de dial-up y ADSL
 
-Hay una parte de Internet que quedó bastante lejos, pero todavía me resulta reconocible. La época del dial-up, los módems haciendo ruido y el ancho de banda medido con otra escala. En CoyspuNET había 384k para todos los usuarios dial-up. No para una casa. Para todos.
+Todavía me acuerdo de la época del dial-up, con los módems haciendo ruido y el ancho de banda medido en otra escala. En CoyspuNET había apenas 384k para repartir entre todos los usuarios dial-up, algo difícil de imaginar hoy, cuando una conexión doméstica puede tener cientos de megas.
 
-Después llegó el ADSL, y en algún momento de eso me dio por hacer páginas web. Un pantallazo de eso se puede ver acá:
+Después llegó el ADSL y por esos años también me dio por hacer páginas web. Una de ellas fue la de COYSPU, que armé en 2003 y que ahora se puede recorrer de nuevo:
 
 [Ver CoyspuNET recuperado](/coyspunet/)
 
 ## ASP clásico
 
-Esto era la página de COYSPU en 2003. Para ese momento no desentonaba para nada. Aunque muchos usaban `.php`, yo seguía defendiendo el bastión de ASP: includes, bases Access, rutas pensadas para IIS y bastante mezcla con HTML y JavaScript.
+Para 2003, aquella web estaba bastante en línea con lo que se hacía. Aunque muchos usaban `.php`, yo seguía defendiendo el bastión de ASP, con *includes*, bases Access, rutas pensadas para IIS y una buena mezcla de HTML y JavaScript. Escribía todo a mano, con Notepad o algún editor tipo Notepad++, y el trabajo consistía en probar, corregir y volver a subir los archivos.
 
-Cuando hice esas páginas era Notepad puro, o algún editor tipo Notepad++. Era todo a pulmón: escribir a manopla y sin mucha asistencia, probar, corregir y volver a subir.
+Cuando quise recuperarla apareció una complicación: los archivos seguían en `.asp`, que Hugo no puede ejecutar y que requerían volver a montar un servidor con IIS. Como no tenía ganas de instalar todo eso, le planteé el problema a ChatGPT casi con las mismas palabras con las que me había surgido:
 
-Ahora fue bastante distinto. Como dije, el sitio estaba en `.asp`, así que tenía que instalar IIS y no lo podía correr con Hugo ni publicarlo como página estática en GitHub. Entonces se lo pedí a ChatGPT y no toqué una línea de código. ChatGPT se las arregló solo.
+> "Tengo un sitio web en ASP viejísimo. ¿Hay alguna forma de ejecutarlo sin instalar IIS? No quiero cargar eso, es un perno hacerlo. ¿Con Hugo se puede?"
 
-## Qué se hizo
+ChatGPT propuso convertir el sitio a contenido estático y me pidió primero un ZIP con los archivos y después las bases Access que alimentaban algunas secciones. No toqué una línea de código durante la conversión: le pasé el material y fue trabajando sobre él.
 
-La idea era recuperar el sitio sin tener que volver a montar IIS ni ejecutar ASP clásico.
+## Qué se recuperó
 
-ChatGPT lo convirtió a una versión estática navegable a partir de un pedido bastante simple, escrito casi como salió:
+Los archivos `.asp` se convirtieron a HTML, se resolvieron los *includes* simples, se acomodaron los enlaces internos y se conservaron las imágenes y los recursos originales. También se recuperó, en la medida de lo posible, el contenido que antes se generaba desde las bases Access.
 
-> “Tengo un sitio web en ASP viejísimo. ¿Hay alguna forma de ejecutarlo sin instalar IIS? No quiero cargar eso, es un perno hacerlo. ¿Con Hugo se puede?”
+Hubo que corregir problemas propios de la época, como acentos mal codificados, imágenes externas que ya no estaban disponibles, enlaces a servicios desaparecidos y rutas que dependían de la instalación original. El resultado es una versión estática navegable que permite volver a ver el sitio sin tener que ejecutar ASP clásico.
 
-Claro que Hugo no podía ejecutar ASP clásico. Eso estaba fuera de discusión. Entonces ChatGPT me sugirió otro camino: convertir el sitio a contenido estático. Me pidió el sitio completo en un ZIP y, cuando ya lo tenía, también las bases Access desde donde se armaban algunos contenidos dinámicos.
+## Una aclaración sobre el sitio recuperado
 
-Los `.asp` se convirtieron a HTML, los includes simples se resolvieron, los links internos se acomodaron, las imágenes y recursos originales se conservaron, y lo que venía de las bases Access se recuperó donde se pudo.
+Se trata de una recuperación histórica y personal de la página de **COYSPU de 2003**. No representa el sitio actual de la cooperativa ni contiene información vigente sobre sus servicios, datos técnicos, teléfonos o condiciones institucionales.
 
-También hubo que corregir cosas propias de la época: acentos rotos, codificación de caracteres, imágenes externas caídas, enlaces a servicios que ya no existen y rutas que dependían del entorno original.
-
-## Aclaración
-
-Esto es más un rescate que una restauración.
-
-Este material queda publicado como una recuperación histórica y personal de una web vieja.
-
-No representa el sitio actual de COYSPU, ni refleja servicios, información institucional, datos técnicos, teléfonos, enlaces, contenidos o condiciones vigentes de la cooperativa.
-
-El pie original del sitio indica:
+El pie de página original decía:
 
 > © 2003. Coop. de Prov. de Agua, Obras y Servicios Públicos, Vivienda y Crédito Ltda. de Marcos Juárez
 
-Por eso conviene leerlo como lo que es: un recorte de 2003, conservado como recuerdo de ese momento de Internet: dial-up, ADSL temprano, ASP clásico, Access y páginas hechas a mano.
+Quedó como un recuerdo de aquella etapa de internet, entre el dial-up, el ADSL temprano, ASP clásico, Access y las páginas hechas a mano.

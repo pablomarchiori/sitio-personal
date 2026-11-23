@@ -7,33 +7,27 @@ tags: ["cloudflare", "security", "headers", "https", "csp", "hsts", "hardening"]
 categories: ["Site Log"]
 ---
 
-**2026-04-04 — Update sobre Content Security Policy (CSP) y panel del sitio:** [agregué `connect-src` para habilitar consultas a APIs externas del panel](#update-2026-04-04-csp-y-panel).
+*Texto original: 30/03/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
 
-**2026-05-17 — Update sobre Permissions-Policy y geolocalización del panel:** [habilité `geolocation=(self)` para que el panel pueda usar la ubicación del navegador](#update-2026-05-17-permissions-policy-y-geolocalizacion-del-panel).
+**2026-04-04 - Update sobre Content Security Policy (CSP) y panel del sitio:** [agregué `connect-src` para habilitar consultas a APIs externas del panel](#update-2026-04-04-csp-y-panel).
 
-**2026-05-17 — Update sobre Content Security Policy (CSP) y traductor LinkedIn:** [agregué el Cloudflare Worker del traductor a `connect-src`](#update-2026-05-17-csp-y-traductor-linkedin).
+**2026-05-17 - Update sobre Permissions-Policy y geolocalización del panel:** [habilité `geolocation=(self)` para que el panel pueda usar la ubicación del navegador](#update-2026-05-17-permissions-policy-y-geolocalizacion-del-panel).
 
-**2026-10-05 — Update sobre CSP y videos de YouTube:** [agregué `frame-src` para permitir los videos embebidos de YouTube](#update-2026-10-05-csp-y-youtube).
+**2026-05-17 - Update sobre Content Security Policy (CSP) y traductor LinkedIn:** [agregué el Cloudflare Worker del traductor a `connect-src`](#update-2026-05-17-csp-y-traductor-linkedin).
+
+**2026-10-05 - Update sobre CSP y videos de YouTube:** [agregué `frame-src` para permitir los videos embebidos de YouTube](#update-2026-10-05-csp-y-youtube).
 
 ---
 
-El sitio funcionaba bien, tenía HTTPS y cargaba sin problemas. Pero al pasarlo por [SecurityHeaders](https://securityheaders.com/?q=marchiori.ar&followRedirects=on), la nota era **F**.
+Al revisar el sitio en [SecurityHeaders](https://securityheaders.com/?q=marchiori.ar&followRedirects=on) obtuvo una calificación **F**, aunque cargaba correctamente y ya tenía certificado HTTPS. Faltaban varias cabeceras de seguridad que permiten limitar qué puede hacer el navegador con los recursos de la página.
 
-A simple vista parecía estar todo correcto: dominio publicado, certificado activo, candado del navegador y contenido cargando normal. Pero hoy eso ya no alcanza. Además del certificado, se esperan otras capas de protección, y en este caso la **postura de seguridad del lado del navegador** todavía era débil.
+## El "hardening"
 
-En otras palabras: una cosa es que el sitio cargue, y otra bastante distinta es que tenga una configuración de seguridad sólida.
-
-## El “hardening”
-
-**Hardening** es **mejorar la seguridad técnica de un sistema** para reducir su superficie de ataque, limitar comportamientos inseguros por defecto y agregar capas de protección que disminuyan riesgos ante errores, abusos o ataques.
-
-Dicho más simple: no se trata solo de que algo funcione, sino de que funcione con menos exposición innecesaria.
+**Hardening** es ajustar la configuración de un sistema para reducir exposición y limitar comportamientos inseguros por defecto. En esta prueba trabajé sobre las cabeceras HTTP, sin cambiar el contenido de Hugo.
 
 ## Qué mostraba el análisis
 
-Una **F** en un scanner de headers no significa automáticamente que el sitio esté comprometido ni que exista una vulnerabilidad crítica explotable.
-
-En este caso indicaba que faltaban varias capas de protección del lado del navegador:
+La calificación **F** no demostraba una intrusión ni una vulnerabilidad crítica por sí sola; en este caso señalaba que faltaban estas cabeceras:
 
 - `Strict-Transport-Security`
 - `Content-Security-Policy`
@@ -42,7 +36,7 @@ En este caso indicaba que faltaban varias capas de protección del lado del nave
 - `Referrer-Policy`
 - `Permissions-Policy`
 
-El sitio podía funcionar normalmente y, al mismo tiempo, tener margen para mejorar su configuración de seguridad.
+
 
 ## Qué se hizo
 
@@ -54,7 +48,7 @@ Se activó **Always Use HTTPS**, se configuró **HSTS**, se subió la versión m
 
 Fuerza la redirección de `http://` a `https://`.
 
-El sitio ya respondía por HTTPS, pero con esto el acceso por HTTP deja de depender de cómo haya escrito la URL el usuario.
+Así, un acceso escrito con HTTP se redirige a HTTPS.
 
 ### HSTS
 
@@ -66,7 +60,7 @@ Para empezar lo configuré de forma prudente:
 - **includeSubDomains:** apagado
 - **Preload:** apagado
 
-La idea fue sumar la protección sin aplicar de entrada una política demasiado agresiva.
+Preferí comenzar con un alcance acotado y comprobar el resultado antes de extenderlo.
 
 ### Minimum TLS Version = 1.2
 
@@ -82,7 +76,7 @@ Su utilidad principal es mitigar escenarios de **clickjacking**, donde una pági
 
 Le indica al navegador que no reinterprete un archivo o una respuesta como si fuera de otro tipo distinto del declarado por el servidor.
 
-Por ejemplo: si el servidor dice “esto es una imagen” o “esto es un archivo CSS”, el navegador debe tratarlo como eso y no intentar adivinar otra cosa por su cuenta.
+Por ejemplo: si el servidor dice "esto es una imagen" o "esto es un archivo CSS", el navegador debe tratarlo como eso y no intentar adivinar otra cosa por su cuenta.
 
 Sirve para reducir riesgos asociados a contenido mal servido o mal identificado.
 
@@ -106,47 +100,29 @@ La **Content Security Policy (CSP)** define qué recursos puede cargar el navega
 
 Es una de las capas más interesantes porque una política demasiado abierta aporta poco, pero una demasiado cerrada puede bloquear recursos legítimos.
 
-La configuración que usé fue prudente. La intención era mejorar seguridad sin romper el sitio.
-
-Cuando la CSP bloquea algo, la consola del navegador suele decir exactamente qué ocurrió con mensajes como `Refused to load...`, `Refused to connect...` o similares. Ahí aparece el origen bloqueado y la directiva responsable.
-
-La parte más útil de este ajuste no fue improvisar hasta que algo funcionara, sino entender qué herramientas usar y qué mirar en cada capa. En seguridad web, avanzar a ciegas no sirve: una política no “va a salir a bailar” por más que uno le insista. Hace falta criterio, validación y señales concretas para ajustar cada cosa donde corresponde.
+Configuré una política que limitara los orígenes externos sin impedir el funcionamiento normal del sitio. Cuando CSP bloquea un recurso, la consola del navegador suele indicar el origen y la directiva responsable mediante mensajes como `Refused to load...` o `Refused to connect...`. Esa evidencia resulta más útil que ir agregando permisos sin saber qué se está habilitando; la política no "va a salir a bailar" por insistencia.
 
 ## El resultado
 
 Después de aplicar los cambios, el sitio pasó de **F** a **A** en SecurityHeaders.
 
-No cambió el contenido, el diseño ni Hugo. Cambió la respuesta HTTP y el conjunto de reglas que recibe el navegador al cargar el sitio.
-
-Quedó una advertencia relacionada con la CSP actual, que todavía permite algunos comportamientos que podrían restringirse más adelante. No busqué llevarla al máximo desde el primer día: primero preferí una configuración estable y razonable, y dejar el ajuste fino para cuando aparezca una necesidad concreta.
+El cambio estuvo en las cabeceras HTTP, sin modificar el diseño ni las páginas de Hugo. Quedó pendiente endurecer algunas excepciones de CSP, pero prioricé una configuración estable antes de restringirlas más.
 
 ## Si no estuviera Cloudflare
 
-Cloudflare simplificó bastante el trabajo porque varias políticas se pudieron aplicar en el **edge de Cloudflare**, o sea, en la capa intermedia desde la que Cloudflare publica y protege el sitio antes de llegar al servidor de origen.
+Cloudflare permitió aplicar estas políticas desde el **edge**, la capa que recibe las solicitudes antes del origen.
 
 Si el sitio estuviera publicado directamente sobre un **IIS en una vCloud**, la lógica sería la misma pero la implementación cambiaría de lugar. El certificado HTTPS y su binding quedarían en IIS, la redirección HTTP → HTTPS se haría en IIS o en el balanceador, HSTS se configuraría allí y el resto de los headers podría agregarse como custom response headers o desde un proxy inverso.
 
-No cambia la necesidad. Cambia dónde se resuelve.
+
 
 ## Infraestructura, desarrollo y especialización
 
-En el mismo día uno puede pasar de asistir a un usuario con un cambio de contraseña a trabajar sobre la seguridad de publicación de un sitio web. Sin demasiada transición.
-
-Aunque buena parte de esta configuración corresponde a infraestructura, mantener un sitio seguro necesita trabajo conjunto con desarrollo. CSP, scripts inline, APIs externas, iframes, dependencias y permisos del navegador terminan cruzando las dos áreas.
-
-La cantidad de capas que hoy intervienen exige cada vez más especialización, aunque la realidad operativa muchas veces siga obligando a saltar de una tarea básica a otra bastante más específica.
+En infraestructura se puede pasar de un cambio de contraseña a ajustar una CSP casi sin transición. Estas reglas también cruzan el trabajo de desarrollo: scripts, iframes, APIs externas y permisos del navegador condicionan qué puede ejecutar una página, por lo que cada excepción exige revisar cómo está hecha la aplicación.
 
 ## El rol de la IA
 
-Sin asistencia de IA, este proceso habría sido más largo y más tedioso.
-
-No porque la IA reemplace la validación real ni las pruebas, sino porque me ayudó a identificar qué headers convenía mirar primero, a ordenar mejor la secuencia de implementación, a llegar más rápido a una CSP razonable y a no perder horas entre documentación dispersa o pruebas mal enfocadas.
-
-Después hubo que revisar, probar y validar igual.
-
-También dejó algo práctico: una vez recorrido todo el proceso, la publicación de referencia se vuelve mucho más clara y documentarlo resulta bastante más rápido que intentar reconstruir manualmente cada decisión después.
-
-Más allá del resultado puntual, lo más valioso fue el aprendizaje: meterse de lleno en un aspecto de seguridad web que muchas veces se deja para después, cuando en realidad forma parte de una publicación seria.
+Usé IA para orientar la búsqueda de cabeceras y ordenar el trabajo. Los cambios concretos y su resultado los revisé después en Cloudflare, la consola del navegador y SecurityHeaders.
 
 ---
 
@@ -241,6 +217,4 @@ La política completa quedó:
 default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; font-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://api.open-meteo.com https://geocoding-api.open-meteo.com https://api.argentinadatos.com https://traductor-linkedin.mnerd.workers.dev; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests
 ```
 
-Este caso terminó siendo un buen ejemplo práctico de cómo funciona CSP. La política no estaba fallando: estaba haciendo exactamente lo que se le había pedido, bloquear un origen que todavía no estaba autorizado.
-
-La solución tampoco fue abrir los frames para cualquiera, sino agregar solamente los dos orígenes de YouTube que podían necesitar los embeds.
+La CSP estaba aplicando la restricción configurada: al agregar solo los dos orígenes necesarios para los videos, los `iframe` pudieron cargarse sin abrir `frame-src` a cualquier destino.

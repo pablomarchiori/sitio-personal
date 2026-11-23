@@ -6,90 +6,47 @@ description: "Cómo activé Cloudflare Web Analytics en el sitio."
 tags: ["cloudflare", "analytics", "dns", "github pages", "site log"]
 ---
 
-Quería sumar una métrica básica al sitio, sin meterle cosas raras ni llenar todo de scripts.  
-La idea era simple: **activar Cloudflare Web Analytics** y listo.
+*Texto original: 30/03/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
 
-En teoría, no parecía haber mucho misterio. El DNS ya estaba funcionando, el sitio respondía bien y todo daba la impresión de estar en orden. Así que fui a Cloudflare, agregué el dominio para analytics y esperé ver aparecer tráfico.
+Quería activar **Cloudflare Web Analytics** para tener una idea básica de las visitas al sitio, sin agregar herramientas ni scripts innecesarios. El dominio ya resolvía, la página cargaba normalmente y habilité Analytics desde Cloudflare, pero las estadísticas seguían vacías.
 
-No apareció nada.
+## A buscar en el navegador
 
-## A arremangarse y buscar
-
-Abrí las herramientas del navegador y revisé la pestaña **Network**.  
-Esperaba encontrar alguna referencia al beacon de Cloudflare, algo como `beacon`, `cloudflareinsights` o una llamada a `/cdn-cgi/rum`.
-
-Lo único que cargaba era lo normal del sitio:
+Abrí las herramientas de desarrollo y revisé **Network**, buscando solicitudes relacionadas con `beacon`, `cloudflareinsights` o `/cdn-cgi/rum`. Solo aparecían los recursos habituales del sitio:
 
 - `appearance.min.js`
 - `main.bundle.min.css`
 - `custom.css`
 - imágenes y manifiesto
 
-O sea: el sitio estaba cargando bien, pero **Cloudflare Analytics no se estaba inyectando en absoluto**.
+No se estaba cargando el componente de Analytics.
 
-## El primer falso sospechoso
+## El primer sospechoso
 
-En un momento pensé que el problema podía ser el hostname.
+Había habilitado las estadísticas para `marchiori.ar`, mientras que el sitio usa `www.marchiori.ar`. Pensé que podía faltar dar de alta `www`, aunque la inyección automática de Cloudflare depende principalmente de que el tráfico pase por su proxy. Había que comprobar por dónde estaba entrando la respuesta.
 
-Yo había activado analytics para `marchiori.ar`, pero el sitio real entra por `www.marchiori.ar`.  
-La duda era lógica: quizá había que dar de alta también el `www`.
+## La prueba
 
-Pero eso no terminaba de cerrar, porque Cloudflare maneja la activación automática a nivel de zona cuando el tráfico pasa por su proxy. Así que, si todo hubiera estado bien encaminado, `www` no debería haber sido el problema principal. En ese punto ya empezaba a dar la impresión de que el problema estaba en otro lado.
-
-## La prueba que mostró el problema real
-
-Después vino la verificación más útil de todas:
+Consulté las cabeceras HTTP:
 
 ```powershell
 curl.exe -I https://www.marchiori.ar
-
 ```
 
-La respuesta devolvía encabezados como estos:
+La respuesta incluía:
 
-* `Server: GitHub.com`
-* `Via: 1.1 varnish`
-* `X-Fastly-Request-ID`
+- `Server: GitHub.com`
+- `Via: 1.1 varnish`
+- `X-Fastly-Request-ID`
 
-Eso ya dejaba bastante claro que la respuesta **venía directa desde GitHub Pages/Fastly**, no desde el proxy de Cloudflare.
+El sitio se estaba sirviendo directamente desde **GitHub Pages/Fastly**. En Cloudflare confirmé que los registros web estaban en **DNS only** y no en **Proxied**. La resolución DNS funcionaba, pero Cloudflare no estaba intermediando el tráfico web y, por lo tanto, no podía insertar automáticamente su Analytics.
 
-Y cuando fui a mirar el panel DNS, apareció la confirmación definitiva:
-los registros web estaban en **DNS only**, no en **Proxied**.
+## El cambio en DNS
 
-Ahí estaba el problema de verdad.
+Pasé a **Proxied** los registros web de la zona:
 
-## Qué estaba mal
+- los **A** de `marchiori.ar`;
+- los **AAAA** de `marchiori.ar`;
+- el **CNAME** de `www`.
 
-Yo tenía configurados correctamente los registros para que el dominio resolviera y el sitio funcionara, pero **no estaba pasando el tráfico web por Cloudflare**.
-
-Eso significa que:
-
-* el sitio abría;
-* el dominio resolvía bien;
-* GitHub Pages entregaba el contenido;
-* pero **Cloudflare no estaba en el medio** para inyectar automáticamente el analytics.
-
-En otras palabras: el sitio funcionaba, pero lo hacía **por afuera** de la parte de Cloudflare que necesitaba usar.
-
-## La corrección
-
-La solución fue simple una vez detectada la causa:
-
-* pasar los registros **A** de `marchiori.ar` a **Proxied**;
-* pasar los registros **AAAA** de `marchiori.ar` a **Proxied**;
-* pasar el **CNAME** de `www` a **Proxied**;
-* dejar sin tocar los **MX** y **TXT**, porque esos no van por proxy.
-
-Después de eso, el tráfico web sí empezó a pasar por Cloudflare, que es justamente lo necesario para que la instalación automática de Web Analytics funcione como corresponde. Cloudflare lo documenta así: el modo automático aplica a tráfico web proxied, mientras que para sitios no proxied hay que usar instalación manual con JS snippet.
-
-## Conclusión
-
-Al final, el problema no era Hugo, no era GitHub Pages, no era el `www`, ni era un bug raro de Cloudflare.
-
-Era algo más básico:
-
-**había activado analytics, pero el sitio todavía no estaba realmente pasando por Cloudflare.**
-
-Una vez corregido eso, recién tenía sentido esperar que aparecieran métricas.
-
-Otra pequeña confirmación de algo bastante clásico en sistemas: muchas veces el problema no está en lo que uno acaba de tocar, sino en una capa anterior que parecía resuelta.
+No modifiqué los **MX** ni los **TXT**, porque el correo no pasa por ese proxy. Después de ese ajuste, las solicitudes web sí atravesaron Cloudflare y la instalación automática de Analytics pudo empezar a funcionar. Para los sitios que no pasan por el proxy, Cloudflare ofrece la alternativa de instalar manualmente el fragmento de JavaScript.

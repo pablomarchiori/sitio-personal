@@ -6,7 +6,9 @@ description: "Diferencia entre secciones, menú, categorías y tags en Hugo, má
 tags: ["hugo", "markdown", "site-log", "publicaciones", "guia"]
 ---
 
-Esta es una nota de referencia para no volver a preguntarme lo mismo dentro de dos semanas: qué es cada cosa en Hugo, cómo conviene organizar el contenido del sitio y qué sintaxis Markdown me sirve para escribir publicaciones sin renegar.
+*Texto original: 29/03/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
+
+Dejo esta guía como referencia de la organización que usaba cuando armé las primeras publicaciones: secciones, menús, categorías, etiquetas y la sintaxis Markdown que necesitaba para escribir sin revisar documentación a cada rato.
 
 ---
 
@@ -342,7 +344,7 @@ Resultado:
 
 ## Estructura recomendada para mis notas
 
-Una plantilla simple que me sirve:
+Una estructura posible, cuando la nota realmente necesita todos estos apartados, es la siguiente. No hace falta completar cada título ni agregar "Lo que aprendí" por obligación:
 
 ```markdown
 ---
@@ -436,15 +438,6 @@ Terminé migrando DNS y correo a **Cloudflare**.
 
 ---
 
-## Regla simple para no marearme
+## Sobre estos ejemplos
 
-Para publicar:
-
-- el archivo va en `content/site-log/`
-- front matter arriba
-- después contenido en Markdown
-- imágenes en `static/img/...`
-- links con `[texto](url)`
-- negrita con `**texto**`
-
-Con eso alcanza para la mayoría de las publicaciones.
+Los ejemplos de esta nota muestran cómo estaba organizando el contenido en marzo de 2026. Más adelante pasé los artículos a carpetas con `index.md` y sus imágenes propias al lado; esa convención posterior está registrada en [la instalación y evolución del sitio](/site-log/instalacion-del-sitio/#anexo-estructura-de-artículos-imágenes-y-agentsmd) y en `AGENTS.md`. Las rutas del ejemplo original se conservan para reflejar cómo trabajaba en aquel momento.

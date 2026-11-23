@@ -7,7 +7,9 @@ tags: ["linkedin", "satira", "ia", "labs"]
 categories: ["Labs"]
 ---
 
-Esto es simple: pegás una frase normal, chabacana, sin brillos, y la convertís en una publicación con propósito, resiliencia, sinergia, con toda la pompa épica que necesitás para pertenecer al mundo corporativo que LinkedIn custodia para todos nosotros, los plebeyos.
+*Texto original: 17/05/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
+
+Pegás una frase normal, chabacana, sin brillos, y el traductor la convierte en una publicación llena de propósito, resiliencia y sinergia, con toda la pompa épica que LinkedIn parece exigirnos a nosotros, los plebeyos.
 
 <div class="linkedin-translator">
   <label for="texto-original"><strong>Texto normal feo y sin brillo</strong></label>
@@ -115,9 +117,8 @@ btn.addEventListener("click", async () => {
 });
 </script>
 
->
-> Dicho ha la API de Gemini: «Podéis formular a aqueste servidor veinte demandas por cada jornada».
+> Dicho ha la API de Gemini: "Podéis formular a aqueste servidor veinte demandas por cada jornada".
 > Por tanto, conviene que seades discreto y cauteloso en vuestras cuestiones, mancebo. Que esta labor cuesta valiosos maravedís, rapaz, y no está en mi ánimo sufragar vuestro vano solaz.
 >
->Plegue a Dios que hayades sido alumbrado; donde no, quede dicho: «Agradecido os quedo. Tornad presto».
+> Plegue a Dios que hayades sido alumbrado; donde no, quede dicho: "Agradecido os quedo. Tornad presto".
 >

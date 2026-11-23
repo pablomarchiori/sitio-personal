@@ -4,16 +4,14 @@ date: 2026-10-01T18:30:00-03:00
 draft: false
 description: "Cómo terminé reutilizando una CX Boreal II de 2013 como panel fijo para el sitio."
 tags: ["android", "tablet", "hugo", "cloudflare", "firefox", "dashboard", "labs"]
+# Revisión anterior: 01/10/2026 (revisión editorial, imágenes y estructura).
 ---
-*Texto original: 21/04/2026, Actualización: 01/10/2026 — revisión editorial, imágenes y estructura.*
 
-Acomodando un poco el cajón de los aparatos viejos, ese intermedio entre lo que sirve y lo que se tira, encontré una tablet vieja: una **CX Boreal II de 9.7"**, con **Android 4.1.1**.
+*Texto original: 21/04/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
 
-La usé un tiempo para leer PDFs, pero ya se tornaba tedioso pasarle archivos por SD. Tiene librerías y certificados raíz viejos, ya hay poco que funcione ahí, aunque sigue teniendo una linda pantalla y todavía le dura unas horas la batería. No estaba preparado para tirarla, pero tampoco tenía mucho uso práctico.
+Acomodando el cajón de los aparatos viejos, ese lugar intermedio entre lo que todavía sirve y lo que uno no se decide a tirar, encontré una **CX Boreal II de 9.7"**, con **Android 4.1.1**. La había usado para leer PDF, aunque pasarle archivos por SD ya se había vuelto bastante tedioso. Tiene las librerías y los certificados raíz de otra época, así que hoy casi nada funciona como debería, pero todavía tiene una linda pantalla y una batería que aguanta unas horas.
 
-**¿Para qué se puede usar? ¿Todavía puede servir como terminal fija para mostrar algo útil?**
-
-Terminé reconvirtiéndola en un panel fijo para mostrar una página propia del sitio: [**`/panel/`**](https://www.marchiori.ar/panel).
+Antes de mandarla al descarte, me pregunté si podía servir como terminal fija para mostrar algo útil. Terminé convirtiéndola en una pantalla para una página propia del sitio: [**`/panel/`**](https://www.marchiori.ar/panel).
 
 <div style="display: flex; align-items: center; gap: 16px; margin: 1.2rem 0;">
   <img
@@ -31,70 +29,47 @@ Terminé reconvirtiéndola en un panel fijo para mostrar una página propia del 
 - Tablet CX Boreal II 9.7" (2013 aprox.)
 - Android 4.1.1 Jelly Bean
 - API 16
-- recursos claramente limitados para estándares actuales
+- Recursos bastante limitados para los estándares actuales
 
-La idea era dejarla como pantalla fija con reloj, fecha, clima de Marcos Juárez, calendario mensual y feriados. Nada más.
+Quería dejarla mostrando un reloj, la fecha, el clima de Marcos Juárez, un calendario mensual y los feriados, sin exigirle mucho más a un equipo de esa edad.
 
 ## El panel
 
-En vez de depender de una app externa, preferí hacer una página específica dentro del sitio.
-
-Hacer una página propia evitaba depender de Play Store o de una app abandonada. Además, seguía dentro del mismo proyecto Hugo, podía ajustarla exactamente a esa pantalla y quedaba abierta la posibilidad de reutilizar la idea en otro panel.
+Preferí hacer una página específica dentro del sitio Hugo para no depender de una aplicación abandonada o de una Play Store que ya no funcionaba. Además, podía adaptar la interfaz a la pantalla de la Boreal II y conservar la posibilidad de reutilizar el panel en otro equipo.
 
 ### Navegadores y certificados
 
-Antes de seguir con el proyecto, había que verificar que la tablet pudiera abrir el sitio. Si no, era leña.
+Lo primero era conseguir que la tablet abriera el sitio. Si no, era leña.
 
-Con los navegadores nativos de Android 4.1 apareció enseguida el problema de errores de certificado y avisos de conexión no privada. La Play Store tampoco funciona ya en algo así.
+Los navegadores que venían con Android 4.1.1 mostraban errores de certificado y avisos de conexión no privada, algo esperable con un sistema que lleva tantos años sin actualizarse: los certificados raíz envejecen, las cadenas de confianza cambian y cada vez hay menos compatibilidad con los sitios actuales. Tampoco podía recurrir a la Play Store.
 
-En equipos tan viejos, eso no sorprende. El sistema operativo quedó congelado hace años y la confianza HTTPS moderna empieza a romperse por certificados raíz desactualizados, cambios en la cadena de validación y compatibilidad cada vez más pobre con sitios actuales.
-
-Busqué en F-Droid algún navegador compatible. También insistí un poco más con alternativas tipo kiosk, pero las versiones para Android 4.1.1 ya no estaban disponibles. Chrome ya no me resolvía nada en esa versión, así que fui a algo seguro para este caso: el viejo y confiable **Firefox** (`fennec-68.11.0.multi.android-arm.apk`). En esa versión, Firefox se manejó mejor que el navegador del sistema con los certificados del sitio, así que no tuve que seguir peleando con el WebView viejo de Android.
-
-Antes de seguir, hice una limpieza razonable para que el equipo quedara un poco más liviano. En términos prácticos, fue deshabilitar aplicaciones de fábrica que no aportaban nada y dejar el dispositivo lo más cerca posible de una función única.
+Busqué alternativas en F-Droid y probé la posibilidad de usar un navegador tipo *kiosk*, pero las versiones compatibles con Android 4.1.1 ya no estaban disponibles. Chrome tampoco resolvía el problema, así que terminé con el viejo y confiable **Firefox** (`fennec-68.11.0.multi.android-arm.apk`), que manejó mejor los certificados del sitio y permitió evitar las limitaciones del WebView del sistema. Antes de instalarlo, deshabilité algunas aplicaciones de fábrica que ya no aportaban nada para dejar la tablet lo más liviana posible.
 
 ## Qué se hizo del lado del sitio
 
-Acá entró ChatGPT 5.4 Thinking. El código, en general, salió casi todo de ahí. Probamos un par de alternativas y me fue tirando los HTML rápido y bastante en línea con lo que quería.
+Acá entró **ChatGPT 5.4 Thinking**, que generó casi todo el código HTML a partir de lo que le iba pidiendo. Fuimos probando cuatro versiones del panel: una *light*, otra conectada a JSON, una por API y una más moderna. Esta última terminó funcionando bien con Firefox, así que descarté las anteriores.
 
-Fui cambiando un par de layouts, pero sin mover la idea central: una sola pantalla, bien legible, con información útil y lo bastante liviana como para que incluso un equipo muy viejo pudiera visualizarla.
+La pantalla consulta `api.open-meteo.com` para el clima y `api.argentinadatos.com` para los feriados. El diseño quedó como una página independiente dentro del sitio, legible y liviana para que pudiera mostrarla un equipo tan viejo.
 
-Probamos cuatro versiones: una light, una conectada a JSON, una por API y otra más moderna. Al final, con Firefox, la moderna funcionaba bien, así que eliminamos las otras.
+Hubo un problema al publicarla: en local las APIs respondían, pero en producción no aparecía la información. La política de seguridad del sitio bloqueaba esas conexiones hasta que ajusté la [CSP en Cloudflare](/site-log/hardening-del-sitio-en-cloudflare/) y agregué los permisos necesarios en `connect-src`.
 
-Además, conectamos `api.open-meteo.com` para el clima y `api.argentinadatos.com` para los feriados.
-
-La página del panel terminó publicada como una ruta separada dentro del mismo sitio, con una versión más simple y visualmente limpia que el resto.
-
-Hubo un solo “problema” al publicar: la información de las APIs se veía en local, pero en producción no. El hardening existente no dejaba consultar esas APIs hasta agregar los permisos puntuales que el panel necesitaba. Eso obligó a [tocar la política de seguridad del sitio (CSP) en Cloudflare](/site-log/hardening-del-sitio-en-cloudflare/) para permitir esas conexiones salientes mediante `connect-src` hacia las APIs del panel.
-
-Sumé a Gemini al “equipo de desarrollo” para resolver la parte de pantalla completa en Firefox y armar un pequeño script. ChatGPT se había puesto un poco reticente con la idea del JavaScript, así que esa parte se la pedí a su colega.
-
-El comportamiento final quedó limitado al primer toque, para que no intente entrar en fullscreen en cada interacción. Así, al abrir el panel y tocar una vez la pantalla, Firefox pasa a pantalla completa y aprovecha mejor el área visible.
+Durante las pruebas también usé **Gemini** para explorar compatibilidades y alternativas que todavía pudieran funcionar con Android 4.1.1. Al final recurrí a Gemini para resolver la pantalla completa de Firefox con un pequeño script, porque ChatGPT se había puesto algo reticente con la idea de usar JavaScript. El script actúa solamente con el primer toque: al abrir el panel y tocar la pantalla, Firefox entra en *fullscreen* sin intentar repetir esa acción en cada interacción.
 
 ## Lo que quedó funcionando
 
-Para una tablet que parecía destinada al cajón, el resultado quedó bastante digno.
-
-La tablet hoy puede quedar como terminal fija con el panel abierto, sin exigirle nada para lo que ya no está preparada.
+La Boreal II terminó como una terminal fija con el panel abierto. Es un uso bastante acotado, pero aprovecha una pantalla y una batería que todavía sirven.
 
 [![Tablet CX Boreal II mostrando el panel](panel-tablet-cx-boreal-ii-thumb.png)](panel-tablet-cx-boreal-ii.png)
 
 *La CX Boreal II corriendo el panel desde Firefox. No revive como tablet moderna, pero como pantalla fija todavía tiene sentido.*
 
-El experimento salió bien, pero con límites claros. Esta tablet ya no sirve para navegación general, correo, redes sociales ni nada parecido. Aunque el sitio funcione en Firefox, las apps ya no acompañan y el equipo queda, en la práctica, reducido a ese navegador y a una función muy puntual.
-
-Acá el valor está en darle una función mínima, visible y controlada.
+El experimento tampoco le devuelve la utilidad que alguna vez tuvo como tablet: navegar por sitios modernos, instalar aplicaciones o usar servicios habituales sigue siendo complicado. Para mostrar un panel propio, en cambio, alcanza con ese Firefox y una función bien delimitada.
 
 ## Lo bueno: del proceso
 
-Lo más entretenido terminó siendo cómo se llegó.
+Lo más entretenido fue el recorrido hasta llegar a algo que funcionara, entre pruebas con software viejo, ideas que no iban a instalarse y cambios sobre el sitio. ChatGPT aportó la mayor parte de los archivos y Gemini ayudó a destrabar problemas concretos, pero la decisión de qué probar, qué descartar y cómo usar la tablet fue saliendo del intercambio.
 
-Durante las pruebas fui usando **Gemini** para explorar ideas, compatibilidades posibles, alternativas de software y caminos de descarte: qué probar, qué probablemente no iba a instalar y qué enfoques tenían más sentido con Android 4.1.
-
-**ChatGPT** aportó el código en general y los archivos Markdown de Hugo. Al final, entre uno y otro, salió algo funcional en tiempo récord.
-
-Luego de terminar este trabajo me quedan dudas profundas...
-¿Esto va en Notas, en Site Log o se ganó directamente un lugar propio? ¿Un menú Labs? ¿Nerdeadas? ¿Cosas raras? 🤔
+Después de terminar me quedan dudas profundas... ¿Esto va en Notas, en Site Log o se ganó directamente un lugar propio? ¿Un menú Labs? ¿Nerdeadas? ¿Cosas raras? 🤔
 
 Por ahora, quedó en Labs. Bastante justo.
 

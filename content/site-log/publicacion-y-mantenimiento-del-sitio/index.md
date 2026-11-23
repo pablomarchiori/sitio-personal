@@ -8,92 +8,43 @@ categories: ["Site Log"]
 ---
 
 Texto original: 28/03/26  
-Actualización: 30/05/26 — [Recuperación de un archivo borrado por Duplicate Cleaner](#recuperar-un-archivo-borrado-por-error)
+Actualización: 30/05/26 - [Recuperación de un archivo borrado por Duplicate Cleaner](#recuperar-un-archivo-borrado-por-error)
 
-# Objetivo
+*Revisión editorial: 23/11/2026 (redacción y estructura).*
 
-Dejar anotado el flujo real para mantener este sitio sin tener que redescubrirlo cada vez.
-
-La idea de esta nota es cubrir lo práctico:
-
-- cómo agregar contenido
-- cómo crear secciones nuevas
-- cómo funcionan los `draft`
-- por qué local puede verse distinto que online
-- qué pasó con el error de la fecha futura
-- qué hacen `git add`, `git commit` y `git push`
-- cómo publicar cambios sin hacer lío
-- cómo detectar y recuperar un archivo borrado por error
+Esta nota comenzó como un apunte de trabajo para mantener el sitio con Hugo y GitHub Pages, especialmente después de perder tiempo por un borrador invisible y por una fecha futura. El 30 de mayo sumé la recuperación de un archivo que había borrado Duplicate Cleaner; por eso dejo los comandos y las comprobaciones tal como los fui usando.
 
 ## La estructura mental básica
 
-Hay que pensar el sitio en tres capas:
-
-- el contenido
-- la vista local
-- la publicación online
+Conviene distinguir el contenido que guardo en la PC, la vista local de Hugo y lo que finalmente publica GitHub Pages. Las tres cosas pueden estar en estados diferentes.
 
 ### 1. El contenido
 
-El contenido vive dentro de `content/`.
-
-Por ejemplo:
-
-- `content/notas/`
-- `content/site-log/`
-
-Cada archivo `.md` es una página o una nota.
+El contenido vive dentro de `content/`, principalmente en `content/notas/` y `content/site-log/`. En la organización inicial cada publicación era un archivo `.md`; después pasé a carpetas por artículo con un `index.md` y sus recursos propios.
 
 ### 2. La vista local
 
-Para ver el sitio en la PC se usa Hugo localmente, por ejemplo con:
-
-`hugo server -D`
-
-Eso levanta el sitio en:
-
-`http://localhost:1313`
+Para trabajar localmente uso `hugo server -D`, que levanta la vista de desarrollo en `http://localhost:1313`. La opción `-D` incluye borradores.
 
 ### 3. La publicación online
 
-Lo que se ve online no sale directamente de la PC, sino del repositorio en GitHub y del workflow de GitHub Pages.
-
-O sea:
-
-- se cambia algo localmente
-- se guarda
-- se hace commit
-- se hace push
-- GitHub recompila el sitio
-- recién ahí aparece online
+Los cambios que veo en mi PC no quedan publicados por guardarlos. Primero van al historial local de Git, después a GitHub con `push`, y allí el workflow compila y despliega la versión pública.
 
 ## Cómo agregar una nota nueva
 
-Si ya existe una sección, por ejemplo `notas`, se puede crear una nota nueva con:
+En la estructura original podía crear una publicación con:
 
 `hugo new content notas/nombre-de-la-nota.md`
 
-Si existe un arquetipo para esa sección, Hugo toma esa plantilla y arma el archivo base.
+Si existe un arquetipo para esa sección, Hugo utiliza esa plantilla. **Desde la reorganización de octubre de 2026**, los artículos del sitio son *page bundles*: `content/notas/nombre-de-la-nota/index.md`, con sus imágenes y recursos al lado.
 
 ## Cómo crear una sección nueva
 
-Una sección nueva, en la práctica, es una carpeta dentro de `content/`.
-
-Por ejemplo:
-
-`content/site-log/`
-
-Si además se quiere que esa sección tenga una portada propia, hay que crear:
-
-`content/site-log/_index.md`
-
-Ese archivo funciona como portada o índice de la sección.
+Una sección es una carpeta bajo `content/`, por ejemplo `content/site-log/`. Su portada o índice se define en `content/site-log/_index.md`, que no debe confundirse con el `index.md` de una publicación individual.
 
 ## Cómo está formado un archivo Markdown del sitio
 
-Cada nota arranca con un encabezado entre `---` y `---`.
-
-Eso es el front matter.
+Cada nota tiene un **front matter**, el encabezado delimitado por `---` donde Hugo guarda sus metadatos.
 
 Por ejemplo:
 
@@ -104,41 +55,19 @@ Por ejemplo:
 - `tags`
 - `categories`
 
-Después de ese bloque recién viene el contenido de la nota.
+Después aparece el contenido en Markdown.
 
 ## Qué significa `draft: true`
 
-Si una nota tiene:
-
-`draft: true`
-
-entonces está en borrador.
-
-### Qué implica eso
-
-- se puede ver localmente si el server se levanta con `-D`
-- no se publica online en GitHub Pages
-
-Por eso una nota puede existir, verse localmente y aun así no aparecer en la web pública.
+Con `draft: true` la publicación queda en borrador. Hugo la muestra localmente si inicio el servidor con `-D`, pero el workflow normal de GitHub Pages no la incluye en la publicación.
 
 ## Por qué local puede verse distinto que online
 
-Porque localmente se puede levantar Hugo con opciones más amplias.
-
-Por ejemplo:
-
-`hugo server -D`
-
-muestra también los borradores.
-
-Pero el workflow de GitHub Pages no publica drafts.  
-O sea: si una nota sigue en borrador, online no aparece aunque local sí.
+La vista local puede incluir borradores y contenido futuro según las opciones del servidor, mientras que GitHub Pages usa la configuración del build de producción. Por eso una nota puede verse en `localhost` y faltar en la web.
 
 ## El otro detalle molesto: la fecha futura
 
-Además del draft, también importa la fecha.
-
-Tuvimos un error justamente por eso: una nota no aparecía y no era porque estuviera mal ubicada, sino porque tenía una fecha futura.
+Además del estado de borrador, Hugo evalúa la fecha de publicación. Una de las primeras notas parecía desaparecer porque tenía una hora futura, aunque el archivo estaba en la carpeta correcta.
 
 ### Qué pasó
 
@@ -156,9 +85,7 @@ la nota no aparecía.
 
 ### Por qué
 
-Porque `-D` muestra drafts, pero no incluye contenido futuro.
-
-Para ver contenido con fecha futura hay que usar además:
+La opción `-D` incluye borradores, pero **no** contenido con fecha futura. Para verlo localmente hace falta también:
 
 `-F`
 
@@ -166,81 +93,46 @@ o sea:
 
 `hugo server -D -F`
 
-### Conclusión práctica
-
-Si una nota no aparece, revisar siempre estas tres cosas:
-
-- que esté en la carpeta correcta
-- que el front matter esté bien
-- que no tenga `draft: true` o una fecha futura que la esté escondiendo
+Si una publicación no aparece, compruebo su ubicación, el front matter, `draft` y la fecha antes de investigar problemas de plantillas.
 
 ## Cómo ver el sitio localmente
 
-El comando habitual es:
-
-`hugo server -D`
-
-Si además se quiere ver contenido con fecha futura:
-
-`hugo server -D -F`
-
-Eso alcanza para la mayoría del trabajo diario.
+El comando habitual es `hugo server -D`. Cuando necesito incluir también publicaciones fechadas en el futuro, uso `hugo server -D -F`.
 
 ## Qué hace cada comando de Git
 
 ### `git add`
 
-Prepara cambios para el próximo commit.
-
-Todavía no publica nada.  
-Solo dice: estos cambios quiero guardarlos en la próxima versión.
+Deja preparados los archivos seleccionados para incorporarlos al siguiente commit, todavía sin subirlos a ningún servidor.
 
 ### `git commit`
 
-Guarda una versión nueva en el repositorio local.
-
-Tampoco publica nada online.  
-Todavía sigue siendo algo local.
+Registra una versión en el historial local de Git; no publica la página.
 
 ### `git push`
 
-Sube esos cambios a GitHub.
-
-Recién después del `push`, GitHub Actions recompila y publica el sitio.
+Envía los commits al repositorio de GitHub. Después del `push`, GitHub Actions compila y despliega el sitio.
 
 ## Flujo normal para publicar un cambio
 
-El flujo simple es este:
+El flujo que anoté entonces fue:
 
-1. editar el archivo
-2. revisar localmente en `localhost:1313`
-3. hacer `git status`
-4. hacer `git add .` o agregar archivos puntuales
-5. hacer `git commit -m "mensaje"`
-6. hacer `git push`
-7. esperar que GitHub Actions termine
-8. revisar online
+1. Editar el archivo y comprobarlo en `localhost:1313`.
+2. Revisar `git status` para saber qué cambió.
+3. Preparar los archivos con `git add .` o seleccionarlos individualmente.
+4. Guardarlos con `git commit -m "mensaje"`.
+5. Enviar con `git push`.
+6. Comprobar el resultado de GitHub Actions y revisar la página pública.
+
+Con el tiempo incorporé `publica.cmd`, que automatiza parte de esta secuencia. Antes de ejecutarlo, igual hay que revisar los cambios porque utiliza `git add -A` y agrega **todos** los archivos nuevos, modificados y borrados del repositorio.
 
 ## Cuándo usar `git add .`
 
-`git add .` agrega todo lo modificado y todo lo nuevo dentro de la carpeta actual y sus subcarpetas.
-
-Sirve cuando ya se sabe que todo lo que está pendiente realmente se quiere subir.
-
-Si hay archivos de prueba o basura, conviene borrarlos antes o agregar solo lo puntual.
+`git add .` prepara cambios dentro de la carpeta actual y sus subcarpetas. Conviene utilizarlo únicamente después de revisar qué archivos se van a incluir; si hay pruebas o recursos que todavía no corresponden, prefiero seleccionar los archivos de manera explícita.
 
 ## Qué revisar antes de publicar
 
-Antes de hacer `push`, conviene mirar:
-
-`git status`
-
-Eso muestra:
-
-- archivos modificados
-- archivos nuevos
-- archivos borrados
-- si hay algo que no se quería subir
+Antes del commit reviso `git status` para detectar archivos modificados, nuevos o borrados. Es especialmente importante con `publica.cmd`, porque su `git add -A` no distingue lo que quería publicar de lo que simplemente quedó en la carpeta.
 
 ## Recuperar un archivo borrado por error
 
@@ -254,19 +146,19 @@ Para revisar si Git detecta archivos borrados:
 
 `git status --short`
 
-Este comando muestra un resumen compacto de los cambios. Los archivos eliminados aparecen marcados con `D`.
+El resumen marca con `D` los archivos eliminados.
 
 Para listar únicamente los archivos versionados que faltan en la carpeta local:
 
 `git diff --name-only --diff-filter=D`
 
-El filtro `D` limita el resultado a archivos borrados. Así se puede revisar qué falta antes de restaurar nada.
+El filtro `D` muestra solo los archivos borrados que Git está siguiendo.
 
 Para recuperar solo el archivo afectado desde el último commit:
 
 `git restore --source=HEAD -- layouts/_partials/functions/warnings.html`
 
-`HEAD` representa el último commit local. El comando recupera ese archivo puntual sin modificar el resto del proyecto.
+`HEAD` es el último commit local. Esta restauración afecta únicamente al archivo indicado.
 
 Después conviene verificar que volvió a aparecer:
 
@@ -283,36 +175,3 @@ Revisar en este orden:
 - si realmente se hizo `git push`
 - si GitHub Actions terminó bien
 - si la página está entrando por la URL correcta
-
-## Qué cosas ya quedaron claras en este sitio
-
-En este sitio ya quedó comprobado que:
-
-- un draft se puede ver localmente pero no online
-- una fecha futura puede hacer que una nota “desaparezca” aunque el archivo esté bien
-- el contenido no se publica por arte de magia: sin `commit` y `push`, no sale
-- GitHub Pages compila después del push, no antes
-- conviene separar el contenido general en `notas` y la bitácora técnica del sitio en `site-log`
-- un archivo vacío puede ser necesario y Git permite recuperarlo desde el último commit
-
-## Recomendación práctica para no perder tiempo
-
-Antes de pensar que Hugo “anda mal”, revisar siempre esto:
-
-- ¿el archivo está dentro de `content/`?
-- ¿el front matter tiene los `---` correctos?
-- ¿está en draft?
-- ¿la fecha es futura?
-- ¿el server está levantado con `-D`?
-- ¿ya hice commit y push?
-- ¿terminó el workflow de GitHub?
-- ¿Git detecta algún archivo borrado?
-
-La mitad de los problemas raros suelen venir de ahí.
-
-## Cierre
-
-Mantener el sitio no es difícil, pero sí tiene varias pequeñas mañas.
-La más clara hasta ahora fue esta:
-una nota puede no aparecer no porque esté mal escrita, sino porque tiene `draft: true` o porque la fecha está en el futuro.
-Por eso esta nota existe: para no volver a pelearse con exactamente lo mismo dentro de una semana.

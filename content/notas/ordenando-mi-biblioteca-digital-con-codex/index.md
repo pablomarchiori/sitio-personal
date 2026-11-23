@@ -8,25 +8,17 @@ categories: ["Notas"]
 featureAlt: "Una biblioteca digital caótica que atraviesa un portal y aparece ordenada"
 ---
 
+*Texto original: 23/07/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
 
+Antes del streaming y las suscripciones para todo, los "internautas" descargábamos cuanta cosa aparecía por ahí, convencidos de que algún día nos iba a servir. En mi caso, la mayoría terminó sirviendo de poco 😅, pero dejó una colección de libros, historietas, manuales y material multimedia que todavía conservo en OneDrive, acumulada durante años desde fuentes muy distintas.
 
-Antes del streaming y de las suscripciones para todo, los “internautas” descargábamos cuanta cosa encontrábamos por ahí, convencidos de que algún día nos iba a servir.
-
-En mi caso, el paso de los años demostró que la mayoría terminó sirviendo poco 😅, pero dejó una acumulación digital de libros, historietas, manuales, documentos y material multimedia que todavía conservo. Todo quedó reunido en una carpeta de OneDrive que se alimentó de distintas fuentes, formatos y épocas de mi vida.
-
-Aunque la colección nunca fue un caos absoluto, con el tiempo aparecieron nombres escritos de varias maneras, carpetas innecesarias, formatos antiguos y archivos que ya no se abrían bien con programas actuales. Siempre tuve en mente revisarla, pero hacerlo a mano no me parecía una posibilidad muy realista: son 58.667 archivos distribuidos en 2.558 carpetas.
-
-Con la nueva aplicación de escritorio de ChatGPT podía darle a Codex acceso a una carpeta local, así que abrí `Documentos\Libros` y le pedí que revisara qué había ahí.
+La colección nunca fue un caos absoluto, aunque había nombres inconsistentes, carpetas innecesarias, formatos antiguos y archivos que ya no se abrían bien. Revisarla a mano no parecía realista: **58.667 archivos en 2.558 carpetas**. Con la aplicación de escritorio de ChatGPT pude darle a Codex acceso a la carpeta local `Documentos\Libros` y le pedí que mirara qué había ahí.
 
 ## Mirar antes de tocar
 
-Después de darle acceso, Codex recorrió las carpetas, revisó extensiones, nombres y contenidos, y preparó un inventario. Yo le marcaba qué quería conseguir y definía los criterios generales. Él inspeccionaba los archivos, proponía cambios, escribía los scripts y ejecutaba las tareas.
+Codex recorrió las carpetas, revisó extensiones, nombres y contenidos, y preparó un inventario. Yo definía los objetivos y los criterios; la herramienta inspeccionaba los archivos, proponía cambios, escribía los scripts y ejecutaba las tareas, deteniéndose cuando necesitaba autorización o encontraba algo dudoso.
 
-Cuando encontraba algo dudoso o necesitaba permisos, se detenía y preguntaba.
-
-Antes de mover o convertir nada (léase: antes de cagarla), le pedí que trabajara en modo simulación. El primer registro mostraba qué carpetas pensaba eliminar, qué nombres iba a cambiar y cuáles eran los archivos candidatos a conversión. Además, todo quedó documentado en archivos CSV.
-
-Recién después de revisar eso autorizaba los cambios reales.
+Antes de mover o convertir nada (léase: antes de cagarla), le pedí una simulación. El registro, guardado en CSV, mostraba qué carpetas eliminaría, qué nombres cambiaría y cuáles eran los archivos candidatos a conversión. Recién después de revisarlo autorizaba los cambios reales.
 
 ## Poner orden
 
@@ -34,15 +26,13 @@ Codex empezó unificando títulos, numeraciones y nombres de volúmenes. Tambié
 
 En algunos cómics, por ejemplo, la carpeta principal contenía otra carpeta y recién dentro de ella estaban las imágenes de las páginas. Codex detectaba esos casos y subía las imágenes al nivel correcto cuando no había otros archivos que justificaran esa separación.
 
-La tarea es sencilla cuando aparece una vez. Repetida en cientos de carpetas se vuelve el tipo de trabajo que uno deja pendiente durante años.
-
-Ya había intentado resolver algunas de estas cosas con herramientas más tradicionales, pero siempre terminaba armando una regla rígida para un caso puntual.
+Algo sencillo de corregir en una carpeta se vuelve una tarea interminable cuando se repite cientos de veces. Ya había probado herramientas más tradicionales, pero terminaba escribiendo reglas rígidas para casos puntuales.
 
 ## Modernizar formatos antiguos
 
 Después aparecieron documentos DOC y presentaciones PPT. Codex me pidió autorización para usar las aplicaciones instaladas en la computadora y automatizó la conversión a DOCX y PPTX.
 
-Abría cada archivo con Office, generaba la versión nueva y comprobaba que el texto, las fuentes, el paginado y los demás elementos se hubieran conservado correctamente. Los originales iban a una carpeta de respaldo antes de ser reemplazados.
+Con Office abría cada archivo, generaba la versión nueva y comprobaba el texto, las fuentes y el paginado. Los originales quedaban respaldados antes de reemplazarlos.
 
 También convirtió imágenes BMP a PNG conservando sus dimensiones, recuperó archivos MHT y revisó varios contenidos Flash.
 
@@ -62,9 +52,7 @@ Entre los HTML había cosas muy diferentes. Algunos eran índices, manuales o pe
 
 Para esas obras, Codex reconstruyó el orden de los capítulos, generó el índice, reunió las imágenes y armó un EPUB. El resultado se podía abrir y recorrer desde cualquier lector compatible.
 
-Después de revisar uno, noté que le faltaba la portada. No sé si Codex no la había identificado o si simplemente nunca habíamos hablado del tema.
-
-Así que asumí mi rol de liderazgo y le dije:
+Al revisar uno de los EPUB noté que faltaba la portada. No sé si Codex no la había identificado o si nunca habíamos hablado del tema, así que asumí mi rol de liderazgo y le dije:
 
 > Ponele la portada.
 
@@ -82,14 +70,14 @@ Los HTML originales y sus recursos también quedaron guardados.
 
 ## Cómo terminó la cosa
 
-Finalmente fueron un par de tardes. Podía hacer otras cosas y volver cuando Codex terminaba una etapa o necesitaba consultarme algo.
+El trabajo llevó un par de tardes, durante las cuales podía dedicarme a otras cosas y volver cuando Codex terminaba una etapa o necesitaba consultarme algo.
 
-Codex tampoco la tuvo fácil. Según el registro, el primer script ni siquiera llegó a ejecutarse: PowerShell rechazó la combinación de parámetros. Tuvo que corregirlo, volver a correr la simulación y revisar el registro nuevo. También encontró reglas que funcionaban en una carpeta pero no en otra, y conversiones que necesitaron más de un intento. Cuando algo no estaba claro, conservaba el original y dejaba ese caso pendiente.
+El proceso tuvo errores. Según el registro, PowerShell rechazó la combinación de parámetros del primer script antes de que llegara a ejecutarse, así que Codex lo corrigió y volvió a simular la tarea. También aparecieron reglas que servían para una carpeta pero no para otra y conversiones que necesitaron más de un intento. Ante las dudas, conservaba los originales y dejaba esos casos pendientes.
 
 Hoy probablemente lo haría por etapas más chicas, empezando por un solo tipo de archivo y ajustando las reglas antes de escalar al resto. Aun así, creo que el trabajo quedó hecho en una fracción del tiempo que me habría llevado hacerlo a mano.
 
-Codex tampoco viene con uso ilimitado. Pago la suscripción Plus, veinte dólares por mes, y días después de terminar con la biblioteca (mientras seguía probando con otras carpetas) me quedé sin cuota. La aplicación avisó que se restablecería una semana más tarde. Hasta entonces, las opciones eran esperar, comprar créditos, pasar al plan Pro o gastar uno de los reinicios que tenía guardados sin saberlo.
+Codex tampoco tenía uso ilimitado en mi plan. Pagaba la suscripción Plus, veinte dólares por mes, y unos días después de terminar con la biblioteca, mientras probaba con otras carpetas, me quedé sin cuota. La aplicación indicaba que se restablecería una semana más tarde; podía esperar, comprar créditos, pasar al plan Pro o usar uno de los reinicios que tenía guardados sin saberlo.
 
-Recién ahí me puse a mirar cómo se consume. Habitualmente uso razonamiento alto en ChatGPT Classic sin haber alcanzado un límite y di por sentado que en Codex sería igual. No lo es. Acá el consumo no depende simplemente de cuántos mensajes mandás: se calcula a partir de tokens y varía según el tamaño y la complejidad del trabajo, el modelo elegido y la duración de la sesión. En una tarea como esta, leer miles de archivos y mantener todo ese contexto puede gastar muchísimo más que una conversación larga.
+Recién ahí me puse a mirar los límites. Solía usar razonamiento alto en ChatGPT Classic sin alcanzarlos y había supuesto que en Codex sería parecido. En mi experiencia, una tarea que recorre miles de archivos y mantiene mucho contexto consume recursos de otra escala; influyen el volumen de información, el modelo y la complejidad y duración del trabajo. El límite apareció bastante antes de lo que esperaba.
 
 ¿Fue útil organizar una colección que casi no uso? No lo sé. Pero esas dos tardes me sirvieron para descubrir una aplicación práctica de Codex que no conocía 🤓.

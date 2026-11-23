@@ -7,304 +7,98 @@ tags: ["cloudflare", "dns", "dominio", "email-routing", "redirects", "github-pag
 categories: ["Notas"]
 ---
 
-# De cdmon y Hanami a Cloudflare
+*Texto original: 29/03/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
 
-Cuando apareció el problema del **apex** del dominio, por una sugerencia de **ChatGPT GPT-5.4 Thinking**, me puse a investigar **Cloudflare**. La verdad es que no tenía registrado todo lo que ofrecían. Yo venía usando **cdmon** desde hacía fácil **15 años o más**, sin mover demasiado esa parte.
+## De cdmon y Hanami a Cloudflare
 
-En correo, el recorrido fue bastante largo. Primero pasé por los **reenvíos de correo de Dattatec**. Después usé **Outlook Premium**, en la época en que todavía permitía trabajar con **dominio propio**. Cuando Microsoft sacó esa funcionalidad, me pasé a **DonWeb** —que antes era Dattatec—. Más adelante, DonWeb también dejó de ofrecer esa opción, así que buscando alternativas encontré **Hanami.run**.
+Cuando apareció el problema del **apex** del dominio, **ChatGPT GPT-5.4 Thinking** me sugirió investigar **Cloudflare**. Yo venía usando **cdmon** desde hacía fácil **15 años o más**, sin tocar demasiado esa parte, y desconocía varias de las funciones de Cloudflare.
 
-Con **Hanami** la experiencia fue muy buena. Funcionó perfecto, sin quejas. Durante bastante tiempo me resolvió muy bien el reenvío de correo por alrededor de **2 USD mensuales**, que no era un problema. El punto no era el costo, sino que al ver lo que ofrecía **Cloudflare** apareció una oportunidad más interesante: **simplificar y unificar**.
+Con el correo había pasado por más servicios. Empecé con los **reenvíos de Dattatec** y después usé **Outlook Premium**, cuando Microsoft todavía permitía trabajar con **dominio propio**. Al retirar esa posibilidad, volví a **DonWeb** (la antigua Dattatec). Cuando también dejó de ofrecerla, encontré **Hanami.run**.
 
-La posibilidad de tener en un mismo lugar los **DNS**, los **reenvíos de correo**, las **reglas de redirección**, algunas **métricas** y otras funciones adicionales me terminó de convencer. Así que decidí migrar.
+Hanami funcionaba perfecto y costaba alrededor de **2 USD mensuales**. No tenía motivos para cambiarlo, pero al investigar Cloudflare descubrí que podía administrar desde un mismo lugar los **DNS**, los **reenvíos de correo** y las **redirecciones** de ambos dominios, además de acceder a métricas y otras funciones. Eso terminó de convencerme. De paso, era una buena excusa para conocer mejor Cloudflare, que hasta entonces había mirado bastante de afuera.
 
-No fue una búsqueda impulsada por disconformidad con Hanami, porque en mi caso funcionó muy bien. Fue más bien una decisión de orden: **menos servicios separados, menos dependencias dispersas y una base más coherente para seguir armando el sitio**.
+## La migración de los dominios
 
-Además, era una buena excusa para meterme un poco más en el mundo de **Cloudflare**, que hasta ahora había mirado bastante de afuera.
+Cambié en **NIC Argentina** la delegación de `marchiori.ar` y `marchiori.com.ar` a los *nameservers* asignados por Cloudflare. Desde ese momento, Cloudflare pasó a ser el **DNS autoritativo** de ambos dominios.
 
-Veremos cuánto dura esta configuración, pero por ahora la movida cerró por todos lados.
+La organización quedó definida así: `marchiori.ar` como dominio principal, con el sitio alojado en **GitHub Pages**; **Cloudflare Email Routing** para recibir y reenviar el correo de los dos dominios; y `marchiori.com.ar` como dominio alternativo, con redirección web hacia el principal. Los servicios que dependían de Hanami se fueron retirando a medida que completaba la configuración.
 
----
+## El DNS de `marchiori.ar`
 
-# Configuración final en Cloudflare
+El sitio siguió alojado en **GitHub Pages**. Para el dominio raíz quedaron estos registros:
 
-## Objetivo general
+| Tipo | Destino |
+| --- | --- |
+| A | `185.199.108.153` |
+| A | `185.199.109.153` |
+| A | `185.199.110.153` |
+| A | `185.199.111.153` |
+| AAAA | `2606:50c0:8000::153` |
+| AAAA | `2606:50c0:8001::153` |
+| AAAA | `2606:50c0:8002::153` |
+| AAAA | `2606:50c0:8003::153` |
 
-Se migraron a Cloudflare los dominios:
+Para `www` mantuve el **CNAME** hacia `pablomarchiori.github.io`. Todos los registros web quedaron en **DNS only**, sin pasar el tráfico por el proxy de Cloudflare.
 
-* **`marchiori.ar`**
-* **`marchiori.com.ar`**
+## El correo y los reenvíos
 
-La idea final quedó así:
+Para los dos dominios configuré **Cloudflare Email Routing**. En cada zona DNS, los registros **MX** apuntan a:
 
-* **`marchiori.ar`** como dominio principal del sitio
-* **GitHub Pages** como hosting web para `marchiori.ar`
-* **Cloudflare Email Routing** para el correo entrante de ambos dominios
-* **`marchiori.com.ar`** redirigiendo hacia `marchiori.ar`
-* eliminación completa de dependencias anteriores con **Hanami**
+- `route1.mx.cloudflare.net`
+- `route2.mx.cloudflare.net`
+- `route3.mx.cloudflare.net`
 
----
+El registro **SPF** quedó con el mismo valor en ambos dominios:
 
-# 1. Delegación de dominios
+```text
+v=spf1 include:_spf.mx.cloudflare.net ~all
+```
 
-La delegación de ambos dominios se cambió en **NIC Argentina**, apuntándolos a los nameservers asignados por Cloudflare.
+También se configuró el registro **DKIM** `cf2024-1._domainkey` con el valor generado por Cloudflare para cada dominio. Los registros de correo quedaron en **DNS only**.
 
-A partir de eso:
+El *catch-all* de `marchiori.ar` reenvía cualquier dirección que no tenga una regla específica a `pablo.marchiori@outlook.com`. Estas son las reglas individuales:
 
-* Cloudflare pasó a ser el **DNS autoritativo**
-* toda la configuración DNS se centralizó ahí
-* los servicios viejos quedaron reemplazados progresivamente
+| Dirección | Destino |
+| --- | --- |
+| `pablo@marchiori.ar` | `pablo.marchiori@outlook.com` |
+| `xxx1@marchiori.ar` | `xxx1.marchiori@hotmail.com` |
+| `xxx2@marchiori.ar` | `xxx2.marchiori@outlook.com` |
+| `xxx3@marchiori.ar` | `xxx3.marchiori@outlook.com` |
 
----
+En `marchiori.com.ar` también dejé un *catch-all* hacia `pablo.marchiori@outlook.com`, junto con estas reglas:
 
-# 2. Configuración final de `marchiori.ar`
+| Dirección | Destino |
+| --- | --- |
+| `pablo@marchiori.com.ar` | `pablo.marchiori@outlook.com` |
+| `lucia@marchiori.com.ar` | `lucia.marchiori@hotmail.com` |
+| `anabella@marchiori.com.ar` | `anabella.marchiori@outlook.com` |
+| `monica@marchiori.com.ar` | `monica.marchiori@outlook.com` |
 
-## 2.1 Sitio web
+Para activar algunas de las reglas tuve que verificar primero las direcciones de destino.
 
-`marchiori.ar` quedó apuntando a **GitHub Pages**.
+## `marchiori.com.ar` y las redirecciones
 
-### Registros DNS web
+El dominio alternativo conserva sus direcciones de correo, pero en la web apunta a `marchiori.ar`. Para que Cloudflare procese las redirecciones, configuré estos registros en **Proxied**:
 
-#### A
+- **A:** `marchiori.com.ar` → `192.0.2.1`
+- **CNAME:** `www` → `marchiori.com.ar`
 
-* `marchiori.ar -> 185.199.108.153`
-* `marchiori.ar -> 185.199.109.153`
-* `marchiori.ar -> 185.199.110.153`
-* `marchiori.ar -> 185.199.111.153`
-
-#### AAAA
-
-* `marchiori.ar -> 2606:50c0:8000::153`
-* `marchiori.ar -> 2606:50c0:8001::153`
-* `marchiori.ar -> 2606:50c0:8002::153`
-* `marchiori.ar -> 2606:50c0:8003::153`
-
-#### CNAME
-
-* `www -> pablomarchiori.github.io`
-
-### Estado de proxy
-
-Todos estos registros web quedaron en:
-
-* **DNS only**
-
-Es decir:
-
-* sin proxy de Cloudflare
-* resolución directa hacia GitHub Pages
-
----
-
-## 2.2 Correo
-
-El correo de `marchiori.ar` se migró a **Cloudflare Email Routing**.
-
-### Registros DNS de correo
-
-#### MX
-
-* `marchiori.ar -> route1.mx.cloudflare.net`
-* `marchiori.ar -> route2.mx.cloudflare.net`
-* `marchiori.ar -> route3.mx.cloudflare.net`
-
-#### SPF
-
-* `marchiori.ar -> "v=spf1 include:_spf.mx.cloudflare.net ~all"`
-
-#### DKIM
-
-* `cf2024-1._domainkey ->` valor DKIM generado por Cloudflare
-
-Todos estos registros quedaron en:
-
-* **DNS only**
-
----
-
-## 2.3 Reglas de correo
-
-### Catch-all
-
-Se configuró catch-all para:
-
-* cualquier dirección no definida en `@marchiori.ar`
-* destino: `pablo.marchiori@outlook.com`
-
-### Direcciones específicas
-
-Se crearon además estas reglas:
-
-* `pablo@marchiori.ar -> pablo.marchiori@outlook.com`
-* `xxx1@marchiori.ar -> xxx1.marchiori@hotmail.com`
-* `xxx2@marchiori.ar -> xxx2.marchiori@outlook.com`
-* `xxx3@marchiori.ar -> xxx3.marchiori@outlook.com`
-
-En los casos necesarios hubo que verificar primero las direcciones destino.
-
----
-
-## 2.4 Lo que se eliminó
-
-Se eliminaron todos los restos de Hanami en `marchiori.ar`, incluyendo:
-
-* `mx1.hanami.run`
-* `mx2.hanami.run`
-* SPF anterior con `spf.hanami.run`
-* cualquier otro resto de configuración heredada
-
----
-
-# 3. Configuración final de `marchiori.com.ar`
-
-## 3.1 Correo
-
-También se migró el correo de `marchiori.com.ar` a **Cloudflare Email Routing**.
-
-### Registros DNS de correo
-
-#### MX
-
-* `marchiori.com.ar -> route1.mx.cloudflare.net`
-* `marchiori.com.ar -> route2.mx.cloudflare.net`
-* `marchiori.com.ar -> route3.mx.cloudflare.net`
-
-#### SPF
-
-* `marchiori.com.ar -> "v=spf1 include:_spf.mx.cloudflare.net ~all"`
-
-#### DKIM
-
-* `cf2024-1._domainkey ->` valor DKIM generado por Cloudflare
-
-Todos estos en:
-
-* **DNS only**
-
----
-
-## 3.2 Reglas de correo
-
-### Catch-all
-
-* catch-all de `marchiori.com.ar`
-* destino: `pablo.marchiori@outlook.com`
-
-### Direcciones específicas
-
-* `pablo@marchiori.com.ar -> pablo.marchiori@outlook.com`
-* `lucia@marchiori.com.ar -> lucia.marchiori@hotmail.com`
-* `anabella@marchiori.com.ar -> anabella.marchiori@outlook.com`
-* `monica@marchiori.com.ar -> monica.marchiori@outlook.com`
-
-También acá se usó verificación previa de destinos cuando correspondía.
-
----
-
-## 3.3 Web y redirección
-
-`marchiori.com.ar` no se dejó como sitio independiente.
-Se lo configuró para **redirigir a `marchiori.ar`**.
-
-### Registros DNS web
-
-#### A
-
-* `marchiori.com.ar -> 192.0.2.1`
-
-#### CNAME
-
-* `www -> marchiori.com.ar`
-
-Estos dos registros quedaron en:
-
-* **Proxied**
-
-Eso se hizo para que Cloudflare pudiera interceptar la petición y aplicar las reglas de redirección.
-
----
-
-## 3.4 Redirect Rules
-
-Se crearon reglas en Cloudflare para redirigir:
-
-* `marchiori.com.ar`
-* `www.marchiori.com.ar`
-
-hacia:
-
-* `https://marchiori.ar`
-
-manteniendo:
-
-* el **path**
-* el **query string**
-
-### Expresión usada
-
-En la parte de destino se utilizó:
+Después creé las **Redirect Rules** para `marchiori.com.ar` y `www.marchiori.com.ar`. El destino se construye con esta expresión, que conserva la ruta solicitada:
 
 ```text
 concat("https://marchiori.ar", http.request.uri.path)
 ```
 
-con:
+La redirección responde con **301** y tiene activada la opción **Preserve query string**, para mantener también los parámetros de la URL. Por ejemplo, `https://www.marchiori.com.ar/prueba` termina en `https://marchiori.ar/prueba`.
 
-* **Status code: 301**
-* **Preserve query string: activado**
+## Limpieza de la configuración anterior
 
-Esto hace que, por ejemplo:
+Una vez que el correo quedó configurado en Cloudflare, eliminé los registros heredados de **Hanami**.
 
-* `https://www.marchiori.com.ar/prueba`
-* redirija a
-* `https://marchiori.ar/prueba`
+En `marchiori.ar` retiré los MX `mx1.hanami.run` y `mx2.hanami.run`, el SPF que incluía `spf.hanami.run` y otros restos de la configuración anterior.
 
----
+En `marchiori.com.ar` eliminé los **CNAME** `*` y `www` hacia `forward.hanami.run`, los **TXT** `hanami-forward` y `hanami-forward.www`, y los antiguos registros MX y SPF de Hanami.
 
-## 3.5 Lo que se eliminó
+## Un rebote durante la migración
 
-Se borró todo lo que dependía de Hanami:
-
-* `CNAME * -> forward.hanami.run`
-* `CNAME www -> forward.hanami.run`
-* `TXT hanami-forward`
-* `TXT hanami-forward.www`
-* MX anteriores de Hanami
-* SPF anterior de Hanami
-
----
-
-# 4. Resultado final
-
-La estructura final quedó así:
-
-## `marchiori.ar`
-
-* dominio principal
-* web en GitHub Pages
-* correo por Cloudflare
-* `www` funcionando
-* sin Hanami
-
-## `marchiori.com.ar`
-
-* correo por Cloudflare
-* redirección web a `marchiori.ar`
-* sin Hanami
-
-## Beneficios concretos
-
-* unificación de DNS y correo en una sola plataforma
-* menos dependencia de terceros separados
-* configuración más limpia
-* base lista para seguir aprovechando otras funciones de Cloudflare
-* eliminación de servicios heredados que habían quedado como parches a lo largo de los años
-
----
-
-# 5. Observación práctica
-
-Durante la migración hubo algún rebote transitorio de correo en `marchiori.ar`, pero terminó siendo un problema momentáneo de propagación o activación reciente. Después de eso, el reenvío quedó funcionando correctamente desde Cloudflare.
-
----
-
-Si querés, te lo convierto ahora en una versión más tipo **post del sitio**, con subtítulos más naturales y menos formato técnico.
+Durante el cambio hubo algún rebote transitorio de correo en `marchiori.ar`, aparentemente relacionado con la propagación o la activación reciente de la nueva configuración. Después de eso, los reenvíos quedaron funcionando desde Cloudflare.

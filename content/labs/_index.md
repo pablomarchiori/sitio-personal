@@ -3,7 +3,7 @@ title: "Labs"
 description: "Experimentos, pruebas, paneles, hardware reciclado y otras nerdeadas técnicas."
 draft: false
 ---
-Proyectos, experimentos y cacharreo con hardware y software. Cosas que se construyen, no solo se comentan.
+Proyectos, experimentos y cacharreo con hardware y software. Cosas que se construyen y de las que quiero contar cómo se hicieron.
 
 <nav class="labs-accesos" aria-label="Accesos de Labs">
   <a href="/panel/">Panel</a> ·

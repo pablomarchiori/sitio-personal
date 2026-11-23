@@ -9,14 +9,15 @@ featureAlt: "Traductor LinkedIn"
 coverCaption: "*Pompa épica corporativa, ahora con botón.*"
 ---
 
+*Texto original: 18/05/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
 
 La idea salió viendo a [Dot Dager](https://www.youtube.com/@DotDager) jugando con algo parecido: tomar una frase común y pasarla por el filtro LinkedIn, ese idioma que convierte cualquier insignificancia en épica profesional.
 
-Este idioma no nos tomó por sorpresa: nos empujó por el ropero hacia Narnia, un lugar gobernado por propósito, resiliencia y mejora continua. Un Disney World corporativo donde todo parece tener impacto, visión estratégica y una cuota innecesaria de inspiración.
+Ese idioma nos empuja por el ropero hacia Narnia, un lugar gobernado por propósito, resiliencia y mejora continua; una especie de Disney World corporativo donde hasta la tarea más insignificante necesita impacto y visión estratégica.
 
 ## La idea
 
-La herramienta tenía que hacer una sola cosa: recibir una frase normal y devolverla convertida en pompa épica corporativa.
+Quería que la herramienta recibiera una frase corriente y la devolviera pasada por ese filtro de pompa épica corporativa.
 
 Algo del estilo:
 
@@ -24,7 +25,7 @@ Algo del estilo:
 
 Y que la salida terminara convertida en una pequeña gesta profesional sobre ejecución, eficiencia operativa y procesamiento exitoso de recursos orgánicos.
 
-No tiene utilidad real. Eso es parte del punto. Igual que la versión oficial.
+La utilidad real era discutible, pero justamente ahí estaba el chiste. Igual que en la versión oficial.
 
 ## El enfoque
 
@@ -45,9 +46,7 @@ La página quedó en:
 
 ## La parte técnica
 
-La página está hecha como un archivo Markdown dentro de Labs, con HTML, CSS y JavaScript embebido.
-
-El sitio no llama directamente a Gemini, porque eso dejaría la API key expuesta en el navegador. La clave quedó guardada como secret dentro de un Cloudflare Worker.
+La interfaz quedó en una página de Labs dentro del sitio Hugo, con HTML, CSS y JavaScript. Para no exponer la clave de Gemini en el navegador, el JavaScript llama a un **Cloudflare Worker**, que tiene la API key guardada como secreto.
 
 El flujo quedó así:
 
@@ -67,29 +66,27 @@ El Worker recibe el texto, arma el prompt, llama a Gemini y devuelve el resultad
 
 La parte delicada fue controlar el tono.
 
-Si se dejaba demasiado libre, Gemini se iba al LinkedIn insoportable completo: preguntas finales, frases motivacionales, épica desbordada y cierres tipo “¿Y vos cómo estás liderando el cambio?”.
+Si se dejaba demasiado libre, Gemini se iba al LinkedIn insoportable completo: preguntas finales, frases motivacionales, épica desbordada y cierres tipo "¿Y vos cómo estás liderando el cambio?".
 
 Hubo que ajustar reglas:
 
 - No inventar detalles técnicos.
 - No usar hashtags.
 - No hacer preguntas al lector.
-- No usar “transformación digital”.
+- No usar "transformación digital".
 - Evitar primera persona solemne.
 - Preferir una voz más seca y absurda.
 - El cierre debe ser una afirmación seca.
 
-El remate ideal apareció solo ante mis ojos viendo como "La impresora ahora imprime." tomaba el tono resiliente e inspirador que estaba buscando. Hermoso.
+El resultado que buscaba apareció cuando "La impresora ahora imprime" se convirtió, ante mis ojos, en una hazaña resiliente e inspiradora. Hermoso.
 
 ### El límite gratis
 
-Gemini en modo gratuito no da margen infinito. En esta prueba quedó con un límite de 20 consultas por día.
+En la configuración de esta prueba, el modo gratuito de Gemini tenía un límite de **20 consultas por día**.
 
 Más que eso cuesta dinero, muchacho, y no pienso pagar por tu diversión. Así que debés ser inteligente y cuidar tus preguntas, muchacho.
 
 
 ## El resultado
 
-Para mí sirvió. No resuelve ningún problema importante y tampoco pretende hacerlo, pero me hizo probar APIs de Gemini, Cloudflare Workers y hacer que todo eso funcione con Hugo.
-
-A veces un Lab no necesita salvar al mundo. Alcanza con agarrar una estupidez reconocible, volverla tocable y dejarla funcionando en una página.
+La herramienta terminó sirviendo para probar la API de Gemini y los Cloudflare Workers dentro del sitio, además de transformar frases como "La impresora ahora imprime" en manifiestos de superación personal. Bastante para una nerdeada de Labs.

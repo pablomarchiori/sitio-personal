@@ -8,62 +8,48 @@ categories: ["Notas"]
 featureAlt: "Pensar en voz baja hasta encontrar a los tuyos"
 ---
 
-
+*Texto original: 14/04/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
 
 ## Ideas que parecían pensarse en voz baja
 
-Durante mucho tiempo tuve la sensación de que ciertas ideas había que pensarlas casi en voz baja.
-
-No porque fueran ideas rarísimas. Más bien porque no parecían tener demasiado lugar en la conversación pública. Dudar de ciertos dogmas, tomarse el humor como herramienta para pinchar solemnidades, decir que no toda creencia merece reverencia automática, o marcar que ciencia y religión no juegan al mismo juego, no era algo que uno viera expresado con demasiada naturalidad. Ni en la cultura más masiva, ni en la charla común.
-
-Durante años, ese tipo de cosas me daba la impresión de existir en un circuito medio lateral. Aparecían en algún documental perdido, en alguna revista, en un programa raro que agarrabas haciendo zapping, en el viejo submundo nerd de los que leían sobre astronomía, electrónica, aviación o historietas por puro entusiasmo. No era algo que se dijera en voz alta con naturalidad.
+Durante mucho tiempo tuve la sensación de que ciertas ideas había que pensarlas casi en voz baja, desde cuestionar dogmas religiosos hasta usar el humor para pinchar solemnidades. Me cruzaba con esas discusiones en alguna revista, un documental perdido o un programa raro que encontraba haciendo zapping, pero tenían poco lugar en la conversación cotidiana. Circulaban sobre todo entre quienes leían sobre astronomía, electrónica, aviación o historietas por puro entusiasmo, en ese ambiente nerd que todavía tenía algo de circuito paralelo.
 
 ## La lotería cultural
 
-Antes de la Internet masiva el acceso era otro. Veíamos bastante de lo que nos imponían. Las series que llegaban, las películas que tocaban, los documentales que algún canal decidía pasar a una hora absurda. Si enganchabas algo interesante, bien. Si no, desaparecía. No era un ecosistema pensado para que uno encontrara afinidades intelectuales finas. Era más bien una lotería cultural.
+Antes de que internet se volviera masiva, buena parte de lo que podíamos ver dependía de lo que llegaba a la televisión o aparecía en los quioscos. Había que enganchar la serie, la película o el documental justo cuando algún canal decidía pasarlo, a veces a una hora absurda. Si te lo perdías, era bastante probable que no volvieras a encontrarlo.
 
-En ese paisaje, cada hallazgo valía más. A veces aparecía algo en el viejo History Channel, cuando todavía era bueno; otras, en algún programa tipo *Beyond 2000* o en la televisión local, casi siempre pasado por el filtro de la frivolidad. Todavía me acuerdo de aquel blooper de [Susana Giménez preguntando “¿En serio? ¿Vivo?”](https://www.youtube.com/watch?v=ZQ1ya_FwMhU) cuando le hablaron de un dinosaurio de la Patagonia.
-
-Hasta cuando aparecía algo interesante, muchas veces entraba procesado desde la sorpresa hueca, no desde la curiosidad real. También por ahí me crucé con [Carl Sagan y *Cosmos*](https://youtube.com/playlist?list=PLaxBFMgnaqt79JotyqmbA36ZY72o-RWLA&si=pkNG4W8kQxzHmzuh), que para muchos fue apenas una serie, pero para otros fue una puerta a un universo nuevo.
+Recuerdo el viejo History Channel, cuando todavía era bueno, los programas tipo *Beyond 2000* y algunos segmentos de la televisión local donde la ciencia aparecía filtrada por el espectáculo. Todavía me acuerdo de aquel blooper de [Susana Giménez preguntando "¿En serio? ¿Vivo?"](https://www.youtube.com/watch?v=ZQ1ya_FwMhU) cuando le hablaron de un dinosaurio de la Patagonia. En medio de todo eso también apareció [Carl Sagan con *Cosmos*](https://youtube.com/playlist?list=PLaxBFMgnaqt79JotyqmbA36ZY72o-RWLA&si=pkNG4W8kQxzHmzuh), una serie que me abrió otra manera de mirar el universo.
 
 ## Revistas, historietas y preguntas incómodas
 
-Y ahí entraron las revistas. [Lúpin](https://ahira.com.ar/revistas/lupin/), algunas [Cosmik](https://www.instagram.com/reels/DQ9rM1nCXAU/) y, en particular, aquel suplemento *Historietísimo* me dejaron algo que en ese momento quizá no podía formular del todo, pero que ya estaba ahí. Era 1986, yo tenía diez años, y esas historias me metieron en relatos más complejos, con preguntas más existenciales, menos domesticadas. De ahí salté a [Skorpio](https://ahira.com.ar/revistas/skorpio/) y [Fierro](https://ahira.com.ar/revistas/fierro/), y a los 12 o 13 años me voló la cabeza.
+Las revistas ocuparon un lugar importante en esa búsqueda. [Lúpin](https://ahira.com.ar/revistas/lupin/), algunas [Cosmik](https://www.instagram.com/reels/DQ9rM1nCXAU/) y, especialmente, aquel suplemento *Historietísimo* me acercaron a historias más complejas, con preguntas existenciales que no aparecían demasiado en otros lados. Era 1986, yo tenía diez años; después pasé a [Skorpio](https://ahira.com.ar/revistas/skorpio/) y [Fierro](https://ahira.com.ar/revistas/fierro/), y a los doce o trece años todo eso me voló la cabeza.
 
-Todo eso convivía con otra formación muy distinta. Mientras hacía la primera comunión y la confirmación, me encontraba con preguntas que el catecismo no respondía. Y había muchas preguntas en esos años. Mi viejo atravesó una enfermedad jodida durante un par de años, así que además de la angustia había una sobrecarga de manochantas, promesas, rezos y oraciones que, por supuesto, no cumplieron nada. Al final nos dejó.
+Al mismo tiempo hacía la primera comunión y la confirmación, pero me encontraba con preguntas que el catecismo no respondía. Mi viejo pasó por una enfermedad jodida durante un par de años, y junto con la angustia vino una sobrecarga de manochantas, promesas, rezos y oraciones que, por supuesto, no cumplieron nada. Al final nos dejó.
 
-Ahí entendí, aunque en ese momento no lo pudiera formular así, que mi escepticismo no venía de una rebeldía vacía ni de hacerme el inteligente. Venía de ver que cuando las cosas queman de verdad, los manochantas, las promesas y los rezos no mueven la aguja. Y eso también te obliga a mirar distinto las respuestas cerradas.
+Esa experiencia también fue formando mi escepticismo. Cuando las cosas queman de verdad y ninguna de esas promesas mueve la aguja, empezás a mirar de otra manera las explicaciones cerradas y las certezas que se presentan como indiscutibles. Me costaba aceptar que cualquier pregunta difícil pudiera darse por resuelta invocando a un ser superior.
 
-Cuando una explicación queda cerrada de entrada en un ser superior, ya no estamos en el terreno de la ciencia. La ciencia avanza porque duda, revisa, corrige y vuelve a preguntar. La religión puede servir como consuelo o marco simbólico, pero cuando ocupa el lugar de la investigación, frena la búsqueda en vez de impulsarla.
-
-Con el tiempo entendí que no se trataba de encontrar ídolos, sino de aprender a dudar. Ahí empezó a ordenarse algo: bajar certezas, revisar respuestas cerradas y reconocer afinidades sin convertirlas en devoción.
+La ciencia necesita preguntas abiertas, evidencia y la posibilidad de corregir lo que parecía cierto. La religión puede cumplir otra función como consuelo o marco simbólico, pero cuando pretende explicar los fenómenos naturales en lugar de investigarlos, limita justamente esa posibilidad de seguir buscando.
 
 ## La sátira como crítica
 
-Cuando descubrí lo del Monstruo de Espagueti Volador entendí que no estaba solo en un rincón solitario fuera de este mundo. Había tipos con estudio y cabeza dispuestos a hacer un safarrancho brillante para dejar en evidencia un problema real.
+Años después descubrí el Monstruo de Espagueti Volador y me encontré con gente que había llevado ese cuestionamiento al terreno del humor. Había tipos con estudio y cabeza dispuestos a armar un zafarrancho brillante para dejar en evidencia un problema real.
 
-La [intervención de Bobby Henderson](https://www.spaghettimonster.org/about/open-letter/) no funcionaba como una religión en serio, sino como una forma de exponer el absurdo de meter el Diseño Inteligente en clases de ciencia como si estuviera al nivel de una teoría sustentada en evidencia. Si se aceptaba una explicación sobrenatural no verificable, entonces también había que aceptar la del espagueti volador. El chiste era ridículo a propósito, y justamente por eso funcionaba tan bien.
+La [carta abierta de Bobby Henderson](https://www.spaghettimonster.org/about/open-letter/) respondía al intento de enseñar Diseño Inteligente en las clases de ciencia como si tuviera el mismo fundamento que una teoría respaldada por evidencia. Su propuesta llevaba el argumento al absurdo: si alcanzaba con invocar una explicación sobrenatural imposible de verificar, también había que reservarle un lugar al Monstruo de Espagueti Volador.
 
-Para mí eso fue liberador. No solo por la idea en sí, sino porque mostraba que había gente en el mundo capaz de responder con inteligencia e ironía a cosas que hasta entonces parecían blindadas por respeto automático. Por supuesto, desde ese momento soy devoto del Monstruo de Espagueti Volador. El Unicornio Rosa Invisible me pareció simpático, sí, pero no me interesó tanto: no tiene volcanes de cerveza.
+Me resultó liberador encontrar una crítica tan bien planteada y, al mismo tiempo, tan poco solemne. Por supuesto, desde entonces soy devoto del Monstruo de Espagueti Volador. El Unicornio Rosa Invisible me pareció simpático, sí, pero nunca me entusiasmó tanto: no tiene volcanes de cerveza.
 
-Igual, el punto del Unicornio era bueno. Servía para mostrar que la carga de la prueba recae en quien afirma la existencia de algo, no en quien pide evidencia. Era otra herramienta de ese mismo ecosistema escéptico, una forma medio nerd, medio blasfema y bastante eficaz de señalar que no todo enunciado merece el mismo trato solo porque se lo diga con solemnidad.
+El Unicornio, de todos modos, aportaba otra forma de explicar la carga de la prueba: quien afirma que algo existe es quien debe presentar evidencia. Ambas sátiras cuestionaban esa costumbre de concederle a una afirmación religiosa un respeto automático que no se le daría a cualquier otra explicación sin pruebas.
 
-## Ideas con voz pública
+## Cuando esas ideas empezaron a tener voz pública
 
-Por eso, encontrar hace unos años figuras públicas como [Ricky Gervais](https://www.rickygervais.com/) o [Neil deGrasse Tyson](https://neildegrassetyson.com/) tuvo para mí un efecto raro, pero muy claro. No me dieron ideas nuevas de cero. Lo que hicieron fue mostrarme que había gente visible diciendo en voz alta cosas que antes parecían reservadas al chiste interno, al escepticismo de nicho o a conversaciones entre pocos.
+Encontrarme años después con figuras como [Ricky Gervais](https://www.rickygervais.com/) y [Neil deGrasse Tyson](https://neildegrassetyson.com/) me produjo una sensación bastante particular. Escuchaba a personas conocidas hablar abiertamente de dudas y críticas que yo había visto circular durante años en revistas, charlas entre pocos o rincones del humor escéptico. Para alguien que se interesa por estos temas sin ser especialista, también era una manera de encontrar nuevas referencias y seguir leyendo.
 
-Para los que somos entusiastas, no especialistas, eso también abre puertas: no reemplaza el estudio serio, pero vuelve más accesibles temas que a veces parecen reservados a una minoría técnica. No porque uno necesite que un famoso le autorice una idea, sino porque de golpe ciertas intuiciones dejan de sentirse menos aisladas. Lo que antes parecía condenado al margen, al comentario entre pocos o a la sátira de nicho, empieza a tener voz pública.
+Gervais llegó a esas discusiones desde el humor. Sus monólogos usan la ironía, el *stand-up* y a veces el humor negro para cuestionar la religión y algunas costumbres sociales que suelen darse por sentadas. Puedo discrepar con él en muchas cosas, pero me gusta esa libertad de decirlas sin pedir permiso ni tratar cada creencia como algo intocable.
 
-## Dos caminos para decir cosas en voz alta
+Tyson me resulta cercano por otro camino: es astrofísico y divulgador, y sabe transmitir asombro por el universo desde lo que podemos observar y comprender. Habla de física, del tiempo, del espacio y de nuestra escala diminuta sin necesidad de envolverlos en misticismo. Esa curiosidad por la realidad, con todas las preguntas que todavía quedan abiertas, me resulta mucho más atractiva que una respuesta sobrenatural preparada de antemano.
 
-Ricky Gervais llegó desde un lugar poco habitual para ese tipo de discusiones: el humor. No como divulgador científico ni como filósofo profesional, sino como comediante, guionista y actor. Y justamente por eso su efecto es interesante. Usa el stand up, la ironía y el humor negro para meterse con temas que mucha gente prefiere tratar con algodones, especialmente la religión, la corrección social automática y ciertas hipocresías culturales. No es que tenga razón en todo, ni falta que hace. Lo valioso es otra cosa: dice sin culpa cosas que durante mucho tiempo parecían condenadas a circular solo en ámbitos chicos, medio nerds o directamente blasfemos.
+## Encontrar interlocutores
 
-Neil deGrasse Tyson entra por otro lado. Es astrofísico y divulgador, pero sobre todo alguien que sabe transmitir asombro sin convertirlo en misticismo. Habla del universo, de la física, del tiempo, del espacio y de nuestra escala diminuta sin necesidad de envolver todo en humo espiritual. Su mirada no le saca belleza al mundo: al contrario, muestra que la realidad ya es lo bastante impresionante sin agregarle respuestas sobrenaturales. En Tyson la afinidad viene por otro lado: método, curiosidad y una forma de asombro que no necesita apagar la razón.
+Internet trajo ruido, sobreexposición e idiotez industrializada, pero también hizo posible acceder a conversaciones que antes eran difíciles de encontrar. Había una tradición de divulgación, humor escéptico y crítica cultural que para mí aparecía apenas en fragmentos, y de pronto estaba mucho más cerca.
 
-## Dejar de sentirse solo
-
-Internet cambió mucho de eso. Para bien y para mal, claro. Trajo ruido, sobreexposición, idiotez industrializada y una cantidad absurda de gente opinando sin pensar. Pero también permitió descubrir que uno no era un marciano aislado. Había toda una tradición de humor, escepticismo, divulgación y crítica cultural que no era que no existía, simplemente antes no llegaba con facilidad.
-
-Tal vez por eso hoy valoro más a quienes se animan a decir en público lo que antes parecía reservado a un margen medio vergonzante. No porque sean héroes, ni porque haya que aplaudirles todo. Justamente no. Si algo enseña el pensamiento crítico es a no reemplazar un dogma por otro, ni una obediencia por una devoción nueva. Pero sí hay algo reconfortante en descubrir que ciertas intuiciones, ciertas dudas y ciertas incomodidades no eran una rareza personal, sino parte de una forma posible de mirar el mundo.
-
-No se trataba de encontrar ídolos. Se trataba de reconocer afinidades. Pensar, dudar y hacer preguntas incómodas no siempre te deja solo. A veces nomás tardás un poco más en encontrar a los tuyos.
+Sigo sin tener interés en cambiar un dogma por otro ni en convertir a Gervais, Tyson o cualquier divulgador en una autoridad a la que haya que darle siempre la razón. Lo que agradezco es haber encontrado interlocutores para preguntas que durante mucho tiempo me parecieron demasiado raras para decir en voz alta.
