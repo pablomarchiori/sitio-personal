@@ -44,7 +44,7 @@ El Unicornio, de todos modos, aportaba otra forma de explicar la carga de la pru
 
 Encontrarme años después con figuras como [Ricky Gervais](https://www.rickygervais.com/) y [Neil deGrasse Tyson](https://neildegrassetyson.com/) me produjo una sensación bastante particular. Escuchaba a personas conocidas hablar abiertamente de dudas y críticas que yo había visto circular durante años en revistas, charlas entre pocos o rincones del humor escéptico. Para alguien que se interesa por estos temas sin ser especialista, también era una manera de encontrar nuevas referencias y seguir leyendo.
 
-Gervais llegó a esas discusiones desde el humor. Sus monólogos usan la ironía, el *stand-up* y a veces el humor negro para cuestionar la religión y algunas costumbres sociales que suelen darse por sentadas. Puedo discrepar con él en muchas cosas, pero me gusta esa libertad de decirlas sin pedir permiso ni tratar cada creencia como algo intocable.
+Gervais llegó a esas discusiones desde el humor. Sus monólogos usan la ironía, el *stand-up* y a veces el humor negro para cuestionar la religión y algunas costumbres sociales que suelen darse por sentadas. Puedo discrepar con él en muchas cosas, pero me gusta la libertad con que dice lo que piensa, sin pedir permiso ni tratar cada creencia como algo intocable.
 
 Tyson me resulta cercano por otro camino: es astrofísico y divulgador, y sabe transmitir asombro por el universo desde lo que podemos observar y comprender. Habla de física, del tiempo, del espacio y de nuestra escala diminuta sin necesidad de envolverlos en misticismo. Esa curiosidad por la realidad, con todas las preguntas que todavía quedan abiertas, me resulta mucho más atractiva que una respuesta sobrenatural preparada de antemano.
 

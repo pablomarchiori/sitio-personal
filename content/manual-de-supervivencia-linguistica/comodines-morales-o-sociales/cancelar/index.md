@@ -13,7 +13,7 @@ tags: ["lenguaje", "manual", "comodines"]
 ## El desvío
 
 **Cancelar** significa anular o dejar sin efecto algo.  
-En redes pasó a condensar acciones bastante distintas: criticar públicamente, repudiar, dejar de apoyar, boicotear o intentar excluir a alguien. Una sola palabra termina reemplazando acciones que no son necesariamente lo mismo.
+En redes pasó a condensar acciones bastante distintas: criticar públicamente, repudiar, dejar de apoyar, boicotear o intentar excluir a alguien.
 
 ## Más preciso
 

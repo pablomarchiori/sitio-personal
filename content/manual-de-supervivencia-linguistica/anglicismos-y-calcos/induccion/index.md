@@ -3,6 +3,7 @@ title: "Inducción"
 draft: false
 date: 2026-04-09T09:15:00-03:00
 tags: ["lenguaje", "manual", "anglicismos"]
+featureAlt: "Fotografía histórica en blanco y negro de una multitud haciendo el saludo nazi, con un hombre que permanece con los brazos cruzados."
 ---
 
 ## Uso común

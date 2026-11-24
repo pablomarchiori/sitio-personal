@@ -3,6 +3,7 @@ title: "Alien"
 draft: false
 date: 2026-03-30T09:15:00-03:00
 tags: ["lenguaje", "manual", "anglicismos"]
+featureAlt: "Fotografía en blanco y negro de un hombre con bufanda sentado en un automóvil."
 ---
 
 ## Uso común
@@ -12,8 +13,7 @@ tags: ["lenguaje", "manual", "anglicismos"]
 
 ## El desvío
 
-**Alien** viene del inglés y entró sobre todo por el cine y la cultura pop.  
-En español ya existían palabras para eso, como **extraterrestre** o **alienígena**.  
+**Alien** viene del inglés y entró sobre todo por el cine y la cultura pop, aunque en español ya existían palabras para eso, como **extraterrestre** o **alienígena**.  
 En inglés, **alien** puede significar extraterrestre, pero también extraño, ajeno o incluso extranjero según el contexto.
 
 ## Más preciso

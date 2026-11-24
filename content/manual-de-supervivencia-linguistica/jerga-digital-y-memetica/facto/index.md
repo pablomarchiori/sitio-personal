@@ -15,9 +15,7 @@ tags: ["lenguaje", "manual", "jerga-digital"]
 
 En la jerga de redes sociales, **facto** se usa como adaptación del inglés *fact*: un hecho, un dato o algo que se presenta como verdadero.
 
-También se extendió con otro matiz: no siempre señala un hecho comprobable. Muchas veces **“es un facto”** simplemente significa “estoy de acuerdo”, “dijo la verdad” o “esa opinión me parece indiscutible”.
-
-Así, hechos, datos, afirmaciones y opiniones terminan entrando bajo la misma palabra.
+También se extendió con otro matiz: no siempre señala un hecho comprobable. Muchas veces **“es un facto”** simplemente significa “estoy de acuerdo”, “dijo la verdad” o “esa opinión me parece indiscutible”, de modo que hechos, datos, afirmaciones y opiniones terminan entrando bajo la misma palabra.
 
 En español ya existe la expresión latina **de facto**, que significa “de hecho”, pero ese uso no equivale a emplear **facto** por sí solo como sinónimo de hecho o verdad.
 

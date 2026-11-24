@@ -3,6 +3,7 @@ title: "Call"
 draft: false
 date: 2026-04-02T09:15:00-03:00
 tags: ["lenguaje", "manual", "anglicismos"]
+featureAlt: "Mujer frente a un videoteléfono de escritorio con el rostro de su interlocutor en la pantalla."
 ---
 
 ## Uso común
@@ -12,10 +13,7 @@ tags: ["lenguaje", "manual", "anglicismos"]
 
 ## El desvío
 
-Es un anglicismo corporativo innecesario.  
-En español ya existen palabras claras para eso, incluso cuando se trata de video.
-
-La acumulación de *invite* y *call* en el ejemplo es intencional.
+Es un anglicismo corporativo innecesario: en español ya existen palabras claras para eso, incluso cuando hay video.
 
 ## Más preciso
 

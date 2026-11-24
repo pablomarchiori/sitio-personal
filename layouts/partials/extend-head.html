@@ -1,1 +1,2 @@
-<link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+{{- $customCSSVersion := readFile "static/css/custom.css" | sha256 -}}
+<link rel="stylesheet" href="{{ "css/custom.css" | relURL }}?v={{ $customCSSVersion }}">

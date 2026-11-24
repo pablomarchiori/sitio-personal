@@ -22,9 +22,7 @@ Antes de mover o convertir nada (léase: antes de cagarla), le pedí una simulac
 
 ## Poner orden
 
-Codex empezó unificando títulos, numeraciones y nombres de volúmenes. También eliminó carpetas vacías y corrigió estructuras innecesariamente profundas.
-
-En algunos cómics, por ejemplo, la carpeta principal contenía otra carpeta y recién dentro de ella estaban las imágenes de las páginas. Codex detectaba esos casos y subía las imágenes al nivel correcto cuando no había otros archivos que justificaran esa separación.
+Codex empezó unificando títulos, numeraciones y nombres de volúmenes. También eliminó carpetas vacías y corrigió estructuras innecesariamente profundas. En algunos cómics, por ejemplo, la carpeta principal contenía otra carpeta y recién dentro de ella estaban las imágenes de las páginas. Codex detectaba esos casos y subía las imágenes al nivel correcto cuando no había otros archivos que justificaran esa separación.
 
 Algo sencillo de corregir en una carpeta se vuelve una tarea interminable cuando se repite cientos de veces. Ya había probado herramientas más tradicionales, pero terminaba escribiendo reglas rígidas para casos puntuales.
 
@@ -34,15 +32,11 @@ Después aparecieron documentos DOC y presentaciones PPT. Codex me pidió autori
 
 Con Office abría cada archivo, generaba la versión nueva y comprobaba el texto, las fuentes y el paginado. Los originales quedaban respaldados antes de reemplazarlos.
 
-También convirtió imágenes BMP a PNG conservando sus dimensiones, recuperó archivos MHT y revisó varios contenidos Flash.
-
-Con uno de los archivos Flash empezó a buscar una forma de recuperarlo. Al inspeccionar el resto de la carpeta encontró una versión HTML interactiva del mismo material, así que decidí abandonar la conversión y conservar la alternativa que ya funcionaba.
+También convirtió imágenes BMP a PNG conservando sus dimensiones, recuperó archivos MHT y revisó varios contenidos Flash. Con uno de ellos empezó a buscar una forma de recuperarlo. Al inspeccionar el resto de la carpeta encontró una versión HTML interactiva del mismo material, así que decidí abandonar la conversión y conservar la alternativa que ya funcionaba.
 
 ## Atacando los videos y una pausa
 
-Codex encontró también varios videos AVI. Inspeccionó su duración y resolución, descargó FFmpeg, preparó la conversión y generó las versiones MP4. Que hubiera descargado por su cuenta la herramienta que necesitaba fue lo que realmente me sorprendió.
-
-Después comparó los datos de entrada y salida para comprobar que cada archivo conservara la duración y las dimensiones del original.
+Codex encontró también varios videos AVI. Inspeccionó su duración y resolución, descargó FFmpeg, preparó la conversión y generó las versiones MP4. Después comparó los datos de entrada y salida para comprobar que cada archivo conservara la duración y las dimensiones del original. Que hubiera descargado por su cuenta la herramienta que necesitaba fue lo que realmente me sorprendió.
 
 Mi parte fue autorizar el proceso y abrir algunos resultados para revisar imagen y sonido. Con la excusa de comprobar uno, terminé viendo casi un capítulo completo de *Robotech* 🤫.
 
@@ -64,9 +58,7 @@ Buscó entre los recursos de la obra, encontró la imagen correspondiente y la i
 
 Las obras narrativas y los textos divididos en capítulos pasaron a EPUB. Ese formato permite adaptar el texto a la pantalla, cambiar la tipografía y recorrer el contenido mediante un índice.
 
-Los artículos, documentos técnicos y materiales donde importaba conservar la disposición visual terminaron en PDF. En algunos casos también hubo que corregir fondos, márgenes o tipografías para que se leyeran mejor.
-
-Los HTML originales y sus recursos también quedaron guardados.
+Los artículos, documentos técnicos y materiales donde importaba conservar la disposición visual terminaron en PDF. En algunos casos también hubo que corregir fondos, márgenes o tipografías para que se leyeran mejor. Los HTML originales y sus recursos también quedaron guardados.
 
 ## Cómo terminó la cosa
 

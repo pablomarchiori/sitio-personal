@@ -21,7 +21,7 @@ tags: ["lenguaje", "manual", "otros-desvios"]
 5. decir que hay “mala energía” → **palabra paraguas para lo anterior**
 6. alguien transmite ganas de hacer cosas → **entusiasmo / vitalidad**
 
-Decir cuál es la sensación permite entender mejor lo que pasa. “Mala energía” no aclara si hay rechazo personal, sospecha o un ambiente tenso.
+“Mala energía” no aclara si hay rechazo personal, sospecha o un ambiente tenso.
 
 ## Más preciso
 

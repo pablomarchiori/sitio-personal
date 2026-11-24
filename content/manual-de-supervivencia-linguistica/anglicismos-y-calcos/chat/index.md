@@ -3,6 +3,7 @@ title: "Chat"
 draft: false
 date: 2026-04-02T09:15:00-03:00
 tags: ["lenguaje", "manual", "anglicismos"]
+featureAlt: "Monitor CRT de una computadora antigua con ventanas de mensajería instantánea."
 ---
 
 ## Uso común
@@ -12,8 +13,7 @@ tags: ["lenguaje", "manual", "anglicismos"]
 
 ## El desvío
 
-**Chat** está ampliamente usado y bastante aceptado, pero no deja de ser un préstamo innecesario en muchos contextos.  
-Desplazó palabras que ya existían.
+**Chat** está ampliamente usado y bastante aceptado, pero en muchos contextos es un préstamo innecesario que desplazó palabras que ya existían.
 
 ## Más preciso
 

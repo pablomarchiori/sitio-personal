@@ -14,8 +14,6 @@ tags: ["lenguaje", "manual", "tecnicismos"]
 
 En muchos contextos se usa como si fuera más técnico o más profesional que **aplicación**, pero no agrega claridad.
 
-El *link* del ejemplo es deliberado: muestra cómo se acumula la jerga en una misma frase.
-
 ## Más preciso
 
 Aplicación, sistema, programa.

@@ -27,7 +27,7 @@
       {{ end }}
 
       {{ with $feature }}
-        <div class="prose">
+        <div class="prose manual-featured">
           {{ $altText := $.Params.featureAlt | default $.Params.coverAlt | default "" }}
           {{ $class := "mb-6 rounded-md" }}
           {{ $webp := $.Page.Site.Params.enableImageWebp | default true }}

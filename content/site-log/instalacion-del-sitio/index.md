@@ -4,7 +4,7 @@ date: 2026-09-07T16:55:00-03:00
 draft: false
 description: "Primera nota del sitio: instalación de Hugo, Git, Congo y puesta en marcha local."
 tags: ["hugo", "windows", "github", "sitio-personal"]
-categories: ["Notas"]
+categories: ["Site Log"]
 ---
 
 *Texto original: 28/03/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
@@ -23,7 +23,9 @@ Actualicé las versiones usadas en Windows y en la publicación automática. [Ve
 
 ## Instalación original - 28/03/2026
 
-Venía de Blogger y quería armar un sitio personal con archivos Markdown, un dominio propio y un costo de mantenimiento bajo. Elegí **Hugo** para generar las páginas, **Congo** como tema y **Git** para registrar cambios. Hice la instalación en Windows, con asistencia de ChatGPT 5.4 Thinking y algunas consultas a Gemini, aprovechando para aprender con los problemas que fueran apareciendo.
+Venía de Blogger, donde había tenido mi blog durante años, y tenía ganas de volver a reunir mis cosas en un sitio propio, pero con otra forma de trabajar. Me interesaba escribir directamente en Markdown, usar un dominio propio y mantener los costos bajos. También quería entender cómo funcionaba todo, desde armarlo en mi computadora hasta publicarlo, con los problemas que seguramente aparecerían en el camino.
+
+Para eso elegí **Hugo** como generador de páginas, **Congo** como tema y **Git** para registrar los cambios. Hice la instalación en Windows, con asistencia de ChatGPT 5.4 Thinking y algunas consultas a Gemini. La idea era que el sitio fuera tomando forma mientras aprendía a manejar esas herramientas.
 
 ### Hugo, Git y el proyecto local
 

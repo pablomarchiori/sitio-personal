@@ -4,7 +4,7 @@ date: 2026-03-28T17:00:00-03:00
 draft: false
 description: "Cómo agregué el dominio propio al sitio, qué DNS usé y dónde apareció la limitación con el dominio alternativo."
 tags: ["github-pages", "dns", "dominio", "hanami", "cloudflare"]
-categories: ["Notas"]
+categories: ["Site Log"]
 ---
 
 *Texto original: 28/03/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

@@ -4,6 +4,7 @@ aliases: ["/manual-de-supervivencia-linguistica/anglicismos-y-calcos/apply/"]
 draft: false
 date: 2026-03-30T09:15:00-03:00
 tags: ["lenguaje", "manual", "anglicismos"]
+featureAlt: "Hombre con camisa y corbata que flexiona los brazos frente a una pizarra con músculos dibujados."
 ---
 
 ## Uso común
@@ -15,7 +16,7 @@ tags: ["lenguaje", "manual", "anglicismos"]
 
 **Aplicar** tiene sentidos como poner algo en práctica o usarlo sobre algo. Su empleo con el significado de postularse o presentar una solicitud surgió como calco del inglés *apply* y fue censurado durante un tiempo.
 
-Hoy ese uso está recogido como válido en el español de América. El interés de la ficha es el recorrido del corrimiento semántico, no señalarlo como un error actual. **Postularse** o **presentar una solicitud** pueden ser más transparentes para lectores de distintas variedades.
+Hoy ese uso está recogido como válido en el español de América, aunque **postularse** o **presentar una solicitud** pueden resultar más transparentes para lectores de otras variedades.
 
 ## Más preciso
 

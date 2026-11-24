@@ -79,8 +79,6 @@ Con eso quedó solo:
 - el contenido escrito en el `_index.md`
 - y nada más
 
-Así desaparecieron el año, el `0001` y el listado automático que en esa portada no aportaba nada.
-
 ## Cada sección: listado automático, pero en orden alfabético
 
 Resuelta la portada, el siguiente paso fue hacer que dentro de cada sección las entradas salieran solas, pero ordenadas por nombre.
@@ -147,8 +145,6 @@ El orden alfabético lo produce esta expresión:
 ```go-html-template
 {{ range .RegularPages.ByTitle }}
 ```
-
-Ese `ByTitle` fue lo que dejó la lista en orden alfabético.
 
 ## Breadcrumbs: qué son
 

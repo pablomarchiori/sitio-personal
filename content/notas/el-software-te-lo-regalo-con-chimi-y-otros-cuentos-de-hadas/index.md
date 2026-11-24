@@ -10,7 +10,7 @@ featureAlt: "PC de escritorio noventosa con monitor CRT, diskettes y cajas de so
 
 *Texto original: 22/08/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
 
-Allá por los noventa, cuando armábamos PCs, era bastante común copiarle al pobre disco rígido de 120 MB un directorio con "todo lo necesario" 🙃. Podía traer Word, Excel, AutoCAD, CorelDraw, Print Artist, algún antivirus, juegos y varias cosas más que el usuario probablemente nunca iba a abrir, daba lo mismo si la máquina era para un oficinista, un estudiante o alguien que solo necesitaba escribir dos cartas y hacer una planilla. Se copiaba todo y "gratis".
+Allá por los noventa, cuando armábamos PCs, era bastante común copiarle al pobre disco rígido de 120 MB un directorio con "todo lo necesario" 🙃. Podía traer Word, Excel, AutoCAD, CorelDraw, Print Artist, algún antivirus, juegos y varias cosas más que el usuario probablemente nunca iba a abrir. Daba lo mismo si la máquina era para un oficinista, un estudiante o alguien que solo necesitaba escribir dos cartas y hacer una planilla. Se copiaba todo y "gratis".
 
 > Sí, 120 MB. Megabytes. Y sí, en ese momento eran directorios, no carpetas.
 

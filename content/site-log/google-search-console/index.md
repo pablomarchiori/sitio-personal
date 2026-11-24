@@ -9,7 +9,6 @@ categories: ["Site Log"]
 
 *Texto original: 17/05/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
 
-**Texto original:** 17/05/26  
 **Actualización:** 26/05/26 - [404 que sí venían de enlaces reales](#actualizacion-404)
 
 Search Console seguía marcando un error de datos estructurados en una página que ya había corregido. El aviso decía:
@@ -50,7 +49,7 @@ Pedí una nueva indexación y dejé que Google actualizara el informe, porque mo
 <a id="actualizacion-404"></a>
 ## Otra vuelta: 404 que sí venían de enlaces reales
 
-**Actualización 26/05/26:** apareció otro aviso de Search Console, ahora bajo **No se ha encontrado (404)**. Esta vez había rutas que sí salían del código del simulador **Moonjs**:
+**Actualización 26/05/26:** apareció otro aviso de Search Console, ahora bajo **No se ha encontrado (404)**. Esta vez la lista incluía rutas del simulador **Moonjs**, del panel y de Cloudflare:
 
 ```text
 /cgi-bin/logger.php
@@ -67,7 +66,7 @@ La búsqueda en el repositorio confirmó que varias referencias salían del cód
 findstr /S /I /N /C:"logger.php" /C:"svtsim.com" /C:"hemosim" /C:"info@sandroid" /C:"feriados-" /C:"email-protection" *.md *.html *.js *.json *.xml
 ```
 
-Si bien algunas URLs estaban dentro de `public`, ese no era el lugar correcto para tocar nada. En Hugo, `public` es salida generada. Si se corrige ahí, el próximo build puede pisar el cambio. La fuente real está en:
+Si bien algunas URLs estaban dentro de `public`, ese no era el lugar correcto para tocar nada. En Hugo, `public` es salida generada: si se corrige ahí, el próximo build puede pisar el cambio. La fuente real está en:
 
 ```text
 static\moonjs\agc.html
@@ -121,8 +120,8 @@ La URL `/data/feriados-` venía de un script del panel que arma dinámicamente e
 var jsonUrl = "/data/feriados-" + year + ".json";
 ```
 
-Eso no era un enlace roto común, sino una ruta construida por JavaScript. Mientras los archivos reales existan con el año correspondiente, no había que inventar una redirección rara para esa URL incompleta.
+Era una ruta construida por JavaScript. Mientras existieran los archivos del año correspondiente, no había que inventar una redirección rara para esa URL incompleta.
 
-La ruta `/cdn-cgi/l/email-protection` venía de Cloudflare, no del contenido normal del repositorio. Eso pertenece a la protección de direcciones de correo de Cloudflare. No era algo para resolver editando Markdown o plantillas de Hugo.
+La ruta `/cdn-cgi/l/email-protection` pertenece a la protección de direcciones de correo de Cloudflare, así que no se resolvía editando Markdown o plantillas de Hugo.
 
 Después de corregir las fuentes correspondía regenerar y publicar el sitio, y pedir a Google que volviera a rastrear las URLs afectadas.

@@ -12,9 +12,9 @@ tags: ["lenguaje", "manual", "hiperbole"]
 
 ## El desvío
 
-**Legendario** remite a las leyendas y también se usa para destacar algo extraordinario o digno de ser recordado. Ese uso expresivo no es un simple error.
+**Legendario** remite a las leyendas y también se usa para destacar algo extraordinario o digno de ser recordado.
 
-El desvío aparece por generalización: si cada asado, cada salida y cada anécdota son legendarios, la palabra deja de señalar algo excepcional. La repetición le quita la fuerza que buscaba aportar.
+El desvío aparece por generalización: si cada asado, cada salida y cada anécdota son legendarios, la palabra deja de señalar algo excepcional.
 
 ## Más preciso
 

@@ -17,7 +17,7 @@ Starlink cambió esa experiencia con una constelación de satélites en órbita 
 
 ## Tecnologías distintas bajo el mismo cielo
 
-Desde tierra, una antena de DirecTV, una de internet satelital clásico y una Starlink pueden parecer variantes de lo mismo. Pero cumplen funciones distintas. La televisión satelital distribuye una señal a una zona amplia y tolera bien la demora de transmisión. GPS usa satélites para ofrecer posicionamiento y tiempo. Los teléfonos satelitales priorizan la comunicación en lugares remotos. En una conexión de internet, en cambio, importa mucho el tiempo de respuesta: abrir una página, hacer una videollamada o conectarse por VPN implica enviar datos y esperar una respuesta.
+Desde tierra, una antena de DirecTV, una de internet satelital clásico y una Starlink pueden parecer variantes de lo mismo, aunque cumplen funciones distintas. La televisión satelital distribuye una señal a una zona amplia y tolera bien la demora de transmisión, el GPS ofrece posicionamiento y tiempo, y los teléfonos satelitales priorizan la comunicación en lugares remotos. En una conexión de internet, en cambio, importa mucho el tiempo de respuesta: abrir una página, hacer una videollamada o conectarse por VPN implica enviar datos y esperar una respuesta.
 
 En los servicios geoestacionarios tradicionales esa demora viene, en buena parte, de la distancia. Starlink utiliza satélites mucho más cercanos a la Tierra para reducirla.
 
@@ -76,7 +76,7 @@ Esto explica por qué Starlink resulta tan útil en el último tramo de conexió
 
 ## Antenas, orientación y clima
 
-En una instalación fija, la aplicación indica qué sector del cielo conviene despejar y hacia dónde orientar la antena. En nuestra zona suele pedir orientación hacia el sur. Desde Argentina, los satélites geoestacionarios se ven hacia el norte, y Starlink tiene que convivir con esos sistemas. La selección de enlaces depende también de la elevación, las obstrucciones, la carga de red, la celda de servicio y las restricciones regulatorias. Por eso importa disponer de una buena ventana de cielo, más que apuntar permanentemente a una dirección.
+En una instalación fija, la aplicación indica qué sector del cielo conviene despejar y hacia dónde orientar la antena. En nuestra zona suele pedir orientación hacia el sur. Desde Argentina, el arco de los satélites geoestacionarios se ve hacia el norte, y Starlink evita transmitir o recibir en esa zona del cielo [para no interferir con esos sistemas](https://starlink.com/support/article/71707228-cea9-52d5-6134-f3de8cc7437f). La selección de enlaces depende también de la elevación, las obstrucciones, la carga de red, la celda de servicio y las restricciones regulatorias. Por eso importa disponer de una buena ventana de cielo, más que apuntar permanentemente a una dirección.
 
 ![Antena Starlink Performance instalada en la planta](starlink_campo.jpg)
 

@@ -9,7 +9,7 @@ categories: ["Notas"]
 
 *Texto original: 12/10/2026. Actualización: 23/11/2026 (revisión editorial y precisión histórica).*
 
-Este 12 de octubre de 2026, el Gobierno argentino volvió a utilizar la denominación [*Día de la Raza*](https://www.argentina.gob.ar/noticias/12-de-octubre-dia-de-la-raza) en sus comunicaciones oficiales. Sin embargo, la [Ley 27.399](https://www.argentina.gob.ar/normativa/nacional/ley-27399-281835/texto) mantiene el nombre *Día del Respeto a la Diversidad Cultural*, adoptado en 2010. El calendario oficial de 2026 también lo muestra como *Día de la Raza*.
+Este 12 de octubre de 2026, el Gobierno argentino volvió a utilizar la denominación [*Día de la Raza*](https://www.argentina.gob.ar/noticias/12-de-octubre-dia-de-la-raza) en sus comunicaciones y en el calendario oficial, aunque la [Ley 27.399](https://www.argentina.gob.ar/normativa/nacional/ley-27399-281835/texto) mantiene el nombre *Día del Respeto a la Diversidad Cultural*, adoptado en 2010.
 
 La situación me hace pensar en cuánto peso real tienen los nombres y las palabras cuando no están acompañados por hechos concretos. Algunos celebran el regreso del viejo nombre, posiblemente más por el gusto de hacer enojar a "los zurdos", como suele decir "el peluca", que por una preocupación histórica o lingüística. Del otro lado, quienes defienden la denominación adoptada en 2010 consideran que recuperarla representa un retroceso.
 

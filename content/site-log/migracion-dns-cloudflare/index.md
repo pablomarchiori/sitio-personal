@@ -4,7 +4,7 @@ date: 2026-03-29T21:00:00-03:00
 draft: false
 description: "Cómo migré mis dominios a Cloudflare, unifiqué DNS y reenvíos de correo, y resolví la redirección del dominio alternativo."
 tags: ["cloudflare", "dns", "dominio", "email-routing", "redirects", "github-pages", "hanami"]
-categories: ["Notas"]
+categories: ["Site Log"]
 ---
 
 *Texto original: 29/03/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

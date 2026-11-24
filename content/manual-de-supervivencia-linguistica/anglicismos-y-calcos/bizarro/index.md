@@ -3,6 +3,7 @@ title: "Bizarro"
 draft: false
 date: 2026-03-30T09:15:00-03:00
 tags: ["lenguaje", "manual", "anglicismos"]
+featureAlt: "Grabado antiguo de un caballero armado a caballo, rodeado de otras figuras."
 ---
 
 ## Uso común
@@ -14,7 +15,7 @@ tags: ["lenguaje", "manual", "anglicismos"]
 
 En español tradicional, **bizarro** significa valiente o gallardo. El sentido de “extraño” o “extravagante” se difundió por influencia del francés *bizarre* y también del inglés *bizarre*.
 
-El sentido moderno está aceptado y recogido en el diccionario académico. La preferencia editorial del manual sigue siendo elegir **extraño**, **extravagante** o **insólito** cuando expresan mejor el matiz buscado; esa preferencia no convierte el uso moderno en un error.
+El sentido moderno está aceptado y recogido en el diccionario académico; aun así, **extraño**, **extravagante** o **insólito** suelen expresar mejor el matiz buscado.
 
 ## Más preciso
 

@@ -48,8 +48,6 @@ Se activó **Always Use HTTPS**, se configuró **HSTS**, se subió la versión m
 
 Fuerza la redirección de `http://` a `https://`.
 
-Así, un acceso escrito con HTTP se redirige a HTTPS.
-
 ### HSTS
 
 **HSTS (HTTP Strict Transport Security)** le indica al navegador que ese dominio debe abrirse únicamente por **HTTPS** durante un período determinado (`max-age`).

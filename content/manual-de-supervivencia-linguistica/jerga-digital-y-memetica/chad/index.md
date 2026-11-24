@@ -12,8 +12,7 @@ tags: ["lenguaje", "manual", "jerga-digital"]
 
 ## El desvío
 
-**Chad** viene de la jerga de internet y se usa como figura del varón idealizado, dominante, seguro o admirado.  
-No es una palabra del español: es un símbolo memético importado.
+**Chad** es un símbolo memético importado de la jerga de internet, que se usa como figura del varón idealizado, dominante, seguro o admirado.
 
 ## Más preciso
 

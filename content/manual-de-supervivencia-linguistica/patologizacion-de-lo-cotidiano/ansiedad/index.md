@@ -14,7 +14,7 @@ tags: ["lenguaje", "manual", "patologizacion"]
 
 **Ansiedad** también puede nombrar un estado de agitación, inquietud o zozobra; no implica necesariamente un trastorno clínico.
 
-El desvío es la exageración o generalización: nervios, impaciencia, molestia e incomodidad no son automáticamente ansiedad. En “El ruido del tránsito me da ansiedad”, si lo que se quiere decir es que el ruido molesta, **molestia** es más preciso. En “Me da ansiedad que tarde tanto en cargar”, cuando lo que se expresa es querer que termine de una vez, el matiz es **impaciencia**.
+El desvío es la exageración o generalización: nervios, impaciencia, molestia e incomodidad no son automáticamente ansiedad.
 
 1. querer que la página termine de cargar ya → **impaciencia**
 2. estar inquieto antes de una entrevista → **nervios**

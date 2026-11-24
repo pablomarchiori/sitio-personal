@@ -19,8 +19,6 @@ El **trauma** psicológico remite a una perturbación profunda, no a cualquier e
 3. quedar defraudado por una salida y recordarla con disgusto → **decepción / mal recuerdo**
 4. referirse a una huella psíquica profundamente perturbadora → **trauma**
 
-Una experiencia desagradable no es necesariamente un trauma.
-
 ## Más preciso
 
 Mal recuerdo, situación incómoda, experiencia desagradable.

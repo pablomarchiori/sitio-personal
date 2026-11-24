@@ -61,7 +61,7 @@ La Boreal II terminó como una terminal fija con el panel abierto. Es un uso bas
 
 [![Tablet CX Boreal II mostrando el panel](panel-tablet-cx-boreal-ii-thumb.png)](panel-tablet-cx-boreal-ii.png)
 
-*La CX Boreal II corriendo el panel desde Firefox. No revive como tablet moderna, pero como pantalla fija todavía tiene sentido.*
+*La CX Boreal II corriendo el panel desde Firefox.*
 
 El experimento tampoco le devuelve la utilidad que alguna vez tuvo como tablet: navegar por sitios modernos, instalar aplicaciones o usar servicios habituales sigue siendo complicado. Para mostrar un panel propio, en cambio, alcanza con ese Firefox y una función bien delimitada.
 

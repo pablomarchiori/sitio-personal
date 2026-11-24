@@ -14,7 +14,7 @@ tags: ["lenguaje", "manual", "comodines"]
 
 **Visibilizar** significa hacer visible. Su uso social es una extensión metafórica: dar presencia o reconocimiento público a algo que pasaba inadvertido.
 
-La extensión no es un error en sí misma. El desvío aparece cuando funciona como fórmula genérica y no aclara si se busca mostrar, difundir, denunciar o dar a conocer algo.
+El desvío aparece cuando esa extensión funciona como fórmula genérica y no aclara si se busca mostrar, difundir, denunciar o dar a conocer algo.
 
 ## Más preciso
 

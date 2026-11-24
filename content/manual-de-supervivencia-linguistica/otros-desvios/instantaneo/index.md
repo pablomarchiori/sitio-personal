@@ -18,7 +18,7 @@ tags: ["lenguaje", "manual", "otros-desvios"]
 2. recibirla enseguida, sin una espera apreciable o con una demora mínima → **inmediato / casi inmediato**
 3. describir algo que ocurre en un instante, como un destello → **instantáneo**
 
-“Inmediato” e “instantáneo” pueden coincidir en ciertos contextos. La distinción útil es no presentar como ausencia de demora lo que solo ocurrió en poco tiempo: ganar fama rápidamente no equivale necesariamente a tener fama instantánea.
+Aunque **inmediato** e **instantáneo** a veces coinciden, ganar fama rápidamente no equivale a tener fama instantánea.
 
 ## Más preciso
 

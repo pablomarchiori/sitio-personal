@@ -3,6 +3,7 @@ title: "Eventually / Eventualmente"
 draft: false
 date: 2026-04-09T09:15:00-03:00
 tags: ["lenguaje", "manual", "anglicismos"]
+featureAlt: "Infografía que contrasta el falso equivalente eventualmente con finalmente, ilustrados con un reloj de arena y un cartel de éxito."
 ---
 
 ## Uso común

@@ -142,3 +142,13 @@ article li p {
     max-width: 92vw;
   }
 }
+
+/* Portadas de fichas del Manual */
+.manual-featured picture img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(100%, 500px);
+  max-height: 220px;
+  object-fit: contain;
+}

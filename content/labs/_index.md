@@ -13,7 +13,7 @@ Proyectos, experimentos y cacharreo con hardware y software. Cosas que se constr
   <a href="/descargas/ConvertirMD_v1_2.zip" download>ConvertirMD ↓</a>
 </nav>
 
-<p class="labs-aviso"><em>Lo que comparto en Labs va tal como está y sin garantías. Ojo que podés hacer cagadas y yo no me hago cargo, salamín ¯\(ツ)/¯.</em></p>
+<p class="labs-aviso"><em>Lo que comparto en Labs va tal como está y sin garantías. Ojo que podés hacer cagadas y yo no me hago cargo, salamín ¯\_(ツ)_/¯.</em></p>
 
 <div class="labs-banner">
   <img src="/images/home/banner-nerd3.webp" alt="Banner animado nerd" width="350" height="88">

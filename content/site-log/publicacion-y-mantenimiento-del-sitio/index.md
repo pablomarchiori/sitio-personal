@@ -7,10 +7,9 @@ tags: ["hugo", "git", "github-pages", "markdown", "site-log"]
 categories: ["Site Log"]
 ---
 
-Texto original: 28/03/26  
-Actualización: 30/05/26 - [Recuperación de un archivo borrado por Duplicate Cleaner](#recuperar-un-archivo-borrado-por-error)
+*Texto original: 28/03/2026. Revisión editorial: 23/11/2026 (redacción y estructura).*
 
-*Revisión editorial: 23/11/2026 (redacción y estructura).*
+**Actualización:** 30/05/26 - [Recuperación de un archivo borrado por Duplicate Cleaner](#recuperar-un-archivo-borrado-por-error)
 
 Esta nota comenzó como un apunte de trabajo para mantener el sitio con Hugo y GitHub Pages, especialmente después de perder tiempo por un borrador invisible y por una fecha futura. El 30 de mayo sumé la recuperación de un archivo que había borrado Duplicate Cleaner; por eso dejo los comandos y las comprobaciones tal como los fui usando.
 

@@ -12,8 +12,7 @@ tags: ["lenguaje", "manual", "otros-desvios"]
 
 ## El desvío
 
-**Karma** no significa simplemente castigo.  
-En su origen remite a la relación entre las acciones y sus consecuencias dentro de tradiciones filosóficas y religiosas mucho más complejas.
+En su origen, **karma** remite a la relación entre las acciones y sus consecuencias dentro de tradiciones filosóficas y religiosas complejas; reducirlo a un castigo lo simplifica bastante.
 
 ## Más preciso
 

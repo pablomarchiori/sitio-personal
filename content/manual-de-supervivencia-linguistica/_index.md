@@ -21,8 +21,7 @@ Solo esa diferencia en la forma de comprender lo que el autor transmitió con es
 
 ## ¿Por dónde va esto?
 
-Esto no es una serie para mostrar [grandilocuencia](https://dle.rae.es/grandilocuencia) 🎩.  
-Esto es apenas un intento de comprender mejor lo que decimos, lo que escuchamos y lo que perdemos.  
+Con esta serie intento comprender un poco mejor lo que decimos, lo que escuchamos y lo que perdemos, sin pretensiones de [grandilocuencia](https://dle.rae.es/grandilocuencia) 🎩.  
 No busco traducciones perfectas, frases académicas ni equivalencias palabra por palabra. La idea es recordar que existen palabras que muchos ya no conocen, o que repetimos sin pensar porque es lo que consumimos a diario. 
 Si cada uno le da a las palabras el significado que quiere,  
 ¿cómo nos entendemos? ¿Dónde está el diccionario de eso?
@@ -58,7 +57,7 @@ El lenguaje se transforma, muta, cambia. Cambiar es natural. Aunque no todo camb
 
 El lenguaje mejora y se enriquece cuando se nutre de nuevos hechos, inventos e ideas, incluso de otros lenguajes.
 
-Pero cuando el hablante deja de nutrirse del lenguaje, rompe el significado compartido, cesa el entendimiento.
+Pero cuando el hablante deja de nutrirse del lenguaje, rompe el significado compartido y cesa el entendimiento.
 
 Todo se empobrece, se simplifica, pierde los matices que lo vuelven rico. Eso no es enriquecer el lenguaje. Es vaciarlo.
 

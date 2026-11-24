@@ -45,7 +45,7 @@ Durante la observación, distintos sujetos iniciaron conversaciones con este obs
 
 La escasa interacción de este observador parece despertar, a su vez, una mayor necesidad de interacción por parte de los sujetos observados. Sería conveniente determinar mediante nuevas observaciones si esto constituye una respuesta social habitual ante un individuo poco participativo o si algunos comienzan a sospechar que están siendo observados.
 
-Se advirtió que ciertos sujetos presentaban conductas compatibles con tareas de observación. Debido a que no ha sido comunicado el envío de asistencia, se requiere establecer si se trata de otros observadores destinados a colaborar con la observación, si responden a una línea de estudio distinta o si su presencia obedece a cierta desconfianza respecto del desempeño del Observador 117.
+Se advirtió que ciertos sujetos presentaban conductas compatibles con tareas de observación. Debido a que no ha sido comunicado el envío de asistencia, se requiere establecer si se trata de otros observadores destinados a colaborar con la observación, si responden a una línea de estudio distinta o si su presencia obedece a cierta desconfianza respecto del desempeño del Observador *1 1 7*.
 
 ## De la conveniencia de poner término a la permanencia
 
@@ -57,7 +57,7 @@ Para futuras observaciones estimo conveniente preparar con antelación respuesta
 
 Corresponde revisar los términos de esta inserción. Las dimensiones físicas de este observador no facilitan pasar inadvertido y obligan a compensar mediante una conducta social más activa, lo que puede terminar comprometiendo la observación. Para próximas inserciones sería conveniente considerar condiciones que permitan una presencia menos singular dentro de la población estudiada.
 
-## Evaluación del estado del Observador 117
+## Evaluación del estado del Observador *1 1 7*
 
 No es la primera vez que se requieren mayores herramientas para sostener una inserción de esta naturaleza, por lo que se deja nuevamente constancia de esa necesidad. El medio no es hostil y los sujetos observados, en términos generales, tampoco manifiestan hostilidad; sin embargo, esta ausencia de peligro no reduce el esfuerzo necesario para permanecer entre ellos sin ser advertido.
 
@@ -76,8 +76,10 @@ Sigo aguardando.
 
 ---
 
-### Sobre el Observador 117
+### Sobre el Observador *1 1 7*
 
-Hay cosas que parecen espontáneas hasta que exigen pensar para actuar con naturalidad. Conversar, responder, reírse, saber cuándo acercarse o cuándo retirarse.
+Este escrito nace de una sensación que algunos podemos experimentar en un encuentro social. Comprendemos lo que sucede alrededor y, sin embargo, dejamos de sentirnos parte de ello. Conversar, responder, reírse, saber cuándo acercarse o cuándo retirarse son cosas que resultan espontáneas para muchos, pero que a algunos nos exigen, en ocasiones, pensar activamente para "actuar" con naturalidad. Algunos aspectos de esta sensación guardan relación con fenómenos psicológicos como la despersonalización y la desrealización.
 
-El resto pertenece al Observador.
+*1 1 7* representa esa desconexión y el agotamiento que supone intentar participar de algo que los demás parecen vivir sin esfuerzo. En ese intento de pertenecer, *1 1 7* recurre a las escasas herramientas de las que dispone y recopila información para comprender lo que sucede, una búsqueda que hacia el final se vuelve desesperada.
+
+El número 117 es un capricho mío y encierra también un contraste. Fue el que me tocó en el sorteo del servicio militar y, pocos meses después, el de mi habitación durante el viaje de egresados.

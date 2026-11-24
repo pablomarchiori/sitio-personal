@@ -12,15 +12,13 @@ tags: ["lenguaje", "manual", "comodines"]
 
 ## El desvío
 
-**Empatía** es comprender lo que otra persona siente. El desvío aparece cuando funciona como palabra paraguas para prudencia, respeto, paciencia, consideración o tacto: no toda buena disposición es empatía.
+**Empatía** es comprender lo que otra persona siente, sin que eso obligue a justificar su conducta ni a suspender límites. El desvío aparece cuando funciona como palabra paraguas para prudencia, respeto, paciencia, consideración o tacto.
 
 1. esperar antes de hablar → **prudencia**
 2. no prejuzgar → **cautela / prudencia**
 3. tratar bien a alguien → **respeto**
 4. tolerar una demora → **paciencia**
 5. entender cómo se siente → **empatía**
-
-Comprender no obliga a justificar conductas ni a suspender límites.
 
 ## Más preciso
 

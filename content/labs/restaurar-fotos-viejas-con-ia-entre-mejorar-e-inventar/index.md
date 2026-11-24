@@ -5,7 +5,7 @@ draft: false
 description: "Probé dos instrucciones de restauración fotográfica con Gemini sobre fotos familiares y comparé hasta dónde recupera detalles y cuándo empieza a inventarlos."
 tags: ["inteligencia artificial", "Gemini", "fotografía", "restauración", "Google", "Labs"]
 categories: ["Labs"]
-featureAlt: "Ilustración en blanco y negro para Inicio"
+featureAlt: "Una fotografía familiar antigua junto a una versión ilustrada en colores"
 coverCaption: "*A veces la IA divaga...*"
 ---
 
@@ -73,7 +73,7 @@ Con el segundo prompt, la martineta siguió siendo reconocible, el patrón de la
 
 *Segundo ejemplo: original, restauración con el primer prompt y restauración con el segundo. La versión más conservadora respeta mejor los detalles que todavía se distinguen en la foto.*
 
-Esta comparación me sirvió para ajustar el criterio: limpiar ruido sin plastificar, recuperar contraste sin modernizar la escena y, cuando faltan datos, aceptar las limitaciones del original. Una restauración puede ser más nítida y agradable de mirar sin ser necesariamente más fiel, algo importante cuando se trabaja con recuerdos familiares.
+Esta comparación me sirvió para ajustar el criterio: limpiar ruido sin plastificar, recuperar contraste sin modernizar la escena y, cuando faltan datos, aceptar las limitaciones del original.
 
 ## Cómo crear un Gem para restaurar fotos
 
@@ -90,7 +90,7 @@ Dejo las dos versiones originales para probarlas o adaptarlas:
 
 La primera organiza las etapas de mejora y la segunda agrega restricciones para los casos donde Gemini completa información que falta. Ninguna reemplaza la revisión de cada resultado, porque una foto en blanco y negro, con daño físico, plantea problemas diferentes de una escena familiar oscura donde aparecen personas y objetos difíciles de reconocer.
 
-## Google AI Pro gratuito para estudiantes en Argentina, Chile y Perú
+## Google AI gratuito para estudiantes {#google-ai-pro-gratuito-para-estudiantes-en-argentina-chile-y-perú}
 
 En [un anuncio de Google publicado en octubre de 2025](https://blog.google/intl/es-419/actualizaciones-de-producto/informacion/la-ia-de-google-al-alcance-de-todos-llega-a-hispanoamerica-ai-plus-y-el-gemini-gratuito-para-estudiantes/) se ofreció un año sin costo de **Google AI Pro** a estudiantes universitarios mayores de 18 años de Argentina, Chile y Perú. Lo mencioné porque el acceso a algunas funciones avanzadas depende del plan, la región y los modelos disponibles en cada momento.
 
@@ -98,4 +98,4 @@ En [un anuncio de Google publicado en octubre de 2025](https://blog.google/intl/
 
 ## Mejorar una foto sin cambiar su historia
 
-Estas pruebas me dejaron una precaución bastante concreta: cuando Gemini devuelve una imagen más limpia, conviene mirar con cuidado qué recuperó a partir de la foto y qué pudo haber completado por su cuenta. Para experimentar y volver a disfrutar imágenes deterioradas puede ser una herramienta muy útil, pero cuando la fotografía tiene valor familiar o documental, el original sigue siendo la referencia con la que hay que comparar cada detalle.
+Cuando Gemini devuelve una imagen más limpia, conviene mirar con cuidado qué recuperó a partir de la foto y qué pudo haber completado por su cuenta. Para experimentar y volver a disfrutar imágenes deterioradas puede ser una herramienta muy útil, pero cuando la fotografía tiene valor familiar o documental, el original sigue siendo la referencia con la que hay que comparar cada detalle.
