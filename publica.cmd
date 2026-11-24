@@ -54,7 +54,8 @@ set /p "MSG=Mensaje del commit: "
 rem Impide crear un commit con el mensaje vacio.
 if not defined MSG goto mensaje_vacio
 rem Registra los cambios preparados en el historial Git local.
-git commit -m "%MSG%"
+rem Desactiva solo para este comando la limpieza automatica de Git; OneDrive puede bloquear archivos de .git.
+git -c gc.auto=0 -c maintenance.auto=false commit -m "%MSG%"
 rem Si el comando anterior fallo, corta el proceso para no continuar con errores.
 if errorlevel 1 goto error
 
@@ -66,7 +67,9 @@ rem Indica el inicio de la sincronizacion con la rama remota.
 echo === Sincronizando con GitHub ===
 rem Descarga los cambios de GitHub y coloca los commits locales encima.
 rem Evita el rechazo por "fetch first" y evita crear un commit de merge innecesario.
-git pull --rebase origin main
+rem Evita que Git intente compactar o borrar objetos mientras OneDrive los esta sincronizando.
+rem Esto no modifica la configuracion permanente del repositorio.
+git -c gc.auto=0 -c maintenance.auto=false pull --rebase origin main
 rem Si falla el rebase o aparece un conflicto, se detiene: NO intenta publicar.
 if errorlevel 1 goto conflicto
 
@@ -75,7 +78,8 @@ echo.
 rem Indica que comenzara la publicacion de los commits locales.
 echo === Publicando en GitHub ===
 rem Envia los commits de main a GitHub; esto dispara el workflow del sitio.
-git push origin main
+rem Evita mantenimiento automatico tambien durante el push.
+git -c gc.auto=0 -c maintenance.auto=false push origin main
 rem Si el comando anterior fallo, corta el proceso para no continuar con errores.
 if errorlevel 1 goto error
 
