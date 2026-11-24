@@ -3,6 +3,7 @@ title: "Ansiedad"
 draft: false
 date: 2026-04-02T09:15:00-03:00
 tags: ["lenguaje", "manual", "patologizacion"]
+featureAlt: "Mujer con las manos en las sienes, flanqueada por dos imágenes borrosas de sí misma."
 ---
 
 ## Uso común

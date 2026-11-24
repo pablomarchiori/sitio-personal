@@ -3,6 +3,7 @@ title: "Pánico"
 draft: false
 date: 2026-04-02T09:15:00-03:00
 tags: ["lenguaje", "manual", "patologizacion"]
+featureAlt: "Mujer que mira hacia un costado mientras se muerde las uñas."
 ---
 
 ## Uso común

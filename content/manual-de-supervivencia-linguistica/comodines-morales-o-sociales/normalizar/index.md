@@ -3,6 +3,7 @@ title: "Normalizar"
 draft: false
 date: 2026-04-02T09:15:00-03:00
 tags: ["lenguaje", "manual", "comodines"]
+featureAlt: "Ilustración de una multitud de personas con distintos rasgos y vestimentas."
 ---
 
 ## Uso común

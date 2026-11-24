@@ -3,6 +3,7 @@ title: "POV"
 draft: false
 date: 2026-04-02T09:15:00-03:00
 tags: ["lenguaje", "manual", "jerga-digital"]
+featureAlt: "Dos personas interpretan como seis o nueve el mismo número desde lados opuestos."
 ---
 
 ## Uso común

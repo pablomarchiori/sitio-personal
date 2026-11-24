@@ -5,6 +5,7 @@ draft: false
 description: "Search Console seguía mostrando problemas viejos o enlaces rotos que había que separar entre errores históricos y referencias reales del sitio."
 tags: ["google-search-console", "seo", "breadcrumbs", "404", "cloudflare", "moonjs", "site-log"]
 categories: ["Site Log"]
+featureAlt: "Logotipo de Google Search Console sobre un gráfico de líneas."
 ---
 
 *Texto original: 17/05/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

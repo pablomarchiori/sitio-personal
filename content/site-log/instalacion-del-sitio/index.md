@@ -5,6 +5,7 @@ draft: false
 description: "Primera nota del sitio: instalación de Hugo, Git, Congo y puesta en marcha local."
 tags: ["hugo", "windows", "github", "sitio-personal"]
 categories: ["Site Log"]
+featureAlt: "Computadora de escritorio antigua con monitor CRT y una mano insertando un disquete de Hugo."
 ---
 
 *Texto original: 28/03/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

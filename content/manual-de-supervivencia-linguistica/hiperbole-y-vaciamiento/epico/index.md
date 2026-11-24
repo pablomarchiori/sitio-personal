@@ -3,6 +3,7 @@ title: "Épico"
 draft: false
 date: 2026-04-09T09:15:00-03:00
 tags: ["lenguaje", "manual", "hiperbole"]
+featureAlt: "Pintura histórica de un ejército en el campo de batalla, con oficiales a caballo en primer plano."
 ---
 
 ## Uso común

@@ -3,6 +3,7 @@ title: "GOAT"
 draft: false
 date: 2026-03-30T09:15:00-03:00
 tags: ["lenguaje", "manual", "jerga-digital"]
+featureAlt: "Cabra blanca de pelo largo con un sombrero de paja."
 ---
 
 ## Uso común

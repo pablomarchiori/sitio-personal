@@ -3,6 +3,7 @@ title: "Karma"
 draft: false
 date: 2026-05-09T09:15:00-03:00
 tags: ["lenguaje", "manual", "otros-desvios"]
+featureAlt: "Dos hombres conversan mientras uno sostiene una hoja de papel."
 ---
 
 ## Uso común

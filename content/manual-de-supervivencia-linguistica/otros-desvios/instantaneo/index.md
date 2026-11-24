@@ -3,6 +3,7 @@ title: "Instantáneo"
 draft: false
 date: 2026-04-21T09:15:00-03:00
 tags: ["lenguaje", "manual", "otros-desvios"]
+featureAlt: "Envase de café instantáneo junto a una taza y granos de café."
 ---
 
 ## Uso común

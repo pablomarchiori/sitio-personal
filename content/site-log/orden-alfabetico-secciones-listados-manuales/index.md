@@ -5,6 +5,7 @@ draft: false
 description: "Cómo apliqué el orden alfabético en las secciones del Manual, quité el listado automático del theme y dejé listados personalizados."
 tags: ["hugo", "congo", "site log", "manual", "orden alfabetico", "layouts"]
 categories: ["Site Log"]
+featureAlt: "Ilustración de un lector rodeado de libros y palabras como cringe, bizarro, literal y épico."
 ---
 
 *Texto original: 02/04/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

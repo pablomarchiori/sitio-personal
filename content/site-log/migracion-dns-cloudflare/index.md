@@ -5,6 +5,7 @@ draft: false
 description: "Cómo migré mis dominios a Cloudflare, unifiqué DNS y reenvíos de correo, y resolví la redirección del dominio alternativo."
 tags: ["cloudflare", "dns", "dominio", "email-routing", "redirects", "github-pages", "hanami"]
 categories: ["Site Log"]
+featureAlt: "Ilustración de servidores conectados entre sí, con las leyendas DNS y Cloudflare."
 ---
 
 *Texto original: 29/03/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

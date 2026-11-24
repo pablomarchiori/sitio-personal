@@ -3,6 +3,7 @@ title: "Privilegio"
 draft: false
 date: 2026-04-09T09:15:00-03:00
 tags: ["lenguaje", "manual", "comodines"]
+featureAlt: "Figuras de madera sobre pilas de monedas de diferentes alturas."
 ---
 
 ## Uso común

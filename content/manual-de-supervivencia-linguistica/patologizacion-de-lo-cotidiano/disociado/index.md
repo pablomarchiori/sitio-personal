@@ -3,6 +3,7 @@ title: "Disociado"
 draft: false
 date: 2026-03-30T09:15:00-03:00
 tags: ["lenguaje", "manual", "patologizacion"]
+featureAlt: "Dibujo de una persona sentada frente a una pantalla dentro de un ojo gigante."
 ---
 
 ## Uso común

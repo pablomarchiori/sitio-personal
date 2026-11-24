@@ -3,6 +3,7 @@ title: "Ocupar"
 draft: false
 date: 2026-03-30T09:15:00-03:00
 tags: ["lenguaje", "manual", "otros-desvios"]
+featureAlt: "Viñeta de un maestro que enseña a pronunciar necesito y recibe como respuesta ocupo."
 ---
 
 ## Uso común

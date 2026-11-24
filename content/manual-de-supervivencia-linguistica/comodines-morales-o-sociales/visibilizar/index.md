@@ -3,6 +3,7 @@ title: "Visibilizar"
 draft: false
 date: 2026-04-16T09:15:00-03:00
 tags: ["lenguaje", "manual", "comodines"]
+featureAlt: "Tres monos que se cubren respectivamente la boca, los ojos y los oídos."
 ---
 
 ## Uso común

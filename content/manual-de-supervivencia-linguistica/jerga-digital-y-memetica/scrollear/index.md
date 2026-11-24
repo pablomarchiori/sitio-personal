@@ -3,6 +3,7 @@ title: "Scroll / Scrollear"
 draft: false
 date: 2026-05-12T09:15:00-03:00
 tags: ["lenguaje", "manual", "jerga-digital"]
+featureAlt: "Persona recostada que recorre publicaciones en la pantalla de un teléfono."
 ---
 
 ## Uso común

@@ -5,6 +5,7 @@ draft: false
 description: "El regreso del Día de la Raza, el peso político de las palabras y el contraste con la masacre de Rincón Bomba."
 tags: ["12 de octubre", "lenguaje", "historia argentina", "diversidad cultural"]
 categories: ["Notas"]
+featureAlt: "Montaje satírico de un rodaje sobre la llegada de Colón a América, con una versión distinta de la escena en el monitor de dirección."
 ---
 
 *Texto original: 12/10/2026. Actualización: 23/11/2026 (revisión editorial y precisión histórica).*

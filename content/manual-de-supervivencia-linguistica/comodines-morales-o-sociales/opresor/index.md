@@ -3,6 +3,7 @@ title: "Opresor"
 draft: false
 date: 2026-04-09T09:15:00-03:00
 tags: ["lenguaje", "manual", "comodines"]
+featureAlt: "Cartel de propaganda china con un dirigente que levanta la mano ante una multitud."
 ---
 
 ## Uso común

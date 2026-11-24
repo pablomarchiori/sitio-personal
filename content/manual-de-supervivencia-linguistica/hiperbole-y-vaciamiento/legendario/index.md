@@ -3,6 +3,7 @@ title: "Legendario"
 draft: false
 date: 2026-04-09T09:15:00-03:00
 tags: ["lenguaje", "manual", "hiperbole"]
+featureAlt: "Ilustración de estilo cerámica griega con dos guerreros enfrentados con lanzas y un caballo de madera al fondo."
 ---
 
 ## Uso común

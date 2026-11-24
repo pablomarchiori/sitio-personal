@@ -3,6 +3,7 @@ title: "Postear"
 draft: false
 date: 2026-04-14T09:15:00-03:00
 tags: ["lenguaje", "manual", "jerga-digital"]
+featureAlt: "Persona con sombrero frente al mar, usando un teléfono y una computadora portátil."
 ---
 
 ## Uso común

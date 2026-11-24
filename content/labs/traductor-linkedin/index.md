@@ -5,6 +5,7 @@ draft: false
 description: "Un traductor inútil pero necesario: convierte frases normales en publicaciones corporativas infladas."
 tags: ["linkedin", "satira", "ia", "labs"]
 categories: ["Labs"]
+featureAlt: "Ilustración de un vendedor en un puesto de feria que ofrece traducir expresiones al lenguaje de LinkedIn."
 ---
 
 *Texto original: 17/05/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

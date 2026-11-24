@@ -3,6 +3,7 @@ title: "Energía"
 draft: false
 date: 2026-04-16T09:15:00-03:00
 tags: ["lenguaje", "manual", "otros-desvios"]
+featureAlt: "Figura humana rodeada de luces, galaxias y efectos de energía de colores."
 ---
 
 ## Uso común

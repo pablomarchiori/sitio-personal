@@ -5,6 +5,7 @@ draft: false
 description: "Cómo terminé reutilizando una CX Boreal II de 2013 como panel fijo para el sitio."
 tags: ["android", "tablet", "hugo", "cloudflare", "firefox", "dashboard", "labs"]
 # Revisión anterior: 01/10/2026 (revisión editorial, imágenes y estructura).
+featureAlt: "Tablet sobre un escritorio que muestra un panel con reloj, tiempo meteorológico y calendario."
 ---
 
 *Texto original: 21/04/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

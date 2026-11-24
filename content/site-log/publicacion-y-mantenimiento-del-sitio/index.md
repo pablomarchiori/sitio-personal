@@ -5,6 +5,7 @@ draft: false
 description: "Guía práctica para agregar contenido, manejar drafts, entender fechas y publicar cambios en GitHub Pages sin hacer lío."
 tags: ["hugo", "git", "github-pages", "markdown", "site-log"]
 categories: ["Site Log"]
+featureAlt: "Logotipo de GitHub sobre un fondo de código informático."
 ---
 
 *Texto original: 28/03/2026. Revisión editorial: 23/11/2026 (redacción y estructura).*

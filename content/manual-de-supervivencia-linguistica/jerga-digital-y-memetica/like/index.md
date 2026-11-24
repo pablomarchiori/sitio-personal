@@ -3,6 +3,7 @@ title: "Like"
 draft: false
 date: 2026-05-24T09:15:00-03:00
 tags: ["lenguaje", "manual", "jerga-digital"]
+featureAlt: "Hombre sonriente con ambos pulgares levantados."
 ---
 
 ## Uso común

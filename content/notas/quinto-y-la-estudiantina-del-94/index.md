@@ -5,6 +5,7 @@ draft: false
 description: "Carrozas, bailes, VHS y algunos recuerdos de quinto año en la Escuela Nacional de Comercio."
 tags: ["Marcos Juárez", "Estudiantina", "ENC", "1994", "VHS"]
 categories: ["Notas"]
+featureAlt: "Emblema de la Estudiantina del 94, con una E naranja y el número 94 verde moteado."
 ---
 
 *Texto original: 05/10/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

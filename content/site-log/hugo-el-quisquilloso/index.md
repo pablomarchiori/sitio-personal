@@ -5,6 +5,7 @@ draft: false
 description: "Tres ajustes chicos del sitio: un bloque Markdown que se veía mal, HTML dentro de Markdown y una sección que no aparecía en Reciente."
 tags: ["hugo", "markdown", "goldmark", "site-log"]
 categories: ["Site Log"]
+featureAlt: "Logotipo de Hugo con sus cuatro letras en hexágonos de colores."
 ---
 
 *Texto original: 17/05/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

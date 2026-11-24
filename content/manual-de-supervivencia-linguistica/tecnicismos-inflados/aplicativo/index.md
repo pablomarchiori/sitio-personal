@@ -3,6 +3,7 @@ title: "Aplicativo"
 draft: false
 date: 2026-03-30T09:15:00-03:00
 tags: ["lenguaje", "manual", "tecnicismos"]
+featureAlt: "Ilustración de un teléfono inteligente rodeado de iconos de aplicaciones."
 ---
 
 ## Uso común

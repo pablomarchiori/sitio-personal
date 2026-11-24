@@ -4,6 +4,7 @@ date: 2026-03-30T09:15:00-03:00
 draft: false
 description: "Cómo activé Cloudflare Web Analytics en el sitio."
 tags: ["cloudflare", "analytics", "dns", "github pages", "site log"]
+featureAlt: "Logotipo naranja de Cloudflare con la leyenda Cloudflare Web Analytics."
 ---
 
 *Texto original: 30/03/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

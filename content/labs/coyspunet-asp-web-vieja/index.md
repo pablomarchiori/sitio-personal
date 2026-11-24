@@ -5,6 +5,7 @@ draft: false
 description: "Una prueba de recuperación estática de un sitio viejo hecho en ASP, entre recuerdos de dial-up, ADSL y páginas de otra época."
 tags: ["labs", "web", "asp", "coyspunet", "internet"]
 categories: ["Labs"]
+featureAlt: "Captura de la antigua web de CoyspuNET, con su cabecera verde, menú lateral y noticias de la cooperativa."
 ---
 
 *Texto original: 01/06/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

@@ -3,6 +3,7 @@ title: "Depresión"
 draft: false
 date: 2026-04-02T09:15:00-03:00
 tags: ["lenguaje", "manual", "patologizacion"]
+featureAlt: "Hombre sentado con la cabeza inclinada y la cara entre las manos, sobre fondo oscuro."
 ---
 
 ## Uso común

@@ -3,6 +3,7 @@ title: "TOC"
 draft: false
 date: 2026-04-09T09:15:00-03:00
 tags: ["lenguaje", "manual", "patologizacion"]
+featureAlt: "Hombre golpeando una puerta con el subtítulo Penny, Penny, Penny."
 ---
 
 ## Uso común

@@ -5,6 +5,7 @@ draft: false
 description: "Una nivelación mínima antes de instalar el sitio: qué tuve que entender de Git y GitHub viniendo desde otro palo."
 tags: ["git", "github", "aprendizaje", "infraestructura", "site-log"]
 categories: ["Site Log"]
+featureAlt: "Ilustración del traslado de un blog desde Blogger hacia GitHub y Hugo."
 ---
 
 *Texto original: 26/03/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

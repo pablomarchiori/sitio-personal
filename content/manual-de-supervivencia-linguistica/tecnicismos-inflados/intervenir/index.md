@@ -3,6 +3,7 @@ title: "Intervenir"
 draft: false
 date: 2026-04-09T09:15:00-03:00
 tags: ["lenguaje", "manual", "tecnicismos"]
+featureAlt: "Retroexcavadora trabajando sobre una calle cercada con cintas amarillas."
 ---
 
 ## Uso común

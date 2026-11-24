@@ -5,6 +5,7 @@ draft: false
 description: "Alta de una nueva sección del sitio para publicar textos personales de archivo."
 tags: ["sitio", "hugo", "escritos"]
 categories: ["Site Log"]
+featureAlt: "Ilustración en blanco y negro de un hombre sentado frente al mar, con un cuaderno y una taza sobre la mesa."
 ---
 
 *Texto original: 07/06/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

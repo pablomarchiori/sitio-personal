@@ -5,6 +5,7 @@ draft: false
 description: "Cómo agregué el dominio propio al sitio, qué DNS usé y dónde apareció la limitación con el dominio alternativo."
 tags: ["github-pages", "dns", "dominio", "hanami", "cloudflare"]
 categories: ["Site Log"]
+featureAlt: "Ilustración de servidores conectados entre sí, con las leyendas DNS y Cloudflare."
 ---
 
 *Texto original: 28/03/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

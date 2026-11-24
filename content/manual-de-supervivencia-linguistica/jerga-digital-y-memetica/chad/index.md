@@ -3,6 +3,7 @@ title: "Chad"
 draft: false
 date: 2026-04-11T09:15:00-03:00
 tags: ["lenguaje", "manual", "jerga-digital"]
+featureAlt: "Caricatura de perfil de un hombre rubio y barbudo con mandíbula prominente."
 ---
 
 ## Uso común

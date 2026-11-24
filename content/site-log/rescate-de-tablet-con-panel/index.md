@@ -4,6 +4,7 @@ date: 2026-04-04T18:30:00-03:00
 draft: false
 description: "Cambios en Hugo, Cloudflare y el panel público del sitio para reutilizar una tablet vieja como pantalla fija."
 tags: ["hugo", "cloudflare", "csp", "dashboard", "panel", "site log"]
+featureAlt: "Captura del panel de información con reloj, clima de Marcos Juárez y calendario mensual."
 ---
 
 *Texto original: 04/04/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

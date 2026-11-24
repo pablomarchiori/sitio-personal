@@ -4,6 +4,7 @@ date: 2026-03-29T21:30:00-03:00
 draft: false
 description: "Diferencia entre secciones, menú, categorías y tags en Hugo, más una guía rápida de Markdown para escribir notas."
 tags: ["hugo", "markdown", "site-log", "publicaciones", "guia"]
+featureAlt: "Logotipo de Markdown sobre un fondo de código y texto de una publicación."
 ---
 
 *Texto original: 29/03/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

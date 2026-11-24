@@ -5,6 +5,7 @@ draft: false
 description: "Cómo mejoré la postura de seguridad del sitio desde Cloudflare, qué hace cada header y por qué esto va bastante más allá de tener HTTPS."
 tags: ["cloudflare", "security", "headers", "https", "csp", "hsts", "hardening"]
 categories: ["Site Log"]
+featureAlt: "Logotipo de Cloudflare iluminado sobre un fondo de circuitos electrónicos."
 ---
 
 *Texto original: 30/03/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

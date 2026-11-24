@@ -4,7 +4,7 @@ date: 2011-10-25T21:43:00-03:00
 draft: false
 description: "Texto breve de archivo personal sobre vínculo, distancia y pérdida."
 tags: ["escritos", "archivo personal"]
-featureAlt: "Ilustración en blanco y negro para Tomo su mano"
+featureAlt: "Ilustración en blanco y negro de un hombre sentado con la cabeza inclinada y dos figuras femeninas entre las sombras detrás de él."
 ---
 
 
