@@ -36,10 +36,18 @@
 </div>
 
 <style>
+  .mn-article-header > h1.mb-8 {
+    margin-bottom: 1rem;
+  }
+
+  .mn-article-header > .mn-article-meta {
+    margin-bottom: 0;
+  }
+
   .mn-share {
-    margin: 2.2rem 0 1.8rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(128, 128, 128, 0.3);
+    margin: 0.85rem 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
 
     display: flex;
     flex-wrap: wrap;
@@ -84,14 +92,22 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   /*
-   * Mueve el bloque desde el footer hasta debajo
-   * del encabezado de la nota.
+   * Ubica las acciones después de los metadatos y antes de la portada.
+   * Escritos usa un elemento time; las demás plantillas usan article-meta.
    */
   const shareBlock = document.querySelector(".mn-share");
   const articleHeader = document.querySelector("main article > header");
 
   if (shareBlock && articleHeader) {
-    articleHeader.insertAdjacentElement("afterend", shareBlock);
+    const metadata = articleHeader.querySelector(":scope > div.mb-10, :scope > time");
+    const heading = articleHeader.querySelector(":scope > h1");
+    const anchor = metadata || heading;
+
+    if (anchor) {
+      articleHeader.classList.add("mn-article-header");
+      if (metadata) metadata.classList.add("mn-article-meta");
+      anchor.insertAdjacentElement("afterend", shareBlock);
+    }
   }
 
   const url = window.location.href;
