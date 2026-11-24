@@ -24,9 +24,9 @@ Actualicé las versiones usadas en Windows y en la publicación automática. [Ve
 
 ## Instalación original - 28/03/2026
 
-Venía de Blogger, donde había tenido mi blog durante años, y tenía ganas de volver a reunir mis cosas en un sitio propio, pero con otra forma de trabajar. Me interesaba escribir directamente en Markdown, usar un dominio propio y mantener los costos bajos. También quería entender cómo funcionaba todo, desde armarlo en mi computadora hasta publicarlo, con los problemas que seguramente aparecerían en el camino.
+Venía de Blogger, donde había tenido mi blog durante años, y tenía ganas de volver a reunir mis cosas en un sitio propio, pero con otra forma de trabajar. Me interesaba escribir directamente en Markdown, usar un dominio propio y mantener los costos bajos. También quería entender cómo funcionaba todo, desde armarlo en mi computadora hasta publicarlo.
 
-Para eso elegí **Hugo** como generador de páginas, **Congo** como tema y **Git** para registrar los cambios. Hice la instalación en Windows, con asistencia de ChatGPT 5.4 Thinking y algunas consultas a Gemini. La idea era que el sitio fuera tomando forma mientras aprendía a manejar esas herramientas.
+Para eso elegí **Hugo** como generador de páginas, **Congo** como tema y **Git** para registrar los cambios. Hice la instalación en Windows, con asistencia de ChatGPT 5.4 Thinking y algunas consultas a Gemini.
 
 ### Hugo, Git y el proyecto local
 

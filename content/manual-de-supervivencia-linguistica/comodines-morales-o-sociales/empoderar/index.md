@@ -3,7 +3,7 @@ title: "Empoderar"
 draft: false
 date: 2026-04-02T09:15:00-03:00
 tags: ["lenguaje", "manual", "comodines"]
-featureAlt: "Un peón de ajedrez frente a un espejo en el que se refleja como rey."
+featureAlt: "Un peón de ajedrez frente a un espejo en el que se refleja como reina."
 ---
 
 ## Uso común

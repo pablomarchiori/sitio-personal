@@ -4,7 +4,7 @@ date: 2026-04-13T19:10:00-03:00
 draft: false
 description: "Una recreación web del AGC y el DSKY de Apollo 9: tocar con el mouse algo que alguna vez fue hardware crítico de misión."
 tags: ["apollo", "nasa", "agc", "simulación", "labs"]
-featureAlt: "Command Module Apollo"
+featureAlt: "Panel de instrumentos del módulo de comando de Apollo, con los asientos de los astronautas debajo."
 coverCaption: "*Command Module de Apollo 11. No es Gumdrop, pero tiene un aspecto visual muy similar al módulo de comando de Apollo 9.*"
 ---
 

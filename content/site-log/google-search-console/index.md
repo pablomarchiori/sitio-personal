@@ -50,7 +50,7 @@ Pedí una nueva indexación y dejé que Google actualizara el informe, porque mo
 <a id="actualizacion-404"></a>
 ## Otra vuelta: 404 que sí venían de enlaces reales
 
-**Actualización 26/05/26:** apareció otro aviso de Search Console, ahora bajo **No se ha encontrado (404)**. Esta vez la lista incluía rutas del simulador **Moonjs**, del panel y de Cloudflare:
+**Actualización 26/05/26:** apareció otro aviso de Search Console, ahora bajo **No se ha encontrado (404)**. Esta vez había rutas que sí salían del código del simulador **Moonjs**, junto con otras del panel y de Cloudflare:
 
 ```text
 /cgi-bin/logger.php

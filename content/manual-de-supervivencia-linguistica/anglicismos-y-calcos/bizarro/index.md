@@ -3,7 +3,7 @@ title: "Bizarro"
 draft: false
 date: 2026-03-30T09:15:00-03:00
 tags: ["lenguaje", "manual", "anglicismos"]
-featureAlt: "Grabado antiguo de un caballero armado a caballo, rodeado de otras figuras."
+featureAlt: "Grabado antiguo del Quijote: el caballero, con los ojos vendados, montado sobre Clavileño, el caballo de madera."
 ---
 
 ## Uso común

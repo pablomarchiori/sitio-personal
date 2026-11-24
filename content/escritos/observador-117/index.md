@@ -5,7 +5,7 @@ draft: false
 description: "El medio no era hostil. La permanencia, aun así, requirió un esfuerzo creciente."
 tags: ["ficción", "observación", "relato"]
 categories: ["Escritos"]
-featureAlt: "Registro del Observador 117"
+featureAlt: "Ilustración de una fiesta nocturna en un departamento, con invitados que conversan y beben; varios miran hacia el frente."
 ---
 
 

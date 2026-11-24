@@ -5,7 +5,7 @@ draft: false
 description: "Cuando cada área mira solo su propia pantalla, cualquier error puede terminar pareciendo red."
 tags: ["infraestructura", "desarrollo", "diagnóstico", "IA", "soporte"]
 categories: ["Notas"]
-featureAlt: "Imagen de portada"
+featureAlt: "Ilustración pixelada de una oficina: un monitor muestra «!FAIL! Connection timed out at Application Layer» mientras uno lo amenaza con un mazo y otro lo golpea."
 ---
 
 *Texto original: 25/04/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*

@@ -4,7 +4,7 @@ date: 2026-04-02T13:00:00-03:00
 draft: false
 description: "Una reflexión sobre la bandera, los actos escolares, la pertenencia impuesta y los símbolos heredados."
 tags: ["escuela", "bandera", "actos escolares", "identidad", "símbolos", "pertenencia"]
-featureAlt: "Desde abajo del palco"
+featureAlt: "Acuarela de abanderados de espaldas, con bandas celestes y blancas, frente a un palco con autoridades."
 # Revisión anterior: 02/10/2026 (revisión editorial, imágenes y estructura).
 ---
 

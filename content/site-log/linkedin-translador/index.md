@@ -5,7 +5,7 @@ draft: false
 description: "Un experimento simple en Labs: tomar una frase común y convertirla, con Gemini y Cloudflare Workers, en una publicación inflada con propósito, resiliencia y épica corporativa innecesaria."
 tags: ["linkedin", "ia", "gemini", "cloudflare-workers", "hugo", "labs"]
 categories: ["Site Log"]
-featureAlt: "Traductor LinkedIn"
+featureAlt: "Meme de un hombre vestido de elfo con el texto «Hi I'd like to add you to my professional network on LinkedIn»."
 coverCaption: "*Pompa épica corporativa, ahora con botón.*"
 ---
 

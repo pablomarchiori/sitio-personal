@@ -4,11 +4,10 @@ date: 2026-10-01T18:30:00-03:00
 draft: false
 description: "Cómo terminé reutilizando una CX Boreal II de 2013 como panel fijo para el sitio."
 tags: ["android", "tablet", "hugo", "cloudflare", "firefox", "dashboard", "labs"]
-# Revisión anterior: 01/10/2026 (revisión editorial, imágenes y estructura).
 featureAlt: "Tablet sobre un escritorio que muestra un panel con reloj, tiempo meteorológico y calendario."
 ---
 
-*Texto original: 21/04/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
+*Texto original: 21/04/2026. Actualizaciones: 01/10/2026 (revisión editorial, imágenes y estructura) y 23/11/2026 (revisión editorial y estructura).*
 
 Acomodando el cajón de los aparatos viejos, ese lugar intermedio entre lo que todavía sirve y lo que uno no se decide a tirar, encontré una **CX Boreal II de 9.7"**, con **Android 4.1.1**. La había usado para leer PDF, aunque pasarle archivos por SD ya se había vuelto bastante tedioso. Tiene las librerías y los certificados raíz de otra época, así que hoy casi nada funciona como debería, pero todavía tiene una linda pantalla y una batería que aguanta unas horas.
 
@@ -62,7 +61,7 @@ La Boreal II terminó como una terminal fija con el panel abierto. Es un uso bas
 
 [![Tablet CX Boreal II mostrando el panel](panel-tablet-cx-boreal-ii-thumb.png)](panel-tablet-cx-boreal-ii.png)
 
-*La CX Boreal II corriendo el panel desde Firefox.*
+*La CX Boreal II corriendo el panel desde Firefox. No revive como tablet moderna, pero como pantalla fija todavía tiene sentido.*
 
 El experimento tampoco le devuelve la utilidad que alguna vez tuvo como tablet: navegar por sitios modernos, instalar aplicaciones o usar servicios habituales sigue siendo complicado. Para mostrar un panel propio, en cambio, alcanza con ese Firefox y una función bien delimitada.
 

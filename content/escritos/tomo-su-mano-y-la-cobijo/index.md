@@ -4,7 +4,7 @@ date: 2011-06-07T21:57:00-03:00
 draft: false
 description: "Texto breve de archivo personal sobre un gesto suspendido en el tiempo."
 tags: ["escritos", "archivo personal"]
-featureAlt: "Ilustración en blanco y negro para Tomo su mano"
+featureAlt: "Ilustración en blanco y negro de un hombre sentado en una cama con la cara entre las manos, bajo la silueta de una pareja tomada de la mano."
 ---
 
 

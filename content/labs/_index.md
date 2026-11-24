@@ -3,8 +3,11 @@ title: "Labs"
 description: "Experimentos, pruebas, paneles, hardware reciclado y otras nerdeadas técnicas."
 draft: false
 ---
+<div class="labs-banner">
+  <img src="/images/home/banner-nerd3.webp" alt="Banner animado nerd" width="350" height="88">
+</div>  
 Proyectos, experimentos y cacharreo con hardware y software. Cosas que se construyen y de las que quiero contar cómo se hicieron.
-
+ 
 <nav class="labs-accesos" aria-label="Accesos de Labs">
   <a href="/panel/">Panel</a> ·
   <a href="/moonjs/agc_sp.html">Apollo AGC</a> ·
@@ -15,6 +18,4 @@ Proyectos, experimentos y cacharreo con hardware y software. Cosas que se constr
 
 <p class="labs-aviso"><em>Lo que comparto en Labs va tal como está y sin garantías. Ojo que podés hacer cagadas y yo no me hago cargo, salamín ¯\_(ツ)_/¯.</em></p>
 
-<div class="labs-banner">
-  <img src="/images/home/banner-nerd3.webp" alt="Banner animado nerd" width="350" height="88">
-</div>
+
