@@ -27,22 +27,22 @@ Los botones de ejemplo cargan una frase y seleccionan un modo. **Limpiar** borra
 
 La máquina usa siempre el mismo modelo de Gemini. Lo que cambia al mover el selector es una línea del *prompt* que el Worker manda como instrucción al modelo:
 
-- **Argentino cotidiano:** "Reescribí el texto en español argentino cotidiano contemporáneo".
-- **Lunfardo clásico:** "Reescribí el texto usando lunfardo clásico razonablemente documentado, con naturalidad y sin inventar antigüedades. Si la frase no admite una traducción verosímil, conservá parte del español general".
-- **Castellano neutro:** "Reescribí el texto en castellano neutro claro, entendible fuera de Argentina. Explicá los argentinismos detectados en el original".
-- **Modo exagerado:** "Reescribí el texto con humor argentino, exagerando de forma moderada modismos y lunfardo, sin perder el sentido ni recurrir automáticamente a muletillas o insultos".
+- **Argentino cotidiano:** “Reescribí el texto en español argentino cotidiano contemporáneo”.
+- **Lunfardo clásico:** “Reescribí el texto usando lunfardo clásico razonablemente documentado, con naturalidad y sin inventar antigüedades. Si la frase no admite una traducción verosímil, conservá parte del español general”.
+- **Castellano neutro:** “Reescribí el texto en castellano neutro claro, entendible fuera de Argentina. Explicá los argentinismos detectados en el original”.
+- **Modo exagerado:** “Reescribí el texto con humor argentino, exagerando de forma moderada modismos y lunfardo, sin perder el sentido ni recurrir automáticamente a muletillas o insultos”.
 
-Todos los modos comparten instrucciones para conservar el significado, los tiempos verbales, las negaciones y los hechos; evitar traducciones literales de frases hechas y no inventar entradas de diccionario. También se le pide distinguir el lunfardo de otras épocas del habla actual, sin meter un "che", un "boludo" o un "viste" en cada oración por el solo hecho de sonar argentino. El texto ingresado se trata como material para traducir, aunque contenga algo escrito como una orden.
+Todos los modos comparten instrucciones para conservar el significado, los tiempos verbales, las negaciones y los hechos; evitar traducciones literales de frases hechas y no inventar entradas de diccionario. También se le pide distinguir el lunfardo de otras épocas del habla actual, sin meter un “che”, un “boludo” o un “viste” en cada oración por el solo hecho de sonar argentino. El texto ingresado se trata como material para traducir, aunque contenga algo escrito como una orden.
 
 El modo exagerado lleva una *temperatura* de Gemini de `0.8`, frente a `0.35` en los demás. Ese parámetro le da más libertad para variar palabras y expresiones: no mide el nivel de chamuyo ni hace que la traducción sea más precisa.
 
-El Worker le pide a Gemini una respuesta JSON con la traducción y datos auxiliares. La máquina muestra solo el texto traducido y envía siempre "Argentina en general" como región fija.
+El Worker le pide a Gemini una respuesta JSON con la traducción y datos auxiliares. La máquina muestra solo el texto traducido y envía siempre “Argentina en general” como región fija.
 
 ## El glosario del modo clásico
 
 Para **Lunfardo clásico**, el Worker incorpora un glosario de **29 términos** elaborado a partir del [diccionario de Todo Tango](https://www.todotango.com/comunidad/lunfardo/). Cada entrada tiene una explicación breve, contrastada con la ficha correspondiente, y conserva el enlace a la fuente. El glosario no copia el diccionario completo ni sus definiciones.
 
-El Worker relaciona la frase recibida con las pistas de ese glosario. Ante "No tengo dinero y hoy no tengo ganas de trabajar", por ejemplo, encuentra *guita*, *vento*, *fiaca* y *laburar*. Agrega hasta seis referencias al prompt y deja que Gemini elija las que encajen. No reemplaza palabras automáticamente: un término puede tener varios sentidos y quedar fuera de lugar según el contexto.
+El Worker relaciona la frase recibida con las pistas de ese glosario. Ante “No tengo dinero y hoy no tengo ganas de trabajar”, por ejemplo, encuentra *guita*, *vento*, *fiaca* y *laburar*. Agrega hasta seis referencias al prompt y deja que Gemini elija las que encajen. No reemplaza palabras automáticamente: un término puede tener varios sentidos y quedar fuera de lugar según el contexto.
 
 El glosario **solo interviene en Lunfardo clásico**. En los otros modos, Gemini recibe las instrucciones anteriores. Si el texto no coincide con ninguna entrada, el Worker se lo aclara al modelo en lugar de rellenar la traducción con términos elegidos al azar.
 
@@ -70,7 +70,7 @@ D1 guarda solamente la fecha y la cantidad de consultas. No almacena las frases.
 
 La aplicación está hecha con **HTML, CSS y JavaScript** dentro de `static/` de Hugo. El backend es un **Cloudflare Worker** separado. El despliegue se hizo con **Wrangler**; **D1** lleva el contador y **Gemini 3.5 Flash-Lite** genera las respuestas. La clave queda del lado del Worker.
 
-Antes de publicar, también hubo que agregar `https://pasalo-a-criollo.mnerd.workers.dev` a la directiva `connect-src` de la política de seguridad (CSP) configurada en Cloudflare. Esa política controla a qué servicios externos puede conectarse el navegador y, sin esa autorización, bloquea las consultas de la máquina. (En un principio la Máquina de hacer chamuyo se llamaba "Pasalo a criollo". Después cambié el nombre, pero el Worker quedó así. Qué le vamos a hacer.)
+Antes de publicar, también hubo que agregar `https://pasalo-a-criollo.mnerd.workers.dev` a la directiva `connect-src` de la política de seguridad (CSP) configurada en Cloudflare. Esa política controla a qué servicios externos puede conectarse el navegador y, sin esa autorización, bloquea las consultas de la máquina. (En un principio la Máquina de hacer chamuyo se llamaba “Pasalo a criollo”. Después cambié el nombre, pero el Worker quedó así. Qué le vamos a hacer.)
 
 **Todo el código lo generó ChatGPT**: la interfaz, los estilos, el Worker, el glosario y las pruebas. La idea de la máquina, su estética y los ajustes surgieron de nuestras conversaciones. Yo probé la aplicación con Hugo local y ejecuté el despliegue del Worker en Cloudflare.
 

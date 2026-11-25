@@ -5,14 +5,14 @@ draft: false
 description: "Cuando cada área mira solo su propia pantalla, cualquier error puede terminar pareciendo red."
 tags: ["infraestructura", "desarrollo", "diagnóstico", "IA", "soporte"]
 categories: ["Notas"]
-featureAlt: "Ilustración pixelada de una oficina: un monitor muestra «!FAIL! Connection timed out at Application Layer» mientras uno lo amenaza con un mazo y otro lo golpea."
+featureAlt: "Ilustración pixelada de una oficina: un monitor muestra “!FAIL! Connection timed out at Application Layer” mientras uno lo amenaza con un mazo y otro lo golpea."
 ---
 
 *Texto original: 25/04/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
 
 ## Cuando nadie mira más allá de su propio ombligo (o de su propia pantalla)
 
-Decime si no te pasó alguna vez: un usuario avisa que una aplicación tiró un error, alguien de Infraestructura alcanza a decir "esto parece de la aplicación" y del otro lado ya apareció el diagnóstico exprés: "es la red".
+Decime si no te pasó alguna vez: un usuario avisa que una aplicación tiró un error, alguien de Infraestructura alcanza a decir “esto parece de la aplicación” y del otro lado ya apareció el diagnóstico exprés: “es la red”.
 
 Un timeout al guardar un registro, es la red. La aplicación falla en una sucursal, es la red. Se cuelga cuando varios usuarios trabajan a la vez, también es la red. Hasta cuando solo falla esa aplicación y todas las demás siguen funcionando, la red sigue siendo la sospechosa. Para algunos parece un éter místico y maligno capaz de elegir a qué proceso molestar mientras todo lo demás anda normalmente.
 
@@ -22,23 +22,23 @@ Y cuando preguntás por qué es la culpable, la explicación suele tener la prec
 
 Ojo, la red falla. También fallan firewalls, DNS, switches y enlaces. Mi queja (sí, dije queja, chupate esa, coach!) es el diagnóstico automático, sin evidencia, que manda el problema a Infraestructura antes de leer el error completo, revisar los logs o averiguar qué estaba haciendo la aplicación cuando falló.
 
-## El ciclo de vida de un bug "de infraestructura"
+## El ciclo de vida de un bug “de infraestructura”
 
 El ciclo suele tener etapas bastante reconocibles:
 
-**Negación:** "En mi máquina funciona".  
-**Delegación:** "Debe ser un problema de red o latencia".  
+**Negación:** “En mi máquina funciona”.  
+**Delegación:** “Debe ser un problema de red o latencia”.  
 **Evidencia:** Infraestructura muestra conectividad, puertos, rutas, DNS y logs, todo eso que nadie había pedido antes de culparla.  
-**Aceptación forzada:** "Ah, entonces debe ser otra cosa".  
+**Aceptación forzada:** “Ah, entonces debe ser otra cosa”.  
 **Resolución:** aparece un parche de la aplicación que casualmente corrige el problema que no era de la aplicación.
 
 Puede haber apuro, exceso de confianza, desconocimiento o poca investigación (y alguna vez, quizá, mala fe 🤨). Lo macana es cuando esa falta de análisis se presenta como certeza técnica.
 
-> El "complejo de Dios" 😅 aparece cuando alguien da su propia lógica por infalible, deja de investigar y empieza a defender territorio.
+> El “complejo de Dios” 😅 aparece cuando alguien da su propia lógica por infalible, deja de investigar y empieza a defender territorio.
 
 ## Para empezar, mirarse el ombligo
 
-Ahh, y la fatality... preguntás por qué no revisaron primero la aplicación y te contestan: "Tenés que entender que es programador, no sabe de Infraestructura". Bárbaro, nadie le pidió que configurara un switch; alcanzaba con leer el error, revisar qué estaba ejecutando su programa y hacer alguna prueba antes de derivarlo. Si no sabe qué está pasando, puede pedir ayuda. Eso sería bastante más colaborativo.
+Ahh, y la fatality... preguntás por qué no revisaron primero la aplicación y te contestan: “Tenés que entender que es programador, no sabe de Infraestructura”. Bárbaro, nadie le pidió que configurara un switch; alcanzaba con leer el error, revisar qué estaba ejecutando su programa y hacer alguna prueba antes de derivarlo. Si no sabe qué está pasando, puede pedir ayuda. Eso sería bastante más colaborativo.
 
 Cuando un sistema pasa del entorno de desarrollo al trabajo cotidiano aparecen condiciones que quizá no estaban en la prueba: usuarios simultáneos, permisos, conexiones, bloqueos de SQL, timeouts y fallos que no se habían previsto. Si hay una transacción mal manejada o una excepción sin capturar, habrá que revisar el código; y si realmente falló la red, lo resolveremos nosotros. Para eso estamos.
 
@@ -46,15 +46,15 @@ Una aplicación tiene que sobrevivir donde va a funcionar. Tenés que capturar e
 
 ## La mancha venenosa
 
-Al grito de "es la red", el problema cambia de escritorio. Quien lo derivó sigue con lo suyo y nuestra parte queda señalada como culpable, aunque nadie haya mostrado una prueba. Nosotros tenemos que interrumpir lo que estamos haciendo para demostrar que el problema no estaba ahí. Y urgente, por supuesto.
+Al grito de “es la red”, el problema cambia de escritorio. Quien lo derivó sigue con lo suyo y nuestra parte queda señalada como culpable, aunque nadie haya mostrado una prueba. Nosotros tenemos que interrumpir lo que estamos haciendo para demostrar que el problema no estaba ahí. Y urgente, por supuesto.
 
-!["La red", el sospechoso universal, acechando desde el centro de datos](la-red-asesina.png)
+![“La red”, el sospechoso universal, acechando desde el centro de datos](la-red-asesina.png)
 
-*"La red", la más mala de todas... ¡Muajajajá!*
+*“La red”, la más mala de todas... ¡Muajajajá!*
 
 Encima, si no salís corriendo a revisar todo con cara de preocupado, ya sos poco colaborativo. Ni se te ocurra preguntar qué pruebas hicieron antes de derivar el ticket, porque podés terminar siendo vos el que tiene un problema de actitud.
 
-Después aparece un parche de la aplicación, un pase mágico y todo vuelve a funcionar, sin demasiadas explicaciones sobre qué pasó ("era el perfil roto del SQL", ¿wtf?). El usuario vuelve a trabajar y el desarrollador sigue adelante, mientras nosotros cargamos con la sospecha. Mil puntos para Gryffindor (por si quedan dudas, Infraestructura es Hufflepuff).
+Después aparece un parche de la aplicación, un pase mágico y todo vuelve a funcionar, sin demasiadas explicaciones sobre qué pasó (“era el perfil roto del SQL”, ¿wtf?). El usuario vuelve a trabajar y el desarrollador sigue adelante, mientras nosotros cargamos con la sospecha. Mil puntos para Gryffindor (por si quedan dudas, Infraestructura es Hufflepuff).
 
 A cualquiera le puede fallar un diagnóstico. Lo que molesta es que se puedan derivar problemas sin investigarlos y que termine siendo el complicado quien pide averiguar qué pasó.
 
@@ -78,11 +78,11 @@ En eso último también hay algo nuestro. Muchas veces Infraestructura se vende 
 
 ![Infraestructura invisible](richmond-avenal.jpg)
 
-*Todavía nos imaginan encerrados en el cuarto de servidores como Richmond Avenal, el "Server Room Guy" de [The IT Crowd](https://www.youtube.com/show/VLPLQxUFrtzYaUlfC1e_wcoaUGC02HPVHSW4?sbp=KgtOTlJRYURrUTdGOEAB). Otra idea para mi libro "Me lo dijo un coach".*
+*Todavía nos imaginan encerrados en el cuarto de servidores como Richmond Avenal, el “Server Room Guy” de [The IT Crowd](https://www.youtube.com/show/VLPLQxUFrtzYaUlfC1e_wcoaUGC02HPVHSW4?sbp=KgtOTlJRYURrUTdGOEAB). Otra idea para mi libro “Me lo dijo un coach”.*
 
-Explicar hacia "arriba" tampoco siempre es fácil. A veces hay que traducir logs, capturas y pruebas para personas que creen que un senior de Infraestructura se fabrica con un cursito de seis meses y que todo anda por magia (el complejo de Dios del de RR. HH. o del coach, pero eso da para otra nota).
+Explicar hacia “arriba” tampoco siempre es fácil. A veces hay que traducir logs, capturas y pruebas para personas que creen que un senior de Infraestructura se fabrica con un cursito de seis meses y que todo anda por magia (el complejo de Dios del de RR. HH. o del coach, pero eso da para otra nota).
 
-Y acá entran los jueces (jefes, gerentes) que quizá no saben de qué hablamos, pero escuchan una explicación con mucha seguridad escénica y la dan por buena. Podrían decirles que es la crapodina del micro y ~~como no quieren dejar en evidencia que no saben un corno~~ algunos terminarían aceptando la primera hipótesis, sobre todo si en su casa también falla el wifi. Entonces sí, seguro que "es la red". A veces falta interés en meterse en el problema y otras veces se prefiere evitar un conflicto.
+Y acá entran los jueces (jefes, gerentes) que quizá no saben de qué hablamos, pero escuchan una explicación con mucha seguridad escénica y la dan por buena. Podrían decirles que es la crapodina del micro y ~~como no quieren dejar en evidencia que no saben un corno~~ algunos terminarían aceptando la primera hipótesis, sobre todo si en su casa también falla el wifi. Entonces sí, seguro que “es la red”. A veces falta interés en meterse en el problema y otras veces se prefiere evitar un conflicto.
 
 Si nadie pide evidencias cuando se deriva mal un incidente, la próxima vez se repite la historia. Total, ya sabemos quién tiene que demostrar que no fue la red.
 

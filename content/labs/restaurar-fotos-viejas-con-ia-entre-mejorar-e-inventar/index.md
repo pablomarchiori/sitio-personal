@@ -13,7 +13,7 @@ coverCaption: "*A veces la IA divaga...*"
 
 ## Fotos viejas, frío y una excusa para probar IA
 
-Hoy OneDrive me mostró en el teléfono uno de esos recuerdos de "por esta época, hace algunos años". Entre las imágenes aparecieron fotos de mis abuelos y parece que hace unos seis años, también por esta época, hacía frío y yo estaba haciendo lo mismo que ahora: acomodando fotos viejas. 😬
+Hoy OneDrive me mostró en el teléfono uno de esos recuerdos de “por esta época, hace algunos años”. Entre las imágenes aparecieron fotos de mis abuelos y parece que hace unos seis años, también por esta época, hacía frío y yo estaba haciendo lo mismo que ahora: acomodando fotos viejas. 😬
 
 Venía experimentando con instrucciones para restauración digital en Gemini, así que aproveché para armar un Gem dedicado a las fotografías antiguas. Preparé dos versiones del *prompt*, las probé con fotos familiares y comparé los resultados, prestando especial atención a esos detalles que una imagen generada puede mejorar visualmente y, al mismo tiempo, alterar.
 
@@ -21,7 +21,7 @@ Venía experimentando con instrucciones para restauración digital en Gemini, as
 
 En esta prueba, un **prompt** es el conjunto de instrucciones que define cómo tratar la foto, qué deterioros corregir y qué límites respetar. Un **Gem** es una configuración personalizada de Gemini que permite guardar esas instrucciones y volver a usarlas sin copiarlas cada vez; Google explica su funcionamiento en la [documentación de Gems](https://support.google.com/gemini/answer/15235603).
 
-El **motor de imagen** es el componente que genera o modifica el resultado visual. En las pruebas originales usé la herramienta que tenía disponible entonces en Gemini, identificada como Imagen 3. También hablo de **orquestador** para referirme a la capa que interpreta el pedido y lo encamina al motor de imagen. No puedo ver cómo toma internamente cada decisión, pero el resultado permite reconocer un problema: cuando la herramienta interpreta "restaurar" como "crear una versión más completa y prolija", puede reconstruir detalles que la foto nunca llegó a registrar.
+El **motor de imagen** es el componente que genera o modifica el resultado visual. En las pruebas originales usé la herramienta que tenía disponible entonces en Gemini, identificada como Imagen 3. También hablo de **orquestador** para referirme a la capa que interpreta el pedido y lo encamina al motor de imagen. No puedo ver cómo toma internamente cada decisión, pero el resultado permite reconocer un problema: cuando la herramienta interpreta “restaurar” como “crear una versión más completa y prolija”, puede reconstruir detalles que la foto nunca llegó a registrar.
 
 Gemini trabaja con una imagen de referencia, aunque eso no equivale a restaurar píxeles de manera controlada, como se haría en una edición manual por capas. Si una zona está dañada o demasiado oscura, el modelo puede producir una solución visualmente convincente sin disponer de información suficiente para saber qué había allí.
 
@@ -51,7 +51,7 @@ La primera prueba fue con una fotografía antigua en blanco y negro, con manchas
 
 La segunda prueba fue más complicada: una foto familiar a color, con poca luz, mucho grano, un flash duro y zonas donde apenas se distingue lo que había. Con el primer prompt, Gemini mejoró el contraste y la definición de las caras, pero empezó a reinterpretar elementos concretos.
 
-El caso más evidente fue la martineta colorada (o simplemente "colorada" ☺️) que aparece en la fotografía. En la primera restauración dejó de parecer un ave y se transformó en una especie de objeto con alas de madera. Cuando la IA divaga, el resultado puede acercarse más al [Ecce Homo de Borja](https://www.infobae.com/cultura/2022/08/08/10-anos-del-ecce-homo-de-borja-la-peor-restauracion-de-la-historia-icono-pop-o-arte/) que a una recuperación fiel, aunque aquí el desastre fue bastante más discreto.
+El caso más evidente fue la martineta colorada (o simplemente “colorada” ☺️) que aparece en la fotografía. En la primera restauración dejó de parecer un ave y se transformó en una especie de objeto con alas de madera. Cuando la IA divaga, el resultado puede acercarse más al [Ecce Homo de Borja](https://www.infobae.com/cultura/2022/08/08/10-anos-del-ecce-homo-de-borja-la-peor-restauracion-de-la-historia-icono-pop-o-arte/) que a una recuperación fiel, aunque aquí el desastre fue bastante más discreto.
 
 También cambió la bufanda de mi hermana: el dibujo de la tela se convirtió en otro patrón, más uniforme y prolijo. En el fondo, donde había oscuridad y poca información, apareció una pared de piedra bien definida que la foto original no permite confirmar. Son detalles fáciles de pasar por alto cuando el resultado general se ve mejor.
 
@@ -77,7 +77,7 @@ Esta comparación me sirvió para ajustar el criterio: limpiar ruido sin plastif
 
 ## Cómo crear un Gem para restaurar fotos
 
-En Gemini se abre la sección **Gems**, se crea uno nuevo, se le pone un nombre (por ejemplo, "Restaurador Fotográfico") y se pegan las instrucciones en el campo correspondiente. Después alcanza con abrir ese Gem y subir la fotografía; también se puede invocar con `@` desde el chat principal, fijarlo en el panel lateral o guardar su dirección como marcador.
+En Gemini se abre la sección **Gems**, se crea uno nuevo, se le pone un nombre (por ejemplo, “Restaurador Fotográfico”) y se pegan las instrucciones en el campo correspondiente. Después alcanza con abrir ese Gem y subir la fotografía; también se puede invocar con `@` desde el chat principal, fijarlo en el panel lateral o guardar su dirección como marcador.
 
 Conviene definir claramente si el Gem debe procesar la imagen o solamente ayudar a redactar instrucciones. Si no se quieren usar Gems, los prompts pueden guardarse como archivos de texto y pegarse manualmente al iniciar una conversación.
 

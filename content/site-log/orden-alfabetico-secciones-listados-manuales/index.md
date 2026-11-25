@@ -149,7 +149,7 @@ El orden alfabético lo produce esta expresión:
 
 ## Breadcrumbs: qué son
 
-En medio de la configuración, chatcito apareció con "los **breadcrumb**", esas **rutas de navegación** que suelen verse encima del título de una página y muestran dónde estamos:
+En medio de la configuración, chatcito apareció con “los **breadcrumb**”, esas **rutas de navegación** que suelen verse encima del título de una página y muestran dónde estamos:
 
 ```text
 Inicio / Manual de supervivencia lingüística / Anglicismos y calcos

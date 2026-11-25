@@ -52,7 +52,7 @@ Al votante se le pide que se interese, participe y valore las instituciones mien
 
 ### Fuentes y entrevistas
 
-Yo no me inventé (todo) esto. Buena parte está en las notas y entrevistas que siguen. Aprovechen a leerlas, no vaya a ser que algún «patriarca» le pida a un medio local que la baje.
+Yo no me inventé (todo) esto. Buena parte está en las notas y entrevistas que siguen. Aprovechen a leerlas, no vaya a ser que algún “patriarca” le pida a un medio local que la baje.
 
 - [Clarín (2014): Macri y Aguad en la campaña de Marcos Juárez](https://www.clarin.com/politica/Marcos-Juarez-Macri-Aguad-volvieron_0_HyveiC59PXe.html).
 - [Red Panorama (10/07/2026): presentación de Generación MJ y declaraciones sobre su identidad local](https://redpanorama.com.ar/generacion-mj-entra-en-escena-y-competira-por-la-intendencia/).

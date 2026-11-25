@@ -24,7 +24,7 @@ Para 2003, aquella web estaba bastante en línea con lo que se hacía. Aunque mu
 
 Cuando quise recuperarla apareció una complicación: los archivos seguían en `.asp`, que Hugo no puede ejecutar y que requerían volver a montar un servidor con IIS. Como no tenía ganas de instalar todo eso, le planteé el problema a ChatGPT casi con las mismas palabras con las que me había surgido:
 
-> "Tengo un sitio web en ASP viejísimo. ¿Hay alguna forma de ejecutarlo sin instalar IIS? No quiero cargar eso, es un perno hacerlo. ¿Con Hugo se puede?"
+> “Tengo un sitio web en ASP viejísimo. ¿Hay alguna forma de ejecutarlo sin instalar IIS? No quiero cargar eso, es un perno hacerlo. ¿Con Hugo se puede?”
 
 ChatGPT propuso convertir el sitio a contenido estático y me pidió primero un ZIP con los archivos y después las bases Access que alimentaban algunas secciones. No toqué una línea de código durante la conversión: le pasé el material y fue trabajando sobre él.
 

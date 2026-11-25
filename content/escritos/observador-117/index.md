@@ -78,7 +78,7 @@ Sigo aguardando.
 
 ### Sobre el Observador *1 1 7*
 
-Este escrito nace de una sensación que algunos podemos experimentar en un encuentro social. Comprendemos lo que sucede alrededor y, sin embargo, dejamos de sentirnos parte de ello. Conversar, responder, reírse, saber cuándo acercarse o cuándo retirarse son cosas que resultan espontáneas para muchos, pero que a algunos nos exigen, en ocasiones, pensar activamente para "actuar" con naturalidad. Algunos aspectos de esta sensación guardan relación con fenómenos psicológicos como la despersonalización y la desrealización.
+Este escrito nace de una sensación que algunos podemos experimentar en un encuentro social. Comprendemos lo que sucede alrededor y, sin embargo, dejamos de sentirnos parte de ello. Conversar, responder, reírse, saber cuándo acercarse o cuándo retirarse son cosas que resultan espontáneas para muchos, pero que a algunos nos exigen, en ocasiones, pensar activamente para “actuar” con naturalidad. Algunos aspectos de esta sensación guardan relación con fenómenos psicológicos como la despersonalización y la desrealización.
 
 *1 1 7* representa esa desconexión y el agotamiento que supone intentar participar de algo que los demás parecen vivir sin esfuerzo. En ese intento de pertenecer, *1 1 7* recurre a las escasas herramientas de las que dispone y recopila información para comprender lo que sucede, una búsqueda que hacia el final se vuelve desesperada.
 

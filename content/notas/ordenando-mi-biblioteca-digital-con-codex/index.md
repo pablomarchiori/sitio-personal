@@ -10,7 +10,7 @@ featureAlt: "Una biblioteca digital caótica que atraviesa un portal y aparece o
 
 *Texto original: 23/07/2026. Actualización: 23/11/2026 (revisión editorial y estructura).*
 
-Antes del streaming y las suscripciones para todo, los "internautas" descargábamos cuanta cosa aparecía por ahí, convencidos de que algún día nos iba a servir. En mi caso, la mayoría terminó sirviendo de poco 😅, pero dejó una colección de libros, historietas, manuales y material multimedia que todavía conservo en OneDrive, acumulada durante años desde fuentes muy distintas.
+Antes del streaming y las suscripciones para todo, los “internautas” descargábamos cuanta cosa aparecía por ahí, convencidos de que algún día nos iba a servir. En mi caso, la mayoría terminó sirviendo de poco 😅, pero dejó una colección de libros, historietas, manuales y material multimedia que todavía conservo en OneDrive, acumulada durante años desde fuentes muy distintas.
 
 La colección nunca fue un caos absoluto, aunque había nombres inconsistentes, carpetas innecesarias, formatos antiguos y archivos que ya no se abrían bien. Revisarla a mano no parecía realista: **58.667 archivos en 2.558 carpetas**. Con la aplicación de escritorio de ChatGPT pude darle a Codex acceso a la carpeta local `Documentos\Libros` y le pedí que mirara qué había ahí.
 

@@ -18,7 +18,7 @@ Durante mucho tiempo tuve la sensación de que ciertas ideas había que pensarla
 
 Antes de que internet se volviera masiva, buena parte de lo que podíamos ver dependía de lo que llegaba a la televisión o aparecía en los quioscos. Había que enganchar la serie, la película o el documental justo cuando algún canal decidía pasarlo, a veces a una hora absurda. Si te lo perdías, era bastante probable que no volvieras a encontrarlo.
 
-Recuerdo el viejo History Channel, cuando todavía era bueno, los programas tipo *Beyond 2000* y algunos segmentos de la televisión local donde la ciencia aparecía filtrada por el espectáculo. Todavía me acuerdo de aquel blooper de [Susana Giménez preguntando "¿En serio? ¿Vivo?"](https://www.youtube.com/watch?v=ZQ1ya_FwMhU) cuando le hablaron de un dinosaurio de la Patagonia. En medio de todo eso también apareció [Carl Sagan con *Cosmos*](https://youtube.com/playlist?list=PLaxBFMgnaqt79JotyqmbA36ZY72o-RWLA&si=pkNG4W8kQxzHmzuh), una serie que me abrió otra manera de mirar el universo.
+Recuerdo el viejo History Channel, cuando todavía era bueno, los programas tipo *Beyond 2000* y algunos segmentos de la televisión local donde la ciencia aparecía filtrada por el espectáculo. Todavía me acuerdo de aquel blooper de [Susana Giménez preguntando “¿En serio? ¿Vivo?”](https://www.youtube.com/watch?v=ZQ1ya_FwMhU) cuando le hablaron de un dinosaurio de la Patagonia. En medio de todo eso también apareció [Carl Sagan con *Cosmos*](https://youtube.com/playlist?list=PLaxBFMgnaqt79JotyqmbA36ZY72o-RWLA&si=pkNG4W8kQxzHmzuh), una serie que me abrió otra manera de mirar el universo.
 
 ## Revistas, historietas y preguntas incómodas
 

@@ -22,13 +22,13 @@ Para entonces la Estudiantina incluía bastante más que el desfile. Organizába
 
 ![Aviso del desfile y el baile](estudiantina-94-aviso.png)
 
-Durante el desfile, delante de las carrozas iban las candidatas a reina, muchas veces sentadas sobre el capot de un auto, haciendo aquel lento "saludo de reina" con la mano de lado a lado. La elección llegaba después, durante el baile.
+Durante el desfile, delante de las carrozas iban las candidatas a reina, muchas veces sentadas sobre el capot de un auto, haciendo aquel lento “saludo de reina” con la mano de lado a lado. La elección llegaba después, durante el baile.
 
-Los que la vivieron seguramente se acuerdan de que el desfile empezaba varios meses antes de la noche del desfile. Se veían bicicletas y motos llevando materiales para "el galpón" de la carroza. Se hacía como se podía, pidiendo, tomando prestado y, cada tanto, tomando prestado y no devolviendo.
+Los que la vivieron seguramente se acuerdan de que el desfile empezaba varios meses antes de la noche del desfile. Se veían bicicletas y motos llevando materiales para “el galpón” de la carroza. Se hacía como se podía, pidiendo, tomando prestado y, cada tanto, tomando prestado y no devolviendo.
 
-No sé cuántas carrozas habrán sido hechas de "corralitos" (no los de Cavallo, esos vinieron después). Si no se acuerdan, eran esas estructuras metálicas que la gente ponía sobre las veredas para marcar el pozo ciego. Durante unos años caminar por algunas veredas de Marcos Juárez tenía cierto componente de deporte extremo. Éramos la capital del pozo ciego con banda sonora de los Cadillacs 😜. Llegaba la noche y podía escucharse el ruido metálico de alguno siendo arrastrado por el pavimento por alguna motito.
+No sé cuántas carrozas habrán sido hechas de “corralitos” (no los de Cavallo, esos vinieron después). Si no se acuerdan, eran esas estructuras metálicas que la gente ponía sobre las veredas para marcar el pozo ciego. Durante unos años caminar por algunas veredas de Marcos Juárez tenía cierto componente de deporte extremo. Éramos la capital del pozo ciego con banda sonora de los Cadillacs 😜. Llegaba la noche y podía escucharse el ruido metálico de alguno siendo arrastrado por el pavimento por alguna motito.
 
-Las carrozas alegóricas solían empezar con una estructura de hierro soldada (cuántos ojos habrán terminado "flechados" ahí), recubierta con bolsas arpilleras de plástico. Después venían cientos de flores hechas con papel de diario, atadas con alambre y "finamente" pintadas con pintura sintética rebajada con nafta para que rindiera más y no tapara el soplete. Todavía no entiendo cómo sobrevivimos, ¡jua! Sobre todo los que después se metían dentro de los monigotes para crear la magia del movimiento.
+Las carrozas alegóricas solían empezar con una estructura de hierro soldada (cuántos ojos habrán terminado “flechados” ahí), recubierta con bolsas arpilleras de plástico. Después venían cientos de flores hechas con papel de diario, atadas con alambre y “finamente” pintadas con pintura sintética rebajada con nafta para que rindiera más y no tapara el soplete. Todavía no entiendo cómo sobrevivimos, ¡jua! Sobre todo los que después se metían dentro de los monigotes para crear la magia del movimiento.
 
 En 1994 el desfile estaba previsto para el domingo 9 de octubre, pero el mal tiempo obligó a pasarlo al lunes 10. Las puteadas que recibimos fueron unas cuantas. Para peor, el lunes volvió a lloviznar durante la tarde, aunque cerca de las ocho paró y finalmente arrancó el desfile por avenida Alem.
 

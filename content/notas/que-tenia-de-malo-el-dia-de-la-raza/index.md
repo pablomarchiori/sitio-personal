@@ -12,13 +12,13 @@ featureAlt: "Montaje satírico de un rodaje sobre la llegada de Colón a Améric
 
 Este 12 de octubre de 2026, el Gobierno argentino volvió a utilizar la denominación [*Día de la Raza*](https://www.argentina.gob.ar/noticias/12-de-octubre-dia-de-la-raza) en sus comunicaciones y en el calendario oficial, aunque la [Ley 27.399](https://www.argentina.gob.ar/normativa/nacional/ley-27399-281835/texto) mantiene el nombre *Día del Respeto a la Diversidad Cultural*, adoptado en 2010.
 
-La situación me hace pensar en cuánto peso real tienen los nombres y las palabras cuando no están acompañados por hechos concretos. Algunos celebran el regreso del viejo nombre, posiblemente más por el gusto de hacer enojar a "los zurdos", como suele decir "el peluca", que por una preocupación histórica o lingüística. Del otro lado, quienes defienden la denominación adoptada en 2010 consideran que recuperarla representa un retroceso.
+La situación me hace pensar en cuánto peso real tienen los nombres y las palabras cuando no están acompañados por hechos concretos. Algunos celebran el regreso del viejo nombre, posiblemente más por el gusto de hacer enojar a “los zurdos”, como suele decir “el peluca”, que por una preocupación histórica o lingüística. Del otro lado, quienes defienden la denominación adoptada en 2010 consideran que recuperarla representa un retroceso.
 
 ¿Y qué cambia realmente con cualquiera de los dos nombres?
 
 En la primaria lo conocí como el Día de la Raza. En aquel entorno escolar nadie parecía encontrar en ese nombre una expresión despectiva ni una declaración de superioridad racial. Para nosotros era el 12 de octubre, el aniversario de la llegada de Cristóbal Colón a América en 1492. No era más que eso.
 
-La palabra *raza* tiene una historia compleja. Se utilizó para clasificar personas, justificar discriminaciones y sostener teorías de superioridad racial. Pero también tuvo otros usos, incluso afectuosos. En México, por ejemplo, decir "la raza" puede ser una manera amistosa de referirse a la propia gente, a los amigos.
+La palabra *raza* tiene una historia compleja. Se utilizó para clasificar personas, justificar discriminaciones y sostener teorías de superioridad racial. Pero también tuvo otros usos, incluso afectuosos. En México, por ejemplo, decir “la raza” puede ser una manera amistosa de referirse a la propia gente, a los amigos.
 
 Las palabras tienen contexto, historia y distintos significados. ¿Es necesario eliminar una denominación porque algunos le atribuyen una carga negativa que otros nunca encontraron en ella? Y si alguien escucha la palabra *raza* y piensa inmediatamente en superioridad o inferioridad entre seres humanos, cabe preguntarse cuánto de ese prejuicio está realmente en la palabra y cuánto en la mirada de quien la interpreta.
 
@@ -34,7 +34,7 @@ En 2005, la Federación Pilagá inició una demanda civil contra el Estado argen
 
 En 2010, el gobierno argentino cambió la denominación del *Día de la Raza* por *Día del Respeto a la Diversidad Cultural*, mediante el Decreto 1584/2010. Un nombre más acorde con estos tiempos de corrección política. Para entonces, la demanda de la Federación Pilagá llevaba cinco años en trámite. Recién en 2019 llegó una sentencia de primera instancia que reconoció la responsabilidad estatal y ordenó reparaciones.
 
-Es increíble que, mientras se discutía cómo llamar a una fecha de hacía más de cinco siglos, siguiera pendiente una respuesta judicial por la matanza de hombres, mujeres y niños de un pueblo originario, asesinados por nuestro propio Estado apenas 63 años antes. Vergüenza debería darles haber elegido precisamente la palabra "respeto" para aquella nueva denominación.
+Es increíble que, mientras se discutía cómo llamar a una fecha de hacía más de cinco siglos, siguiera pendiente una respuesta judicial por la matanza de hombres, mujeres y niños de un pueblo originario, asesinados por nuestro propio Estado apenas 63 años antes. Vergüenza debería darles haber elegido precisamente la palabra “respeto” para aquella nueva denominación.
 
 El 12 de octubre sigue siendo el aniversario de la llegada de Colón a América. Podemos discutir su significado histórico, reconocer sus consecuencias y recordar a quienes las sufrieron.
 

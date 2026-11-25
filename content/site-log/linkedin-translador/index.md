@@ -5,7 +5,7 @@ draft: false
 description: "Un experimento simple en Labs: tomar una frase común y convertirla, con Gemini y Cloudflare Workers, en una publicación inflada con propósito, resiliencia y épica corporativa innecesaria."
 tags: ["linkedin", "ia", "gemini", "cloudflare-workers", "hugo", "labs"]
 categories: ["Site Log"]
-featureAlt: "Meme de un hombre vestido de elfo con el texto «Hi I'd like to add you to my professional network on LinkedIn»."
+featureAlt: "Meme de un hombre vestido de elfo con el texto “Hi I'd like to add you to my professional network on LinkedIn”."
 coverCaption: "*Pompa épica corporativa, ahora con botón.*"
 ---
 
@@ -31,10 +31,10 @@ La interfaz quedó hecha con HTML, CSS y JavaScript. Para no exponer la clave de
 
 El Worker recibe el texto, arma el prompt, consulta a Gemini y devuelve el resultado. Hugo solo muestra la interfaz.
 
-La parte delicada fue controlar el tono. Si se lo dejaba demasiado libre, Gemini se iba al LinkedIn insoportable completo: preguntas finales, frases motivacionales, épica desbordada y cierres tipo "¿Y vos cómo estás liderando el cambio?".
+La parte delicada fue controlar el tono. Si se lo dejaba demasiado libre, Gemini se iba al LinkedIn insoportable completo: preguntas finales, frases motivacionales, épica desbordada y cierres tipo “¿Y vos cómo estás liderando el cambio?”.
 
-Tuve que ajustar las reglas para que no inventara detalles técnicos ni usara hashtags, preguntas al lector o la expresión "transformación digital". También debía evitar la primera persona solemne, preferir una voz más seca y absurda y terminar con una afirmación tajante.
+Tuve que ajustar las reglas para que no inventara detalles técnicos ni usara hashtags, preguntas al lector o la expresión “transformación digital”. También debía evitar la primera persona solemne, preferir una voz más seca y absurda y terminar con una afirmación tajante.
 
-El resultado que buscaba apareció cuando "La impresora ahora imprime" se convirtió, ante mis ojos, en una hazaña resiliente e inspiradora. Hermoso. De paso, el experimento sirvió para probar la API de Gemini y los Cloudflare Workers dentro del sitio.
+El resultado que buscaba apareció cuando “La impresora ahora imprime” se convirtió, ante mis ojos, en una hazaña resiliente e inspiradora. Hermoso. De paso, el experimento sirvió para probar la API de Gemini y los Cloudflare Workers dentro del sitio.
 
 En la configuración de esta prueba, el modo gratuito de Gemini tenía un límite de **20 consultas por día**. Más que eso cuesta dinero, muchacho, y no pienso pagar por tu diversión. Así que debés ser inteligente y cuidar tus preguntas, muchacho.

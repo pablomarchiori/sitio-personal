@@ -3,7 +3,7 @@ title: "Literalmente"
 draft: false
 date: 2026-04-02T09:15:00-03:00
 tags: ["lenguaje", "manual", "hiperbole"]
-featureAlt: "Jinete sin cabeza sobre un caballo blanco, con el texto «Ha perdido la cabeza. Literalmente»."
+featureAlt: "Jinete sin cabeza sobre un caballo blanco, con el texto “Ha perdido la cabeza. Literalmente”."
 ---
 
 ## Uso común

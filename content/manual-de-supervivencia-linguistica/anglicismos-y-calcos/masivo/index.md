@@ -16,7 +16,7 @@ En inglés, *massive* puede significar simplemente **enorme, muy grande, grave o
 
 En español, **masivo** se usa cuando algo alcanza, reúne o afecta a una gran cantidad de personas, elementos o casos, no simplemente cuando es muy grande.
 
-Como ejemplo, en una entrevista después de una carrera de Fórmula 1, un piloto contó que había sufrido una *massive failure*, lamentó el resultado y agregó que había que "[*keep pushing*]({{< relref "/manual-de-supervivencia-linguistica/anglicismos-y-calcos/empujar/" >}})". En la traducción al castellano apareció como **“falla masiva”**. El problema es que *massive* no necesariamente indica que la falla haya afectado a muchos elementos: también puede referirse simplemente a una falla muy grande, grave o importante.
+Como ejemplo, en una entrevista después de una carrera de Fórmula 1, un piloto contó que había sufrido una *massive failure*, lamentó el resultado y agregó que había que “[*keep pushing*]({{< relref "/manual-de-supervivencia-linguistica/anglicismos-y-calcos/empujar/" >}})”. En la traducción al castellano apareció como **“falla masiva”**. El problema es que *massive* no necesariamente indica que la falla haya afectado a muchos elementos: también puede referirse simplemente a una falla muy grande, grave o importante.
 
 Hablando de una persona, *He’s massive* no quiere decir que alguien sea “masivo”, sino que es **muy famoso**, **muy popular** o una figura muy importante dentro de su ámbito. Un actor puede tener una **audiencia masiva**, pero eso no significa que el actor sea **masivo**.
 

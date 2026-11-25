@@ -345,7 +345,7 @@ Resultado:
 
 ## Estructura recomendada para mis notas
 
-Una estructura posible, cuando la nota realmente necesita todos estos apartados, es la siguiente. No hace falta completar cada título ni agregar "Lo que aprendí" por obligación:
+Una estructura posible, cuando la nota realmente necesita todos estos apartados, es la siguiente. No hace falta completar cada título ni agregar “Lo que aprendí” por obligación:
 
 ```markdown
 ---

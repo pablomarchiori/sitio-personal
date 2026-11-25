@@ -22,7 +22,7 @@ featureAlt: "Logotipo de Cloudflare iluminado sobre un fondo de circuitos electr
 
 Al revisar el sitio en [SecurityHeaders](https://securityheaders.com/?q=marchiori.ar&followRedirects=on) obtuvo una calificación **F**, aunque cargaba correctamente y ya tenía certificado HTTPS. Faltaban varias cabeceras de seguridad que permiten limitar qué puede hacer el navegador con los recursos de la página.
 
-## El "hardening"
+## El “hardening”
 
 **Hardening** es ajustar la configuración de un sistema para reducir exposición y limitar comportamientos inseguros por defecto. En esta prueba trabajé sobre las cabeceras HTTP, sin cambiar el contenido de Hugo.
 
@@ -75,7 +75,7 @@ Su utilidad principal es mitigar escenarios de **clickjacking**, donde una pági
 
 Le indica al navegador que no reinterprete un archivo o una respuesta como si fuera de otro tipo distinto del declarado por el servidor.
 
-Por ejemplo: si el servidor dice "esto es una imagen" o "esto es un archivo CSS", el navegador debe tratarlo como eso y no intentar adivinar otra cosa por su cuenta.
+Por ejemplo: si el servidor dice “esto es una imagen” o “esto es un archivo CSS”, el navegador debe tratarlo como eso y no intentar adivinar otra cosa por su cuenta.
 
 Sirve para reducir riesgos asociados a contenido mal servido o mal identificado.
 
@@ -99,7 +99,7 @@ La **Content Security Policy (CSP)** define qué recursos puede cargar el navega
 
 Es una de las capas más interesantes porque una política demasiado abierta aporta poco, pero una demasiado cerrada puede bloquear recursos legítimos.
 
-Configuré una política que limitara los orígenes externos sin impedir el funcionamiento normal del sitio. Cuando CSP bloquea un recurso, la consola del navegador suele indicar el origen y la directiva responsable mediante mensajes como `Refused to load...` o `Refused to connect...`. Esa evidencia resulta más útil que ir agregando permisos sin saber qué se está habilitando; la política no "va a salir a bailar" por insistencia.
+Configuré una política que limitara los orígenes externos sin impedir el funcionamiento normal del sitio. Cuando CSP bloquea un recurso, la consola del navegador suele indicar el origen y la directiva responsable mediante mensajes como `Refused to load...` o `Refused to connect...`. Esa evidencia resulta más útil que ir agregando permisos sin saber qué se está habilitando; la política no “va a salir a bailar” por insistencia.
 
 ## El resultado
 

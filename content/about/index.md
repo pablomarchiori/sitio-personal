@@ -19,7 +19,7 @@ Mirada Nerd es un sitio personal hecho por mí 😌, Pablo Marchiori. Acá junto
 El término **nerd** tuvo su recorrido: durante mucho tiempo se usó como burla y con los años terminó convirtiéndose en una identidad más que en un insulto. Aparecieron otras etiquetas cercanas, como *geek*, *techie* o *pro*, pero **nerd** sigue teniendo algo más reconocible: mezcla curiosidad, obsesión por los detalles y cierta dificultad para socializar con otros no-nerds 😁.
 También es un pequeño homenaje a la eterna lucha entre [nerds](https://simpsons.fandom.com/es/wiki/Day_of_the_Nerd) y [vivales](https://simpsons.fandom.com/es/wiki/Homer_Goes_to_College).
 
-## ¿Y "Mirada"?
+## ¿Y “Mirada”?
 
 **Mirada** tiene algo de observar desde otro ángulo, cambiar el foco y prestar atención a esas cosas que a veces pasan de largo.
 

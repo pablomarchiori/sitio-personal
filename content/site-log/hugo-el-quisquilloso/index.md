@@ -79,4 +79,4 @@ La corrección fue esta:
 mainSections = ["notas", "labs", "site-log"]
 ```
 
-Después de eso, las publicaciones de Labs volvieron a entrar en "Reciente" como correspondía.
+Después de eso, las publicaciones de Labs volvieron a entrar en “Reciente” como correspondía.
